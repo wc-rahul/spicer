@@ -1,0 +1,954 @@
+<link rel="stylesheet" href="{{ 'collection-page.css' | asset_url }}" type="text/css">
+
+<style>
+  span.h4.item__title.product-card__title {
+    color: var(--text-primary, #362323);
+    font-family: Foundry Sterling;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 180%;
+    letter-spacing: 0.07px;
+  }
+
+  .product-card-short-desc {
+    color: var(--text-primary, #362323);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Foundry Sterling;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin: 7px 0 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 29px;
+  }
+
+  a.add-to-wsl {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 16px 0 0 0;
+    text-decoration: underline;
+  }
+
+  .product-form__cart-submit {
+    min-height: 44px;
+    padding: 9px 20px 10px 23px;
+  }
+
+  .product-item__swatches .color-swatch__item:after {
+    display: none;
+  }
+
+  .product-item__swatches .color-swatch__item {
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  .product-item__swatches .color-swatch {
+    margin: 4px;
+  }
+
+  .product-item__swatches .color-swatch__item-link {
+    position: relative;
+    padding-left: 4px;
+    padding-right: 8px;
+    height: 18px;
+    box-shadow: unset;
+    font-size: 14px;
+    margin: 2px 0 0 0;
+  }
+
+  .product-item__swatches {
+    position: absolute;
+    display: flex;
+    right: 2px;
+    top: 20px;
+  }
+
+  .product-label--on-sale {
+    border-color: var(--product_label_sale_color);
+    color: white;
+    background-color: var(--product_label_sale_color);
+  }
+
+  .product-label {
+    padding: 7px 11px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: unset;
+    min-width: unset;
+    font-weight: 700;
+  }
+
+  .product-item__label-list {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 15px;
+  }
+
+  .product-card {
+    border-radius: 16px;
+  }
+
+  a.color-swatch:after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+
+  .product-item__swatches .color-swatch__item-link.active-9 {
+    display: block !important;
+  }
+
+  @media(max-width: 749px) {
+    span.h4.item__title.product-card__title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .product-card-short-desc {
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 29px;
+    }
+  }
+
+  /* .product-item__swatches .color-swatch__item-link.active-9 {
+    display: block;
+  } */
+</style>
+<style>
+  @media screen and (min-width: 750px) {
+    .custom_page_header_section .page-width .page_header_heading {
+      margin-bottom: 25px;
+      color: var(--text-action-primary, #FFF);
+      font-family: Foundry Sterling;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 120%;
+      text-align: center;
+      letter-spacing: 0;
+    }
+  }
+
+  body.no-overlap-header.template-collection .custom_page_header_section {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+
+  .breadcrumbs {
+    margin: 0 0 40px;
+  }
+
+  .collection-description span {
+    max-width: 640px;
+    display: block;
+  }
+
+  .collection-description {
+    color: var(--text-action-primary, #FFF);
+    text-align: center;
+    font-family: Foundry Sterling;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: 0.07px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 26px 0;
+  }
+
+  a.subcoll {
+    border-radius: 39px;
+    background: var(--brand-accent-01, #FEC340);
+    padding: 20px 32px;
+    color: var(--text-primary, #362323);
+    font-family: Foundry Sterling;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin: 0 6px 0 0;
+  }
+
+  .subcoll-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .collection__layout-button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-right: 15px;
+    background: transparent;
+    border: none;
+    transition: all .3s;
+  }
+
+  .collection__layout-button.is-selected {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: 0 0 0 0;
+  }
+
+  svg.icon.icon--grid {
+    width: 38px;
+    height: 38px;
+    fill: transparent;
+  }
+
+  svg.icon.icon--list {
+    width: 38px;
+    height: 38px;
+    fill: transparent;
+  }
+
+  .toolbar_sort_by-block {
+    border: none;
+  }
+
+  .toolbar_sort_by-block .filters-toolbar__input {
+    width: 135px;
+  }
+
+  .f-head {
+    align-self: stretch;
+    color: var(--text-primary, #362323);
+    font-family: Foundry Sterling;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    padding: 16px 0;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .collection-sidebar .category-filters-section-title {
+    color: var(--text-primary, #362323);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.08px;
+  }
+
+  .collection-sidebar .category-filters-area-list li.advanced-filter a {
+
+    color: var(--text-secondary, #776B6B);
+    font-family: Foundry Sterling;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: 0.07px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .collection-sidebar .category-filters-area-section {
+    padding: 16px 0;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .collection-sidebar .category-filters-area-section {
+    padding: 16px 0;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .collection-sidebar .category-filters-section-title.active svg.icon.icon--plus {
+    display: none;
+  }
+
+  .collection-sidebar .category-filters-section-title svg.icon.icon--minus {
+    display: none;
+  }
+
+  .collection-sidebar .category-filters-section-title.active svg.icon.icon--minus {
+    display: block;
+  }
+
+  .collection-sidebar .category-filters-area-list li.advanced-filter a:before {
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #776B6B;
+    border-radius: 3px;
+  }
+
+  .collection-sidebar .category-filters-area-list li.advanced-filter.active-filter a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    border-style: none solid solid none;
+    border-color: white;
+    border-width: 3px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(42deg);
+  }
+
+  .collection-sidebar .category-filters-area-list li.advanced-filter.active-filter a:before {
+    border-color: #ED1C24;
+    background: #ED1C24;
+  }
+
+  .product-item__swatches .list-view .color-swatch__item-link.active-6 {
+    display: block;
+  }
+
+  .view-mode-grid .color-swatch-list.list-view {
+    display: none;
+  }
+
+  .view-mode-list .color-swatch-list.grid-view {
+    display: none;
+  }
+
+  .view-mode-list .product-item--info {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 40px;
+  }
+
+  .view-mode-list form.product-item__action-list {
+    margin-top: 0;
+    width: 38%;
+  }
+
+  .product-item-block.view-mode-list .product-item--info {
+    /* width: 53%; */
+    padding-left: 40px;
+  }
+
+  .product-item-block.view-mode-list .top-wrap {
+    width: 62%;
+  }
+
+  .view-mode-list {}
+
+  .product-card {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .collection__layout-button .icon rect {
+    fill: #C3BDBD;
+    stroke: #C3BDBD;
+  }
+
+  .collection__layout-button.is-selected .icon rect {
+    fill: #362323;
+    stroke: #362323;
+  }
+
+  .collection__layout-button .icon .first-rect {
+    stroke: transparent;
+    fill: transparent;
+  }
+
+  .collection__layout-button.is-selected .icon .first-rect {
+    stroke: #362323;
+    fill: transparent;
+  }
+
+  .collection-sidebar {
+    margin-right: 45px;
+    padding: 0px 25px 20px 0;
+  }
+
+  .search-sidebar_form {
+    display: none;
+  }
+
+  .colored_filter_link label {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+    min-width: 16px !important;
+    margin: 3px 0 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  .show_more_options {
+    color: #362323;
+    border-bottom: 1px solid #362323;
+  }
+
+  a.product-item__vendor.link {
+    display: none;
+  }
+
+  .search-form .input-group__field .search-form__input:focus-visible {
+    border: 1px solid #e2e2e2;
+  }
+  .Search_Section.filters_view_mode_sidebar_fixed_left {
+    padding: 60px 0 0 0;
+  }
+  .grid-view-item.zoom-fade-animation-element-wrapper {
+    width: 33.33%;
+  }
+
+  .zoom-fade-animation.list-view-items.use_align_height.zoomFade-animation {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 18px;
+  }
+
+
+  @media screen and (min-width: 901px) {
+    .collection__layout-button {
+      min-width: 38px;
+    }
+  }
+
+
+
+
+
+
+
+
+  @media (max-width:749px) {
+    .zoom-fade-animation-element-wrapper.grid__item.product-item-block.view-mode-grid.product-item-block--withAlternateImage {
+      padding-left: 6px;
+      margin-bottom: 10px;
+    }
+    .grid-view-item.zoom-fade-animation-element-wrapper {
+      width: 50%;
+    }
+    h1.page_header_heading {
+      text-align: center;
+      color: var(--text-action-primary, #FFF);
+      font-family: Foundry Sterling;
+      font-size: 27px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 120%;
+      letter-spacing: 0;
+      margin: 0 0 24px 0;
+    }
+
+    body:not(.template-index) .shopify-section+.shopify-section {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .subcoll-wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: 6px;
+    }
+
+    a.subcoll {
+      border-radius: 39px;
+      background: var(--brand-accent-01, #FEC340);
+      padding: 0px 32px;
+      color: var(--text-primary, #362323);
+      font-family: Foundry Sterling;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      margin: 0 6px 0 0;
+      width: 48%;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .collection-sidebar {
+      margin-right: 0;
+      padding: 30px;
+    }
+
+    .f-head {
+      margin-bottom: 16px;
+    }
+
+    .color-swatch-list.grid-view {
+      display: none;
+    }
+
+    .view-mode-grid .color-swatch-list.list-view {
+      display: flex;
+    }
+
+    .product-form__cart-submit {
+      font-size: 12px;
+      padding: 9px 12px 10px 12px;
+    }
+
+    .custom_header-filters-toolbar-block {
+      margin-bottom: 14px;
+    }
+
+    .custom_page_header_section {
+      margin-bottom: 24px;
+    }
+
+    .filters-toolbar .open_mobile_sidebar,
+    .custom_header-filters-toolbar-block .open_mobile_sidebar {
+      font-size: 14px;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    .open_mobile_sidebar span {
+      width: auto;
+    }
+
+    .toolbar_sort_by-block {
+      margin-top: 8px;
+    }
+
+    .product-card__image-with-placeholder-wrapper {
+      margin-bottom: -30px !important;
+    }
+
+    .product-label {
+      padding: 3px 6px;
+      border-radius: 5px;
+      font-size: 12px;
+      border: unset;
+      min-width: unset;
+      font-weight: 700;
+    }
+
+    .half_row_mobile .product-item__label-list {
+      left: 12px;
+      top: 7px;
+    }
+
+    .product-card {
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    span.h4.item__title.product-card__title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 10px;
+      min-height: 64px;
+    }
+
+    .product-card-short-desc {
+      -webkit-line-clamp: 3;
+      min-height: 44px;
+    }
+
+    .half_row_mobile .small--one-half .product-card {
+      padding: 16px 12px 5px 12px;
+    }
+
+    .product-item-block.view-mode-list .product-card-wrapper {
+      flex-direction: row;
+    }
+
+    .product-item-block.view-mode-list .product-item--info {
+      padding-left: 8px;
+    }
+
+    .product-item-block.view-mode-list .top-wrap {
+      width: 100%;
+    }
+
+    .view-mode-list form.product-item__action-list {
+      width: 100%;
+    }
+
+    .use_align_height .collection-grid-item__image-wrapper,
+    .use_align_height .product-card .product-card__image-wrapper {
+      max-width: 100% !important;
+      position: absolute;
+      top: 35%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .view-mode-list .product-item--info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      column-gap: 40px;
+    }
+
+    .product-item-block.view-mode-list .product-item__label-list {
+      position: absolute;
+      z-index: 2;
+      top: 8px;
+      left: 11px;
+    }
+    a.item__link-title.product-card__link-title {
+    min-height: 72px;
+    display: inline-block;
+    }
+    .template-search .product-item-block {
+    margin-bottom: 12px;
+    }
+    .template-search .grid__item {
+    padding-left: 12px;
+    }
+    .template-search span.wk-text {
+    font-size: 14px;
+    }
+  }
+</style>
+<style>
+  button.search-page--open-sidebar-btn.open_mobile_sidebar.btn.btn-gray {
+    display: none;
+  }
+
+  button.open_mobile_sidebar {
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin: 0 0 20px 0;
+  }
+
+  @media screen and (max-width: 1199px) {
+    .collection-sidebar div.category-filters-area {
+      margin-top: 40px;
+    }
+  }
+
+  @media (max-width:749px) {
+    button.search-page--open-sidebar-btn.open_mobile_sidebar.btn.btn-gray {
+      display: block;
+    }
+  }
+</style>
+
+{% paginate search.results by 10 %}
+
+{% assign pagination_mode = section.settings.pagination_mode %}
+{% assign filters_view_mode = section.settings.search_layout %}
+{% assign searchTerms = search.terms | split: "AND" | first  | remove: "*" %}
+
+
+
+{% assign header_image = section.settings.header_image %}
+
+ {% if search.performed == false %}
+{% assign header_heading =  'general.search.title' | t  %} 
+{% else %}
+{% assign header_heading =  'general.search.results_with_count' | t: terms: searchTerms, count: search.results_count %}
+{% endif %}
+
+{% assign show_breadcrumbs = false %}
+
+{% assign image_overlay_color = section.settings.image_overlay_color %}
+{% assign image_overlay_opacity = section.settings.image_overlay_opacity %}
+
+{% if header_image != blank %}
+{% render 'custom_page_header' image: header_image, heading: header_heading, show_breadcrumbs: show_breadcrumbs, show_heading: true, image_overlay_color: image_overlay_color, image_overlay_opacity: image_overlay_opacity %}
+{% endif %}
+
+
+
+
+<div data-section-id="{{ section.id }}" data-section-type="search-template" data-pagination_mode="{{pagination_mode}}">
+
+
+  <div class="page-width">
+
+
+    <div class='Search_Section filters_view_mode_{{filters_view_mode}} {% if search.results_count == 0  %} EmptySearch_Section {% endif %}'>
+
+
+      {% if filters_view_mode != 'no_sidebar'  and search.results.size > 0 %}
+      {% include 'search-sidebar'  filters_view_mode: filters_view_mode %}
+      {% endif %}
+
+      <div class='search-page-wrapper'>
+
+
+        {% if header_image == blank %}
+        {% if search.performed == false %}
+        <div class="text-center">
+          <h1 class="h2">{{ 'general.search.title' | t }}</h1>
+        </div>
+        {% else %}
+        <div class="text-center">
+          <h1 class="h2">
+            <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+            {{ 'general.search.results_with_count' | t: terms: searchTerms, count: search.results_count }}
+          </h1>
+        </div>
+        {% endif %}
+        {% endif %}
+        
+        
+        <div class="grid">
+          <div class="grid__item medium-up--six-tenths medium-up--push-two-tenths">
+            {% if search.performed and search.results_count == 0 %}
+            <div class="rte search--no-results-found text-center">
+              <p>{{ 'general.search.no_results' | t }}</p>
+            </div>
+            {% endif %}
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
+              <div class="input-group input-group--nowrap">
+                <div class="input-group__field input-group__field--connected search-form__input-wrapper">
+            <label for="search-form__input_{{ section.id }}" class="visually-hidden"></label>
+                  <input
+                        id="search-form__input_{{ section.id }}"
+                         type="search"
+                         name="q"
+                         value="{{ searchTerms | escape }}"
+                         placeholder="{{ 'general.search.placeholder' | t }}"
+                         role="combobox"
+                         aria-autocomplete="list"
+                         aria-expanded="false"
+                         aria-label="{{ 'general.search.placeholder' | t }}"
+                         aria-haspopup="listbox"
+                         class="search-form__input"
+                         data-base-url="{{ routes.search_url }}"
+                         />
+
+                  <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+    
+
+
+
+
+                </div>
+
+                <button type="submit" class="search-button__submit" aria-label="{{ 'general.search.submit' | t }}" data-search-page-predictive-search-submit>
+                  {% include 'icon-search' %}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+
+        {% if search.performed %}
+
+
+        <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+
+        {% if filters_view_mode != 'no_sidebar'  and search.results.size > 0 %}
+        {% assign filters_size = search.filters | size %}
+        {% if filters_size > 0 %}
+        <button type='button' class='open_mobile_sidebar large-up-hide'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.33337 12.2498V8.1665" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M2.33337 5.83333V1.75" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7 12.25V7" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7 4.66667V1.75" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.6666 12.2502V9.3335" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.6666 7V1.75" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M0.583374 8.1665H4.08337" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M5.25 4.6665H8.75" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.91663 9.3335H13.4166" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>{{ 'collections.sidebar.mobile_open_button' | t }}</span>
+        </button>
+        {% endif %}
+        {% endif %}
+
+        <div {% if pagination_mode != 'standart' %} id="AjaxinateContainer" {% endif %} class="SearchGrid grid">
+          <div class="zoom-fade-animation  list-view-items {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %}  " >
+
+            {% assign show_as_list = true %}
+            {%- assign max_height = 345 -%}
+
+            {% for item in search.results %}
+            <div class="grid-view-item search-page-item zoom-fade-animation-element-wrapper">
+              {% if item.object_type == 'product' %}
+                {%  unless item.tags contains 'child' %}
+              {% include 'product-card-item', list: show_as_grid, max_height: max_height, product: item, show_vendor: true,
+              products_per_row: 1 %}
+                 {% endunless %}
+              {% else %}
+              
+
+              <div class="zoom-fade-animation-element-wrapper grid__item  product-item-block  view-mode-list">
+                {% capture img_id %}ProductCardImage-{{ section.id }}-{{ item.id }}{% endcapture %}
+                {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ item.id }}{% endcapture %}
+
+                {% assign preview_image = item.image %}
+                {% unless preview_image == blank %}
+                {% include 'image-style', image: preview_image, height: max_height, wrapper_id: wrapper_id, img_id: img_id %}
+                {% endunless %}
+
+                <div class="product-card product-card-wrapper">
+                  <div class='product-item--media'>
+
+                    <div class="product-card__image-with-placeholder-wrapper">
+                      <a class="list-view-item__link-image product-card__link-image" href="{{ item.url | within: collection }}">
+                        <div id="{{ wrapper_id }}" class="list-view-item__image-wrapper product-card__image-wrapper js">
+                          <div style="padding-top:{% unless preview_image == blank %}{{ 1 | divided_by: preview_image.aspect_ratio | times: 100 }}%{% else %}100%{% endunless %};">
+                            <img id="{{ img_id }}"
+                                 class="list-view-item__image product-card__image zoom-fade-animation-element"
+                                 alt="{{ preview_image.alt | split: "#" | first  | default: item.title  }}"
+                                 srcset="{%- if preview_image.width >= 375 -%}{{ preview_image | img_url: '375x' }} 375w,{%- endif -%}
+                                         {%- if preview_image.width >= 720 -%}{{ preview_image | img_url: '720x' }} 750w,{%- endif -%}
+                                         {%- if preview_image.width >= 1066 -%}{{ preview_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                                         {%- if preview_image.width >= 1500 -%}{{ preview_image | img_url: '1500x' }} 1500w{%- endif -%}"
+                                 src="{{ preview_image | img_url: '535x' }}"
+                                 sizes="100vw"
+                                 loading="lazy"
+                                 width="{{ preview_image.width }}"
+                                 height="{{ preview_image.height }}"
+                                 data-media-id="{{preview_image.id}}"
+                                 data-image
+                                 style="{% if max_img_width == '0px' %} width: auto; {% else %} max-width: {{max_img_width}} {% endif %}"
+                                 />
+
+                          
+
+                            {% render 'load_spinner' %}
+
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+
+                  </div>
+                  <div class='product-item--info'>
+                    <a class="item__link-title product-card__link-title" href="{{ item.url }}" aria-label="{{ item.title }}">
+                      <span class="h4 item__title product-card__title" aria-hidden="true">{{ item.title }}</span>
+                    </a>
+                    {% if item.published_at %}{{ item.published_at | date: format: "date" }} &#8212; {% endif %}
+                     <div class='product-item__desc rte'>
+                    {{ item.content | strip_html | truncate: 200 }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {%- if paginate.pages > 1 -%}
+        {% include 'pagination', paginate: paginate %}
+        {%- endif -%}
+        {% endif %}
+
+        {% if search.results_count < 2  %}
+        <div class="search--less-than-2-results"></div>
+        {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+
+
+  {% if pagination_mode != 'standart' %} 
+  <script src="{{ 'ajaxinate.js' | asset_url }}" defer="defer"></script>  
+  {% endif %}
+</div>
+
+  {% endpaginate %}
+{% schema %}
+{
+"name": "t:sections.search-page.name",
+"settings": [
+{
+"type":"image_picker",
+"id":"header_image",
+"label":"t:sections.search-page.settings.header_image.label"
+},
+{
+		"type":"color",
+		"id":"image_overlay_color",
+		"label":"t:sections.search-page.settings.image_overlay_color.label",
+		"default": "#000"
+		},
+      {
+        "type": "range",
+        "id": "image_overlay_opacity",
+       "label": "t:sections.search-page.settings.image_overlay_opacity.label",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+       "unit": "t:sections.search-page.settings.image_overlay_opacity.unit",
+        "default": 40
+      },
+  {
+      "type":"select",
+      "id":"search_layout",
+      "label":"t:sections.search-page.settings.search_layout.label",
+	 "info":"t:sections.search-page.settings.search_layout.info",
+      "default":"sidebar_fixed_left",
+      "options":[
+        {
+          "value":"sidebar_fixed_left",
+          "label":"t:sections.search-page.settings.search_layout.options__1.label"
+        },
+        {
+          "value":"off_canvas_sidebar",
+          "label":"t:sections.search-page.settings.search_layout.options__2.label"
+        },
+        {
+          "value":"no_sidebar",
+          "label":"t:sections.search-page.settings.search_layout.options__3.label"
+        }
+      ]
+    },
+{
+"type":"select",
+"id":"pagination_mode",
+"label":"t:sections.search-page.settings.pagination_mode.label",
+"options": [
+{
+"label":"t:sections.search-page.settings.pagination_mode.options__1.label",
+"value":"standart"
+},
+{
+"label":"t:sections.search-page.settings.pagination_mode.options__2.label",
+"value":"click"
+},
+{
+"label":"t:sections.search-page.settings.pagination_mode.options__3.label",
+"value":"scroll"
+}
+],
+"default": "standart"
+}
+]
+}
+{% endschema %}

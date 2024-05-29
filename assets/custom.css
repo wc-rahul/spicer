@@ -1,0 +1,191 @@
+@media screen and (max-width: 749px) {
+  .small-hide {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .medium-hide {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .large-up-hide {
+    display: none !important;
+  }
+}
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Demi.woff2?v=1699270912') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Demi.woff?v=1699270913') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Bold.woff2?v=1699270912') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Bold.woff?v=1699270912') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Medium.woff2?v=1699270912') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Medium.woff?v=1699270912') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-ExtraBold.woff2?v=1699270913') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-ExtraBold.woff?v=1699270912') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Light.woff2?v=1699270912') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Light.woff?v=1699270912') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Book.woff2?v=1699270912') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-Book.woff?v=1699270912') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Foundry Sterling';
+  src: url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-BookItalic.woff2?v=1699270912') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0807/1964/2907/files/FoundrySterling-BookItalic.woff?v=1699270912') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+.page-width, .page-width-small {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.page-width {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.btn, .shopify-payment-button .shopify-payment-button__button--unbranded {
+  border-radius: 4px;
+  padding: 13px 20px 13px 23px;
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  justify-content: center;
+}
+.btn:after {
+  border-radius: 4px;
+}
+.header_cart_info.btn:after{
+  border-radius: 50px;
+}
+.section-header > *,
+.section-header{
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.btn--tertiary {
+  background-color: white;
+  color: #003DA6;
+  border-color: #003DA6;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+}
+.btn--tertiary:hover,
+.btn--tertiary:focus,
+ .btn--tertiary:not([disabled]):hover{
+  background-color: #003DA6;
+  color: white;
+  border-color: #003DA6;
+}
+.btn--arrow{
+  padding: 11px 16px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 220px;
+}
+@media only screen and (min-width: 750px){
+  .index-section{
+    padding-top: 0;
+    padding-bottom: 0px;
+  }
+  body:not(.template-index) .shopify-section+.shopify-section {
+    padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 749px){
+  .page-width, .page-width-small {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .half_row_mobile .page-width-small, .half_row_mobile .page-width {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+}
+span.wk-text {
+  text-decoration: underline;
+}
+
+.card-wishlist {
+  min-height: 34px;
+}
+
+wishlist-add-to-cart {
+  display: none;
+}
+
+wk-option-select .wk-control {
+  user-select: none;
+  pointer-events: none;
+}
+
+.wk-counter {
+  color: var(--text-action-link, #362323);
+  font-family: Foundry Sterling;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.07px;
+}
+
+wk-option-select .wk-icon {
+  display: none;
+}
+button.shopify-payment-button__more-options.BUz42FHpSPncCPJ4Pr_f {
+  margin-top: 10px;
+}
+.swatch_elements_wrapper .swatch-element label{
+  border: 1px solid #b1b1b1;
+}
+.product-item__swatches .color-swatch__item {
+  border: 1px solid #0000004f;
+  border-radius: 50%;
+}
+
+
+

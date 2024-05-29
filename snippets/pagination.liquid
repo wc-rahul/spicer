@@ -1,0 +1,123 @@
+<style>
+  .pagination li, .pagination li a {
+    color: var(--text-secondary, #776B6B);
+  }
+  .pagination li.active, .pagination li.active a {
+    color: white;
+    opacity: 1;
+    height: 32px;
+    width: 32px;
+    background-color: #ED1C24;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0.08px;
+  }
+  .prev-btn, .next-btn {
+    height: 32px;
+    width: 32px;
+    display: inline-flex;
+    border-radius: 2px;
+    border: 1px solid var(--interactive-action-field, #D9D9D9);
+    justify-content: center;
+    align-items: center;
+  }
+  .next-btn a,
+  .prev-btn a{
+    /* display: inline-flex; */
+    height: fit-content;
+    /* align-items: center; */
+  }
+  .pagination li a svg {
+    top: 0;
+  }
+  .product-viewed {
+    color: var(--text-secondary, #776B6B);
+    font-family: Foundry Sterling;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: 0.07px;
+  }
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .paginate-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #636466;
+    border-bottom: 1px solid #636466;
+  }
+  @media (max-width: 749px){
+    .paginate-wrap {
+      flex-direction: column;
+      padding: 20px 0 0 0;
+    }
+  }
+</style>
+{% if pagination_mode != 'standart'%}
+<div id="AjaxinatePagination" {% if pagination_mode == 'scroll' %} hidden {% endif %}>
+  {% if paginate.next %}
+  <center>
+    <a class='btn btn--secondary' href="{{ paginate.next.url }}">
+      <span>{{ 'general.pagination.load_more' | t }}</span>
+    </a>
+  </center>
+  {% endif %}
+</div>
+{% else %}
+<div class="paginate-wrap">
+  <div class="product-viewed">You’ve viewed {{ paginate.current_offset | plus:limit }} of {{ collection.all_products_count }} products</div>
+  <ol class="list--inline pagination">
+    {%- if paginate.previous-%}
+    <li >
+      <a class="prev-btn" href="{{ paginate.previous.url }}">
+        {% render 'icon' with 'chevron-left' %}
+        {% comment %} {{ 'general.pagination.previous' | t }} {% endcomment %}
+      </a>
+    </li>   
+    {%- endif -%}
+
+
+    {%- for part in paginate.parts -%}
+    {%- if part.is_link -%}
+    <li>
+      <a href="{{ part.url }}">
+        <span class="visuallyhidden">page</span> {{ part.title }}
+      </a>
+    </li>
+    {%- else -%}
+    {%- if part.title == paginate.current_page -%}
+    <li class="active" aria-current="page">
+      {{ part.title }}
+    </li>
+    {%- else -%}
+    <li>
+      {{ part.title }}
+    </li>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
+
+    {%- if paginate.next -%}
+    <li >
+      <a class="next-btn" href="{{ paginate.next.url }}">
+        {% comment %} {{ 'general.pagination.next' | t }} {% endcomment %}
+        {% render 'icon' with 'chevron-right' %}            </a>
+    </li>
+    {%- endif -%}
+  </ol>
+</div>
+{% endif %}

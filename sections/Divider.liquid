@@ -1,0 +1,139 @@
+{% render 'divider-inc', section: section %}
+{% schema %}
+{
+  "name": "Divider",
+  "class": "divider-section",
+  "settings": [
+{
+   "type": "radio",
+   "id": "divider-visibility",
+   "options": [
+      { 
+        "value": "medium-up--hide", 
+        "label": "Mobile only"
+        },
+      { "value": "small--hide", 
+        "label": "Desktop only"
+      },
+      { "value": "showboth",
+                "label": "Both"
+      }
+   ],
+          "label": "Visibility",
+"default":   "showboth"
+},
+      {
+        "type": "color",
+        "id": "hd_border_color",
+        "label": "Heading color",
+        "default": "#aaaaaa"
+      },
+    {
+      "type": "checkbox",
+      "id": "divider_border",
+      "label": "Show border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "divider_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+              "unit": "Px",
+      "label": "Spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "div_width",
+      "min": 5,
+      "max": 100,
+      "step": 1,
+              "unit": "%",
+      "label": "Width",
+      "default": 80
+    },
+      {
+        "type": "range",
+        "id": "hd_border",
+        "label": "Border height",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "Px",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "border_line",
+        "label": "Line height",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 1
+      },
+      {
+        "type": "select",
+        "id": "div_style",
+         "label": "Line style",
+        "default": "solid",
+        "options": [
+          {
+            "value": "mix",
+            "label": "None"
+          },
+          {
+            "value": "dotted",
+            "label": "Dotted"
+          },
+          {
+            "value": "ridge",
+            "label": "Ridge"
+          },
+          {
+            "value": "inset",
+            "label": "Inset"
+          },
+          {
+            "value": "outset",
+            "label": "Outset"
+          },
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "groove",
+            "label": "Groove"
+          },
+          {
+            "value": "dashed",
+            "label": "Dashed"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "border_rad",
+        "label": "Border radius",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "Px",
+        "default": 2
+      }
+  ],
+  "presets": [
+    {
+      "name": "Divider",
+      "category": "Layout",
+      "settings": {
+
+      }
+    }
+  ]
+}
+
+{% endschema %}

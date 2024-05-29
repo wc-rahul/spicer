@@ -1,0 +1,174 @@
+{% assign current_variant = variant %}
+
+
+<div class="variant-wraper active " id="variant-{{ current_variant.id }}" data-option1="{{ variant.option1 }}"
+  data-option2="{{ variant.option2 }}" data-option3="{{ variant.option3 }}">
+
+
+  <form method="post" action="/cart/add" id="product_form_{{ current_variant.id }}" accept-charset="UTF-8"
+    class="product-form" enctype="multipart/form-data" data-product-form="">
+
+    <input type="hidden" name="utf8" value="✓">
+
+    <input name="id" value="{{ current_variant.id }}" type="hidden" />
+
+    <div class="var-color"> <img src="{{ variant.image | img_url:" 100x" }}" alt=""></div>
+
+    <div class="sku"> <span class="sku-label">SKU:</span> {{ current_variant.sku }} </div>
+
+    <div class="varient-desc"> <span class="var-desc-label">Description:</span> {{
+      current_variant.metafields.custom.short_description }} </div>
+
+    <div class="variant-list-options-size">
+      <span class="var-op-size-label">Size:</span>
+      {% for option in product.options %}
+
+      {% assign is_size = false %}
+      {% assign downcased_option = option | downcase %}
+
+      {% if downcased_option contains 'size' or downcased_option contains 'width' %}
+      {% assign option_index = forloop.index0 %}
+      {% assign option_count = 0 %}
+      {% assign values = '' %}
+
+      {% assign value = current_variant.options[option_index] %}
+      {{ value }}
+      {% unless values contains value %}
+
+      {% if option_count > 0 %}
+      {% assign values = values | join: '|' | append: '|' %}
+      {% endif %}
+      {% assign values = values | append: value %}
+      {% assign values = values | split: '|' | sort %}
+      {% assign option_count = values | size %}
+
+      {% comment %} {% if current_variant.available %} {% endif %} {% endcomment %}
+      {% if option_count <= 10 %} <div class="{% unless current_variant.available %}soldout{% endunless %}">
+        {% assign option_count = option_count | plus : 1 %}
+    </div>
+    {% endif %}
+
+    {% endunless %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% if customer %}
+<div class="variant-stock THIS?">
+  <span data-quantity-text>
+    <span class="vs-label">Stock:</span>
+    {% unless current_variant.available %}
+    <span class="oos">{{ 'products.product.out_of_stock' | t }}</span>
+    {% else %}
+    {% if current_variant.inventory_quantity > 5 %}
+    <span class="iss">{{ 'products.product.in_stock_only' | t }}</span>
+    {% else  %}
+  <span class="iss limited-stock">  {{ 'products.product.limited_stock' | t }}  </span>
+    {% endif %}
+    {% endunless %}
+  </span>
+</div>
+
+<!-- Product variant price -->
+<div class="variant-price">
+  <span class="var-price-label">Price:</span>
+  <span class="price-reg">{{ current_variant.price | money }} {{ variant.metafields.custom.variant_unit }}</span>
+
+  {% if current_variant.compare_at_price > current_variant.price %}
+  <span class="price-sale"><s>{{ current_variant.compare_at_price | money }}</s></span> <span> {{
+    variant.metafields.custom.variant_unit }} </span>
+  {% endif %}
+</div>
+{% endif %}
+
+<div class='form_bg_row quantity_block'>
+  <div class='product_quantity_info_container'>
+    <span class="qty-label">QTY:</span>
+    <div class='qty_container'>
+      <div class="qty product-page-qty">
+        <a href='javascript:void(0);' class="minus_btn qty_btn"></a>
+        <input type="text" id="Quantity-{{ current_variant.id }}" name="quantity" value="1" min="1" pattern="[0-9]*"
+          class="product-form__input product-form__input--quantity" data-quantity-input>
+        <a href='javascript:void(0);' class="plus_btn qty_btn"></a>
+      </div>
+    </div>
+    {% if variant.metafields.custom.quantity_notes != blank %}
+    <div class="qty-tooltip-wrap">
+      <div class="qty-tooltip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path
+            d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+            stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9 12V9" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9 6H9.0075" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+    {% endif %}
+    <div class="qty-tooltip-content">
+      {{ variant.metafields.custom.quantity_notes }}
+    </div>
+  </div>
+</div>
+
+{% comment %} <div class="qty-tooltip-wrap">
+  <div class="qty-tooltip">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path
+        d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+        stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9 12V9" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9 6H9.0075" stroke="#362323" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+</div>
+<div class="qty-tooltip-content">
+  {{ variant.metafields.custom.quantity_notes }}
+</div> {% endcomment %}
+
+
+
+<div class="variant-form__item--submit">
+  {% if customer %}
+
+  <button type="submit" name="add" {% unless current_variant.available %} aria-disabled="true" {% endunless %}
+    aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{% if show_preOrderButton %}{{ 'products.product.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}{% endunless %}"
+    class="btn product-form__cart-submit btn--primary" data-add-to-cart>
+    {% comment %} <span data-add-to-cart-text> {% endcomment %}
+      <span data-add-to-cart-text>
+        {% unless current_variant.available %}
+        {{ 'products.product.sold_out' | t }}
+        {% else %}
+        {% if show_preOrderButton %}
+        {{ 'products.product.pre_order' | t }}
+        {% else %}
+        {{ 'products.product.add_cart' | t }}
+        {% endif %}
+        {% endunless %}
+      </span>
+
+      {%- render 'icon', icon: cart_icon_style -%}
+      <span class="hide" data-loader>
+        {% include 'icon-spinner' %}
+      </span>
+  </button>
+
+  {% else %}
+  <a href="{{ routes.account_login_url }}" class="btn product-form__cart-submit btn--primary login-price">
+    <span> {{ 'products.product.login_to_see_price' | t }}</span></a>
+  {% endif %}
+</div>
+{%- render 'wishlist-button', product_handle: current_variant.product.handle, variant_id: current_variant.id -%}
+
+<div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden data-error-message-wrapper"
+  role="alert">
+  <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+  {% include 'icon-error' %}
+  <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t
+    }}</span>
+</div>
+<p class="visually-hidden" data-loader-status aria-live="assertive" role="alert" aria-hidden="true">{{
+  'products.product.loader_label' | t }}</p>
+
+</form>
+</div>

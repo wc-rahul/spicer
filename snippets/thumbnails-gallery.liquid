@@ -1,0 +1,28 @@
+{% assign enable_alts = false %}
+
+{% if product.media.size > 1 %}
+<div class="thumbnails-wrapper">
+  <div class="product-single__thumbnails product-single__thumbnails-{{ section.id }} {% if enable_thumbnail_slides == true %} thumbnails-slider {% else %} thumbnails-grid {% endif %} " 
+       data-thumb_flickity_options='{{thumb_flickity_options}}' >
+    {% for media in product.media %}
+      {% unless media.media_type == 'image' %}
+	    {% include 'thumb_media' %}
+      {% endunless %}
+    {% endfor %}
+     
+    {% for image in product.images %}
+      {% unless image.attached_to_variant?  %}
+        <div class="product-single__thumbnails-block" data-thumb-index="{{ forloop.index0 }}" >
+          <div class='thumbnails-block_wrapper from-my-code'>
+            <img class="product-single__thumbnail-image" 
+            src="{{ image | img_url: '400x', scale: 2 }}" 
+            srcset="{{ image | img_url: '400x' }} 1x, {{ image | img_url: '400x', scale: 2 }} 2x"
+            loading="lazy"
+            alt="{{ image.alt}}">
+          </div>
+        </div>       
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
