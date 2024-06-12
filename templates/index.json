@@ -125,7 +125,7 @@
         "link": "",
         "grid": 6,
         "grid_mobile": "1",
-        "image_style": "background",
+        "image_style": "square",
         "image_style_bg_overlay": "#ffffff",
         "image_style_bg_overlay_opacity": 0,
         "show_arrows": false,
