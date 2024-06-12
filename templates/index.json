@@ -50,7 +50,7 @@
             "collection": "industrial-packaging",
             "title": "Industrial Packaging",
             "bg_color": "",
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "image": "shopify:\/\/shop_images\/IP_Sq.png"
           }
         },
@@ -60,7 +60,7 @@
             "collection": "commercial",
             "title": "Commercial Print",
             "bg_color": "",
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "image": "shopify:\/\/shop_images\/Commerical_Sq.png"
           }
         },
@@ -70,7 +70,7 @@
             "collection": "digital",
             "title": "Digital Print",
             "bg_color": "",
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "image": "shopify:\/\/shop_images\/Digital_Sq.png"
           }
         },
@@ -80,7 +80,7 @@
             "collection": "office",
             "title": "Office Products",
             "bg_color": "",
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "image": "shopify:\/\/shop_images\/Office_Sq.png"
           }
         },
@@ -90,7 +90,7 @@
             "collection": "packaging",
             "title": "Packaging",
             "bg_color": "",
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "image": "shopify:\/\/shop_images\/Pack_Sq.png"
           }
         },
@@ -100,7 +100,7 @@
             "collection": "psa",
             "title": "Labels & Synthetics",
             "bg_color": "",
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "image": "shopify:\/\/shop_images\/Spicers_Sq.png"
           }
         }
@@ -125,7 +125,7 @@
         "link": "",
         "grid": 6,
         "grid_mobile": "1",
-        "image_style": "background",
+        "image_style": "square",
         "image_style_bg_overlay": "#000000",
         "image_style_bg_overlay_opacity": 0,
         "show_arrows": false,
