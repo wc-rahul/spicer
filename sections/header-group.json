@@ -27,8 +27,8 @@
       ],
       "settings": {
         "enable_bar": true,
-        "background": "#636466",
-        "text_color": "#ebebeb",
+        "background": "#003da6",
+        "text_color": "#ffffff",
         "show_close_option": true,
         "show_arrows": true,
         "enable_autoplay": true,
