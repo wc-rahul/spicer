@@ -370,102 +370,6 @@
         "padding_bottom_mobile": 40
       }
     },
-    "7326425c-8e95-4fd0-b649-4b2844cd4132": {
-      "type": "mosaic",
-      "blocks": {
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-1": {
-          "type": "image",
-          "settings": {
-            "cta_label": "",
-            "cta_sublabel": "",
-            "link": "",
-            "cta_col": 3,
-            "cta_image_height": "medium",
-            "caption_align": "center",
-            "caption_position": "bottom",
-            "caption_size": "h3",
-            "caption_color": "#ffffff"
-          }
-        },
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-2": {
-          "type": "image",
-          "settings": {
-            "cta_label": "",
-            "cta_sublabel": "",
-            "link": "",
-            "cta_col": 6,
-            "cta_image_height": "1",
-            "caption_align": "center",
-            "caption_position": "center",
-            "caption_size": "h3",
-            "caption_color": "#ffffff"
-          }
-        },
-        "cc9ea03f-15ef-4a94-adbf-d983f52f6333": {
-          "type": "image",
-          "settings": {
-            "cta_label": "",
-            "cta_sublabel": "",
-            "link": "",
-            "cta_col": 3,
-            "cta_image_height": "medium",
-            "caption_align": "center",
-            "caption_position": "bottom",
-            "caption_size": "h3",
-            "caption_color": "#ffffff"
-          }
-        },
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-5": {
-          "type": "image",
-          "settings": {
-            "cta_label": "",
-            "cta_sublabel": "",
-            "link": "",
-            "cta_col": 3,
-            "cta_image_height": "medium",
-            "caption_align": "right",
-            "caption_position": "bottom",
-            "caption_size": "h3",
-            "caption_color": "#ffffff"
-          }
-        },
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-3": {
-          "type": "image",
-          "settings": {
-            "cta_label": "",
-            "cta_sublabel": "",
-            "link": "",
-            "cta_col": 3,
-            "cta_image_height": "medium",
-            "caption_align": "center",
-            "caption_position": "bottom",
-            "caption_size": "h3",
-            "caption_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-1",
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-2",
-        "cc9ea03f-15ef-4a94-adbf-d983f52f6333",
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-5",
-        "template--20962518040859__7326425c-8e95-4fd0-b649-4b2844cd4132-image-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "",
-        "subtitle": "",
-        "use_stacked_layout": false,
-        "use_lightbox": false,
-        "overlay_opacity": 0,
-        "overlay_color": "#000000",
-        "gutter_width": "11",
-        "title_transform": "none",
-        "hover_animation": "fade-out",
-        "use_mobile_redability": false,
-        "removeBottomMargin": false
-      }
-    },
     "165728607359737ef9": {
       "type": "index-accordion",
       "blocks": {
@@ -533,49 +437,6 @@
         "padding_bottom_mobile": 40
       }
     },
-    "16572860256a3e457c": {
-      "type": "index-icons-with-text",
-      "blocks": {
-        "16572860240fe40332-0": {
-          "type": "block",
-          "settings": {
-            "custom_icon": "star",
-            "title": "Title",
-            "content": "<p>Content text<\/p>",
-            "link": ""
-          }
-        },
-        "16572860240fe40332-1": {
-          "type": "block",
-          "settings": {
-            "custom_icon": "star",
-            "title": "Title",
-            "content": "<p>Content text<\/p>",
-            "link": ""
-          }
-        },
-        "16572860240fe40332-2": {
-          "type": "block",
-          "settings": {
-            "custom_icon": "star",
-            "title": "Title",
-            "content": "<p>Content text<\/p>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "16572860240fe40332-0",
-        "16572860240fe40332-1",
-        "16572860240fe40332-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Heading",
-        "subtitle": "SubHeading",
-        "icon_color": "rgba(0,0,0,0)"
-      }
-    },
     "1657286107baf17a73": {
       "type": "newsletter",
       "disabled": true,
@@ -598,9 +459,7 @@
     "1657285979c825b800",
     "2f104a4a-a7fb-4ef4-a72d-7b5d30e3e4c1",
     "165728609550d705f0",
-    "7326425c-8e95-4fd0-b649-4b2844cd4132",
     "165728607359737ef9",
-    "16572860256a3e457c",
     "1657286107baf17a73"
   ]
 }
