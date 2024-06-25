@@ -60,11 +60,6 @@
             "link_4": ""
           }
         },
-        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
-          "type": "product_price",
-          "settings": {
-          }
-        },
         "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
           "type": "product_options_block",
           "settings": {
@@ -79,6 +74,11 @@
         },
         "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
           "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
           "settings": {
           }
         },
@@ -147,10 +147,10 @@
         "0471109f-c130-454e-a9ba-c56412cc11f3",
         "d25a0285-4fb4-422d-b95b-ab67446120ad",
         "c6ecc51a-2dbc-4111-8a50-dcd06f404b77",
-        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
         "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
         "11795adc-1afa-4833-a193-258f495901ef",
         "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
         "e108ea9e-0f59-448f-ab9a-8d83ab0f08cb",
         "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
         "18d64b58-5f5a-4ed8-9f72-802e7895f62d",
