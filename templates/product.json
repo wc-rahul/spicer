@@ -162,7 +162,7 @@
       "settings": {
         "show_breadcrumbs": true,
         "show_pick_an_option": true,
-        "enable_linked_options": true,
+        "enable_linked_options": false,
         "enabled_mobile_sticky_btns": true,
         "media_size": "small",
         "enable_image_zoom": true,
