@@ -39,32 +39,32 @@
         "block_UXNUyB": {
           "type": "block",
           "settings": {
-            "heading": "Gareth McGrail",
-            "content": "<p><strong>General Manager<\/strong><\/p>",
+            "heading": "Morgan John",
+            "content": "<p><strong>General Manager NZ<\/strong><\/p>",
             "url": ""
           }
         },
         "block_mazPhJ": {
           "type": "block",
           "settings": {
-            "heading": "Geoff Milliken",
-            "content": "<p><strong>Business Development Manager<br\/><\/strong><\/p>",
-            "url": ""
-          }
-        },
-        "block_kE7Xzd": {
-          "type": "block",
-          "settings": {
-            "heading": "Scott Harvey",
-            "content": "<p><strong>Sales Manager<br\/><\/strong><\/p>",
+            "heading": "Nathan Pene",
+            "content": "<p><strong>General Manager - Spicers Paper<\/strong><\/p>",
             "url": ""
           }
         },
         "block_W3FbYw": {
           "type": "block",
           "settings": {
-            "heading": "Steven Brown",
-            "content": "<p><strong>Hardware Manager<\/strong><\/p>",
+            "heading": "Steve Edmonds",
+            "content": "<p><strong>Regional Manager - Wellington<\/strong><\/p>",
+            "url": ""
+          }
+        },
+        "block_kE7Xzd": {
+          "type": "block",
+          "settings": {
+            "heading": "Greg Quirke",
+            "content": "<p><strong>Regional Manager - Christchurch<\/strong><\/p>",
             "url": ""
           }
         }
@@ -72,11 +72,11 @@
       "block_order": [
         "block_UXNUyB",
         "block_mazPhJ",
-        "block_kE7Xzd",
-        "block_W3FbYw"
+        "block_W3FbYw",
+        "block_kE7Xzd"
       ],
       "settings": {
-        "layout": "mosaic",
+        "layout": "grid",
         "title": "Meet The Sales Team",
         "subtitle": "",
         "image_style": "square",
@@ -86,43 +86,43 @@
     "featured_blocks_FMyrXQ": {
       "type": "featured-blocks",
       "blocks": {
+        "block_gkBN46": {
+          "type": "block",
+          "settings": {
+            "heading": "Andrew Jackson",
+            "content": "<p><strong>National Sales Manager & Category Manager - Commercial Print<\/strong><\/p>",
+            "url": ""
+          }
+        },
         "block_LpX8Hh": {
           "type": "block",
           "settings": {
-            "heading": "Chris Knuckey",
-            "content": "<p><strong>Product Manager<\/strong><\/p>",
+            "heading": "Leigh Burton",
+            "content": "<p><strong>Category Manager - Office Papers<\/strong><\/p>",
             "url": ""
           }
         },
         "block_qxynLg": {
           "type": "block",
           "settings": {
-            "heading": "Dylan Mitchell",
-            "content": "<p><strong>Sign Technology - Category Manager<\/strong><\/p>",
-            "url": ""
-          }
-        },
-        "block_gkBN46": {
-          "type": "block",
-          "settings": {
-            "heading": "Daniel Jones",
-            "content": "<p><strong>Account Manager - Auckland<\/strong><\/p>",
+            "heading": "Brooke Painter",
+            "content": "<p><strong>Category Manager - Digital Print<\/strong><\/p>",
             "url": ""
           }
         },
         "block_jNayfz": {
           "type": "block",
           "settings": {
-            "heading": "Kim Heather",
-            "content": "<p><strong>Account Manager - Auckland<\/strong><\/p>",
+            "heading": "David White",
+            "content": "<p><strong>Category Manager - Labels & Synthetic<\/strong><\/p>",
             "url": ""
           }
         }
       },
       "block_order": [
+        "block_gkBN46",
         "block_LpX8Hh",
         "block_qxynLg",
-        "block_gkBN46",
         "block_jNayfz"
       ],
       "settings": {
@@ -136,18 +136,10 @@
     "featured_blocks_qbbzGm": {
       "type": "featured-blocks",
       "blocks": {
-        "block_j7XEw3": {
-          "type": "block",
-          "settings": {
-            "heading": "Sam Morrhall",
-            "content": "<p><strong>Account Manager - South Island<br\/><\/strong><\/p>",
-            "url": ""
-          }
-        },
         "block_VJnntx": {
           "type": "block",
           "settings": {
-            "heading": "Kem Phillips",
+            "heading": "Nigel Williams",
             "content": "<p><strong>Account Manager - South Island<\/strong><\/p>",
             "url": ""
           }
@@ -155,24 +147,32 @@
         "block_KFGUFh": {
           "type": "block",
           "settings": {
-            "heading": "Rae Abbott",
+            "heading": "Kerry Richmond",
             "content": "<p><strong>Account Manager - Wellington<\/strong><\/p>",
+            "url": ""
+          }
+        },
+        "block_j7XEw3": {
+          "type": "block",
+          "settings": {
+            "heading": "Kayden Wilson",
+            "content": "<p><strong>Business Development<\/strong><\/p>",
             "url": ""
           }
         },
         "block_WWV6Td": {
           "type": "block",
           "settings": {
-            "heading": "Amanda Green",
-            "content": "<p><strong>Sales Support <\/strong><\/p>",
+            "heading": "Jamie Low",
+            "content": "<p><strong>Direct Sales<\/strong><\/p>",
             "url": ""
           }
         }
       },
       "block_order": [
-        "block_j7XEw3",
         "block_VJnntx",
         "block_KFGUFh",
+        "block_j7XEw3",
         "block_WWV6Td"
       ],
       "settings": {
@@ -182,6 +182,20 @@
         "image_style": "circle",
         "mobile_carousel": false
       }
+    },
+    "divider_6JeaUA": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
@@ -189,6 +203,7 @@
     "divider_H8hKKK",
     "featured_blocks_xrRYxE",
     "featured_blocks_FMyrXQ",
-    "featured_blocks_qbbzGm"
+    "featured_blocks_qbbzGm",
+    "divider_6JeaUA"
   ]
 }
