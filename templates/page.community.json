@@ -36,13 +36,13 @@
     "rich_text_nNkJGw": {
       "type": "rich-text",
       "settings": {
-        "content_width": "100",
+        "content_width": "75",
         "bg_color": "",
         "section_color": "",
         "rte_icon_width": 100,
         "section_title": "",
-        "subtitle": "",
-        "text": "",
+        "subtitle": "Community",
+        "text": "<p><strong>Spicers is proud to be actively involved in the community, and we’re currently working with the following charities:<\/strong><\/p><p><strong>Books in Homes<\/strong>– in partnership with Soar Printing, we provide paper to be used for producing books which go to schools to help break the cycle of “booklessness”. Kids who can’t read become adults who can’t communicate and that’s a serious disadvantage in a world that operates in the written word. Check out<a href=\"http:\/\/www.booksinhomes.org.nz\/\" target=\"_blank\">www.booksinhomes.org.nz<\/a><\/p><p><strong>Paper Donations<\/strong>– Spicers regularly donates paper and card to our preschools and primary schools throughout New Zealand, helping to keep the rising cost of materials down, while encouraging a love for craft, creativity and the medium we’ve trusted and loved for so many years. To find out if your school is on the register please contact<a href=\"mailto:sales@spicersnz.co.nz\">sales@spicersnz.co.nz<\/a>with the subject heading “paper donations”<\/p><p><strong>NZ Cancer Society<\/strong>– Spicers and Total Supply host an annual charity golf day and auction with all proceeds being donated to the Cancer Society.<\/p><p><strong>Breast Cancer Foundation<\/strong>- Spicers host an annual morning tea fundraising - all proceeds are donated to the Breast Cancer Foundation.<\/p><p><strong>Trees That Count<\/strong>- Spicers are proud to announce our affiliation with Trees That Count - NZ's community marketplace to connect tree funders and planters to ensure native trees are planted, impacting climate change and improving our environment. For every tonne of Revive Laser 100% recycled stock sold, Spicers will donate $100 to this worthy cause. Check out<a href=\"http:\/\/www.treesthatcount.co.nz\/\" target=\"_blank\">www.treesthatcount.co.nz<\/a><\/p>",
         "text_size": "medium"
       }
     }
