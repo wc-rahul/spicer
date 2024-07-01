@@ -129,7 +129,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": false
       }
     },
@@ -179,7 +179,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": false
       }
     },
