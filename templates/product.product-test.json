@@ -155,7 +155,7 @@
           "type": "static_tab_text",
           "settings": {
             "tab_title": "Delivery Information",
-            "product_tab_content": ""
+            "product_tab_content": "<p>{{ product.metafields.global.delivery_information | metafield_tag }}<\/p>"
           }
         }
       },
