@@ -20,6 +20,7 @@
     },
     "divider_4kWg38": {
       "type": "Divider",
+      "disabled": true,
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
@@ -41,7 +42,7 @@
         "rte_icon_width": 100,
         "section_title": "",
         "subtitle": "",
-        "text": "",
+        "text": "<p>Spicers Converting is a specialist division of our business, located on our Auckland site in Highbrook.<\/p><p>For roll label and flexo qualities, Spicers Converting rewind and slitting facilities enable us to offer a service where we can slit down to a minimum of 60mm to match your specification and deliver it direct.<\/p><p>Since its founding in 1996 the philosophy of Spicers Converting to work that little bit harder for customers, has helped the company to grow and adapt. Supplying both standard and bespoke sizes to web and sheet printers, our customers’ requirements range from the traditional – such as publishing (books and magazines), envelope converters and roll labels – to specialist conversion.We can convert many non-paper products including synthetics, self-adhesive, plastics and specialty packaging stocks that often require a more customised approach. We are always happy to talk through the options that we think will best suit your requirements.<\/p><p>New to the Spicers manufacturing capability is the Bimec’ slitter-rewinder. The Bimec Slitter Rewinder is a heavy duty, duplex slitter winder that was designed with the self adhesive converter in mind. This machine is also designed for use on plastic and film, as well as being very proficient at consumer type rolls. The machine offers quick size changes and flexibility in product mixture.<\/p><p>Our fork hoists and clamp trucks provide flexibility, handling reels on pallets or reels that are freestanding on their ends. Spicers’ extensive fleet operation enables us to deliver to you or direct to your customer.<\/p>",
         "text_size": "medium"
       }
     }
