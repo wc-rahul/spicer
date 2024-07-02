@@ -93,15 +93,15 @@
           "settings": {
             "year": "1920",
             "title": "Spicers NZ",
-            "subtitle": "The beginning",
-            "content": "<p>Content text 1<\/p>"
+            "subtitle": "",
+            "content": "<p>Spicer NZ enters the NZ market<\/p>"
           }
         },
         "block_L7jbjP": {
           "type": "block",
           "settings": {
             "year": "2012",
-            "title": "Canterbury Packaging Supplies (now CPS)",
+            "title": "Canterbury Packaging Supplies",
             "subtitle": "Spicers acquires CPS",
             "content": "<p>In 2012, we acquired Canterbury Packaging Supplies (now CPS) in Christchurch. A strong regional player with a proud local history, Canterbury Packaging provided us with our first step in our long term strategy of diversification. Since late 2012, our Industrial Packaging presence has expanded to our wider regional sites to include Auckland, Wellington and Dunedin.<\/p>"
           }
@@ -146,7 +146,7 @@
         "content_side": "left",
         "blocks_height": 400,
         "color_image_overlay": "",
-        "image_overlay_opacity": 70
+        "image_overlay_opacity": 90
       }
     }
   },
