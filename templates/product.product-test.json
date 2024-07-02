@@ -57,7 +57,7 @@
         "c6ecc51a-2dbc-4111-8a50-dcd06f404b77": {
           "type": "image_with_text_blocks",
           "settings": {
-            "icon_color": "#ff1414",
+            "icon_color": "#121212",
             "icon_1": "",
             "image_1": "shopify:\/\/shop_images\/download_1.svg",
             "text_1": "{{ product.metafields.custom.product_information_1_heading.value }}",
