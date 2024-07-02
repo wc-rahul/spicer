@@ -42,7 +42,7 @@
         "rte_icon_width": 100,
         "section_title": "",
         "subtitle": "",
-        "text": "<p>At Spicers NZ we are committed to being a trusted and dependable partner to our customers, employees and suppliers. A partner that delivers a wealth of knowledge, innovation and capability to create outstanding results. We are inspired to make ideas happen, and to grow them into practical and impactful solutions.<\/p><p>We’ve been servicing people’s paper needs in New Zealand for over 100 years, but maintain a strong international identity with operations in Australia and Asia. As a part of the Australian merchanting company, we also enjoy the backing of a solid infrastructure, united by a common set of values, core operating principles and our code of conduct. And every day we go to extraordinary lengths to satisfy our hundreds of customers.<\/p>",
+        "text": "<p>At Spicers NZ we are committed to being a trusted and dependable partner to our customers, employees and suppliers. A partner that delivers a wealth of knowledge, innovation and capability to create outstanding results. We are inspired to make ideas happen, and to grow them into practical and impactful solutions.<\/p><p>We’ve been servicing people’s paper needs in New Zealand for over 100 years, but maintain a strong international identity with operations in Australia and Asia. As a part of the Australian merchanting company, we also enjoy the backing of a solid infrastructure, united by a common set of values, core operating principles and our code of conduct. And every day we go to extraordinary lengths to satisfy our hundreds of customers.<\/p><p>As business moves into diversified products, we have aligned resource levels and skill to this changing orientation, by expanding our service offering to include Sign and Display substrates, Industrial Packaging Consumables and Third Party Logistics (3PL). With our exceptional service model already in place amongst the printing industry for supplying paper, adding new products to this has been a seamless transition but allows us to further assist our customers with their ongoing requests.<\/p><p>We are big believers in leading by example: in everything we do, the impact on our environment is always taken into consideration; our <strong>FSC, PEFC, Toitu net carbonzero Certification<\/strong>  and <strong>Environmental Choice certifications <\/strong>are examples that we continue to manage environmental initiatives that impact our operational footprint. Here at Spicers we believe that sustainable development creates value for all our stakeholders, including customers, suppliers, employees and investors.<\/p><p>Spicers NZ had joined more than 85,000 businesses from across the world to become a <strong>Sedex<\/strong> trusted partner.  This creates a more socially and environmentally sustainable supply chain. The platform’s unrivalled data insights and team’s expert guidance, Sedex makes it easy for you to manage, assess, and report on sustainability performance and, ultimately, meet your supply chain goals.<\/p><p>In 2012, we acquired Canterbury Packaging Supplies (now CPS) in Christchurch. A strong regional player with a proud local history, Canterbury Packaging provided us with our first step in our long term strategy of diversification. Since late 2012, our Industrial Packaging presence has expanded to our wider regional sites to include Auckland, Wellington and Dunedin.<\/p><p>In 2014, we acquired New Zealand's foremost sign industry supplier, Total Supply. Committed to delivering quality, cost effective products and service, they endeavour to supply everything a sign company needs to be at the cutting edge of technology, while delivering upon a policy of excellence in all they do.<a href=\"https:\/\/www.totalsupply.co.nz\/\" target=\"_blank\">www.totalsupply.co.nz<\/a>. A further addition to the Total Supply family was completed with the acquisition of Sign Technology Limited in 2017.<\/p>",
         "text_size": "medium"
       }
     },
@@ -71,17 +71,82 @@
         "subtitle": ""
       }
     },
-    "rich_text_nNkJGw": {
-      "type": "rich-text",
+    "divider_gRX9Wg": {
+      "type": "Divider",
       "settings": {
-        "content_width": "75",
-        "bg_color": "",
-        "section_color": "",
-        "rte_icon_width": 100,
-        "section_title": "",
-        "subtitle": "",
-        "text": "<p>As business moves into diversified products, we have aligned resource levels and skill to this changing orientation, by expanding our service offering to include Sign and Display substrates, Industrial Packaging Consumables and Third Party Logistics (3PL). With our exceptional service model already in place amongst the printing industry for supplying paper, adding new products to this has been a seamless transition but allows us to further assist our customers with their ongoing requests.<\/p><p>We are big believers in leading by example: in everything we do, the impact on our environment is always taken into consideration; our FSC, PEFC, Enviromark and Environmental Choice certifications are examples that we continue to manage environmental initiatives that impact our operational footprint. Here at Spicers we believe that sustainable development creates value for all our stakeholders, including customers, suppliers, employees and investors.<\/p><p>In 2012, we acquired Canterbury Packaging Supplies (now CPS) in Christchurch. A strong regional player with a proud local history, Canterbury Packaging provided us with our first step in our long term strategy of diversification. Since late 2012, our Industrial Packaging presence has expanded to our wider regional sites to include Auckland, Wellington and Dunedin.<\/p><p>In 2014, we acquired New Zealand's foremost sign industry supplier, Total Supply. Committed to delivering quality, cost effective products and service, they endeavour to supply everything a sign company needs to be at the cutting edge of technology, while delivering upon a policy of excellence in all they do.<a href=\"https:\/\/www.totalsupply.co.nz\/\" target=\"_blank\">www.totalsupply.co.nz<\/a>. A further addition to the Total Supply family was completed with the acquisition of Sign Technology Limited in 2017.<\/p>",
-        "text_size": "medium"
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
+    },
+    "timeline_wjAeVG": {
+      "type": "timeline",
+      "blocks": {
+        "block_anUVbc": {
+          "type": "block",
+          "settings": {
+            "year": "1920",
+            "title": "Spicers NZ",
+            "subtitle": "The beginning",
+            "content": "<p>Content text 1<\/p>"
+          }
+        },
+        "block_L7jbjP": {
+          "type": "block",
+          "settings": {
+            "year": "2012",
+            "title": "Canterbury Packaging Supplies (now CPS)",
+            "subtitle": "Spicers acquires CPS",
+            "content": "<p>In 2012, we acquired Canterbury Packaging Supplies (now CPS) in Christchurch. A strong regional player with a proud local history, Canterbury Packaging provided us with our first step in our long term strategy of diversification. Since late 2012, our Industrial Packaging presence has expanded to our wider regional sites to include Auckland, Wellington and Dunedin.<\/p>"
+          }
+        },
+        "block_Nwrbag": {
+          "type": "block",
+          "settings": {
+            "year": "2014",
+            "title": "Total Supply",
+            "subtitle": "Spicers acquires Total Supply",
+            "content": "<p>In 2014, we acquired New Zealand's foremost sign industry supplier, Total Supply. Committed to delivering quality, cost effective products and service, they endeavour to supply everything a sign company needs to be at the cutting edge of technology, while delivering upon a policy of excellence in all they do.<a href=\"https:\/\/www.totalsupply.co.nz\/\" target=\"_blank\">www.totalsupply.co.nz<\/a>. A further addition to the Total Supply family was completed with the acquisition of Sign Technology Limited in 2017.<\/p>"
+          }
+        },
+        "block_Xw8zCx": {
+          "type": "block",
+          "settings": {
+            "year": "2017",
+            "title": "Sign Technology",
+            "subtitle": "Total Supply acquires Sign Technology",
+            "content": "<p>Content text<\/p>"
+          }
+        },
+        "block_MfynJA": {
+          "type": "block",
+          "settings": {
+            "year": "2020",
+            "title": "Universal Packaging",
+            "subtitle": "Spicers acquires Universal Packaging",
+            "content": "<p>Content text<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_anUVbc",
+        "block_L7jbjP",
+        "block_Nwrbag",
+        "block_Xw8zCx",
+        "block_MfynJA"
+      ],
+      "settings": {
+        "text_color": "#fff",
+        "content_side": "left",
+        "blocks_height": 400,
+        "color_image_overlay": "",
+        "image_overlay_opacity": 70
       }
     }
   },
@@ -90,6 +155,7 @@
     "divider_4kWg38",
     "rich_text_nLA3jb",
     "video_VVtUMe",
-    "rich_text_nNkJGw"
+    "divider_gRX9Wg",
+    "timeline_wjAeVG"
   ]
 }
