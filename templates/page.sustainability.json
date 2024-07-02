@@ -20,6 +20,7 @@
     },
     "divider_4kWg38": {
       "type": "Divider",
+      "disabled": true,
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
