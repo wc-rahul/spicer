@@ -132,14 +132,14 @@
           "type": "static_tab_text",
           "settings": {
             "tab_title": "Specification",
-            "product_tab_content": ""
+            "product_tab_content": "<p>{{ product.metafields.global.product_specification | metafield_tag }}<\/p>"
           }
         },
         "203a4b37-483a-4ccf-9608-3188f8f3efc3": {
           "type": "static_tab_text",
           "settings": {
             "tab_title": "Delivery Information",
-            "product_tab_content": ""
+            "product_tab_content": "<p>{{ product.metafields.global.delivery_information | metafield_tag }}<\/p>"
           }
         },
         "collapsible_tab_desc_zJKCnN": {
