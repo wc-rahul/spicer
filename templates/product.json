@@ -145,7 +145,7 @@
         "collapsible_tab_desc_zJKCnN": {
           "type": "collapsible_tab_desc",
           "settings": {
-            "heading": "Applications",
+            "heading": "Applications{{ product.metafields.custom.application.value }}",
             "expanded_by_default": false
           }
         }
