@@ -33,6 +33,20 @@
           "settings": {
           }
         },
+        "collapsible_tab_desc_yRV8CU": {
+          "type": "collapsible_tab_desc",
+          "settings": {
+            "heading": "Accordion (description)",
+            "expanded_by_default": false
+          }
+        },
+        "collapsible_tab_text_cg9tUW": {
+          "type": "collapsible_tab_text",
+          "settings": {
+            "heading": "Applications",
+            "content": "<p>{{ product.metafields.custom.application.value }}<\/p>"
+          }
+        },
         "d25a0285-4fb4-422d-b95b-ab67446120ad": {
           "type": "product_description",
           "settings": {
@@ -145,6 +159,8 @@
         "88b11c3c-0aea-4f1f-b99e-35a806a5c540",
         "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
         "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "collapsible_tab_desc_yRV8CU",
+        "collapsible_tab_text_cg9tUW",
         "d25a0285-4fb4-422d-b95b-ab67446120ad",
         "c6ecc51a-2dbc-4111-8a50-dcd06f404b77",
         "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
