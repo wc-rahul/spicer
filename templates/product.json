@@ -43,20 +43,24 @@
           "settings": {
             "icon_color": "#000000",
             "icon_1": "",
-            "text_1": "",
-            "link_1": "",
+            "image_1": "shopify:\/\/shop_images\/download_1.svg",
+            "text_1": "{{ product.metafields.custom.product_information_1_heading.value }}",
+            "link_1": "{{ product.metafields.custom.product_information_1_url.value }}",
             "show_block_2": true,
             "icon_2": "",
-            "text_2": "",
-            "link_2": "",
+            "image_2": "shopify:\/\/shop_images\/download_1.svg",
+            "text_2": "{{ product.metafields.custom.product_information_2_heading.value }}",
+            "link_2": "{{ product.metafields.custom.product_information_2_url.value }}",
             "show_block_3": true,
             "icon_3": "",
-            "text_3": "",
-            "link_3": "",
+            "image_3": "shopify:\/\/shop_images\/download_1.svg",
+            "text_3": "{{ product.metafields.custom.product_information_3_heading.value }}",
+            "link_3": "{{ product.metafields.custom.product_information_3_url.value }}",
             "show_block_4": true,
             "icon_4": "",
-            "text_4": "",
-            "link_4": ""
+            "image_4": "shopify:\/\/shop_images\/download_1.svg",
+            "text_4": "{{ product.metafields.custom.product_information_4_heading.value }}",
+            "link_4": "{{ product.metafields.custom.product_information_4_url.value }}"
           }
         },
         "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
