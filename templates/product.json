@@ -144,6 +144,7 @@
         },
         "collapsible_tab_desc_zJKCnN": {
           "type": "collapsible_tab_desc",
+          "disabled": true,
           "settings": {
             "heading": "Applications",
             "expanded_by_default": false
