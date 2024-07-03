@@ -41,6 +41,7 @@
           "settings": {
             "heading": "Morgan John",
             "content": "<p><strong>General Manager NZ<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/1_62759e55-35e0-440d-9c7e-d75ae37480c8.png",
             "url": ""
           }
         },
@@ -49,6 +50,7 @@
           "settings": {
             "heading": "Nathan Pene",
             "content": "<p><strong>General Manager - Spicers Paper<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/11.png",
             "url": ""
           }
         },
@@ -57,6 +59,7 @@
           "settings": {
             "heading": "Steve Edmonds",
             "content": "<p><strong>Regional Manager - Wellington<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/4.png",
             "url": ""
           }
         },
@@ -79,7 +82,7 @@
         "layout": "grid",
         "title": "Meet The Sales Team",
         "subtitle": "",
-        "image_style": "square",
+        "image_style": "circle",
         "mobile_carousel": true
       }
     },
@@ -99,6 +102,7 @@
           "settings": {
             "heading": "Leigh Burton",
             "content": "<p><strong>Category Manager - Office Papers<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/13.png",
             "url": ""
           }
         },
@@ -107,6 +111,7 @@
           "settings": {
             "heading": "Brooke Painter",
             "content": "<p><strong>Category Manager - Digital Print<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/5.png",
             "url": ""
           }
         },
@@ -115,6 +120,7 @@
           "settings": {
             "heading": "David White",
             "content": "<p><strong>Category Manager - Labels & Synthetic<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/6.png",
             "url": ""
           }
         }
@@ -129,7 +135,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "square",
+        "image_style": "circle",
         "mobile_carousel": false
       }
     },
@@ -165,6 +171,7 @@
           "settings": {
             "heading": "Jamie Low",
             "content": "<p><strong>Direct Sales<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/12.png",
             "url": ""
           }
         }
@@ -179,7 +186,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "square",
+        "image_style": "circle",
         "mobile_carousel": false
       }
     },
