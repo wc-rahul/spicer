@@ -79,6 +79,7 @@
         "block_W3FbYw",
         "block_kE7Xzd"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "Meet The Sales Team",
@@ -133,6 +134,7 @@
         "block_qxynLg",
         "block_jNayfz"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "",
@@ -187,6 +189,7 @@
         "block_j7XEw3",
         "block_WWV6Td"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "",
