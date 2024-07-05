@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -64,8 +73,9 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Digital Print",
-            "image_heading": "",
-            "image_link": "shopify:\/\/collections\/digital",
+            "image": "shopify:\/\/shop_images\/Commercial.jpg",
+            "image_heading": "Commercial Print",
+            "image_link": "shopify:\/\/collections\/commercial",
             "btn_label": "",
             "btn_url": ""
           }
