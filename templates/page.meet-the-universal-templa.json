@@ -206,7 +206,7 @@
           "type": "block",
           "settings": {
             "heading": "Jordan Armstrong",
-            "content": "<p>Technical Services & Sales<\/p>",
+            "content": "<p><strong>Technical Services & Sales<\/strong><\/p>",
             "url": ""
           }
         },
