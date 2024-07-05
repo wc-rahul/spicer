@@ -75,7 +75,6 @@
         "block_W3FbYw",
         "block_kE7Xzd"
       ],
-      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "Meet The Sales Team",
@@ -126,7 +125,6 @@
         "block_qxynLg",
         "block_jNayfz"
       ],
-      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "",
@@ -141,18 +139,16 @@
         "block_VJnntx": {
           "type": "block",
           "settings": {
-            "heading": "Nigel Williams",
-            "content": "<p><strong>Account Manager - South Island<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/3_24cbb56e-d824-4c44-a67b-106781f9ca83.png",
+            "heading": "Brae Rusling",
+            "content": "<p><strong>Warehouse & Logistics<\/strong><\/p>",
             "url": ""
           }
         },
         "block_KFGUFh": {
           "type": "block",
           "settings": {
-            "heading": "Kerry Richmond",
-            "content": "<p><strong>Account Manager - Wellington<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/10.png",
+            "heading": "Ash Tyson",
+            "content": "<p><strong>Business Development Manager - Auckland<\/strong><\/p>",
             "url": ""
           }
         },
