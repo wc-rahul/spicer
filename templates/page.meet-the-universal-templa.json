@@ -175,7 +175,6 @@
         "block_j7XEw3",
         "block_WWV6Td"
       ],
-      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "",
@@ -184,18 +183,54 @@
         "mobile_carousel": false
       }
     },
-    "divider_6JeaUA": {
-      "type": "Divider",
+    "featured_blocks_MW6hkJ": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_QzjbaR": {
+          "type": "block",
+          "settings": {
+            "heading": "Tina Smith",
+            "content": "<p><strong>Business Development Manager - South Island<\/strong><\/p>",
+            "url": ""
+          }
+        },
+        "block_gjmwMB": {
+          "type": "block",
+          "settings": {
+            "heading": "Dean Godfrey",
+            "content": "<p><strong>Business Development Manager - South Island<\/strong><\/p>",
+            "url": ""
+          }
+        },
+        "block_bEDHey": {
+          "type": "block",
+          "settings": {
+            "heading": "Block title",
+            "content": "<p>Default text<\/p>",
+            "url": ""
+          }
+        },
+        "block_4TKrtE": {
+          "type": "block",
+          "settings": {
+            "heading": "Block title",
+            "content": "<p>Default text<\/p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_QzjbaR",
+        "block_gjmwMB",
+        "block_bEDHey",
+        "block_4TKrtE"
+      ],
       "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 20,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
+        "layout": "grid",
+        "title": "",
+        "subtitle": "",
+        "image_style": "circle",
+        "mobile_carousel": false
       }
     }
   },
@@ -205,6 +240,6 @@
     "featured_blocks_xrRYxE",
     "featured_blocks_FMyrXQ",
     "featured_blocks_qbbzGm",
-    "divider_6JeaUA"
+    "featured_blocks_MW6hkJ"
   ]
 }
