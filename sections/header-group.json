@@ -76,8 +76,8 @@
             "image": "shopify:\/\/shop_images\/Commercial.jpg",
             "image_heading": "Commercial Print",
             "image_link": "shopify:\/\/collections\/commercial",
-            "btn_label": "",
-            "btn_url": ""
+            "btn_label": "Shop Now",
+            "btn_url": "shopify:\/\/collections\/commercial"
           }
         },
         "category_menu_qf6CqL": {
