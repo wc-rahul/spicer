@@ -84,6 +84,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Envelopes",
+            "image": "shopify:\/\/shop_images\/Custom_Carton.png",
             "image_heading": "Coloured Film",
             "image_link": "shopify:\/\/collections\/coloured-films",
             "btn_label": "View All",
@@ -94,6 +95,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Graphics",
+            "image": "shopify:\/\/shop_images\/Custom_Carton.png",
             "image_heading": "Application Tapes",
             "image_link": "shopify:\/\/collections\/application-tapes",
             "btn_label": "View All",
