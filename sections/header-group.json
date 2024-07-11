@@ -133,11 +133,12 @@
         "category_menu_UzLtVi": {
           "type": "category_menu",
           "settings": {
-            "menu_item": "Pressure Sensitive Labels",
-            "image_heading": "Digital Displays",
-            "image_link": "shopify:\/\/collections\/digital-displays",
+            "menu_item": "Labels & Synthetics",
+            "image": "shopify:\/\/shop_images\/Custom_Carton.png",
+            "image_heading": "Packaging",
+            "image_link": "shopify:\/\/collections\/packaging",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/illuminated-signage"
+            "btn_url": "shopify:\/\/collections\/psa"
           }
         },
         "category_menu_NBMETW": {
