@@ -129,7 +129,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Office Products",
-            "image": "shopify:\/\/shop_images\/Custom_Carton300.png",
+            "image": "shopify:\/\/shop_images\/Commercial.jpg",
             "image_heading": "Coloured Film Intermediate",
             "image_link": "shopify:\/\/collections\/colour-film-intermediate",
             "btn_label": "View All",
@@ -151,7 +151,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Synthetics",
-            "image": "shopify:\/\/shop_images\/Custom_Carton200.png",
+            "image": "shopify:\/\/shop_images\/Commercial.jpg",
             "image_heading": "Digital Print Film",
             "image_link": "shopify:\/\/collections\/digital-print-film",
             "btn_label": "View All",
