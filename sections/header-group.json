@@ -63,6 +63,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Commercial Print",
+            "image": "shopify:\/\/shop_images\/Custom_Carton.png",
             "image_heading": "Tools & Accessories",
             "image_link": "",
             "btn_label": "View All",
