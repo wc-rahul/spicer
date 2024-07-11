@@ -106,6 +106,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Industrial Packaging",
+            "image": "shopify:\/\/shop_images\/Custom_Carton.png",
             "image_heading": "Application Tools",
             "image_link": "shopify:\/\/collections\/application-tools",
             "btn_label": "View All",
@@ -116,6 +117,7 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Labels\/Synthetic",
+            "image": "shopify:\/\/shop_images\/Custom_Carton.png",
             "image_heading": "Tools & Accessories",
             "image_link": "shopify:\/\/collections\/tools-and-accessories",
             "btn_label": "View All",
