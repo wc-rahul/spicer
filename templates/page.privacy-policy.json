@@ -26,6 +26,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "image_overlay_color": "#000000",
         "image_overlay_opacity": 40,
