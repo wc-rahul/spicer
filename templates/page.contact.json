@@ -65,7 +65,7 @@
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
         "divider_border": false,
-        "divider_spacing": 20,
+        "divider_spacing": 50,
         "div_width": 80,
         "hd_border": 2,
         "border_line": 1,
