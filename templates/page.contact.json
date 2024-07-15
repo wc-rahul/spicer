@@ -61,53 +61,11 @@
     },
     "divider_NdY7Ye": {
       "type": "Divider",
-      "disabled": true,
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
         "divider_border": false,
         "divider_spacing": 20,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
-      }
-    },
-    "rich_text_XFrMbR": {
-      "type": "rich-text",
-      "disabled": true,
-      "settings": {
-        "content_width": "100",
-        "bg_color": "",
-        "section_color": "",
-        "rte_icon_width": 95,
-        "section_title": "Auckland",
-        "subtitle": "",
-        "text": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161<br\/>New Zealand<\/p>",
-        "text_size": "medium"
-      }
-    },
-    "rich_text_hCNDmR": {
-      "type": "rich-text",
-      "settings": {
-        "content_width": "100",
-        "bg_color": "",
-        "section_color": "",
-        "rte_icon_width": 500,
-        "section_title": "",
-        "subtitle": "",
-        "text": "",
-        "text_size": "medium"
-      }
-    },
-    "divider_4eckqB": {
-      "type": "Divider",
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 72,
         "div_width": 80,
         "hd_border": 2,
         "border_line": 1,
@@ -172,9 +130,6 @@
     "main",
     "slideshow_hYEh4B",
     "divider_NdY7Ye",
-    "rich_text_XFrMbR",
-    "rich_text_hCNDmR",
-    "divider_4eckqB",
     "16572891445ca8e851",
     "feature_row_d9Tk8n",
     "divider_tmVkHt"
