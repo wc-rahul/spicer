@@ -38,6 +38,7 @@
       "blocks": {
         "block_UXNUyB": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "heading": "Morgan John",
             "content": "<p><strong>General Manager NZ<\/strong><\/p>",
