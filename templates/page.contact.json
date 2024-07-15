@@ -27,8 +27,8 @@
         "rte_icon_width": 30,
         "section_title": "Need to Contact Us?",
         "subtitle": "",
-        "text": "<p>Phone: (09) 966 9362 or Freephone 0800 800 6618<br\/>Facsimile: (09) 966 9356 or Freefax 0508 787 759<\/p>",
-        "text_size": "large"
+        "text": "<p>             Phone: (09) 966 9362 or Freephone 0800 800 6618<br\/>Facsimile: (09) 966 9356 or Freefax 0508 787 759<\/p>",
+        "text_size": "medium"
       }
     },
     "divider_NdY7Ye": {
@@ -43,31 +43,6 @@
         "border_line": 1,
         "div_style": "solid",
         "border_rad": 2
-      }
-    },
-    "16572891445ca8e851": {
-      "type": "page-contact",
-      "blocks": {
-        "8ddbb26d-b25f-4f01-81ef-188d92cb20fd": {
-          "type": "custom_row",
-          "settings": {
-            "field_name": "Company Name",
-            "filed_type": "input",
-            "required_field": false
-          }
-        }
-      },
-      "block_order": [
-        "8ddbb26d-b25f-4f01-81ef-188d92cb20fd"
-      ],
-      "settings": {
-        "section_bg_color": "",
-        "section_color": "",
-        "bg_image_opacity": 70,
-        "section_title": "Contact Us",
-        "subtitle": "",
-        "subheading": "<p>Please fill out the form below and we’ll get back to you within 24 hours.<\/p>",
-        "button_style": "primary"
       }
     },
     "divider_4eckqB": {
@@ -151,21 +126,6 @@
         "button_link": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9308924,174.8653811,16z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
       }
     },
-    "divider_gWekAk": {
-      "type": "Divider",
-      "disabled": true,
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 72,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
-      }
-    },
     "feature_row_RApQNG": {
       "type": "feature-row",
       "disabled": true,
@@ -217,7 +177,7 @@
         "button_url": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9296978,174.7895544,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09fdaf2387:0xb0dc8abb02c7a16c!2m2!1d174.8719554!2d-36.9297263?entry=ttu",
         "button_style": "white",
         "content": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161<br\/>New Zealand<\/p>",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "content_side": "left",
         "color_image_overlay": "",
         "image_overlay_opacity": 82,
@@ -272,12 +232,51 @@
         "button_url": "https:\/\/www.google.co.nz\/maps\/dir\/\/Universal+Packaging+Limited+142+Benmore+Avenue,+Cloverlea,+Palmerston+North+4412\/@-40.341393,175.5899683,17z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d404cd0a419caff:0xc91c3904b0913ffe!2m2!1d175.592436!2d-40.341528?entry=ttu",
         "button_style": "white",
         "content": "<p>142 Benmore Avenue<br\/>Palmerston North 4412<br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "content_side": "left",
         "color_image_overlay": "",
         "image_overlay_opacity": 82,
         "show_vendor": true,
         "hotspot_size": "small"
+      }
+    },
+    "divider_gWekAk": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 72,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
+    },
+    "16572891445ca8e851": {
+      "type": "page-contact",
+      "blocks": {
+        "8ddbb26d-b25f-4f01-81ef-188d92cb20fd": {
+          "type": "custom_row",
+          "settings": {
+            "field_name": "Company Name",
+            "filed_type": "input",
+            "required_field": false
+          }
+        }
+      },
+      "block_order": [
+        "8ddbb26d-b25f-4f01-81ef-188d92cb20fd"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Contact Us",
+        "subtitle": "",
+        "subheading": "<p>Please fill out the form below and we’ll get back to you within 24 hours.<\/p>",
+        "button_style": "primary"
       }
     }
   },
@@ -285,19 +284,19 @@
     "main",
     "rich_text_hCNDmR",
     "divider_NdY7Ye",
-    "16572891445ca8e851",
     "divider_4eckqB",
     "rich_text_XFrMbR",
     "rich_text_MXkUzD",
     "rich_text_UCqFbj",
     "rich_text_3gLfnD",
     "feature_row_qNPJYT",
-    "divider_gWekAk",
     "feature_row_RApQNG",
     "feature_row_d9Tk8n",
     "divider_tmVkHt",
     "shop_the_look_8rJqgM",
     "divider_H4zMga",
-    "shop_the_look_YTLXyR"
+    "shop_the_look_YTLXyR",
+    "divider_gWekAk",
+    "16572891445ca8e851"
   ]
 }
