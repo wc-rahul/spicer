@@ -48,15 +48,15 @@
         "image_dhajVz"
       ],
       "settings": {
-        "slideshow_width": "full",
+        "slideshow_width": "wrapper",
         "slideshow_height": "adapt",
         "slideshow_mobile_height": "adapt",
         "text_size": "medium",
-        "show_buttons": true,
-        "show_dots": true,
+        "show_buttons": false,
+        "show_dots": false,
         "autorotate": false,
         "autorotate_speed": 5,
-        "removeBottomMargin": false
+        "removeBottomMargin": true
       }
     },
     "divider_NdY7Ye": {
