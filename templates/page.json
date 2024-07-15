@@ -103,18 +103,33 @@
     "shop_the_look_LRpqUf": {
       "type": "shop-the-look",
       "settings": {
-        "title": "Heading",
-        "subtitle": "Subtitle",
-        "button_title": "",
+        "image": "shopify:\/\/shop_images\/Christchurch_Spicers.png",
+        "title": "Christchurch",
+        "subtitle": "",
+        "button_title": "Get Directions",
         "button_url": "",
-        "button_style": "primary",
-        "content": "<p>Content text<\/p>",
+        "button_style": "white",
+        "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
         "text_color": "#fff",
         "content_side": "left",
         "color_image_overlay": "",
-        "image_overlay_opacity": 70,
-        "show_vendor": true,
-        "hotspot_size": "medium"
+        "image_overlay_opacity": 82,
+        "show_vendor": false,
+        "hotspot_size": "small"
+      }
+    },
+    "divider_xNnU9P": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
       }
     }
   },
@@ -125,6 +140,7 @@
     "shop_the_look_aUexed",
     "shop_the_look_A4idUY",
     "divider_bpmA4t",
-    "shop_the_look_LRpqUf"
+    "shop_the_look_LRpqUf",
+    "divider_xNnU9P"
   ]
 }
