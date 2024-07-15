@@ -208,17 +208,18 @@
     "shop_the_look_8rJqgM": {
       "type": "shop-the-look",
       "settings": {
+        "image": "shopify:\/\/shop_images\/Auckland_Spicers.png",
         "title": "Auckland",
         "subtitle": "",
         "button_title": "Get Directions",
         "button_url": "",
-        "button_style": "primary",
+        "button_style": "white",
         "content": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161<br\/>New Zealand<\/p>",
         "text_color": "#fff",
-        "content_side": "right",
+        "content_side": "left",
         "color_image_overlay": "",
-        "image_overlay_opacity": 44,
-        "show_vendor": true,
+        "image_overlay_opacity": 82,
+        "show_vendor": false,
         "hotspot_size": "small"
       }
     },
@@ -234,6 +235,23 @@
         "border_line": 1,
         "div_style": "solid",
         "border_rad": 2
+      }
+    },
+    "shop_the_look_YTLXyR": {
+      "type": "shop-the-look",
+      "settings": {
+        "title": "Heading",
+        "subtitle": "Subtitle",
+        "button_title": "",
+        "button_url": "",
+        "button_style": "primary",
+        "content": "<p>Content text<\/p>",
+        "text_color": "#fff",
+        "content_side": "left",
+        "color_image_overlay": "",
+        "image_overlay_opacity": 70,
+        "show_vendor": true,
+        "hotspot_size": "medium"
       }
     }
   },
@@ -253,6 +271,7 @@
     "feature_row_d9Tk8n",
     "divider_tmVkHt",
     "shop_the_look_8rJqgM",
-    "divider_H4zMga"
+    "divider_H4zMga",
+    "shop_the_look_YTLXyR"
   ]
 }
