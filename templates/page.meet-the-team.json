@@ -83,7 +83,7 @@
         "layout": "grid",
         "title": "Meet The Sales Team",
         "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": true
       }
     },
@@ -137,7 +137,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": false
       }
     },
@@ -191,7 +191,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": false
       }
     },
