@@ -86,6 +86,7 @@
     },
     "rich_text_XFrMbR": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "content_width": "100",
         "bg_color": "",
@@ -99,6 +100,7 @@
     },
     "rich_text_MXkUzD": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "content_width": "100",
         "bg_color": "",
