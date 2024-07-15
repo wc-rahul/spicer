@@ -71,6 +71,7 @@
     "shop_the_look_A4idUY": {
       "type": "shop-the-look",
       "settings": {
+        "image": "shopify:\/\/shop_images\/Wellington_Spicers.png",
         "title": "Wellington",
         "subtitle": "",
         "button_title": "Get Directions",
@@ -98,6 +99,23 @@
         "div_style": "solid",
         "border_rad": 2
       }
+    },
+    "shop_the_look_LRpqUf": {
+      "type": "shop-the-look",
+      "settings": {
+        "title": "Heading",
+        "subtitle": "Subtitle",
+        "button_title": "",
+        "button_url": "",
+        "button_style": "primary",
+        "content": "<p>Content text<\/p>",
+        "text_color": "#fff",
+        "content_side": "left",
+        "color_image_overlay": "",
+        "image_overlay_opacity": 70,
+        "show_vendor": true,
+        "hotspot_size": "medium"
+      }
     }
   },
   "order": [
@@ -106,6 +124,7 @@
     "divider_4kWg38",
     "shop_the_look_aUexed",
     "shop_the_look_A4idUY",
-    "divider_bpmA4t"
+    "divider_bpmA4t",
+    "shop_the_look_LRpqUf"
   ]
 }
