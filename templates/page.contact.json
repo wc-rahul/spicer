@@ -50,13 +50,14 @@
     "rich_text_hCNDmR": {
       "type": "rich-text",
       "settings": {
-        "content_width": "100",
+        "content_width": "50",
+        "bg_image": "shopify:\/\/shop_images\/Title_1_680319e5-7c84-44cf-8e96-c3c1a5cb2f61.png",
         "bg_color": "",
         "section_color": "",
-        "rte_icon_width": 30,
-        "section_title": "Need to Contact Us?",
+        "rte_icon_width": 500,
+        "section_title": "",
         "subtitle": "",
-        "text": "<p>Phone: (09) 966 9362 or Freephone 0800 800 6618<br\/>Facsimile: (09) 966 9356 or Freefax 0508 787 759<\/p>",
+        "text": "<p><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><\/p>",
         "text_size": "medium"
       }
     },
