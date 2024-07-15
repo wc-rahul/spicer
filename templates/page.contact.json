@@ -18,21 +18,9 @@
         "show_page_content": true
       }
     },
-    "rich_text_hCNDmR": {
-      "type": "rich-text",
-      "settings": {
-        "content_width": "100",
-        "bg_color": "",
-        "section_color": "",
-        "rte_icon_width": 30,
-        "section_title": "Need to Contact Us?",
-        "subtitle": "",
-        "text": "<p>             Phone: (09) 966 9362 or Freephone 0800 800 6618<br\/>Facsimile: (09) 966 9356 or Freefax 0508 787 759<\/p>",
-        "text_size": "medium"
-      }
-    },
     "divider_NdY7Ye": {
       "type": "Divider",
+      "disabled": true,
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
@@ -47,6 +35,7 @@
     },
     "divider_4eckqB": {
       "type": "Divider",
+      "disabled": true,
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
@@ -84,6 +73,19 @@
         "section_title": "Palmerston North",
         "subtitle": "",
         "text": "<p>142 Benmore Avenue<br\/>Palmerston North 4412<br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
+        "text_size": "medium"
+      }
+    },
+    "rich_text_hCNDmR": {
+      "type": "rich-text",
+      "settings": {
+        "content_width": "100",
+        "bg_color": "",
+        "section_color": "",
+        "rte_icon_width": 30,
+        "section_title": "Need to Contact Us?",
+        "subtitle": "",
+        "text": "<p>Phone: (09) 966 9362 or Freephone 0800 800 6618<br\/>Facsimile: (09) 966 9356 or Freefax 0508 787 759<\/p>",
         "text_size": "medium"
       }
     },
@@ -150,21 +152,6 @@
         "button_style": "primary",
         "button_label": "Get Directions",
         "button_link": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9308924,174.8653811,16z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
-      }
-    },
-    "divider_tmVkHt": {
-      "type": "Divider",
-      "disabled": true,
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 72,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
       }
     },
     "shop_the_look_8rJqgM": {
@@ -278,25 +265,39 @@
         "subheading": "<p>Please fill out the form below and we’ll get back to you within 24 hours.<\/p>",
         "button_style": "primary"
       }
+    },
+    "divider_tmVkHt": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 72,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
     "main",
-    "rich_text_hCNDmR",
     "divider_NdY7Ye",
     "divider_4eckqB",
     "rich_text_XFrMbR",
     "rich_text_MXkUzD",
+    "rich_text_hCNDmR",
     "rich_text_UCqFbj",
     "rich_text_3gLfnD",
     "feature_row_qNPJYT",
     "feature_row_RApQNG",
     "feature_row_d9Tk8n",
-    "divider_tmVkHt",
     "shop_the_look_8rJqgM",
     "divider_H4zMga",
     "shop_the_look_YTLXyR",
     "divider_gWekAk",
-    "16572891445ca8e851"
+    "16572891445ca8e851",
+    "divider_tmVkHt"
   ]
 }
