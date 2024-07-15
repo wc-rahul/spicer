@@ -115,6 +115,7 @@
         "block_j3PMdB",
         "block_CDL69P"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "",
