@@ -36,20 +36,6 @@
         "hotspot_size": "small"
       }
     },
-    "divider_4kWg38": {
-      "type": "Divider",
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 20,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
-      }
-    },
     "shop_the_look_aUexed": {
       "type": "shop-the-look",
       "settings": {
@@ -78,26 +64,12 @@
         "button_url": "https:\/\/www.google.com\/maps\/dir\/\/480+Jackson+Street,+Petone,+Lower+Hutt\/@-41.2303359,174.8115591,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d38abca32f2aa25:0xa8106ab1496f2f26!2m2!1d174.8939605!2d-41.2304944?entry=ttu",
         "button_style": "white",
         "content": "<p>Unilever Buildings 4 & 5<br\/>480 Jackson Street<br\/>Petone, Wellington<br\/>New Zealand<\/p>",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "content_side": "left",
         "color_image_overlay": "",
         "image_overlay_opacity": 82,
         "show_vendor": false,
         "hotspot_size": "small"
-      }
-    },
-    "divider_bpmA4t": {
-      "type": "Divider",
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 20,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
       }
     },
     "shop_the_look_LRpqUf": {
@@ -110,7 +82,7 @@
         "button_url": "",
         "button_style": "white",
         "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "content_side": "left",
         "color_image_overlay": "",
         "image_overlay_opacity": 82,
@@ -136,10 +108,8 @@
   "order": [
     "main",
     "shop_the_look_RNtjhU",
-    "divider_4kWg38",
     "shop_the_look_aUexed",
     "shop_the_look_A4idUY",
-    "divider_bpmA4t",
     "shop_the_look_LRpqUf",
     "divider_xNnU9P"
   ]
