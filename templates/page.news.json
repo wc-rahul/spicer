@@ -27,7 +27,7 @@
           "settings": {
             "heading": "Spicers achieves Toitu net carbonzero certification.",
             "content": "<p>Spicers is proud to take science based action for the environment with Toitu net carbonzero certification.<\/p>",
-            "image": "shopify:\/\/shop_images\/Carbonzero.jpg",
+            "image": "shopify:\/\/shop_images\/H2.jpg",
             "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0810\/7550\/3408\/files\/Spicers_NetZero_A4-handout_v3.pdf?v=1721001578"
           }
         },
@@ -66,57 +66,7 @@
         "layout": "grid",
         "title": "News & Communication",
         "subtitle": "",
-        "image_style": "circle",
-        "mobile_carousel": true
-      }
-    },
-    "featured_blocks_JBWnhb": {
-      "type": "featured-blocks",
-      "blocks": {
-        "block_mwDwi9": {
-          "type": "block",
-          "settings": {
-            "heading": "3M IJ280 New Product Range",
-            "content": "<p>Two Films For Quick, Bold Impact<\/p>",
-            "url": ""
-          }
-        },
-        "block_irVMtY": {
-          "type": "block",
-          "settings": {
-            "heading": "Avery Dennison Supreme Wrap",
-            "content": "<p>New Range - 8 Sleek New Colours<\/p>",
-            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0807\/1964\/2907\/files\/Supreme_Wrapping_Film_-_Avery_and_Total_Supply.pdf?v=1707437529"
-          }
-        },
-        "block_NXf4KQ": {
-          "type": "block",
-          "settings": {
-            "heading": "LG Hausys Is Changing It's Name",
-            "content": "<p>New Name, Same Great Product<\/p>",
-            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0807\/1964\/2907\/files\/LG_to_LX_Notice_-_Total_Supply.pdf?v=1707432840"
-          }
-        },
-        "block_yn3CHk": {
-          "type": "block",
-          "settings": {
-            "heading": "The Next Generation",
-            "content": "<p>4 New Products Exclusive to Total Supply<\/p><p><\/p>",
-            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0807\/1964\/2907\/files\/Cyclone_Products_List_-_Total_Supply.pdf?v=1707433297"
-          }
-        }
-      },
-      "block_order": [
-        "block_mwDwi9",
-        "block_irVMtY",
-        "block_NXf4KQ",
-        "block_yn3CHk"
-      ],
-      "settings": {
-        "layout": "grid",
-        "title": "",
-        "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": true
       }
     },
@@ -199,6 +149,7 @@
     },
     "featured_blog_LerNfD": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
         "title": "Promotions",
         "subtitle": "",
@@ -208,8 +159,8 @@
         "cycle_speed": 5,
         "show_dots": true,
         "show_arrows": true,
-        "post_limit": 4,
-        "blogs_per_row": 4,
+        "post_limit": 6,
+        "blogs_per_row": 2,
         "blog_show_author": false,
         "blog_show_date": true,
         "show_view_all": true,
@@ -221,7 +172,6 @@
   "order": [
     "main",
     "featured_blocks_ng3yyY",
-    "featured_blocks_JBWnhb",
     "featured_blocks_WCRcJc",
     "divider_HNqmbL",
     "feature_row_HcnLde",
