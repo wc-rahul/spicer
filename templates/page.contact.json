@@ -225,6 +225,7 @@
     },
     "divider_H4zMga": {
       "type": "Divider",
+      "disabled": true,
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
@@ -239,19 +240,41 @@
     },
     "shop_the_look_YTLXyR": {
       "type": "shop-the-look",
+      "blocks": {
+        "look_ByqXTW": {
+          "type": "look",
+          "settings": {
+            "product": "",
+            "product_horizontal_position": 15,
+            "product_vertical_position": 15
+          }
+        },
+        "look_xUtgCd": {
+          "type": "look",
+          "settings": {
+            "product": "",
+            "product_horizontal_position": 15,
+            "product_vertical_position": 15
+          }
+        }
+      },
+      "block_order": [
+        "look_ByqXTW",
+        "look_xUtgCd"
+      ],
       "settings": {
-        "title": "Heading",
-        "subtitle": "Subtitle",
-        "button_title": "",
+        "title": "Palmerston North",
+        "subtitle": "",
+        "button_title": "Get Directions",
         "button_url": "",
-        "button_style": "primary",
-        "content": "<p>Content text<\/p>",
+        "button_style": "white",
+        "content": "<p>142 Benmore Avenue<br\/>Palmerston North 4412<br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
         "text_color": "#fff",
         "content_side": "left",
         "color_image_overlay": "",
-        "image_overlay_opacity": 70,
+        "image_overlay_opacity": 82,
         "show_vendor": true,
-        "hotspot_size": "medium"
+        "hotspot_size": "small"
       }
     }
   },
