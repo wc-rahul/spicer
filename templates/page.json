@@ -18,6 +18,24 @@
         "show_page_content": true
       }
     },
+    "shop_the_look_RNtjhU": {
+      "type": "shop-the-look",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Auckland_Spicers_9feceb40-fa69-4844-bf3f-e6914c8ff6e2.png",
+        "title": "Auckland",
+        "subtitle": "",
+        "button_title": "Get Directions",
+        "button_url": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9296978,174.7895544,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09fdaf2387:0xb0dc8abb02c7a16c!2m2!1d174.8719554!2d-36.9297263?entry=ttu",
+        "button_style": "white",
+        "content": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161<br\/>New Zealand<\/p>",
+        "text_color": "#fff",
+        "content_side": "left",
+        "color_image_overlay": "",
+        "image_overlay_opacity": 82,
+        "show_vendor": false,
+        "hotspot_size": "small"
+      }
+    },
     "divider_4kWg38": {
       "type": "Divider",
       "settings": {
@@ -32,23 +50,29 @@
         "border_rad": 2
       }
     },
-    "rich_text_nNkJGw": {
-      "type": "rich-text",
+    "shop_the_look_aUexed": {
+      "type": "shop-the-look",
       "settings": {
-        "content_width": "75",
-        "bg_color": "",
-        "section_color": "",
-        "rte_icon_width": 100,
-        "section_title": "",
+        "image": "shopify:\/\/shop_images\/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
+        "title": "Palmerston North",
         "subtitle": "",
-        "text": "",
-        "text_size": "medium"
+        "button_title": "Get Directions",
+        "button_url": "",
+        "button_style": "white",
+        "content": "<p>142 Benmore Avenue<br\/>Palmerston North 4412<br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
+        "text_color": "#fff",
+        "content_side": "left",
+        "color_image_overlay": "",
+        "image_overlay_opacity": 82,
+        "show_vendor": true,
+        "hotspot_size": "small"
       }
     }
   },
   "order": [
     "main",
+    "shop_the_look_RNtjhU",
     "divider_4kWg38",
-    "rich_text_nNkJGw"
+    "shop_the_look_aUexed"
   ]
 }
