@@ -69,7 +69,7 @@
         "layout": "grid",
         "title": "News & Communication",
         "subtitle": "",
-        "image_style": "square",
+        "image_style": "circle",
         "mobile_carousel": true
       }
     },
