@@ -42,8 +42,9 @@
         "block_WYdqaK": {
           "type": "block",
           "settings": {
-            "heading": "MIMAKI",
-            "content": "<p>3D Printing<\/p>",
+            "heading": "Ecofoil Digital brings your colours to life",
+            "content": "<p>Ecofoil Digital is an exciting new range of metallised foil substrate materials that have been specifically developed for the HP Indigo and Dry Toner digital print markets. <\/p>",
+            "image": "shopify:\/\/shop_images\/Ecofoil_a5105452-671a-4a0f-a55d-9c15b0e1778a.jpg",
             "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0807\/1964\/2907\/files\/Total_3D_Catalogue_2022_V7.pdf?v=1707431920"
           }
         },
@@ -116,7 +117,7 @@
         "layout": "grid",
         "title": "",
         "subtitle": "",
-        "image_style": "circle",
+        "image_style": "square",
         "mobile_carousel": true
       }
     },
