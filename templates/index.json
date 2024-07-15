@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "1657285967afba02c0": {
@@ -6,7 +15,7 @@
         "1657285966fbda115a-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Gorilla-Board-Header.gif",
+            "image": "shopify:\/\/shop_images\/Firefly_5c46e9c6-4aff-4cc1-ad26-8694453973f1.jpg",
             "color_image_overlay": "#000000",
             "image_overlay_opacity": 40,
             "text_color": "#ffffff",
