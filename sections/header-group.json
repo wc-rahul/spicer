@@ -97,10 +97,10 @@
           "settings": {
             "menu_item": "Graphics",
             "image": "shopify:\/\/shop_images\/Commercial.jpg",
-            "image_heading": "Application Tapes",
-            "image_link": "shopify:\/\/collections\/application-tapes",
+            "image_heading": "Commercial Print",
+            "image_link": "shopify:\/\/collections\/commercial",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/coloured-films"
+            "btn_url": "shopify:\/\/collections"
           }
         },
         "category_menu_DtWNab": {
