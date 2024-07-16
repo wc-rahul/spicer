@@ -37,7 +37,7 @@
           "type": "collapsible_tab_desc",
           "settings": {
             "heading": "Product Details",
-            "expanded_by_default": true
+            "expanded_by_default": false
           }
         },
         "collapsible_tab_text_cg9tUW": {
