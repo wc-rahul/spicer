@@ -24,8 +24,8 @@
         "image_dhajVz": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Title_3.png",
-            "color_image_overlay": "#000",
+            "image": "shopify:\/\/shop_images\/Contact_Us.png",
+            "color_image_overlay": "#000000",
             "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "center center",
