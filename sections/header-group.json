@@ -64,10 +64,10 @@
           "settings": {
             "menu_item": "Commercial Print",
             "image": "shopify:\/\/shop_images\/Commercial.jpg",
-            "image_heading": "Tools & Accessories",
-            "image_link": "",
+            "image_heading": "Digital Print",
+            "image_link": "shopify:\/\/collections\/digital",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/digital"
+            "btn_url": "shopify:\/\/collections\/commercial"
           }
         },
         "3864f932-4cc2-4083-bba3-bb7912280cc2": {
