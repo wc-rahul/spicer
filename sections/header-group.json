@@ -130,10 +130,10 @@
           "settings": {
             "menu_item": "Office Products",
             "image": "shopify:\/\/shop_images\/Commercial.jpg",
-            "image_heading": "Coloured Film Intermediate",
-            "image_link": "shopify:\/\/collections\/colour-film-intermediate",
+            "image_heading": "Stationery",
+            "image_link": "shopify:\/\/collections\/stationery",
             "btn_label": "View All",
-            "btn_url": ""
+            "btn_url": "shopify:\/\/collections\/office"
           }
         },
         "category_menu_UzLtVi": {
