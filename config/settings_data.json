@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "alternateHeader_bg_color": "#ffffff",
@@ -86,10 +95,10 @@
     "share_facebook": false,
     "share_twitter": false,
     "share_pinterest": false,
-    "social_twitter_link": "",
-    "social_facebook_link": "",
+    "social_twitter_link": "https:\/\/nz.linkedin.com\/company\/spicers-nz-limited",
+    "social_facebook_link": "https:\/\/www.facebook.com\/SpicersNZLimited\/",
     "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/spicersnz\/",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "",

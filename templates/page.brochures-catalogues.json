@@ -20,6 +20,7 @@
     },
     "shop_the_look_RNtjhU": {
       "type": "shop-the-look",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Auckland_Spicers_9feceb40-fa69-4844-bf3f-e6914c8ff6e2.png",
         "title": "Auckland",
@@ -38,6 +39,7 @@
     },
     "shop_the_look_aUexed": {
       "type": "shop-the-look",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
         "title": "Palmerston North",
@@ -56,6 +58,7 @@
     },
     "shop_the_look_A4idUY": {
       "type": "shop-the-look",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Wellington_Spicers.png",
         "title": "Wellington",
@@ -74,6 +77,7 @@
     },
     "shop_the_look_LRpqUf": {
       "type": "shop-the-look",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Christchurch_Spicers.png",
         "title": "Christchurch",
@@ -96,7 +100,21 @@
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
         "divider_border": false,
-        "divider_spacing": 59,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
+    },
+    "divider_Hy3x78": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
         "div_width": 80,
         "hd_border": 2,
         "border_line": 1,
@@ -111,6 +129,7 @@
     "shop_the_look_aUexed",
     "shop_the_look_A4idUY",
     "shop_the_look_LRpqUf",
-    "divider_xNnU9P"
+    "divider_xNnU9P",
+    "divider_Hy3x78"
   ]
 }
