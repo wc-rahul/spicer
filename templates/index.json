@@ -321,24 +321,18 @@
             "link": "shopify:\/\/collections\/mosca"
           }
         },
-        "logo_image_Q8j8Lz": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
         "16572860955765f270-1": {
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/download_ffb91e82-27b0-485d-b07c-a3d51e7413d0.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/wulftec"
           }
         },
         "16572860955765f270-2": {
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/download_fbe55e89-5f3c-4e8a-9dea-48777c2f07a3.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/tork"
           }
         },
         "16572860955765f270-3": {
@@ -361,7 +355,6 @@
         "16572860955765f270-0",
         "0271a7e3-30da-4e57-8dc3-a72832e8f9c4",
         "48c0eebc-beac-447f-a99f-a6cdd5fdcfc2",
-        "logo_image_Q8j8Lz",
         "16572860955765f270-1",
         "16572860955765f270-2",
         "16572860955765f270-3",
