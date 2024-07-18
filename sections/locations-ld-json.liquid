@@ -1,0 +1,87 @@
+<script type="application/ld+json">
+    [
+        {% for block in section.blocks %}
+        {
+            "@context":"http://schema.org",
+            "@type":"OfficeEquipmentStore",
+            "name":{{block.settings.name | json}},
+            "address":{
+                "@type":"PostalAddress",
+                "streetAddress":{{block.settings.address | json}},
+                "addressLocality":{{block.settings.locality | json}},
+                "addressRegion":{{block.settings.region | json}},
+                "postalCode":{{block.settings.post_code | json}},
+                "addressCountry":{{block.settings.country | json}}
+            },
+            "telephone":{{block.settings.telephone | json}},
+            "priceRange":{{block.settings.price_range | json}}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ]
+</script>
+
+{% schema %}
+{
+  "name":"Locations ldjson",
+    "settings": [
+        {
+            "type":"header",
+            "content": "Add location blocks"
+        }
+	],
+    "presets": [
+        {
+         "name": "Locations ldjson",
+         "category": "Text"
+        }
+    ],
+	"blocks" : [
+	{
+		"type": "location",
+		"name": "Location",
+		"settings" : [
+		{
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+            "type": "text",
+            "id": "address",
+            "label": "Street Address"
+        },
+        {
+            "type": "text",
+            "id": "locality",
+            "label": "Locality"
+        },
+        {
+            "type": "text",
+            "id": "region",
+            "label": "Region"
+        },
+        {
+            "type": "text",
+            "id": "country",
+            "label": "Country"
+        },
+        {
+            "type": "text",
+            "id": "post_code",
+            "label": "Post code"
+        },
+        {
+            "type": "text",
+            "id": "telephone",
+            "label": "Telephone"
+        },
+        {
+            "type": "text",
+            "id": "price_range",
+            "label": "Price Range"
+        },
+		]
+	}
+	]
+  }
+{% endschema %}

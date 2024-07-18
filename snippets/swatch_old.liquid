@@ -99,7 +99,7 @@
                       {% endif %}
                       "
                >
-          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" />
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
           <span class='swatch_check_icon'>{% render 'icon' with 'check' %}</span>
         </label>
 
@@ -107,7 +107,7 @@
         <label for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}"
                >
           {{ value }}
-          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" />
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
         </label>
         {% endif %}
 

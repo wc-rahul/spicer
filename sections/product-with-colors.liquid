@@ -1008,7 +1008,7 @@
                    data-image-url='{{ image | img_url:"2000x" }}'
         
                >
-                  <img src="{{ image |  img_url: 'master' }}" />
+                  <img src="{{ image |  img_url: 'master' }}" width="{{image.width}}" height="{{image.height}}" />
                   </div>
               </div>
             {% endunless %}

@@ -608,7 +608,7 @@
 
         <noscript>
           {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
-          <img class="item__image" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt | split: "#" | first  | default: product.title   }}" style="max-width: {{ max_height | times: preview_image.aspect_ratio }}px;">
+          <img class="item__image" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt | split: "#" | first  | default: product.title   }}" style="max-width: {{ max_height | times: preview_image.aspect_ratio }}px;" width="{{preview_image.width}}" height="{{preview_image.height}}">
         </noscript>
 
 

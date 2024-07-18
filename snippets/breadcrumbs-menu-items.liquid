@@ -142,7 +142,7 @@
             {
                 "@type": "ListItem",
                 "position": {{ itemCount }},
-                "name": "{{ collection.title }}",
+                "name": {{ collection.title | json }},
                 "item": "{{ shop.url }}{{ collection.url }}"
               }
           ]
@@ -165,7 +165,7 @@
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "{{ page.title }}",
+                        "name": {{ page.title | json }},
                         "item": "{{ shop.url }}{{ page.url }}"
                     }
                 ]
@@ -191,7 +191,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ product.title }}",
+      "name": {{ product.title | json }},
       "item": "{{ shop.url }}{{ product.url }}"
     }
   ]

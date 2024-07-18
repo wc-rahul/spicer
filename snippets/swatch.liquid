@@ -108,11 +108,11 @@
                       background-image: url({{ variant.image | img_url:"100x" }});
                       {% else %}
                       {% render 'color_swatch_customization', default_value: value %}
-                      {% endif %}
+                      {% endif %} 
                       "
                >
           {% unless type == 'no-cross' %}
-          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" />
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
           {% endunless %}
           <span class='swatch_check_icon'>{% render 'icon' with 'check' %}</span>
         </label>
@@ -122,7 +122,7 @@
                >
           {{ value }}
           {% unless type == 'no-cross' %}
-          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" />
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
           {% endunless %}
         </label>
         {% endif %}

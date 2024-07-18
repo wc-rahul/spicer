@@ -43,14 +43,15 @@
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="{{ navigation_font | font_url }}" type="font/woff2" crossorigin>
 
   
   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
 
   {%- if canonical_url != blank  -%}
     {% if template == 'collection' %}
-    <link rel="canonical" href="{{ canonical_url |  split: '&' |  first}}">
+    <link rel="canonical" href="{{ canonical_url |  split: '?' |  first}}">
+    {% elsif template == 'search' %}
+    <link rel="canonical" href="{{ canonical_url | split: "?" | first }}">
     {% else %}
     <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}

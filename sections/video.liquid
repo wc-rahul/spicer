@@ -83,9 +83,9 @@
 
 
                {%- if video_url.type == 'youtube' -%}
-              <img src='https://img.youtube.com/vi/{{video_url.id}}/hqdefault.jpg' class='video_image_overlay' alt='' />
+              <img src='https://img.youtube.com/vi/{{video_url.id}}/hqdefault.jpg' class='video_image_overlay' alt='' width="200" height="200" />
               {% else %}
-              <img src='https://i.vimeocdn.com/video/{{video_url.id}}_200x200.webp' class='video_image_overlay' alt='' />
+              <img src='https://i.vimeocdn.com/video/{{video_url.id}}_200x200.webp' class='video_image_overlay' alt='' width="200" height="200" />
               {% endif %}
             
             {% endif %}

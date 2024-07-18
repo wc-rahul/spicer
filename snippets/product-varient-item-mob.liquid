@@ -12,7 +12,7 @@
 
     <input name="id" value="{{ current_variant.id }}" type="hidden" />
 
-    <div class="var-color"> <img src="{{ variant.image | img_url:" 100x" }}" alt=""></div>
+    <div class="var-color"> <img src="{{ variant.image | img_url:" 100x" }}" alt="" width="{{variant.image.width}}" height="{{variant.image.height}}"></div>
 
     <div class="sku"> <span class="sku-label">SKU:</span> {{ current_variant.sku }} </div>
 

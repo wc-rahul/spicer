@@ -43,7 +43,7 @@
         {% assign default_alt = item.title  %}
         <img class="predictive-search-item__image" 
              src="{{ product.featured_media | img_url:'300x' }}" 
-             alt="{{ product.featured_media.alt | split: "#" | first  | default: default_alt }}"> 
+             alt="{{ product.featured_media.alt | split: "#" | first  | default: default_alt }}" width="{{product.featured_media.width}}" height="{{product.featured_media.height}}"> 
       </div>
       <div class="predictive-search__column predictive-search__column--content predictive-search__column--center">
         <span class="predictive-search-item__title">
@@ -199,7 +199,7 @@
           {% assign default_alt = item.title  %}
           <img class="predictive-search-item__image" 
                src="{{ item.featured_media | img_url:'300x' }}" 
-               alt="{{ item.featured_media.alt | split: "#" | first  | default: default_alt }}"> 
+               alt="{{ item.featured_media.alt | split: "#" | first  | default: default_alt }}" width="{{item.featured_media.width}}" height="{{item.featured_media.height}}"> 
         </div>
         <div class="predictive-search__column predictive-search__column--content predictive-search__column--center">
           <span class="predictive-search-item__title">

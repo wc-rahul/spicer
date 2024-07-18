@@ -1232,7 +1232,7 @@
                  data-image-url='{{ image | img_url:"2000x" }}'
       
              >
-                <img src="{{ image |  img_url: 'master' }}" />
+                <img src="{{ image |  img_url: 'master' }}" width="440" height="{{ 440 | divided_by: image.aspect_ratio | ceil }}"/>
                 </div>
             </div>
           {% endunless %}
@@ -2271,7 +2271,9 @@
   {%- if product.featured_media -%}
     {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
     "image": [
-      {{ product.featured_media | img_url: media_size | prepend: "https:" | json }}
+      {% for image in product.media %}
+      {{ image | img_url: media_size | prepend: "https:" | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
     ],
   {%- endif -%}
   "description": {{ product.description | strip_html | json }},
