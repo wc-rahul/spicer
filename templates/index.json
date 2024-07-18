@@ -400,7 +400,14 @@
           "type": "block",
           "settings": {
             "question": "How do I find out my Account Balance?",
-            "answer": "<p>\"My Account Online\" is coming soon - Due April 2024!<\/p><p>The quickest and easiest way to check your Account is by logging on to your webstore and viewing the details under ‘My Account’. <\/p><p>If you don’t have a webstore login, simply phone our Customer Service team or email  <a href=\"mailto:accounts4@totalsupply.co.nz\">accounts4@totalsupply.co.nz<\/a><br\/>for your Account Balance.<\/p>"
+            "answer": "<p>The quickest and easiest way to check your Account is by logging on to your webstore and viewing the details under ‘My Account’. <\/p><p>If you don’t have a webstore login, simply phone our Customer Service team or email  <a href=\"mailto:accounts@spicersnz.co.nz\" title=\"mailto:accounts@spicersnz.co.nz\">accounts@spicersnz.co.nz<\/a><br\/>for your Account Balance.<\/p>"
+          }
+        },
+        "block_PUYTEb": {
+          "type": "block",
+          "settings": {
+            "question": "Question title",
+            "answer": "<p>Answer text<\/p>"
           }
         },
         "block_HkBFdf": {
@@ -422,6 +429,7 @@
         "165728607323e4cf38-0",
         "e99e9c48-a21e-4aff-aa70-58f7f8e540be",
         "7c613d42-44f7-4ad3-9a2f-64ffc4926e09",
+        "block_PUYTEb",
         "block_HkBFdf",
         "block_Lf7e7M"
       ],
