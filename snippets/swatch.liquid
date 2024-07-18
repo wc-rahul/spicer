@@ -102,7 +102,7 @@
 
         <input class="{% if forloop.first %} swatch-click {% endif %}" id="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if selected_option  %}  {% endif %} />
         {% if is_color %}
-        <label dfgf for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" 
+        <label for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" 
                title="{{value}}"
                style=" {% if variant.image != blank %}
                       background-image: url({{ variant.image | img_url:"100x" }});

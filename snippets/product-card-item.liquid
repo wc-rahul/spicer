@@ -316,7 +316,11 @@
             style="
                     {% if use_variant_image_for_grid_swatches %}
                     background-color:#fff;
-                    background-image: url({{ variant_for_value.featured_media  | img_url:"100x" }});
+                      {% if variant_for_value.featured_media != blank %}
+                      background-image: url({{ variant_for_value.featured_media  | img_url:"100x" }});
+                      {% else %}
+                      {% render 'color_swatch_customization', default_value: value %}
+                      {% endif %}
                     {% else %}
                       {% if color_swatch_image != blank %}
                       background-color:#fff;
