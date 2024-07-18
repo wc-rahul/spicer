@@ -318,6 +318,12 @@
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/download_f3b08a5e-33eb-494e-9b53-3d5b74ff8e0c.png",
+            "link": "shopify:\/\/collections\/mosca"
+          }
+        },
+        "logo_image_Q8j8Lz": {
+          "type": "logo_image",
+          "settings": {
             "link": ""
           }
         },
@@ -355,6 +361,7 @@
         "16572860955765f270-0",
         "0271a7e3-30da-4e57-8dc3-a72832e8f9c4",
         "48c0eebc-beac-447f-a99f-a6cdd5fdcfc2",
+        "logo_image_Q8j8Lz",
         "16572860955765f270-1",
         "16572860955765f270-2",
         "16572860955765f270-3",
