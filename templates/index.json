@@ -364,7 +364,7 @@
         "title": "Popular Brands",
         "subtitle": "",
         "button_label": "View all brands",
-        "btn_url": "",
+        "btn_url": "shopify:\/\/collections\/all",
         "enable_carousel": false,
         "show_dots": false,
         "show_arrows": false,
