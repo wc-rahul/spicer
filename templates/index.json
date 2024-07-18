@@ -409,15 +409,24 @@
             "question": "Can I collect my order?",
             "answer": "<p>Yes you can! We offer 'Click and Collect' from all of our locations around the country. We require 4 hours notice for any collect orders.<\/p><p>It is a requirement that anyone <\/p>"
           }
+        },
+        "block_VecBNe": {
+          "type": "block",
+          "settings": {
+            "question": "How do I add or remove a user from my account?",
+            "answer": "<p>You'll need to get in contact with us to make these changes. Just phone our Customer Service team and they will make these changes for you.<\/p>"
+          }
         }
       },
       "block_order": [
         "165728607323e4cf38-0",
         "e99e9c48-a21e-4aff-aa70-58f7f8e540be",
         "7c613d42-44f7-4ad3-9a2f-64ffc4926e09",
-        "block_HkBFdf"
+        "block_HkBFdf",
+        "block_VecBNe"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Spicers_Sq.png",
         "content_side": "left",
         "title": "Frequently Asked Questions",
         "subtitle": "We're Here to help",
