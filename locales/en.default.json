@@ -619,6 +619,9 @@
     "checkout": {
       "order_summary": {
         "due_on_fulfillment": "On Account"
+      },
+      "payment_gateway": {
+        "deferred_payment_label": "On Account"
       }
     }
   }
