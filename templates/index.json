@@ -403,25 +403,11 @@
             "answer": "<p>The quickest and easiest way to check your Account is by logging on to your webstore and viewing the details under ‘My Account’. <\/p><p>If you don’t have a webstore login, simply phone our Customer Service team or email  <a href=\"mailto:accounts@spicersnz.co.nz\" title=\"mailto:accounts@spicersnz.co.nz\">accounts@spicersnz.co.nz<\/a><br\/>for your Account Balance.<\/p>"
           }
         },
-        "block_PUYTEb": {
-          "type": "block",
-          "settings": {
-            "question": "Question title",
-            "answer": "<p>Answer text<\/p>"
-          }
-        },
         "block_HkBFdf": {
           "type": "block",
           "settings": {
-            "question": "How do I properly shut down my printer?",
-            "answer": "<p>Printers are the unsung hero of any business. So when it's time for the business to take a break, its important you shut your machine down properly. We provide guides on each of our Mimaki printers to ensure you come back and the printer is ready to go. Check out our Resources page for the full list.<\/p>"
-          }
-        },
-        "block_Lf7e7M": {
-          "type": "block",
-          "settings": {
             "question": "Can I collect my order?",
-            "answer": "<p>Absolutely! We offer Click and Collect from each of our Distribution Centres. Simply place your order via phone, web or email and we'll have it ready for you in 2hrs for standard roll media and 4hrs for rigids and banner.<\/p><p>We don't take orders onsite anymore, but you can place it online using your mobile device and we'll endeavour it get it ready for you as quickly as possible.<\/p>"
+            "answer": "<p>Yes you can! We offer 'Click and Collect' from all of our locations around the country. We require 4 hours notice for any collect orders.<\/p><p>It is a requirement that anyone <\/p>"
           }
         }
       },
@@ -429,9 +415,7 @@
         "165728607323e4cf38-0",
         "e99e9c48-a21e-4aff-aa70-58f7f8e540be",
         "7c613d42-44f7-4ad3-9a2f-64ffc4926e09",
-        "block_PUYTEb",
-        "block_HkBFdf",
-        "block_Lf7e7M"
+        "block_HkBFdf"
       ],
       "settings": {
         "content_side": "left",
