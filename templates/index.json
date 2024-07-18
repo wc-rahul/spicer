@@ -339,14 +339,14 @@
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/download_d3695733-0ed5-482a-b9a4-e7f55bf928f7.png",
-            "link": ""
+            "link": "shopify:\/\/collections\/impress"
           }
         },
         "3685fc94-2909-43fe-875d-e0b635859a39": {
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/download.jpg",
-            "link": ""
+            "link": "shopify:\/\/collections\/color-copy"
           }
         }
       },
