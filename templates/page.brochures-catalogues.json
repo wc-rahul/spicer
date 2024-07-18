@@ -107,6 +107,20 @@
         "div_style": "solid",
         "border_rad": 2
       }
+    },
+    "divider_Hy3x78": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
@@ -115,6 +129,7 @@
     "shop_the_look_aUexed",
     "shop_the_look_A4idUY",
     "shop_the_look_LRpqUf",
-    "divider_xNnU9P"
+    "divider_xNnU9P",
+    "divider_Hy3x78"
   ]
 }
