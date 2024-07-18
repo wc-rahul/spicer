@@ -389,18 +389,11 @@
             "answer": "<p>Its simple, just call Customer Service Team on 0800 774 237 or email us at sales@spicersnz.co.nz and we'll take care of the rest. We just need to know how many you have and where to collect them from. <\/p><p>If you're within the Auckland Metro area we'll arrange a collection via Spicers truck.<\/p><p>For those regional, we'll sell you a freight provider ticket with our chosen carrier. Please note, there is a minimum collection of 3 pallets for the regions. Please store your pallets in a safe place until they are ready for collection.<\/p><p>After the pallets have been returned we will credit against the original invoice.<\/p>"
           }
         },
-        "block_byJGtb": {
-          "type": "block",
-          "settings": {
-            "question": "How do I book a Zero Waste Collection?",
-            "answer": "<p>We want to take care of waste as much as you do, that's why we developed the Zero Waste Initiative. To book a collection, simply email sales@totalsupply.co.nz stating the number of bags or pallets you have available and we'll do the rest. You can even order a new bag at the same time!<\/p>"
-          }
-        },
         "e99e9c48-a21e-4aff-aa70-58f7f8e540be": {
           "type": "block",
           "settings": {
             "question": "What is your returns policy?",
-            "answer": "<p>We stand behind our products and want to ensure all of<br\/>our customers are happy. Total Supply offers a 14 days Returns Policy. Simply contact<br\/>our Customer Service Team via phone or email to lodge the return. No goods will<br\/>be accepted for return without prior approval. Where goods are not faulty or damaged, a restocking fee applies. We are unable to return any products after 14 days if you have simply changed your mind, over ordered or incorrectly ordered.<br\/>Unfortunately, we are unable to return any Clearance or custom products, so please ensure you are happy with your order prior to checking out.<\/p>"
+            "answer": "<p>At Spicers, customer satisfaction is our priority. We offer a 14-day return policy for most products. To initiate a return, contact our Customer Service Team by phone or email for approval. Please note that a restocking fee may apply for non-defective items. Returns after 14 days or for change of mind, over-ordering, or ordering errors are not accepted. Clearance and custom products are non-returnable. We encourage you to review your order carefully before finalizing your purchase.<\/p>"
           }
         },
         "7c613d42-44f7-4ad3-9a2f-64ffc4926e09": {
@@ -427,7 +420,6 @@
       },
       "block_order": [
         "165728607323e4cf38-0",
-        "block_byJGtb",
         "e99e9c48-a21e-4aff-aa70-58f7f8e540be",
         "7c613d42-44f7-4ad3-9a2f-64ffc4926e09",
         "block_HkBFdf",
