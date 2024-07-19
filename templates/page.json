@@ -103,6 +103,71 @@
         "div_style": "solid",
         "border_rad": 2
       }
+    },
+    "locations_ld_json_XdhhCi": {
+      "type": "locations-ld-json",
+      "blocks": {
+        "location_E4nUGR": {
+          "type": "location",
+          "settings": {
+            "name": "Spicers NZ Ltd Auckland",
+            "address": "1 Lady Fisher Place",
+            "locality": "East Tamaki",
+            "region": "Auckland",
+            "country": "NZ",
+            "post_code": "204 328",
+            "telephone": "(09) 966 9362",
+            "price_range": "$$$"
+          }
+        },
+        "location_PWrcyX": {
+          "type": "location",
+          "settings": {
+            "name": "Spicers NZ Ltd Wellington",
+            "address": "Unilever Buildings 4 & 5, 480 Jackson Street",
+            "locality": "Petone",
+            "region": "Wellington",
+            "country": "NZ",
+            "post_code": "5012",
+            "telephone": "(09) 966 9362",
+            "price_range": "$$$"
+          }
+        },
+        "location_XkVBVA": {
+          "type": "location",
+          "settings": {
+            "name": "Spicers NZ Ltd Christchurch",
+            "address": "137 Hayton Road",
+            "locality": "Wigram",
+            "region": "Christchurch",
+            "country": "NZ",
+            "post_code": "8140",
+            "telephone": "(09) 966 9362",
+            "price_range": "$$$"
+          }
+        },
+        "location_FAVdwH": {
+          "type": "location",
+          "settings": {
+            "name": "Spicers NZ Ltd Palmerston North",
+            "address": "142 Benmore Avenue",
+            "locality": "Palmerston North",
+            "region": "Palmerston North",
+            "country": "NZ",
+            "post_code": "4412",
+            "telephone": "(09) 966 9362",
+            "price_range": "$$$"
+          }
+        }
+      },
+      "block_order": [
+        "location_E4nUGR",
+        "location_PWrcyX",
+        "location_XkVBVA",
+        "location_FAVdwH"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -111,6 +176,7 @@
     "shop_the_look_aUexed",
     "shop_the_look_A4idUY",
     "shop_the_look_LRpqUf",
-    "divider_xNnU9P"
+    "divider_xNnU9P",
+    "locations_ld_json_XdhhCi"
   ]
 }
