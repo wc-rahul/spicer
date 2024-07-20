@@ -42,6 +42,7 @@
         },
         "collapsible_tab_text_cg9tUW": {
           "type": "collapsible_tab_text",
+          "disabled": true,
           "settings": {
             "heading": "Applications",
             "content": "<p>{{ product.metafields.custom.application.value }}<\/p>"
