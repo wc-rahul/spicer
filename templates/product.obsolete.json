@@ -39,6 +39,13 @@
             "expanded_by_default": true
           }
         },
+        "static_tab_text_4eQTRc": {
+          "type": "static_tab_text",
+          "settings": {
+            "tab_title": "Discontinued:",
+            "product_tab_content": "<p>{{ product.metafields.custom.application.value }}<\/p>"
+          }
+        },
         "collapsible_tab_text_cg9tUW": {
           "type": "collapsible_tab_text",
           "disabled": true,
@@ -98,11 +105,6 @@
         },
         "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
           "type": "product_price",
-          "settings": {
-          }
-        },
-        "product_type_HkNPGU": {
-          "type": "product_type",
           "settings": {
           }
         },
@@ -170,6 +172,7 @@
         "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
         "0471109f-c130-454e-a9ba-c56412cc11f3",
         "collapsible_tab_desc_yRV8CU",
+        "static_tab_text_4eQTRc",
         "collapsible_tab_text_cg9tUW",
         "d25a0285-4fb4-422d-b95b-ab67446120ad",
         "c6ecc51a-2dbc-4111-8a50-dcd06f404b77",
@@ -177,7 +180,6 @@
         "11795adc-1afa-4833-a193-258f495901ef",
         "0ddb7349-1bf6-4352-af41-583159a4e2fe",
         "220d69e9-8c2a-43b9-9363-ffbe33aba185",
-        "product_type_HkNPGU",
         "e108ea9e-0f59-448f-ab9a-8d83ab0f08cb",
         "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
         "18d64b58-5f5a-4ed8-9f72-802e7895f62d",
