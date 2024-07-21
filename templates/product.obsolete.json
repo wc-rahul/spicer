@@ -101,6 +101,11 @@
           "settings": {
           }
         },
+        "product_type_HkNPGU": {
+          "type": "product_type",
+          "settings": {
+          }
+        },
         "e108ea9e-0f59-448f-ab9a-8d83ab0f08cb": {
           "type": "stock",
           "settings": {
@@ -172,6 +177,7 @@
         "11795adc-1afa-4833-a193-258f495901ef",
         "0ddb7349-1bf6-4352-af41-583159a4e2fe",
         "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "product_type_HkNPGU",
         "e108ea9e-0f59-448f-ab9a-8d83ab0f08cb",
         "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
         "18d64b58-5f5a-4ed8-9f72-802e7895f62d",
