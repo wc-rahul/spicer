@@ -164,12 +164,6 @@
             "tab_title": "Delivery Information",
             "product_tab_content": "<p>{{ product.metafields.global.delivery_information | metafield_tag }}<\/p>"
           }
-        },
-        "inventory_qty_Pj6qz4": {
-          "type": "inventory_qty",
-          "settings": {
-            "low_inventory_threshold": 31
-          }
         }
       },
       "block_order": [
@@ -192,8 +186,7 @@
         "a6857d85-dbb6-41d1-9501-c01cf5bbe11f",
         "cb123e32-484c-4312-8275-5955965c5d1e",
         "97b17255-0431-47e0-a80c-57927c1e2279",
-        "203a4b37-483a-4ccf-9608-3188f8f3efc3",
-        "inventory_qty_Pj6qz4"
+        "203a4b37-483a-4ccf-9608-3188f8f3efc3"
       ],
       "settings": {
         "show_breadcrumbs": true,
