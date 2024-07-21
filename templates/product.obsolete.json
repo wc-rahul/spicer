@@ -39,11 +39,11 @@
             "expanded_by_default": true
           }
         },
-        "static_tab_text_4eQTRc": {
-          "type": "static_tab_text",
+        "collapsible_tab_text_yPJxXN": {
+          "type": "collapsible_tab_text",
           "settings": {
-            "tab_title": "Discontinued:",
-            "product_tab_content": "<p>{{ product.metafields.custom.application.value }}<\/p>"
+            "heading": "Stock Update",
+            "content": "<p>{{ product.metafields.custom.application.value }}<\/p>"
           }
         },
         "collapsible_tab_text_cg9tUW": {
@@ -164,6 +164,12 @@
             "tab_title": "Delivery Information",
             "product_tab_content": "<p>{{ product.metafields.global.delivery_information | metafield_tag }}<\/p>"
           }
+        },
+        "inventory_qty_Pj6qz4": {
+          "type": "inventory_qty",
+          "settings": {
+            "low_inventory_threshold": 31
+          }
         }
       },
       "block_order": [
@@ -172,7 +178,7 @@
         "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
         "0471109f-c130-454e-a9ba-c56412cc11f3",
         "collapsible_tab_desc_yRV8CU",
-        "static_tab_text_4eQTRc",
+        "collapsible_tab_text_yPJxXN",
         "collapsible_tab_text_cg9tUW",
         "d25a0285-4fb4-422d-b95b-ab67446120ad",
         "c6ecc51a-2dbc-4111-8a50-dcd06f404b77",
@@ -186,7 +192,8 @@
         "a6857d85-dbb6-41d1-9501-c01cf5bbe11f",
         "cb123e32-484c-4312-8275-5955965c5d1e",
         "97b17255-0431-47e0-a80c-57927c1e2279",
-        "203a4b37-483a-4ccf-9608-3188f8f3efc3"
+        "203a4b37-483a-4ccf-9608-3188f8f3efc3",
+        "inventory_qty_Pj6qz4"
       ],
       "settings": {
         "show_breadcrumbs": true,
