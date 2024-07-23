@@ -79,7 +79,7 @@
         "title": "Christchurch",
         "subtitle": "",
         "button_title": "Get Directions",
-        "button_url": "",
+        "button_url": "https:\/\/www.google.com\/maps\/dir\/\/Spicers+Christchurch,+Hayton+Road,+Wigram,+Christchurch\/@-43.5512494,172.5266469,13z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d32200731c5c8b9:0x3a3e4e3be7a17b2!2m2!1d172.5678513!2d-43.551433?entry=ttu",
         "button_style": "white",
         "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
         "text_color": "#ffffff",
