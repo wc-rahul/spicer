@@ -2591,7 +2591,11 @@ textarea.hidden-placeholder::-ms-input-placeholder {
   min-height: 44px
 }
 
-. input--error.disclosure__toggle,
+.product-form .product-description-short ul {
+  padding-left: 14px;
+}
+
+.input--error.disclosure__toggle,
 input.input--error,
 select.input--error,
 textarea.input--error {
@@ -4823,6 +4827,15 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top
+}
+
+section[data-section-type="rich-text"] ul {
+  padding-left: 14px;
+  list-style-type: disc;
+}
+
+section[data-section-type="rich-text"] ul li {
+  list-style: disc;
 }
 
 .rich-text__heading--large {
