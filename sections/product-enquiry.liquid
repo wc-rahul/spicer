@@ -12,6 +12,10 @@
     .shopify-section-header.showAlternateHeader+#PageContainer.marginTop {
       padding-top: 0;
     }
+
+    .product-single__media-group .flickity-viewport {
+      min-height: 360px !important;
+    }
   }
   .product-single__media__carousel::after{
     content: "";
@@ -27,10 +31,7 @@
   .thumbnails-wrapper .flickity-viewport {
     min-height: 100px !important;
   }
-  .product-single__media-group .flickity-viewport {
-  
-    min-height: 360px !important;
-  }
+
   .thumbnails-wrapper .product-single__thumbnails-block {
     padding-left: 0;
   }
@@ -1035,57 +1036,57 @@
         {% when 'image_with_text_blocks' %}
         
         {% assign image_with_text_blocks_color = block.settings.icon_color %}
-        
-        <div class='image_with_text_blocks'>
-          {% for i in (1..3) %}
 
-          {% capture link_handle %}link_{{i}}{% endcapture %}
-          {% capture text_handle %}text_{{i}}{% endcapture %}
-          {% capture image_handle %}image_{{i}}{% endcapture %}
-          {% capture show_block_handle %}show_block_{{i}}{% endcapture %}
-          {% capture icon_handle %}icon_{{i}}{% endcapture %}
+          <div class='image_with_text_blocks'>
+            {% for i in (1..3) %}
 
-          {% assign link = block.settings[link_handle] %}
-          {% assign text = block.settings[text_handle] %}
-          {% assign image = block.settings[image_handle] %}
-          {% assign icon_name = block.settings[icon_handle] %}
-          
-          {% assign show_block = block.settings[show_block_handle] %}
+              {% capture link_handle %}link_{{i}}{% endcapture %}
+              {% capture text_handle %}text_{{i}}{% endcapture %}
+              {% capture image_handle %}image_{{i}}{% endcapture %}
+              {% capture show_block_handle %}show_block_{{i}}{% endcapture %}
+              {% capture icon_handle %}icon_{{i}}{% endcapture %}
 
-          {% if i == 1 %}
-          {% assign show_block = true %}
-          {% endif %}
-          
-          {% if show_block  %}
-          <div class='block'>
-            {% if link != blank %}
-            <a href='{{link}}'>
-              <div class='block_content'>
-                {% if image != blank %}
-                <img src='{{ image | img_url:"original"}}' 
-                     loading="lazy"
-                     width="{{image.width}}"
-                     height="{{image.height}}"
-                     alt='{{image.alt | default: text }}' 
-                     style="object-position:{{ image.presentation.focal_point }};"> 
-                {% else %}
-                
-                 <load-icon name="{{ icon_name }}"></load-icon>
-                {% endif %}
-                {% if text != blank %}
-                <p>{{text}}</p>
-                {% endif %}
-              </div>
+              {% assign link = block.settings[link_handle] %}
+              {% assign text = block.settings[text_handle] %}
+              {% assign image = block.settings[image_handle] %}
+              {% assign icon_name = block.settings[icon_handle] %}
 
-            </a>
-            {% endif %}
+              {% assign show_block = block.settings[show_block_handle] %}
+
+              {% if i == 1 %}
+                {% assign show_block = true %}
+              {% endif %}
+
+              {% if show_block  %}
+                <div class='block'>
+                  {% if link != blank %}
+                    <a href='{{link}}'>
+                      <div class='block_content'>
+                        {% if image != blank %}
+                          <img src='{{ image | img_url:"original"}}'
+                               loading="lazy"
+                               width="{{image.width}}"
+                               height="{{image.height}}"
+                               alt='{{image.alt | default: text }}'
+                               style="object-position:{{ image.presentation.focal_point }};">
+                        {% else %}
+
+                          <load-icon name="{{ icon_name }}"></load-icon>
+                        {% endif %}
+                        {% if text != blank %}
+                          <p>{{text}}</p>
+                        {% endif %}
+                      </div>
+
+                    </a>
+                  {% endif %}
 
 
+                </div>
+              {% endif %}
+            {% endfor %}
           </div>
-          {% endif %}
-          {% endfor %}
-        </div> 
-        
+
         {% when 'back_in_stock' %}
         <div class='back_in_stock_row {% if current_variant.available %} hide {% endif %}' data-id="{{ 'ContactForm_' | append: product.id }}">
 
