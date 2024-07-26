@@ -37,8 +37,7 @@
      {% unless product.tags contains 'child' %}
   <li class="predictive-search-item this??">
     <a class="predictive-search-item__link" 
-       href="{{ product.url }}" tabindex="0"
-       >
+       href="{{ product.url }}" tabindex="0">
       <div class="predictive-search__column predictive-search__column--image">
         {% assign default_alt = item.title  %}
         <img class="predictive-search-item__image" 
@@ -49,21 +48,21 @@
         <span class="predictive-search-item__title">
           <span class="predictive-search-item__title-text">{{ product.title }}</span>
         </span>
-        {% if customer %}
-        <span class="predictive-search-item__price">
-          {% unless product.price_max == 0 and settings.custom_price0_text != blank %}
-          {% if settings.currency_code_enable %}
-          {{ product.price | money_with_currency }}
-          {% else %}
-          {{ product.price | money }}
-          {% endif %}              
-  
-  
-          {% else %}
-          {{settings.custom_price0_text }}
-          {% endunless %}
-        </span>
-        {% endif %}
+        {% comment %}
+          {% if customer %}
+            <span class="predictive-search-item__price">
+              {% unless product.price_max == 0 and settings.custom_price0_text != blank %}
+              {% if settings.currency_code_enable %}
+              {{ product.price | money_with_currency }}
+              {% else %}
+              {{ product.price | money }}
+              {% endif %}
+              {% else %}
+              {{settings.custom_price0_text }}
+              {% endunless %}
+            </span>
+          {% endif %}
+        {% endcomment %}
       </div>
     </a>
   </li>
