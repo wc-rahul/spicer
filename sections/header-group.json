@@ -183,7 +183,7 @@
         "logo_max_width": 170,
         "main_linklist": "main-menu",
         "right_linklist": "",
-        "mobile_main_linklist": "",
+        "mobile_main_linklist": "main-menu",
         "btn_label": "View All",
         "btn_url": "#",
         "main_linklist_style": "none",
