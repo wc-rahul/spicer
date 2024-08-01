@@ -99,9 +99,8 @@
         },
         "18d64b58-5f5a-4ed8-9f72-802e7895f62d": {
           "type": "shopify:\/\/apps\/wishlist-king\/blocks\/wishlist-button-block\/194f5011-a43c-4b22-b12e-eaf20dc4506a",
-          "disabled": true,
           "settings": {
-            "button_style": "plain_text",
+            "button_style": "plain_accent_1",
             "button_alignment": "center",
             "button_content_alignment": "center",
             "button_margin_top": 12,
