@@ -601,15 +601,11 @@
   <header class="collection-header">
 
     {% if show_banner %}
+      {% assign show_breadcrumbs = section.settings.show_breadcrumbs %}
+      {% assign image_overlay_color = section.settings.image_overlay_color %}
+      {% assign image_overlay_opacity = section.settings.image_overlay_opacity %}
 
-
-    {% assign show_breadcrumbs = section.settings.show_breadcrumbs %}
-    {% assign image_overlay_color = section.settings.image_overlay_color %}
-    {% assign image_overlay_opacity = section.settings.image_overlay_opacity %}
-
-
-    {% render 'custom_page_header' subcollections: true, collection: collection, sort_enable: section.settings.sort_enable,  view_mode:view_mode, filters_view_mode: filters_view_mode, image: banner_image, heading: collection.title, show_breadcrumbs: show_breadcrumbs, show_heading: true, image_overlay_color: image_overlay_color, image_overlay_opacity: image_overlay_opacity, show_collection_filters_toolbar : true %}
-
+      {% render 'custom_page_header' subcollections: true, collection: collection, sort_enable: section.settings.sort_enable,  view_mode:view_mode, filters_view_mode: filters_view_mode, image: banner_image, heading: collection.title, show_breadcrumbs: show_breadcrumbs, show_heading: true, image_overlay_color: image_overlay_color, image_overlay_opacity: image_overlay_opacity, show_collection_filters_toolbar : true %}
     {% endif %}
   
     <div class="page-width">
@@ -617,6 +613,7 @@
     {%  if show_banner == false %}
       <div class="section-header">
         {% render 'breadcrumbs' collection:collection %}
+
         <div class='section-header-wrapper'>
           <div class="section-header-wrapper-collection">
             <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
@@ -624,33 +621,32 @@
             <span class="filters-toolbar__product-count">{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</span>
           </div>
 
-          <div class="filters-toolbar">
+          {% comment %}
+            <div class="filters-toolbar">
+              <button type='button' class='lap-and-up--hide open_mobile_sidebar  btn btn--primary fgh'><span>{{ 'collections.sidebar.mobile_open_button' | t }}</span></button>
+              <button type="button" class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %}" aria-label="{{ 'collections.general.grid' | t }}" data-action="change-layout" data-layout-mode="grid">{% render 'icon', icon: 'grid' %}</button>
+              <button type="button" class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %}" aria-label="{{ 'collections.general.list' | t }}" data-action="change-layout" data-layout-mode="list">{% render 'icon', icon: 'list' %}</button>
 
-            <button type='button' class='lap-and-up--hide open_mobile_sidebar  btn btn--primary fgh'><span>{{ 'collections.sidebar.mobile_open_button' | t }}</span></button>
-            <button type="button" class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %}" aria-label="{{ 'collections.general.grid' | t }}" data-action="change-layout" data-layout-mode="grid">{% render 'icon', icon: 'grid' %}</button>
-            <button type="button" class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %}" aria-label="{{ 'collections.general.list' | t }}" data-action="change-layout" data-layout-mode="list">{% render 'icon', icon: 'list' %}</button>
-
-            {% if section.settings.sort_enable %}
-            <div class="toolbar_sort_by-block filters-toolbar__item-child">
-
-              <label class="filters-toolbar__label select-label" for="SortBy">{{ 'collections.sorting.title' | t }}</label>
-              <div class="filters-toolbar__input-wrapper select-group">
-                <select name="sort_by" id="SortBy"
-                        class="filters-toolbar__input hidden"
-                        aria-describedby="a11y-refresh-page-message a11y-selection-message"
-                        data-default-sortby="{{ collection.default_sort_by }}"
-                        data-select-input
-                        >
-                  {%- for option in collection.sort_options -%}
-                  <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
-                  {%- endfor -%}
-                </select>
-                {% include 'icon-chevron-down' %}
-              </div>
+              {% if section.settings.sort_enable %}
+                <div class="toolbar_sort_by-block filters-toolbar__item-child"
+                  <label class="filters-toolbar__label select-label" for="SortBy">{{ 'collections.sorting.title' | t }}</label>
+                  <div class="filters-toolbar__input-wrapper select-group">
+                    <select name="sort_by" id="SortBy"
+                            class="filters-toolbar__input hidden"
+                            aria-describedby="a11y-refresh-page-message a11y-selection-message"
+                            data-default-sortby="{{ collection.default_sort_by }}"
+                            data-select-input
+                            >
+                      {%- for option in collection.sort_options -%}
+                      <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
+                      {%- endfor -%}
+                    </select>
+                    {% include 'icon-chevron-down' %}
+                  </div>
+                </div>
+              {% endif %}
             </div>
-            {% endif %}
-  
-          </div>
+          {% endcomment %}
         </div> 
       </div>
     {%  endif %}
