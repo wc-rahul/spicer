@@ -63,6 +63,7 @@
           "settings": {
             "heading": "Palmerston North",
             "content": "<p>142 Benmore Avenue<br\/>Cloverlea, Palmerston North<br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
+            "image": "shopify:\/\/shop_images\/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
             "url": ""
           }
         },
@@ -71,7 +72,8 @@
           "settings": {
             "heading": "Wellington",
             "content": "<p>Unilever Buildings 4 & 5<br\/>480 Jackson Street<br\/>Petone,Wellington<br\/>New Zealand<\/p>",
-            "url": ""
+            "image": "shopify:\/\/shop_images\/Spicers_Wellington.png",
+            "url": "https:\/\/www.google.com\/maps\/dir\/\/480+Jackson+Street,+Petone,+Lower+Hutt\/@-41.2303359,174.8115591,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d38abca32f2aa25:0xa8106ab1496f2f26!2m2!1d174.8939605!2d-41.2304944?entry=ttu"
           }
         },
         "block_HkGXVL": {
@@ -79,7 +81,8 @@
           "settings": {
             "heading": "Christchurch",
             "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
-            "url": ""
+            "image": "shopify:\/\/shop_images\/Christchurch_Spicers.png",
+            "url": "https:\/\/www.google.com\/maps\/dir\/\/137+Hayton+Road,+Wigram,+Christchurch\/@-43.5511401,172.5651551,17z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d32200731c5c8b9:0x2fc7a4a71947137c!2m2!1d172.56773!2d-43.551144?entry=ttu"
           }
         }
       },
