@@ -68,16 +68,16 @@
         "block_HnTjny": {
           "type": "block",
           "settings": {
-            "heading": "Block title",
-            "content": "<p>Default text<\/p>",
+            "heading": "Wellington",
+            "content": "<p>Unilever Buildings 4 & 5<br\/>480 Jackson Street<br\/>Petone,Wellington<br\/>New Zealand<\/p>",
             "url": ""
           }
         },
         "block_HkGXVL": {
           "type": "block",
           "settings": {
-            "heading": "Block title",
-            "content": "<p>Default text<\/p>",
+            "heading": "Christchurch",
+            "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
             "url": ""
           }
         }
