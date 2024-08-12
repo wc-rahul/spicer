@@ -193,6 +193,20 @@
         "button_label": "Get Directions",
         "button_link": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9308924,174.8653811,16z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
       }
+    },
+    "divider_gBxgmr": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
@@ -203,6 +217,7 @@
     "slideshow_hYEh4B",
     "divider_tmVkHt",
     "16572891445ca8e851",
-    "feature_row_d9Tk8n"
+    "feature_row_d9Tk8n",
+    "divider_gBxgmr"
   ]
 }
