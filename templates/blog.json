@@ -27,12 +27,12 @@
         "54b06a0f-f189-4a4d-bced-b43d8eaedef4": {
           "type": "featured_posts",
           "settings": {
-            "title": "Popular posts",
+            "title": "Recent Posts",
             "show_date": false,
             "show_comments": true,
             "article_1": "spicers-nz\/beauty-unboxed-with-carta-solida",
             "article_2": "spicers-nz\/environs-volume-3",
-            "article_3": "",
+            "article_3": "spicers-nz\/new-additions-to-the-spicers-wine-gourmet-companion",
             "article_4": "",
             "article_5": ""
           }
