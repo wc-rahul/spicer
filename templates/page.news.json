@@ -64,7 +64,6 @@
         "block_WYdqaK",
         "block_pMQ4Xz"
       ],
-      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "News & Communication",
@@ -152,7 +151,7 @@
         "post_limit": 4,
         "blogs_per_row": 4,
         "blog_show_author": false,
-        "blog_show_date": true,
+        "blog_show_date": false,
         "show_view_all": true,
         "button_text": "",
         "button_style": "primary"
