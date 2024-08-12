@@ -1,1 +1,29 @@
-{"sections":{"main":{"type":"article-template","settings":{"use_featured_image":true,"show_breadcrumbs":false,"image_overlay_color":"#000","image_overlay_opacity":40,"blog_show_date":true,"show_article_tags":true,"blog_show_author":true,"show_share_buttons":true}}},"order":["main"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "settings": {
+        "use_featured_image": true,
+        "show_breadcrumbs": false,
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 40,
+        "blog_show_date": true,
+        "show_article_tags": true,
+        "blog_show_author": false,
+        "show_share_buttons": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
