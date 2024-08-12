@@ -21,9 +21,94 @@
         "blog_show_author": false,
         "show_share_buttons": true
       }
+    },
+    "slideshow_Cx9Rwk": {
+      "type": "slideshow",
+      "blocks": {
+        "image_9e7hiU": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_tLLMDV": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_rwcFBi": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_9e7hiU",
+        "image_tLLMDV",
+        "image_rwcFBi"
+      ],
+      "settings": {
+        "slideshow_width": "full",
+        "slideshow_height": "adapt",
+        "slideshow_mobile_height": "adapt",
+        "text_size": "medium",
+        "show_buttons": true,
+        "show_dots": true,
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "removeBottomMargin": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "slideshow_Cx9Rwk"
   ]
 }
