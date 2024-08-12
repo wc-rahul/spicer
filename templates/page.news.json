@@ -11,7 +11,6 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "image_overlay_color": "#000000",
         "image_overlay_opacity": 40,
@@ -65,6 +64,7 @@
         "block_WYdqaK",
         "block_pMQ4Xz"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "News & Communication",
