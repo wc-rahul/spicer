@@ -11,12 +11,89 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "image_overlay_color": "#000000",
         "image_overlay_opacity": 40,
         "show_breadcrumbs": true,
         "show_page_content": true
+      }
+    },
+    "rich_text_6bKbWe": {
+      "type": "rich-text",
+      "settings": {
+        "content_width": "100",
+        "bg_color": "",
+        "section_color": "",
+        "rte_icon_width": 100,
+        "section_title": "Need to Contact Us?",
+        "subtitle": "",
+        "text": "<p>Phone: (09) 966 9362 or Freephone 0800 800 668<br\/>Facsimile: (09) 966 9356 or Freefax 0508 787 759<\/p>",
+        "text_size": "medium"
+      }
+    },
+    "divider_NdY7Ye": {
+      "type": "Divider",
+      "disabled": true,
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 50,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
+    },
+    "featured_blocks_HMDnUz": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_nVDYbW": {
+          "type": "block",
+          "settings": {
+            "heading": "Auckland",
+            "content": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161 <br\/>New Zealand<\/p>",
+            "url": ""
+          }
+        },
+        "block_GFpAMa": {
+          "type": "block",
+          "settings": {
+            "heading": "Block title",
+            "content": "<p>Default text<\/p>",
+            "url": ""
+          }
+        },
+        "block_HnTjny": {
+          "type": "block",
+          "settings": {
+            "heading": "Block title",
+            "content": "<p>Default text<\/p>",
+            "url": ""
+          }
+        },
+        "block_HkGXVL": {
+          "type": "block",
+          "settings": {
+            "heading": "Block title",
+            "content": "<p>Default text<\/p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_nVDYbW",
+        "block_GFpAMa",
+        "block_HnTjny",
+        "block_HkGXVL"
+      ],
+      "settings": {
+        "layout": "grid",
+        "title": "",
+        "subtitle": "",
+        "image_style": "circle",
+        "mobile_carousel": false
       }
     },
     "slideshow_hYEh4B": {
@@ -48,6 +125,7 @@
       "block_order": [
         "image_dhajVz"
       ],
+      "disabled": true,
       "settings": {
         "slideshow_width": "wrapper",
         "slideshow_height": "adapt",
@@ -60,13 +138,13 @@
         "removeBottomMargin": true
       }
     },
-    "divider_NdY7Ye": {
+    "divider_tmVkHt": {
       "type": "Divider",
       "settings": {
         "divider-visibility": "showboth",
         "hd_border_color": "#aaaaaa",
         "divider_border": false,
-        "divider_spacing": 50,
+        "divider_spacing": 72,
         "div_width": 80,
         "hd_border": 2,
         "border_line": 1,
@@ -111,28 +189,16 @@
         "button_label": "Get Directions",
         "button_link": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9308924,174.8653811,16z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
       }
-    },
-    "divider_tmVkHt": {
-      "type": "Divider",
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 72,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
-      }
     }
   },
   "order": [
     "main",
-    "slideshow_hYEh4B",
+    "rich_text_6bKbWe",
     "divider_NdY7Ye",
+    "featured_blocks_HMDnUz",
+    "slideshow_hYEh4B",
+    "divider_tmVkHt",
     "16572891445ca8e851",
-    "feature_row_d9Tk8n",
-    "divider_tmVkHt"
+    "feature_row_d9Tk8n"
   ]
 }
