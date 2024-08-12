@@ -28,7 +28,7 @@
         "image_9e7hiU": {
           "type": "image",
           "settings": {
-            "color_image_overlay": "#000",
+            "color_image_overlay": "#000000",
             "image_overlay_opacity": 40,
             "text_color": "#ffffff",
             "text_alignment": "center center",
@@ -49,7 +49,7 @@
         "image_tLLMDV": {
           "type": "image",
           "settings": {
-            "color_image_overlay": "#000",
+            "color_image_overlay": "#000000",
             "image_overlay_opacity": 40,
             "text_color": "#ffffff",
             "text_alignment": "center center",
@@ -70,7 +70,7 @@
         "image_rwcFBi": {
           "type": "image",
           "settings": {
-            "color_image_overlay": "#000",
+            "color_image_overlay": "#000000",
             "image_overlay_opacity": 40,
             "text_color": "#ffffff",
             "text_alignment": "center center",
@@ -94,6 +94,7 @@
         "image_tLLMDV",
         "image_rwcFBi"
       ],
+      "disabled": true,
       "settings": {
         "slideshow_width": "full",
         "slideshow_height": "adapt",
