@@ -53,11 +53,11 @@
       "settings": {
         "image_overlay_color": "#000000",
         "image_overlay_opacity": 40,
-        "layout": "grid",
+        "layout": "list",
         "show_breadcrumbs": false,
         "menu": "",
-        "show_tags_dropdown": true,
-        "blog_show_date": true,
+        "show_tags_dropdown": false,
+        "blog_show_date": false,
         "show_excerpt": true,
         "pagination_mode": "standart"
       }
