@@ -62,22 +62,12 @@
             "image": "shopify:\/\/shop_images\/DK.png",
             "url": ""
           }
-        },
-        "block_kE7Xzd": {
-          "type": "block",
-          "settings": {
-            "heading": "Jodie Stewart",
-            "content": "<p><strong>Finance & Administration Manager<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Yodie.png",
-            "url": ""
-          }
         }
       },
       "block_order": [
         "block_UXNUyB",
         "block_mazPhJ",
-        "block_W3FbYw",
-        "block_kE7Xzd"
+        "block_W3FbYw"
       ],
       "settings": {
         "layout": "grid",
@@ -225,12 +215,12 @@
             "url": ""
           }
         },
-        "block_4TKrtE": {
+        "block_8mXptd": {
           "type": "block",
           "settings": {
-            "heading": "Abbey McKee",
-            "content": "<p><strong>Customer Services & Sales<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Ab.png",
+            "heading": "Jodie Stewart",
+            "content": "<p><strong>Finance & Admin Manager<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/Yodie.png",
             "url": ""
           }
         }
@@ -239,7 +229,7 @@
         "block_QzjbaR",
         "block_gjmwMB",
         "block_bEDHey",
-        "block_4TKrtE"
+        "block_8mXptd"
       ],
       "settings": {
         "layout": "grid",

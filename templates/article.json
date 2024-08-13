@@ -1,1 +1,115 @@
-{"sections":{"main":{"type":"article-template","settings":{"use_featured_image":true,"show_breadcrumbs":false,"image_overlay_color":"#000","image_overlay_opacity":40,"blog_show_date":true,"show_article_tags":true,"blog_show_author":true,"show_share_buttons":true}}},"order":["main"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "settings": {
+        "use_featured_image": true,
+        "show_breadcrumbs": true,
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 40,
+        "blog_show_date": false,
+        "show_article_tags": true,
+        "blog_show_author": false,
+        "show_share_buttons": true
+      }
+    },
+    "slideshow_Cx9Rwk": {
+      "type": "slideshow",
+      "blocks": {
+        "image_9e7hiU": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_tLLMDV": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_rwcFBi": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_9e7hiU",
+        "image_tLLMDV",
+        "image_rwcFBi"
+      ],
+      "disabled": true,
+      "settings": {
+        "slideshow_width": "full",
+        "slideshow_height": "adapt",
+        "slideshow_mobile_height": "adapt",
+        "text_size": "medium",
+        "show_buttons": true,
+        "show_dots": true,
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "removeBottomMargin": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_Cx9Rwk"
+  ]
+}
