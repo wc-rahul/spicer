@@ -30,9 +30,9 @@ class WishlistButtonHeadless extends WishlistElementHeadless {
 
   getText() {
     if (this.productInfo.inWishlist) {
-      return "Remove from list";
+      return "Remove from Favourites";
     }
-    return "+ Add to list";
+    return "+ Add to Favourites";
   }
 }
 
