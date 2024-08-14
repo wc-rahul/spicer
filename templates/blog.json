@@ -29,10 +29,10 @@
           "settings": {
             "title": "Recent Posts",
             "show_date": false,
-            "show_comments": true,
-            "article_1": "spicers-nz\/beauty-unboxed-with-carta-solida",
-            "article_2": "spicers-nz\/environs-volume-3",
-            "article_3": "spicers-nz\/new-additions-to-the-spicers-wine-gourmet-companion",
+            "show_comments": false,
+            "article_1": "spicers-nz\/paper-flexible-packaging-films",
+            "article_2": "",
+            "article_3": "",
             "article_4": "",
             "article_5": ""
           }
