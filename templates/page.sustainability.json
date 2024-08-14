@@ -103,7 +103,7 @@
         "cycle_speed": 5,
         "logos_count": 2,
         "rows_count": 2,
-        "show_hover_opacity": false,
+        "show_hover_opacity": true,
         "padding_top": 11,
         "padding_bottom": 10,
         "padding_top_mobile": 11,
