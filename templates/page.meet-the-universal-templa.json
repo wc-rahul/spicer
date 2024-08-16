@@ -123,6 +123,7 @@
         "block_qxynLg",
         "block_jNayfz"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "title": "",
@@ -136,6 +137,7 @@
       "blocks": {
         "block_VJnntx": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "heading": "Brae Rusling",
             "content": "<p><strong>Warehouse & Logistics<\/strong><\/p>",
@@ -217,6 +219,7 @@
         },
         "block_8mXptd": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "heading": "Jodie Stewart",
             "content": "<p><strong>Finance & Admin Manager<\/strong><\/p>",
