@@ -427,6 +427,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Spicers_Sq.png",
+        "mobile_image": "shopify:\/\/shop_images\/Spicers_Sq.png",
         "content_side": "left",
         "title": "Frequently Asked Questions",
         "subtitle": "We're Here to help",
