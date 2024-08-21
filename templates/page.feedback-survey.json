@@ -19,80 +19,99 @@
         "show_page_content": true
       }
     },
-    "quotes_htWT3D": {
-      "type": "quotes",
+    "rich_text_YiLfhY": {
+      "type": "rich-text",
+      "settings": {
+        "content_width": "100",
+        "bg_color": "",
+        "section_color": "",
+        "rte_icon_width": 100,
+        "section_title": "Hot off the press!",
+        "subtitle": "",
+        "text": "<p>We're thrilled to share that our new website is almost here!<\/p><p>This is just a soft launch for now - we're not putting up the big flashy lights just yet.<\/p><p>And that's because we really want your feedback. We're reaching out to some of our valued customers who we think can provide some helpful advice and insights as the site goes live.<\/p><p><em>So tell us, what do you think? Is there anything we're missing? How can we make your experience on the site even better?<\/em><\/p><p>This is just the start of something great. We're committed to continuously improving our services and supporting the amazing work you do. You can count on us to always be partnering with leading businesses like yours.<\/p><p>And please, if there's anything specific you'd love to see on spicersnz.co.nz, just let us know. We'll do our best to make it happen!<\/p>",
+        "text_size": "medium"
+      }
+    },
+    "page_contact_9VkPf8": {
+      "type": "page-contact",
       "blocks": {
-        "quote_EjBgiK": {
-          "type": "quote",
+        "custom_row_R4aFJt": {
+          "type": "custom_row",
           "settings": {
-            "title": "Review heading",
-            "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
+            "field_name": "Company Name",
+            "filed_type": "input",
+            "required_field": true
           }
         },
-        "quote_dDG8Um": {
-          "type": "quote",
+        "custom_row_QVGR3t": {
+          "type": "custom_row",
           "settings": {
-            "title": "Review heading",
-            "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
+            "field_name": "What was your overall first thoughts of the new site?",
+            "filed_type": "textarea",
+            "required_field": false
           }
         },
-        "quote_L9DC6F": {
-          "type": "quote",
+        "custom_row_FKqPTY": {
+          "type": "custom_row",
           "settings": {
-            "title": "Review heading",
-            "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
+            "field_name": "Was there any stand out features or changes that you liked or disliked?",
+            "filed_type": "textarea",
+            "required_field": false
           }
         },
-        "quote_8NtXmH": {
-          "type": "quote",
+        "custom_row_wCdkqH": {
+          "type": "custom_row",
           "settings": {
-            "title": "Review heading",
-            "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
+            "field_name": "Is there anything we’re missing?",
+            "filed_type": "textarea",
+            "required_field": false
           }
         },
-        "quote_GVXwhm": {
-          "type": "quote",
+        "custom_row_9jLgNJ": {
+          "type": "custom_row",
           "settings": {
-            "title": "Review heading",
-            "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
-          }
-        },
-        "quote_KzWQUh": {
-          "type": "quote",
-          "settings": {
-            "title": "Review heading",
-            "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
+            "field_name": "What would make your use of our site easier?",
+            "filed_type": "textarea",
+            "required_field": false
           }
         }
       },
       "block_order": [
-        "quote_EjBgiK",
-        "quote_dDG8Um",
-        "quote_L9DC6F",
-        "quote_8NtXmH",
-        "quote_GVXwhm",
-        "quote_KzWQUh"
+        "custom_row_R4aFJt",
+        "custom_row_QVGR3t",
+        "custom_row_FKqPTY",
+        "custom_row_wCdkqH",
+        "custom_row_9jLgNJ"
       ],
       "settings": {
-        "image_style": "right",
-        "title": "Testimonials",
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Quick-Fire Feedback",
         "subtitle": "",
-        "title_color": "#000",
-        "show_dots": true,
-        "show_arrows": true,
-        "enable_autoplay": true,
-        "cycle_speed": 5
+        "subheading": "",
+        "button_style": "primary"
+      }
+    },
+    "divider_RKN897": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
       }
     }
   },
   "order": [
     "main",
-    "quotes_htWT3D"
+    "rich_text_YiLfhY",
+    "page_contact_9VkPf8",
+    "divider_RKN897"
   ]
 }
