@@ -53,13 +53,6 @@
             "question": "How do I add or remove a user from my account?",
             "answer": "<p>You'll need to get in contact with us to make these changes. Just phone our Customer Service team and they will make these changes for you.<\/p>"
           }
-        },
-        "b2fe745f-356c-4e71-a4c6-9526c2ba1f9b": {
-          "type": "question",
-          "settings": {
-            "question": "Question title",
-            "answer": "<p>Answer text<\/p>"
-          }
         }
       },
       "block_order": [
@@ -68,8 +61,7 @@
         "427e8249-42a3-4443-a393-238a4fd6c1f6",
         "943f91fa-624f-45f0-830e-8b0b43af26ce",
         "a0383d69-bb77-4070-96e7-48c4059b1c1e",
-        "68c1bd80-34cc-435d-8f67-3bd90c0788ee",
-        "b2fe745f-356c-4e71-a4c6-9526c2ba1f9b"
+        "68c1bd80-34cc-435d-8f67-3bd90c0788ee"
       ],
       "settings": {
         "show_breadcrumbs": true,
@@ -83,76 +75,22 @@
         "padding_bottom_mobile": 10
       }
     },
-    "1657289028fa52a62b": {
-      "type": "featured-blocks",
-      "blocks": {
-        "1657289028d2013e24-0": {
-          "type": "block",
-          "settings": {
-            "heading": "Block title",
-            "content": "<p>Default text<\/p>",
-            "url": ""
-          }
-        },
-        "1657289028d2013e24-1": {
-          "type": "block",
-          "settings": {
-            "heading": "Block title",
-            "content": "<p>Default text<\/p>",
-            "url": ""
-          }
-        },
-        "1657289028d2013e24-2": {
-          "type": "block",
-          "settings": {
-            "heading": "Block title",
-            "content": "<p>Default text<\/p>",
-            "url": ""
-          }
-        },
-        "1657289028d2013e24-3": {
-          "type": "block",
-          "settings": {
-            "heading": "Block title",
-            "content": "<p>Default text<\/p>",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "1657289028d2013e24-0",
-        "1657289028d2013e24-1",
-        "1657289028d2013e24-2",
-        "1657289028d2013e24-3"
-      ],
-      "disabled": true,
+    "rich_text_PAjm6f": {
+      "type": "rich-text",
       "settings": {
-        "layout": "grid",
-        "title": "Heading",
-        "subtitle": "Subheading",
-        "image_style": "circle",
-        "mobile_carousel": false
-      }
-    },
-    "1657288909146458ee": {
-      "type": "newsletter",
-      "disabled": true,
-      "settings": {
-        "section_bg_color": "",
+        "content_width": "50",
+        "bg_color": "",
         "section_color": "",
-        "bg_image_opacity": 70,
-        "section_title": "Subscribe to our newsletter",
+        "rte_icon_width": 100,
+        "section_title": "Got a question?",
         "subtitle": "",
-        "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
-        "button_style": "primary",
-        "showFormLabels": true,
-        "removeBottomMargin": false
+        "text": "<p>Jump over to our <a href=\"\/pages\/contact-us\" title=\"Contact Us\">Contact Us<\/a> page and we'll be happy to help<\/p>",
+        "text_size": "medium"
       }
     }
   },
   "order": [
     "main",
-    "1657289028fa52a62b",
-    "1657288909146458ee"
+    "rich_text_PAjm6f"
   ]
 }
