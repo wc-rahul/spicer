@@ -15,8 +15,8 @@
         "83f4eb6f-6a97-43f5-bca7-5159c5efadb4": {
           "type": "heading",
           "settings": {
-            "heading": "Frequently Asked Questions",
-            "subheading": "We're Here to help"
+            "heading": "",
+            "subheading": "Here are some of our most frequently asked questions"
           }
         },
         "f75f86b5-0509-4822-87f4-65fa0ee1e1df": {
@@ -65,11 +65,11 @@
       ],
       "settings": {
         "show_breadcrumbs": true,
-        "show_heading": false,
+        "show_heading": true,
         "show_page_content": true,
         "image_overlay_color": "#000000",
         "image_overlay_opacity": 40,
-        "padding_top": 11,
+        "padding_top": 18,
         "padding_bottom": 0,
         "padding_top_mobile": 11,
         "padding_bottom_mobile": 0
