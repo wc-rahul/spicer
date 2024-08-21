@@ -52,14 +52,14 @@
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/PEFC_FSC_20242_fd299ed5-b85c-4ce7-ba7a-4079951bf85f.jpg",
-            "link": ""
+            "link": "shopify:\/\/collections\/fsc-certified"
           }
         },
         "logo_image_rx4zwp": {
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/PEFC_FSC_2024_e520ab24-b1c8-47ca-9cd9-e355bbf71ad2.jpg",
-            "link": ""
+            "link": "shopify:\/\/collections\/pefc-certified"
           }
         },
         "logo_image_DhYmeH": {
