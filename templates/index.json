@@ -425,6 +425,7 @@
         "block_HkBFdf",
         "block_VecBNe"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Spicers_Sq.png",
         "mobile_image": "shopify:\/\/shop_images\/Spicers_Sq.png",
