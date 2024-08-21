@@ -78,7 +78,7 @@
     "rich_text_PAjm6f": {
       "type": "rich-text",
       "settings": {
-        "content_width": "50",
+        "content_width": "75",
         "bg_color": "",
         "section_color": "",
         "rte_icon_width": 100,
