@@ -70,9 +70,9 @@
         "image_overlay_color": "#000000",
         "image_overlay_opacity": 40,
         "padding_top": 11,
-        "padding_bottom": 10,
+        "padding_bottom": 0,
         "padding_top_mobile": 11,
-        "padding_bottom_mobile": 10
+        "padding_bottom_mobile": 0
       }
     },
     "rich_text_PAjm6f": {
