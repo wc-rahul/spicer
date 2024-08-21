@@ -100,48 +100,6 @@
         "mobile_carousel": false
       }
     },
-    "slideshow_hYEh4B": {
-      "type": "slideshow",
-      "blocks": {
-        "image_dhajVz": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Contact_Us.png",
-            "color_image_overlay": "#000000",
-            "image_overlay_opacity": 0,
-            "text_color": "#ffffff",
-            "text_alignment": "center center",
-            "slide_title": "",
-            "heading_size": 70,
-            "mob_heading_size": 40,
-            "subheading": "",
-            "subtitle_size": 18,
-            "mob_subtitle_size": 18,
-            "subhead_pos": "top",
-            "button_label": "",
-            "button_link": "",
-            "button_style_2": "primary",
-            "button_label_2": "",
-            "button_link_2": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_dhajVz"
-      ],
-      "disabled": true,
-      "settings": {
-        "slideshow_width": "wrapper",
-        "slideshow_height": "adapt",
-        "slideshow_mobile_height": "adapt",
-        "text_size": "medium",
-        "show_buttons": false,
-        "show_dots": false,
-        "autorotate": false,
-        "autorotate_speed": 5,
-        "removeBottomMargin": true
-      }
-    },
     "divider_tmVkHt": {
       "type": "Divider",
       "settings": {
@@ -181,19 +139,6 @@
         "button_style": "primary"
       }
     },
-    "feature_row_d9Tk8n": {
-      "type": "feature-row",
-      "disabled": true,
-      "settings": {
-        "section_width": "page-width-small",
-        "layout": "right",
-        "title": "Christchurch",
-        "text": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
-        "button_style": "primary",
-        "button_label": "Get Directions",
-        "button_link": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9308924,174.8653811,16z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
-      }
-    },
     "divider_gBxgmr": {
       "type": "Divider",
       "settings": {
@@ -214,10 +159,8 @@
     "rich_text_6bKbWe",
     "divider_NdY7Ye",
     "featured_blocks_HMDnUz",
-    "slideshow_hYEh4B",
     "divider_tmVkHt",
     "16572891445ca8e851",
-    "feature_row_d9Tk8n",
     "divider_gBxgmr"
   ]
 }
