@@ -172,7 +172,7 @@
       ],
       "settings": {
         "show_breadcrumbs": true,
-        "show_pick_an_option": true,
+        "show_pick_an_option": false,
         "enable_linked_options": true,
         "enabled_mobile_sticky_btns": true,
         "media_size": "small",
