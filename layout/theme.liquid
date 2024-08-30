@@ -84,10 +84,10 @@
   
   {% if template.name == 'product' %}
 
-    <title> Buy {{ product.title }} online at Total Supply.</title>
+    <title> Buy {{ product.title }} online at Spicers.</title>
     {%  elsif template.name == 'collection'  %}
 
-      <title> Shop {{ collection.title }} online at Total Supply.</title> 
+      <title> Shop {{ collection.title }} online at Spicers.</title> 
   {% endif %}
 
   {% if template.name != 'product' and template.name != 'collection' %}
@@ -96,9 +96,9 @@
   {%- endif -%}
 {% endif %}
   {%  if template.name == 'product'  %} 
-    <meta name="description" content="Shop Total Supply's {{ product.title }} plus the full range of digital, sign and graphics products. Order online today!" >
+    <meta name="description" content="Shop Spicers's {{ product.title }} plus the full range of digital, sign and graphics products. Order online today!" >
   {%  elsif template.name == 'collection'  %}
-    <meta name="description" content="Browse the wide variety of {{ collection.title }} products at Total Supply. Shop online today!" >
+    <meta name="description" content="Browse the wide variety of {{ collection.title }} products at Spicers. Shop online today!" >
   {% endif %}  
 
  
