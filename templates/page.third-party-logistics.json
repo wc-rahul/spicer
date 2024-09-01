@@ -105,10 +105,54 @@
             "button_link_2": ""
           }
         },
-        "image_nYLmWn": {
+        "image_nAjRTx": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20220523_101640.jpg",
+            "image": "shopify:\/\/shop_images\/CHCH.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_Tdfi9F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3PL2.png",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_DCLgnH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3PL.jpg",
             "color_image_overlay": "#000",
             "image_overlay_opacity": 40,
             "text_color": "#ffffff",
@@ -131,16 +175,18 @@
       "block_order": [
         "image_dDhiFw",
         "image_HwF7jp",
-        "image_nYLmWn"
+        "image_nAjRTx",
+        "image_Tdfi9F",
+        "image_DCLgnH"
       ],
       "settings": {
         "slideshow_width": "wrapper",
-        "slideshow_height": "medium",
-        "slideshow_mobile_height": "adapt",
+        "slideshow_height": "small",
+        "slideshow_mobile_height": "small",
         "text_size": "medium",
         "show_buttons": true,
         "show_dots": true,
-        "autorotate": false,
+        "autorotate": true,
         "autorotate_speed": 5,
         "removeBottomMargin": false
       }
