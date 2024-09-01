@@ -44,11 +44,90 @@
         "text": "<p>Spicers Converting is a specialist division of our business, located on our Auckland site in Highbrook.<\/p><p>With three slitter rewinders on site, we can convert a wide  variety of products, including synthetics, self-adhesive, plastics and specialty packaging stocks that often require a more customised approach. We are always happy to talk through the options that will best suit your requirements. <\/p><p>Spicers Converting can rewind rolls up to 3000kg and 1300mm OD. Slitting to a minimum width of 60mm. Our diverse range of machinery also has the capability to produce small counter rolls efficiently. To a minimum roll length of 30m. <\/p><p>Our fork hoists and clamp trucks provide flexibility, handling reels on pallets, or reels that are freestanding on their ends. <\/p><p>Spicers’ own delivery fleet and wide freight network enables us to deliver to you, or direct to your customers.<\/p><p>Contact Spicers Converting today to discuss your bespoke converting requirements. <\/p>",
         "text_size": "medium"
       }
+    },
+    "slideshow_ttW3et": {
+      "type": "slideshow",
+      "blocks": {
+        "image_bnbwLT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Site.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_yGMXNj": {
+          "type": "image",
+          "settings": {
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "Image slide",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "Tell your brand's story through images",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bnbwLT",
+        "image_yGMXNj"
+      ],
+      "settings": {
+        "slideshow_width": "wrapper",
+        "slideshow_height": "adapt",
+        "slideshow_mobile_height": "adapt",
+        "text_size": "medium",
+        "show_buttons": false,
+        "show_dots": false,
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "removeBottomMargin": false
+      }
+    },
+    "divider_reWm8D": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
     "divider_4kWg38",
     "main",
-    "rich_text_nNkJGw"
+    "rich_text_nNkJGw",
+    "slideshow_ttW3et",
+    "divider_reWm8D"
   ]
 }
