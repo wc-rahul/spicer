@@ -39,7 +39,7 @@
         "image": "shopify:\/\/shop_images\/IMG_5799_2.jpg",
         "layout": "left",
         "title": "Keep moving with Spicers",
-        "text": "<p>We are the New Zealand face of Spicers Group and handle over 2000 containers a year. However, we greatly value our smaller customers too, ensuring they receive the full cost advantages of being part of a larger group deal.<\/p>",
+        "text": "<p>Spicers (NZ) Limited handle over 2000 containers a year. However, we greatly value our smaller customers too, ensuring they receive the full cost advantages of being part of a larger group deal.<\/p>",
         "button_style": "primary",
         "button_label": "",
         "button_link": ""
@@ -54,8 +54,109 @@
         "rte_icon_width": 100,
         "section_title": "",
         "subtitle": "",
-        "text": "<p>Our enterprise is a strong, capable and prosperous business, with a total commitment to continue developing, growing and delivering results to all merchant logistics customers.<\/p><p>We offer customers a tailored 3PL service, pickup, storage and delivery service, structured for each customer to their individual needs.<\/p><p><strong>Our logistics network comprises:<\/strong><\/p><ul><li>High quality, clean and modern distribution centres<\/li><li>Secure facilities – fully monitored and patrolled, fully fenced sites<\/li><li>MAF Approved Transitional Facilities in premium locations across Auckland, Wellington and Christchurch<\/li><li>MAF Approved Transitional Facility Operators and Accredited Persons on site at all times<\/li><li>Access to extensive local, national and international fleets<\/li><li>An experience and proactive management team<\/li><li>A customer service-oriented approach with outstanding delivery turnaround capability<\/li><li>Highly developed planning and operating methods, ensuring a smooth process from pickup to delivery<\/li><li>eCommerce – giving you the freedom to manage your inventory and place orders online<\/li><li>Processes to help reduce or even eliminate demurrage and detention charges<\/li><li>Ability to handle pallets and reels up to 1.8 tonne lift weight<\/li><\/ul><p><\/p><p><strong>Services include:<\/strong><\/p><ul><li>Short term storage<\/li><li>Long term storage<\/li><li>Short and long term fixed space<\/li><li>3PL contract warehousing (multi-user environment and discreet operations)<\/li><li>Total end-to-end 3PL management and execution<\/li><li>Total network design and on-going management<\/li><li>DC layout and design<\/li><li>Operational reviews and outcome management<\/li><li>Continuous improvement identification, planning and execution<\/li><li>Total supply chain consultancy and support for our customers<\/li><li>Inventory and supply chain management<\/li><li>Transport contract development and all transport management<\/li><li>Customs clearance service<\/li><\/ul>",
+        "text": "<p>Our enterprise is a strong, capable and prosperous business, with a total commitment to continue developing, growing and delivering results to all<br\/>merchant logistics customers.<\/p><p>We offer customers a tailored 3PL service, pickup, storage and delivery service, structured for each customer to their individual needs.<\/p><p><strong>Our logistics network comprises:<\/strong><\/p><ul><li> High quality, clean and modern, high-stud distribution centres<\/li><li>Secure facilities – fully monitored and patrolled, fully fenced sites<\/li><li>Racking and Bulk space storage options<\/li><li>MPI Approved Transitional Facilities in premium locations across Auckland, Wellington, Palmerston North and Christchurch<\/li><li>MPI Approved Transitional Facility Operators and Accredited Persons on site at all times<\/li><li>Access to extensive local, national and international freight networks. <\/li><li>An experience and proactive management team<\/li><li>A customer service-oriented approach with outstanding delivery turnaround capability<\/li><li>Highly developed planning and operating methods, ensuring a smooth process from pickup to delivery<\/li><li>eCommerce – giving you the freedom to manage your inventory and place orders online<\/li><li>Processes to help reduce or even eliminate demurrage and detention charges<\/li><li>Ability to handle pallets and reels up to 1.8 tonne lift weight<br\/><br\/><\/li><\/ul><p><strong>Services include:<\/strong><\/p><ul><li> Short term storage<\/li><li>Long term storage<\/li><li>Short and long term fixed space arrangements<\/li><li>3PL contract warehousing (multi-user environment and discreet operations)<\/li><li>Total end-to-end 3PL management and execution<\/li><li>Inventory and supply chain management<\/li><li>Customs clearance service<br\/><\/li><\/ul>",
         "text_size": "medium"
+      }
+    },
+    "slideshow_q4nTYN": {
+      "type": "slideshow",
+      "blocks": {
+        "image_dDhiFw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Site.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_HwF7jp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20220523_101447.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_nYLmWn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20220523_101640.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "center center",
+            "slide_title": "",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_dDhiFw",
+        "image_HwF7jp",
+        "image_nYLmWn"
+      ],
+      "settings": {
+        "slideshow_width": "wrapper",
+        "slideshow_height": "medium",
+        "slideshow_mobile_height": "adapt",
+        "text_size": "medium",
+        "show_buttons": true,
+        "show_dots": true,
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "removeBottomMargin": false
+      }
+    },
+    "divider_txez7m": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
       }
     }
   },
@@ -63,6 +164,8 @@
     "divider_4kWg38",
     "main",
     "feature_row_xnhTVE",
-    "rich_text_nNkJGw"
+    "rich_text_nNkJGw",
+    "slideshow_q4nTYN",
+    "divider_txez7m"
   ]
 }
