@@ -110,7 +110,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/CHCH.jpg",
             "color_image_overlay": "#000000",
-            "image_overlay_opacity": 40,
+            "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "center center",
             "slide_title": "",
@@ -132,7 +132,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/3PL2.png",
             "color_image_overlay": "#000000",
-            "image_overlay_opacity": 40,
+            "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "center center",
             "slide_title": "",
