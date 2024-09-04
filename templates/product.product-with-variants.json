@@ -25,6 +25,7 @@
         },
         "88b11c3c-0aea-4f1f-b99e-35a806a5c540": {
           "type": "product_type",
+          "disabled": true,
           "settings": {
           }
         },
