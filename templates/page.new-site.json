@@ -1,0 +1,116 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 40,
+        "show_breadcrumbs": false,
+        "show_page_content": true
+      }
+    },
+    "rich_text_YiLfhY": {
+      "type": "rich-text",
+      "settings": {
+        "content_width": "75",
+        "bg_color": "",
+        "section_color": "",
+        "rte_icon_width": 100,
+        "section_title": "Hot off the press!",
+        "subtitle": "",
+        "text": "<p>We're thrilled to share that our new website is almost here!<\/p><p>This is just a soft launch for now - we're not putting up the big flashy lights just yet.<\/p><p>And that's because we really want your feedback. We're reaching out to some of our valued customers who we think can provide some helpful advice and insights as the site goes live.<\/p><p><em>So tell us, what do you think? Is there anything we're missing? How can we make your experience on the site even better?<\/em><\/p><p>This is just the start of something great. We're committed to continuously improving our services and supporting the amazing work you do. You can count on us to always be partnering with leading businesses like yours.<\/p><p>And please, if there's anything specific you'd love to see on spicersnz.co.nz, just let us know. We'll do our best to make it happen!<\/p>",
+        "text_size": "medium"
+      }
+    },
+    "page_contact_9VkPf8": {
+      "type": "page-contact",
+      "blocks": {
+        "custom_row_R4aFJt": {
+          "type": "custom_row",
+          "settings": {
+            "field_name": "Company Name",
+            "filed_type": "input",
+            "required_field": true
+          }
+        },
+        "custom_row_QVGR3t": {
+          "type": "custom_row",
+          "settings": {
+            "field_name": "What was your overall first thoughts of the new site?",
+            "filed_type": "textarea",
+            "required_field": false
+          }
+        },
+        "custom_row_FKqPTY": {
+          "type": "custom_row",
+          "settings": {
+            "field_name": "Was there any stand out features or changes that you liked or disliked?",
+            "filed_type": "textarea",
+            "required_field": false
+          }
+        },
+        "custom_row_wCdkqH": {
+          "type": "custom_row",
+          "settings": {
+            "field_name": "Is there anything we’re missing?",
+            "filed_type": "textarea",
+            "required_field": false
+          }
+        },
+        "custom_row_9jLgNJ": {
+          "type": "custom_row",
+          "settings": {
+            "field_name": "What would make your use of our site easier?",
+            "filed_type": "textarea",
+            "required_field": false
+          }
+        }
+      },
+      "block_order": [
+        "custom_row_R4aFJt",
+        "custom_row_QVGR3t",
+        "custom_row_FKqPTY",
+        "custom_row_wCdkqH",
+        "custom_row_9jLgNJ"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Quick-Fire Feedback",
+        "subtitle": "",
+        "subheading": "",
+        "button_style": "primary"
+      }
+    },
+    "divider_RKN897": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_YiLfhY",
+    "page_contact_9VkPf8",
+    "divider_RKN897"
+  ]
+}
