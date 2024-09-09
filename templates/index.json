@@ -95,6 +95,7 @@
         },
         "1657285989011473b7-4": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "packaging",
             "title": "Packaging",
@@ -132,7 +133,7 @@
         "button_style": "white",
         "button_text": "",
         "link": "",
-        "grid": 6,
+        "grid": 5,
         "grid_mobile": "1",
         "image_style": "square",
         "image_style_bg_overlay": "#ffffff",
