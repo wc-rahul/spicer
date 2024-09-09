@@ -18,6 +18,19 @@
         "show_page_content": true
       }
     },
+    "rich_text_Kd7kn7": {
+      "type": "rich-text",
+      "settings": {
+        "content_width": "75",
+        "bg_color": "",
+        "section_color": "",
+        "rte_icon_width": 100,
+        "section_title": "Introducing Our New Website: Designed for Efficiency",
+        "subtitle": "",
+        "text": "<p>We're excited to launch our redesigned website, optimized for your needs. <\/p><p>Our goal: to make your experience smoother, faster, and more intuitive.<\/p>",
+        "text_size": "medium"
+      }
+    },
     "rich_text_YiLfhY": {
       "type": "rich-text",
       "settings": {
@@ -25,9 +38,9 @@
         "bg_color": "",
         "section_color": "",
         "rte_icon_width": 100,
-        "section_title": "Hot off the press!",
+        "section_title": "",
         "subtitle": "",
-        "text": "<p>We're thrilled to share that our new website is almost here!<\/p><p>This is just a soft launch for now - we're not putting up the big flashy lights just yet.<\/p><p>And that's because we really want your feedback. We're reaching out to some of our valued customers who we think can provide some helpful advice and insights as the site goes live.<\/p><p><em>So tell us, what do you think? Is there anything we're missing? How can we make your experience on the site even better?<\/em><\/p><p>This is just the start of something great. We're committed to continuously improving our services and supporting the amazing work you do. You can count on us to always be partnering with leading businesses like yours.<\/p><p>And please, if there's anything specific you'd love to see on spicersnz.co.nz, just let us know. We'll do our best to make it happen!<\/p>",
+        "text": "<p><strong>KEY IMPROVEMENTS:<\/strong><\/p><p><strong>Enhanced User Experience<\/strong> <\/p><ul><li>Streamlined navigation<\/li><li>Improved search functionality<\/li><li>Interactive colour swatch for easier selection<\/li><\/ul><p><\/p><p><strong>Simplified Purchasing Process<\/strong> <\/p><ul><li>Responsive, seamless shopping cart<\/li><li>Streamlined checkout for quick, hassle-free transactions<\/li><\/ul><p><\/p><p><strong>Mobile-Friendly Design<\/strong> <\/p><ul><li>Fully responsive across all devices<\/li><li>Consistent functionality on any platform<\/li><\/ul><p><\/p><p><strong>WHATS NEW:<\/strong><\/p><ul><li><strong>Passwordless Login:<\/strong> Access your account with just your email address and a unique code<\/li><li><strong>Interactive Colour Swatch:<\/strong> Automatically filters available sizes when selecting a colour<\/li><li><strong>Detailed Product Information:<\/strong> Improved notes on quantities and pack sizes<\/li><li><strong>Intuitive Navigation:<\/strong> Restructured categories and standardized layout for easier browsing<\/li><\/ul><p><\/p><p>We value your feedback and are committed to continuous improvement. If you have suggestions or need assistance, please contact us at <a href=\"mailto:marketing@totalsupply.co.nz\">marketing@totalsupply.co.nz<\/a>.<\/p><p>Thank you for choosing us. We look forward to serving you better with our enhanced online presence.<\/p><p> <\/p>",
         "text_size": "medium"
       }
     },
@@ -109,6 +122,7 @@
   },
   "order": [
     "main",
+    "rich_text_Kd7kn7",
     "rich_text_YiLfhY",
     "page_contact_9VkPf8",
     "divider_RKN897"
