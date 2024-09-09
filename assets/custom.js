@@ -124,9 +124,7 @@ function activateClass(e) {
 var formsArr = document.querySelectorAll('.container-variant [action="/cart/add"]');
 if(formsArr.length) {
   formsArr.forEach(function(form,index) {
-    // console.log(form);
     theme.AddItemToCart(form);
-
   });
 }
 
@@ -262,4 +260,59 @@ document.querySelectorAll('.readmore-description').forEach(element => {
 
 // }
 
+
+window.navigation.addEventListener("navigate", (event) => {
+  event.transitionWhile(new Promise(resolve => {
+      setTimeout(() => {
+          const url = window.location.href;
+          const urlObject = new URL(url);
+          const queryParams = new URLSearchParams(urlObject.search);
+          const variantIdFromURL = queryParams.get('variant');
+
+          const variantsList = document.querySelector('.variant-loop');
+          const variants = variantsList.querySelectorAll('li');
+          let quantity = 0;
+
+        
+          variants.forEach(variant => {
+              const id = variant.querySelector('.variantid').textContent;
+              if (id === variantIdFromURL) {
+                  quantity = parseInt(variant.querySelector('.variantQuantity').textContent);
+              }
+          });
+
+          const stockContainer = document.querySelector('.stock-avl');
+
+          while (stockContainer.firstChild) {
+              stockContainer.removeChild(stockContainer.firstChild);
+          }
+
+          const p = document.createElement('p');
+          const span = document.createElement('span');
+          span.className = 'sa-svg';
+
+          if (quantity > 5) {
+              p.textContent = "In Stock";
+              p.style.color = '#68C090'; 
+              span.innerHTML = createSvg('#68C090'); 
+          } else {
+              p.textContent = "Limited Stock";
+              p.style.color = 'orange'; 
+              span.innerHTML = createSvg('orange'); 
+          } 
+
+          stockContainer.appendChild(span);
+          stockContainer.appendChild(p);
+
+          console.log("Quantity for Variant ID", variantIdFromURL, "is:", quantity);
+          resolve();
+      }, 0);
+  }));
+});
+
+function createSvg(fillColor) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M17.4163 9.5C17.4163 13.8723 13.8719 17.4167 9.49967 17.4167C5.12742 17.4167 1.58301 13.8723 1.58301 9.5C1.58301 5.12775 5.12742 1.58334 9.49967 1.58334C13.8719 1.58334 17.4163 5.12775 17.4163 9.5ZM7.42741 8.7629C7.524 8.80439 7.61135 8.8647 7.68438 8.94031L8.70801 9.96394L11.315 7.35698C11.388 7.28136 11.4753 7.22105 11.5719 7.17956C11.6685 7.13807 11.7724 7.11623 11.8775 7.11532C11.9826 7.11441 12.0869 7.13444 12.1842 7.17424C12.2815 7.21405 12.3699 7.27283 12.4442 7.34716C12.5185 7.4215 12.5773 7.50989 12.6171 7.60718C12.6569 7.70447 12.677 7.80872 12.676 7.91384C12.6751 8.01895 12.6533 8.12284 12.6118 8.21942C12.5703 8.31601 12.51 8.40336 12.4344 8.47639L9.26771 11.6431C9.11925 11.7915 8.91793 11.8748 8.70801 11.8748C8.49808 11.8748 8.29676 11.7915 8.1483 11.6431L6.56496 10.0597C6.48935 9.9867 6.42904 9.89934 6.38755 9.80276C6.34606 9.70617 6.32422 9.60229 6.32331 9.49717C6.32239 9.39205 6.34242 9.28781 6.38223 9.19051C6.42204 9.09322 6.48082 9.00483 6.55515 8.9305C6.62948 8.85617 6.71787 8.79738 6.81517 8.75758C6.91246 8.71777 7.01671 8.69774 7.12182 8.69865C7.22694 8.69957 7.33082 8.72141 7.42741 8.7629Z" fill="${fillColor}"/>
+          </svg>`;
+}
 
