@@ -4573,7 +4573,12 @@ hr {
 .price__pricing-group {
   display: flex;
   flex-direction: row;
-  align-items: center
+  align-items: center;
+  gap: 25px;
+}
+
+.price__pricing-group .price_label {
+  font-weight: bold;
 }
 
 .price__regular,

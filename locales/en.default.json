@@ -523,7 +523,8 @@
   },
   "products": {
     "product": {
-      "regular_price": "Regular price",
+      "regular_price": "Price:",
+      "price_per": "Price per",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "availability": "Availability",
