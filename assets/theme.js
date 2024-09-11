@@ -8087,7 +8087,7 @@ theme.Product = (function () {
         if(perPackValue && incrementValue) {
           const formatedPrice = variant.price / 100
           const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
-          pricePerPackContainer.innerText = '$ ' + prePrice
+          pricePerPackContainer.innerText = '$ ' + prePrice.toFixed(2)
         }
       }
     },

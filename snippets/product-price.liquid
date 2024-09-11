@@ -85,11 +85,16 @@ if settings.currency_code_enable
     </div>
 
     {% if product.metafields.custom.price_per_pack != blank and product.metafields.custom.product_increment_value != blank %}
-      {% assign price_per = price | money_without_currency | divided_by: product.metafields.custom.product_increment_value | times: product.metafields.custom.price_per_pack %}
+      {% assign price_per = price | money_without_currency | divided_by: product.metafields.custom.product_increment_value | times: product.metafields.custom.price_per_pack | round: 2 %}
       <div class="price__per">
         <span class="price_label">{{ 'products.product.price_per' | t }} {{ product.metafields.custom.price_per_pack }}:</span>
         <span data-price-per>
-          {{ price_per | prepend: '$' }}
+          {% assign decimals = price | split: '.' | last | size %}
+          {% if decimals > 1 %}
+            {{ price_per | prepend: '$' }}
+          {% else %}
+            {{ price_per | prepend: '$' | append: 0 }}
+          {% endif %}
         </span>
       </div>
     {% endif %}
