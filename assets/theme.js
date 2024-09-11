@@ -1124,7 +1124,8 @@ slate.Variants = (function() {
       this.container.dispatchEvent(
         new CustomEvent('variantChange', {
           detail: {
-            variant: variant
+            variant: variant,
+            form: form
           },
           bubbles: true,
           cancelable: true
@@ -1139,7 +1140,7 @@ slate.Variants = (function() {
 
 
       this._updateImages(variant,e);
-      this._updatePrice(variant);
+      this._updatePrice(variant, form);
       this._updateSKU(variant);
       this.currentVariant = variant;
 
@@ -1324,7 +1325,7 @@ slate.Variants = (function() {
      * @param  {object} variant - Currently selected variant
      * @return {event} variantPriceChange
      */
-    _updatePrice: function(variant) {
+    _updatePrice: function(variant, form) {
 
 
       if (
@@ -1339,7 +1340,8 @@ slate.Variants = (function() {
       this.container.dispatchEvent(
         new CustomEvent('variantPriceChange', {
           detail: {
-            variant: variant
+            variant: variant,
+            form: form
           },
           bubbles: true,
           cancelable: true
@@ -8031,7 +8033,10 @@ theme.Product = (function () {
     },
 
     _updatePrice: function (evt) {
+
       var variant = evt.detail.variant;
+      const pricePerPackContainer = document.querySelector('[data-price-per]')
+      const formData = new FormData(evt.detail.form)
 
       var regularPrices = this.priceContainer.querySelectorAll(
         this.selectors.regularPrice
@@ -8072,6 +8077,18 @@ theme.Product = (function () {
           variant.unit_price,
           theme.moneyFormat
         );
+      }
+
+      // Per Pack
+      if (pricePerPackContainer) {
+        const perPackValue = formData.get('per_pack')
+        const incrementValue = formData.get('increment_value')
+
+        if(perPackValue && incrementValue) {
+          const formatedPrice = variant.price / 100
+          const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
+          pricePerPackContainer.innerText = '$ ' + prePrice
+        }
       }
     },
 

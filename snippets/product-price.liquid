@@ -88,7 +88,9 @@ if settings.currency_code_enable
       {% assign price_per = price | money_without_currency | divided_by: product.metafields.custom.product_increment_value | times: product.metafields.custom.price_per_pack %}
       <div class="price__per">
         <span class="price_label">{{ 'products.product.price_per' | t }} {{ product.metafields.custom.price_per_pack }}:</span>
-        {{ price_per | prepend: '$' }}
+        <span data-price-per>
+          {{ price_per | prepend: '$' }}
+        </span>
       </div>
     {% endif %}
     <div class="price__badges">
