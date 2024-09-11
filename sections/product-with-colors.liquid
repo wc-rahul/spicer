@@ -2305,7 +2305,19 @@
         {% endif %}
 </script>
 
-
+<ul class="variant-loop" style="display:none">
+  {% for variant in product.variants %}
+    <li><span class="variantid">{{ variant.id }}</span>
+      <span class="variantQuantity">
+          {% if product.tags contains 'kit-product' and variant.inventory_management == nil %}
+            500
+          {% else %}
+            {{ variant.inventory_quantity }}
+          {% endif %}
+      </span>
+    </li>
+  {% endfor %}
+</ul>
 
 {% schema %}
 {

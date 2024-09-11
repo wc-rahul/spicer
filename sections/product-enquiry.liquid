@@ -1896,8 +1896,6 @@
 
 
     var currentUrl = window.location.href;
-
-
     var wordToRemove = '?contact_posted=true#ContactForm';
 
     // var updatedUrl = currentUrl.replace(new RegExp('\\b' + wordToRemove + '\\b', 'ig'), '');
@@ -1909,13 +1907,24 @@
 
     // Log the updated URL to the console (optional)
     console.log('Updated URL:', updatedUrl);
-
-
-
-
 // });
 
 </script>
+
+
+<ul class="variant-loop" style="display:none">
+  {% for variant in product.variants %}
+    <li><span class="variantid">{{ variant.id }}</span>
+      <span class="variantQuantity">
+          {% if product.tags contains 'kit-product' and variant.inventory_management == nil %}
+            500
+          {% else %}
+            {{ variant.inventory_quantity }}
+          {% endif %}
+      </span>
+    </li>
+  {% endfor %}
+</ul>
 
 
 {% schema %}
