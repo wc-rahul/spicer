@@ -106,12 +106,12 @@
         "category_menu_cFjP4k": {
           "type": "category_menu",
           "settings": {
-            "menu_item": "Labels\/Synthetic",
-            "image": "shopify:\/\/shop_images\/Commercial.jpg",
+            "menu_item": "Machinery",
+            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_8.png",
             "image_heading": "Industrial Packaging",
             "image_link": "shopify:\/\/collections\/industrial-packaging",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/psa"
+            "btn_url": "shopify:\/\/collections\/machinery"
           }
         },
         "category_menu_E9tReX": {
