@@ -133,8 +133,8 @@
         "image_7dzx7E"
       ],
       "settings": {
-        "title": "Gallery",
-        "subtitle": "Subtitle",
+        "title": "",
+        "subtitle": "",
         "use_stacked_layout": false,
         "use_lightbox": false,
         "overlay_opacity": 0,
