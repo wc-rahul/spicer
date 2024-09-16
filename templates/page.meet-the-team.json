@@ -90,24 +90,6 @@
     "featured_blocks_FMyrXQ": {
       "type": "featured-blocks",
       "blocks": {
-        "block_gkBN46": {
-          "type": "block",
-          "settings": {
-            "heading": "Mark Longley",
-            "content": "<p>Category Manager - Retail Packaging<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Mark.jpg",
-            "url": ""
-          }
-        },
-        "block_LpX8Hh": {
-          "type": "block",
-          "settings": {
-            "heading": "Leigh Burton",
-            "content": "<p>Category Manager - Office Papers<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Leigh.jpg",
-            "url": ""
-          }
-        },
         "block_qxynLg": {
           "type": "block",
           "settings": {
@@ -125,13 +107,31 @@
             "image": "shopify:\/\/shop_images\/Headshot5_David.jpg",
             "url": ""
           }
+        },
+        "block_LpX8Hh": {
+          "type": "block",
+          "settings": {
+            "heading": "Leigh Burton",
+            "content": "<p>Category Manager - Office Papers<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Leigh.jpg",
+            "url": ""
+          }
+        },
+        "block_gkBN46": {
+          "type": "block",
+          "settings": {
+            "heading": "Mark Longley",
+            "content": "<p>Category Manager - Retail Packaging<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Mark.jpg",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "block_gkBN46",
-        "block_LpX8Hh",
         "block_qxynLg",
-        "block_jNayfz"
+        "block_jNayfz",
+        "block_LpX8Hh",
+        "block_gkBN46"
       ],
       "settings": {
         "layout": "grid",
@@ -144,21 +144,21 @@
     "featured_blocks_qbbzGm": {
       "type": "featured-blocks",
       "blocks": {
-        "block_VJnntx": {
-          "type": "block",
-          "settings": {
-            "heading": "Nigel Williams",
-            "content": "<p>Account Manager - South Island<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Nigel.jpg",
-            "url": ""
-          }
-        },
         "block_KFGUFh": {
           "type": "block",
           "settings": {
             "heading": "Kerry Richmond",
             "content": "<p>Account Manager - Wellington<\/p>",
             "image": "shopify:\/\/shop_images\/Headshot_Kerry.jpg",
+            "url": ""
+          }
+        },
+        "block_VJnntx": {
+          "type": "block",
+          "settings": {
+            "heading": "Nigel Williams",
+            "content": "<p>Account Manager - South Island<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Nigel.jpg",
             "url": ""
           }
         },
@@ -182,8 +182,8 @@
         }
       },
       "block_order": [
-        "block_VJnntx",
         "block_KFGUFh",
+        "block_VJnntx",
         "block_j7XEw3",
         "block_WWV6Td"
       ],
