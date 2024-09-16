@@ -35,10 +35,136 @@
         "blog_show_author": false,
         "show_share_buttons": false
       }
+    },
+    "mosaic_LnQtAd": {
+      "type": "mosaic",
+      "blocks": {
+        "image_LYfd3Y": {
+          "type": "image",
+          "settings": {
+            "cta_label": "Title",
+            "cta_sublabel": "Description",
+            "link": "",
+            "cta_col": 2,
+            "cta_image_height": "medium",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#ffffff"
+          }
+        },
+        "image_bebUip": {
+          "type": "image",
+          "settings": {
+            "cta_label": "Title",
+            "cta_sublabel": "Description",
+            "link": "",
+            "cta_col": 4,
+            "cta_image_height": "1",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#ffffff"
+          }
+        },
+        "image_jF9qfa": {
+          "type": "image",
+          "settings": {
+            "cta_label": "Title",
+            "cta_sublabel": "Description",
+            "link": "",
+            "cta_col": 4,
+            "cta_image_height": "1",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#ffffff"
+          }
+        },
+        "image_HmMDU3": {
+          "type": "image",
+          "settings": {
+            "cta_label": "Title",
+            "cta_sublabel": "Description",
+            "link": "",
+            "cta_col": 2,
+            "cta_image_height": "medium",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#ffffff"
+          }
+        },
+        "image_48KMkF": {
+          "type": "image",
+          "settings": {
+            "cta_label": "Title",
+            "cta_sublabel": "Description",
+            "link": "",
+            "cta_col": 2,
+            "cta_image_height": "medium",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#ffffff"
+          }
+        },
+        "image_7dzx7E": {
+          "type": "image",
+          "settings": {
+            "cta_label": "Title",
+            "cta_sublabel": "Description",
+            "link": "",
+            "cta_col": 2,
+            "cta_image_height": "medium",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_LYfd3Y",
+        "image_bebUip",
+        "image_jF9qfa",
+        "image_HmMDU3",
+        "image_48KMkF",
+        "image_7dzx7E"
+      ],
+      "settings": {
+        "title": "Gallery",
+        "subtitle": "Subtitle",
+        "use_stacked_layout": false,
+        "use_lightbox": false,
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "gutter_width": "22",
+        "title_transform": "none",
+        "hover_animation": "zoom-in",
+        "use_mobile_redability": false,
+        "removeBottomMargin": false
+      }
+    },
+    "divider_7wEHfP": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
     "divider_bd9TJw",
-    "main"
+    "main",
+    "mosaic_LnQtAd",
+    "divider_7wEHfP"
   ]
 }
