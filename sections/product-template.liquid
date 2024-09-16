@@ -1288,7 +1288,7 @@
         {%- endcapture %}
             {% form 'product', product, class:form_classes, data-product-form: '', data-handle: product.handle %}
               <input type="hidden" name="per_pack" value="{{ current_variant.metafields.custom.price_per_pack }}">
-              <input type="hidden" name="increment_value" value="{{ product.metafields.custom.product_increment_value }}">
+              <input type="hidden" name="increment_value" value="{{ current_variant.metafields.custom.product_increment_value }}">
             {%  assign  show_default_variant_input  = true %}  
 
         {% for block in section.blocks %}
