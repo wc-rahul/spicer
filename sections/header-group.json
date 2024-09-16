@@ -81,23 +81,11 @@
             "btn_url": "shopify:\/\/collections\/digital"
           }
         },
-        "category_menu_qf6CqL": {
-          "type": "category_menu",
-          "disabled": true,
-          "settings": {
-            "menu_item": "Envelopes",
-            "image": "shopify:\/\/shop_images\/Commercial.jpg",
-            "image_heading": "Office Papers",
-            "image_link": "shopify:\/\/collections\/office",
-            "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/envelopes"
-          }
-        },
         "category_menu_UdPJdX": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Graphics",
-            "image": "shopify:\/\/shop_images\/Commercial.jpg",
+            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu.png",
             "image_heading": "Commercial Print",
             "image_link": "shopify:\/\/collections\/commercial",
             "btn_label": "View All",
@@ -164,7 +152,6 @@
         "f171641a-7303-4ccd-87b9-928d9b2c5c1b",
         "d95181ad-63cc-4f5c-93e5-46ec7ffdaef9",
         "3864f932-4cc2-4083-bba3-bb7912280cc2",
-        "category_menu_qf6CqL",
         "category_menu_UdPJdX",
         "category_menu_DtWNab",
         "category_menu_cFjP4k",
