@@ -129,22 +129,11 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Labels & Synthetics",
-            "image": "shopify:\/\/shop_images\/Commercial.jpg",
-            "image_heading": "Packaging",
-            "image_link": "shopify:\/\/collections\/packaging",
+            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_8.png",
+            "image_heading": "Industrial Packaging",
+            "image_link": "shopify:\/\/collections\/industrial-packaging",
             "btn_label": "View All",
             "btn_url": "shopify:\/\/collections\/psa"
-          }
-        },
-        "category_menu_NBMETW": {
-          "type": "category_menu",
-          "settings": {
-            "menu_item": "Synthetics",
-            "image": "shopify:\/\/shop_images\/Commercial.jpg",
-            "image_heading": "Digital Print Film",
-            "image_link": "shopify:\/\/collections\/digital-print-film",
-            "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/digital-synthetic"
           }
         }
       },
@@ -156,8 +145,7 @@
         "category_menu_DtWNab",
         "category_menu_cFjP4k",
         "category_menu_E9tReX",
-        "category_menu_UzLtVi",
-        "category_menu_NBMETW"
+        "category_menu_UzLtVi"
       ],
       "settings": {
         "align_logo": "left",
