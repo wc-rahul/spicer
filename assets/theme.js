@@ -1137,7 +1137,7 @@ slate.Variants = (function() {
         return;
       }
 
-
+      this._updateFormData(variant, form)
 
       this._updateImages(variant,e);
       this._updatePrice(variant, form);
@@ -1317,6 +1317,33 @@ slate.Variants = (function() {
 //           cancelable: true
 //         })
 //       );
+    },
+
+    _updateFormData: async function(variant, form) {
+      const productHandle = form.getAttribute('data-handle');
+      const url = `/products/${productHandle}?section_id=product-template&variant=${variant.id}`;
+
+      try {
+        const response = await fetch(url);
+    
+        if (!response.ok) {
+          throw new Error('Error fetching the section');
+        }
+    
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+    
+        const updatedForm = doc.querySelector('form');
+    
+        if (updatedForm) {
+          form.querySelector('[name="per_pack"]').value = updatedForm.querySelector('[name="per_pack"]').value;
+          form.querySelector('.price__per .price_label').innerHTML = `Price per ${updatedForm.querySelector('[name="per_pack"]').value}:`
+        }
+    
+      } catch (error) {
+        console.error('Error updating the form:', error);
+      }
     },
 
     /**
