@@ -40,8 +40,8 @@
           "type": "block",
           "settings": {
             "heading": "Nathan Pene",
-            "content": "<p><strong>General Manager - Spicers Paper<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/11.png",
+            "content": "<p>General Manager - Spicers Paper<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot7_Nathan.jpg",
             "url": ""
           }
         },
@@ -49,8 +49,8 @@
           "type": "block",
           "settings": {
             "heading": "Steve Edmonds",
-            "content": "<p><strong>Regional Manager - Wellington<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/4.png",
+            "content": "<p>Regional Manager - Wellington<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Steve.jpg",
             "url": ""
           }
         },
@@ -58,8 +58,8 @@
           "type": "block",
           "settings": {
             "heading": "Greg Quirke",
-            "content": "<p><strong>Regional Manager - South Island<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/2_e5d2e490-79b3-4aa0-b68f-8574a252658e.png",
+            "content": "<p>Regional Manager - South Island<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Greg.jpg",
             "url": ""
           }
         },
@@ -68,6 +68,7 @@
           "settings": {
             "heading": "Andrew Jackson",
             "content": "<p>National Sales Manager & Category Manager - Commercial Print<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Andrew.jpg",
             "url": ""
           }
         }
@@ -92,9 +93,9 @@
         "block_gkBN46": {
           "type": "block",
           "settings": {
-            "heading": "Andrew Jackson",
-            "content": "<p><strong>National Sales Manager & Category Manager - Commercial Print<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/9.png",
+            "heading": "Mark Longley",
+            "content": "<p>Category Manager - Retail Packaging<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Mark.jpg",
             "url": ""
           }
         },
@@ -102,8 +103,8 @@
           "type": "block",
           "settings": {
             "heading": "Leigh Burton",
-            "content": "<p><strong>Category Manager - Office Papers<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/13.png",
+            "content": "<p>Category Manager - Office Papers<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Leigh.jpg",
             "url": ""
           }
         },
@@ -111,8 +112,8 @@
           "type": "block",
           "settings": {
             "heading": "Brooke Painter",
-            "content": "<p><strong>Category Manager - Digital Print<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/5.png",
+            "content": "<p>Category Manager - Digital Print<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot4_Brooke.jpg",
             "url": ""
           }
         },
@@ -120,8 +121,8 @@
           "type": "block",
           "settings": {
             "heading": "David White",
-            "content": "<p><strong>Category Manager - Labels & Synthetic<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/6.png",
+            "content": "<p>Category Manager - Labels & Synthetic<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot5_David.jpg",
             "url": ""
           }
         }
@@ -147,8 +148,8 @@
           "type": "block",
           "settings": {
             "heading": "Nigel Williams",
-            "content": "<p><strong>Account Manager - South Island<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/3_24cbb56e-d824-4c44-a67b-106781f9ca83.png",
+            "content": "<p>Account Manager - South Island<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Nigel.jpg",
             "url": ""
           }
         },
@@ -156,8 +157,8 @@
           "type": "block",
           "settings": {
             "heading": "Kerry Richmond",
-            "content": "<p><strong>Account Manager - Wellington<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/10.png",
+            "content": "<p>Account Manager - Wellington<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Kerry.jpg",
             "url": ""
           }
         },
@@ -165,8 +166,8 @@
           "type": "block",
           "settings": {
             "heading": "Kayden Wilson",
-            "content": "<p><strong>Sales Representative<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/8.png",
+            "content": "<p>Sales Representative<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot6_Kayden.jpg",
             "url": ""
           }
         },
@@ -174,8 +175,8 @@
           "type": "block",
           "settings": {
             "heading": "Jamie Low",
-            "content": "<p><strong>Account Manager<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/12.png",
+            "content": "<p>Account Manager<\/p>",
+            "image": "shopify:\/\/shop_images\/Headshot_Jamie.jpg",
             "url": ""
           }
         }
