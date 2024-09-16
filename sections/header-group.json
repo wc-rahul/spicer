@@ -83,6 +83,7 @@
         },
         "category_menu_qf6CqL": {
           "type": "category_menu",
+          "disabled": true,
           "settings": {
             "menu_item": "Envelopes",
             "image": "shopify:\/\/shop_images\/Commercial.jpg",
