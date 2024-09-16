@@ -36,16 +36,6 @@
     "featured_blocks_xrRYxE": {
       "type": "featured-blocks",
       "blocks": {
-        "block_UXNUyB": {
-          "type": "block",
-          "disabled": true,
-          "settings": {
-            "heading": "Morgan John",
-            "content": "<p><strong>General Manager NZ<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/1_62759e55-35e0-440d-9c7e-d75ae37480c8.png",
-            "url": ""
-          }
-        },
         "block_mazPhJ": {
           "type": "block",
           "settings": {
@@ -72,13 +62,21 @@
             "image": "shopify:\/\/shop_images\/2_e5d2e490-79b3-4aa0-b68f-8574a252658e.png",
             "url": ""
           }
+        },
+        "block_PfE88K": {
+          "type": "block",
+          "settings": {
+            "heading": "Andrew Jackson",
+            "content": "<p>National Sales Manager & Category Manager - Commercial Print<\/p>",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "block_UXNUyB",
         "block_mazPhJ",
         "block_W3FbYw",
-        "block_kE7Xzd"
+        "block_kE7Xzd",
+        "block_PfE88K"
       ],
       "settings": {
         "layout": "grid",
