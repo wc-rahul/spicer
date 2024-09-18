@@ -1286,9 +1286,9 @@
         {%- if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
               {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
         {%- endcapture %}
-            {% form 'product', product, class:form_classes, data-product-form: '' %}
-              <input type="hidden" name="per_pack" value="{{ product.metafields.custom.price_per_pack }}">
-              <input type="hidden" name="increment_value" value="{{ product.metafields.custom.product_increment_value }}">
+            {% form 'product', product, class:form_classes, data-product-form: '', data-handle: product.handle %}
+              <input type="hidden" name="per_pack" value="{{ current_variant.metafields.custom.price_per_pack }}">
+              <input type="hidden" name="increment_value" value="{{ current_variant.metafields.custom.product_increment_value }}">
             {%  assign  show_default_variant_input  = true %}  
 
         {% for block in section.blocks %}

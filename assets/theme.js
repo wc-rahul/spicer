@@ -1137,8 +1137,7 @@ slate.Variants = (function() {
         return;
       }
 
-
-
+      
       this._updateImages(variant,e);
       this._updatePrice(variant, form);
       this._updateSKU(variant);
@@ -8031,12 +8030,39 @@ theme.Product = (function () {
         this.productPolicies.classList.remove(this.classes.visibilityHidden);
       }
     },
+    _updateFormData: async function(variant, form) {
+      const productHandle = form.getAttribute('data-handle');
+      const url = `/products/${productHandle}?section_id=product-template&variant=${variant.id}`;
 
-    _updatePrice: function (evt) {
+      try {
+        const response = await fetch(url);
+    
+        if (!response.ok) {
+          throw new Error('Error fetching the section');
+        }
+    
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+    
+        const updatedForm = doc.querySelector('form');
+
+        return updatedForm
+    
+      } catch (error) {
+        console.error('Error updating the form:', error);
+      }
+    },
+
+    _updatePrice: async function (evt, form) {
 
       var variant = evt.detail.variant;
       const pricePerPackContainer = document.querySelector('[data-price-per]')
-      const formData = new FormData(evt.detail.form)
+      let formData = new FormData(evt.detail.form)
+
+      if (form) {
+        formData = new FormData(form)
+      }
 
       var regularPrices = this.priceContainer.querySelectorAll(
         this.selectors.regularPrice
@@ -8081,10 +8107,14 @@ theme.Product = (function () {
 
       // Per Pack
       if (pricePerPackContainer) {
+        const newData = await this._updateFormData(variant, evt.detail.form)
+        formData = new FormData(newData)
+
         const perPackValue = formData.get('per_pack')
         const incrementValue = formData.get('increment_value')
 
         if(perPackValue && incrementValue) {
+          document.querySelector('.price__per .price_label').innerHTML = `Price per ${perPackValue}:`
           const formatedPrice = variant.price / 100
           const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
           pricePerPackContainer.innerText = '$ ' + prePrice.toFixed(2)
