@@ -8112,12 +8112,17 @@ theme.Product = (function () {
 
         const perPackValue = formData.get('per_pack')
         const incrementValue = formData.get('increment_value')
+        const qtyNoteContent = formData.get('qty_note_content')
 
         if(perPackValue && incrementValue) {
           document.querySelector('.price__per .price_label').innerHTML = `Price per ${perPackValue}:`
           const formatedPrice = variant.price / 100
           const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
           pricePerPackContainer.innerText = '$ ' + prePrice.toFixed(2)
+        }
+
+        if (qtyNoteContent) {
+          document.querySelector('.qty-note-content').innerHTML = qtyNoteContent
         }
       }
     },

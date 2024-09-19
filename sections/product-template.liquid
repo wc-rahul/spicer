@@ -1287,8 +1287,17 @@
               {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
         {%- endcapture %}
             {% form 'product', product, class:form_classes, data-product-form: '', data-handle: product.handle %}
-              <input type="hidden" name="per_pack" value="{{ current_variant.metafields.custom.price_per_pack }}">
-              <input type="hidden" name="increment_value" value="{{ current_variant.metafields.custom.product_increment_value }}">
+              {% if current_variant.metafields.custom.price_per_pack != blank %}
+                <input type="hidden" name="per_pack" value="{{ current_variant.metafields.custom.price_per_pack }}">
+              {% endif %}
+
+              {% if current_variant.metafields.custom.product_increment_value != blank %}
+                <input type="hidden" name="increment_value" value="{{ current_variant.metafields.custom.product_increment_value }}">
+              {% endif %}
+
+              {% if current_variant.metafields.custom.product_quantity_note != blank %}
+                <input type="hidden" name="qty_note_content" value="{{ current_variant.metafields.custom.product_quantity_note }}">
+              {% endif %}
             {%  assign  show_default_variant_input  = true %}  
 
         {% for block in section.blocks %}
@@ -1679,8 +1688,8 @@
                     <a href='javascript:void(0);' class="plus_btn qty_btn"></a>
                   </div>
                 </div>
-               {% if product.metafields.custom.product_quantity_note != blank %}
-                <span class="qty-note-content"> {{ product.metafields.custom.product_quantity_note }} </span>
+               {% if current_variant.metafields.custom.product_quantity_note != blank %}
+                <span class="qty-note-content"> {{ current_variant.metafields.custom.product_quantity_note }} </span>
                 {% comment %}                
                   <div class="qty-tooltip-wrap">
                     <div class="qty-tooltip">
@@ -1694,7 +1703,7 @@
                 {% endcomment %}
                 {% endif %}
                 <div class="qty-tooltip-content">
-                  {{ product.metafields.custom.product_quantity_note }}
+                  {{ current_variant.metafields.custom.product_quantity_note }}
                 </div> 
               </div>
             </div>

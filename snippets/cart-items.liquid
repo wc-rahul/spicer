@@ -48,9 +48,9 @@
             <a href="{{ line_item.url }}">{{ line_item.product.title }}</a>
           </h5>
           <div class="variant-details">
-            {% if line_item.product.metafields.custom.product_quantity_note %}
+            {% if line_item.variant.metafields.custom.product_quantity_note %}
               <div class="options">
-                <span class="optionname">{{line_item.product.metafields.custom.product_quantity_note}}</span>
+                <span class="optionname">{{line_item.variant.metafields.custom.product_quantity_note}}</span>
               </div>
             {% endif %}
             {% for option in line_item.options_with_values  %}
