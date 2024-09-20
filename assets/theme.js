@@ -8119,10 +8119,14 @@ theme.Product = (function () {
           const formatedPrice = variant.price / 100
           const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
           pricePerPackContainer.innerText = '$ ' + prePrice.toFixed(2)
+        } else {
+          pricePerPackContainer.innerText = ''
         }
 
         if (qtyNoteContent) {
           document.querySelector('.qty-note-content').innerHTML = qtyNoteContent
+        } else {
+          document.querySelector('.qty-note-content').innerHTML = ''
         }
       }
     },
