@@ -1688,8 +1688,8 @@
                     <a href='javascript:void(0);' class="plus_btn qty_btn"></a>
                   </div>
                 </div>
-               {% if current_variant.metafields.custom.product_quantity_note != blank %}
-                <span class="qty-note-content"> {{ current_variant.metafields.custom.product_quantity_note }} </span>
+               
+                <span class="qty-note-content">{% if current_variant.metafields.custom.product_quantity_note != blank %} {{ current_variant.metafields.custom.product_quantity_note }} {% endif %} </span>
                 {% comment %}                
                   <div class="qty-tooltip-wrap">
                     <div class="qty-tooltip">
@@ -1701,7 +1701,6 @@
                     </div>
                   </div> 
                 {% endcomment %}
-                {% endif %}
                 <div class="qty-tooltip-content">
                   {{ current_variant.metafields.custom.product_quantity_note }}
                 </div> 

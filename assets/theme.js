@@ -8104,30 +8104,27 @@ theme.Product = (function () {
           theme.moneyFormat
         );
       }
+      const newData = await this._updateFormData(variant, evt.detail.form)
+      formData = new FormData(newData)
+      const qtyNoteContent = formData.get('qty_note_content')
 
       // Per Pack
-      if (pricePerPackContainer) {
-        const newData = await this._updateFormData(variant, evt.detail.form)
-        formData = new FormData(newData)
+      const perPackValue = formData.get('per_pack')
+      const incrementValue = formData.get('increment_value')
 
-        const perPackValue = formData.get('per_pack')
-        const incrementValue = formData.get('increment_value')
-        const qtyNoteContent = formData.get('qty_note_content')
+      if(perPackValue && incrementValue) {
+        document.querySelector('.price__per .price_label').innerHTML = `Price per ${perPackValue}:`
+        const formatedPrice = variant.price / 100
+        const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
+        pricePerPackContainer.innerText = '$ ' + prePrice.toFixed(2)
+      } else {
+        pricePerPackContainer.innerText = ''
+      }
 
-        if(perPackValue && incrementValue) {
-          document.querySelector('.price__per .price_label').innerHTML = `Price per ${perPackValue}:`
-          const formatedPrice = variant.price / 100
-          const prePrice = formatedPrice / parseInt(incrementValue) * parseInt(perPackValue)
-          pricePerPackContainer.innerText = '$ ' + prePrice.toFixed(2)
-        } else {
-          pricePerPackContainer.innerText = ''
-        }
-
-        if (qtyNoteContent) {
-          document.querySelector('.qty-note-content').innerHTML = qtyNoteContent
-        } else {
-          document.querySelector('.qty-note-content').innerHTML = ''
-        }
+      if (qtyNoteContent) {
+        document.querySelector('.qty-note-content').innerHTML = qtyNoteContent
+      } else {
+        document.querySelector('.qty-note-content').innerHTML = ''
       }
     },
 
