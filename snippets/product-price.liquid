@@ -84,20 +84,20 @@ if settings.currency_code_enable
 
     </div>
 
-    {% if current_variant.metafields.custom.price_per_pack != blank and current_variant.metafields.custom.product_increment_value != blank %}
-      {% assign price_per = price | money_without_currency | divided_by: current_variant.metafields.custom.product_increment_value | times: current_variant.metafields.custom.price_per_pack | round: 2 %}
       <div class="price__per">
-        <span class="price_label">{{ 'products.product.price_per' | t }} {{ current_variant.metafields.custom.price_per_pack }}:</span>
+        <span class="price_label">{% if current_variant.metafields.custom.price_per_pack != blank %}{{ 'products.product.price_per' | t }} {{ current_variant.metafields.custom.price_per_pack }}:{% endif %}</span>
         <span data-price-per>
-          {% assign decimals = price_per | split: '.' | last | size %}
-          {% if decimals > 1 %}
-            {{ price_per | prepend: '$' }}
-          {% else %}
-            {{ price_per | prepend: '$' | append: 0 }}
+          {% if current_variant.metafields.custom.price_per_pack != blank and current_variant.metafields.custom.product_increment_value != blank %}
+            {% assign price_per = price | money_without_currency | divided_by: current_variant.metafields.custom.product_increment_value | times: current_variant.metafields.custom.price_per_pack | round: 2 %}
+            {% assign decimals = price_per | split: '.' | last | size %}
+            {% if decimals > 1 %}
+              {{ price_per | prepend: '$' }}
+            {% else %}
+              {{ price_per | prepend: '$' | append: 0 }}
+            {% endif %}
           {% endif %}
         </span>
       </div>
-    {% endif %}
     <div class="price__badges">
       <span class="price__badge price__badge--sale" >
         <span>{{ 'products.product.on_sale' | t }}</span>
