@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -27,7 +27,7 @@
         "rte_icon_width": 100,
         "section_title": "Introducing Our New Website: Designed for Efficiency",
         "subtitle": "",
-        "text": "<p>We're excited to launch our redesigned website, optimized for your needs. <\/p><h3>Our goal: to make your experience smoother, faster, and more intuitive.<\/h3>",
+        "text": "<p>We're excited to launch our redesigned website, optimized for your needs. </p><h3>Our goal: to make your experience smoother, faster, and more intuitive.</h3>",
         "text_size": "medium"
       }
     },
@@ -40,7 +40,7 @@
         "rte_icon_width": 100,
         "section_title": "",
         "subtitle": "",
-        "text": "<p><strong>KEY IMPROVEMENTS:<\/strong><\/p><p><strong>Enhanced User Experience<\/strong> <\/p><ul><li>Streamlined navigation<\/li><li>Improved search functionality<\/li><li>Interactive colour swatch for easier selection<\/li><\/ul><p><\/p><p><strong>Simplified Purchasing Process<\/strong> <\/p><ul><li>Responsive, seamless shopping cart<\/li><li>Streamlined checkout for quick, hassle-free transactions<\/li><\/ul><p><\/p><p><strong>Mobile-Friendly Design<\/strong> <\/p><ul><li>Fully responsive across all devices<\/li><li>Consistent functionality on any platform<\/li><\/ul><p><\/p><p><strong>WHATS NEW:<\/strong><\/p><ul><li><strong>Passwordless Login:<\/strong> Access your account with just your email address and a unique code<\/li><li><strong>Interactive Colour Swatch:<\/strong> Automatically filters available sizes when selecting a colour<\/li><li><strong>Detailed Product Information:<\/strong> Improved notes on quantities and pack sizes<\/li><li><strong>Intuitive Navigation:<\/strong> Restructured categories and standardized layout for easier browsing<\/li><\/ul><p><\/p><p>We value your feedback and are committed to continuous improvement. If you have suggestions or need assistance, please contact us at <a href=\"mailto:marketing@totalsupply.co.nz\">marketing@totalsupply.co.nz<\/a>.<\/p><p>Thank you for choosing us. We look forward to serving you better with our enhanced online presence.<\/p>",
+        "text": "<p><strong>KEY IMPROVEMENTS:</strong></p><p><strong>Enhanced User Experience</strong> </p><ul><li>Streamlined navigation</li><li>Improved search functionality</li><li>Interactive colour swatch for easier selection</li></ul><p></p><p><strong>Simplified Purchasing Process</strong> </p><ul><li>Responsive, seamless shopping cart</li><li>Streamlined checkout for quick, hassle-free transactions</li></ul><p></p><p><strong>Mobile-Friendly Design</strong> </p><ul><li>Fully responsive across all devices</li><li>Consistent functionality on any platform</li></ul><p></p><p><strong>WHATS NEW:</strong></p><ul><li><strong>Passwordless Login:</strong> Access your account with just your email address and a unique code</li><li><strong>Interactive Colour Swatch:</strong> Automatically filters available sizes when selecting a colour</li><li><strong>Detailed Product Information:</strong> Improved notes on quantities and pack sizes</li><li><strong>Intuitive Navigation:</strong> Restructured categories and standardized layout for easier browsing</li></ul><p></p><p>We value your feedback and are committed to continuous improvement. If you have suggestions or need assistance, please contact us at <a href=\"mailto:marketing@totalsupply.co.nz\" target=\"_blank\">marketing@spicersnz.co.nz</a>.</p><p>Thank you for choosing us. We look forward to serving you better with our enhanced online presence.</p>",
         "text_size": "medium"
       }
     },
