@@ -18,7 +18,7 @@
             "image": "shopify://shop_images/Home-page-confetti-edit.jpg",
             "mobile_image": "shopify://shop_images/Copy_of_Copy_of_TOTAL_HOME_PAGE_750_x_1428_px_Arlon_GH.png",
             "color_image_overlay": "#000000",
-            "image_overlay_opacity": 40,
+            "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "center top",
             "slide_title": "Print Better. Pack Better. Shop Better!",
