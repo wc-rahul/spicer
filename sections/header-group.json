@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -17,7 +17,7 @@
         "7387d40b-469e-4369-a613-0d11c4b82689": {
           "type": "block",
           "settings": {
-            "content": "<p><strong>Welcome to the all-new Spicers & Universal Packaging e-store!<\/strong><\/p>",
+            "content": "<p><strong>Welcome to the all-new Spicers & Universal Packaging e-store!</strong></p>",
             "link": ""
           }
         },
@@ -25,7 +25,7 @@
           "type": "block",
           "disabled": true,
           "settings": {
-            "content": "<p><strong>Announcement bar text<\/strong><\/p>",
+            "content": "<p><strong>Announcement bar text</strong></p>",
             "link": ""
           }
         }
@@ -63,77 +63,77 @@
           "type": "category_menu",
           "settings": {
             "menu_item": "Commercial Print",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_1.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu_1.png",
             "image_heading": "Digital Print",
-            "image_link": "shopify:\/\/collections\/digital",
+            "image_link": "shopify://collections/digital",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/commercial"
+            "btn_url": "shopify://collections/commercial"
           }
         },
         "3864f932-4cc2-4083-bba3-bb7912280cc2": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Digital Print",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu.png",
             "image_heading": "Commercial Print",
-            "image_link": "shopify:\/\/collections\/commercial",
+            "image_link": "shopify://collections/commercial",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/digital"
+            "btn_url": "shopify://collections/digital"
           }
         },
         "category_menu_UdPJdX": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Graphics",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu.png",
             "image_heading": "Commercial Print",
-            "image_link": "shopify:\/\/collections\/commercial",
+            "image_link": "shopify://collections/commercial",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/graphics"
+            "btn_url": "shopify://collections/graphics"
           }
         },
         "category_menu_DtWNab": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Industrial Packaging",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_300_x_600_px.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu_300_x_600_px.png",
             "image_heading": "Machinery",
-            "image_link": "shopify:\/\/collections\/machinery",
+            "image_link": "shopify://collections/machinery",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/industrial-packaging"
+            "btn_url": "shopify://collections/industrial-packaging"
           }
         },
         "category_menu_cFjP4k": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Machinery",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_8.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu_8.png",
             "image_heading": "Industrial Packaging",
-            "image_link": "shopify:\/\/collections\/industrial-packaging",
+            "image_link": "shopify://collections/industrial-packaging",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/machinery"
+            "btn_url": "shopify://collections/machinery"
           }
         },
         "category_menu_E9tReX": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Office Products",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_3.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu_3.png",
             "image_heading": "Stationery",
-            "image_link": "shopify:\/\/collections\/stationery",
+            "image_link": "shopify://collections/stationery",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/office"
+            "btn_url": "shopify://collections/office"
           }
         },
         "category_menu_UzLtVi": {
           "type": "category_menu",
           "settings": {
             "menu_item": "Labels & Synthetics",
-            "image": "shopify:\/\/shop_images\/Spicers_Web_Category_Mega_Menu_8.png",
+            "image": "shopify://shop_images/Spicers_Web_Category_Mega_Menu_8.png",
             "image_heading": "Industrial Packaging",
-            "image_link": "shopify:\/\/collections\/industrial-packaging",
+            "image_link": "shopify://collections/industrial-packaging",
             "btn_label": "View All",
-            "btn_url": "shopify:\/\/collections\/psa"
+            "btn_url": "shopify://collections/psa"
           }
         }
       },
@@ -154,14 +154,14 @@
         "header_fallback_image_opacity": 30,
         "enable_header_fallback_image": false,
         "show_top_line_separator": false,
-        "logo": "shopify:\/\/shop_images\/Spicers_LOCKUP_RGB_-_Full_Logo_Lockup.jpg",
-        "alternate_logo": "shopify:\/\/shop_images\/Spicers_LOCKUP_RGB_-_Full_Logo_Lockup.jpg",
+        "logo": "shopify://shop_images/Spicers_LOCKUP_RGB_-_Full_Logo_Lockup.jpg",
+        "alternate_logo": "shopify://shop_images/Spicers_LOCKUP_RGB_-_Full_Logo_Lockup.jpg",
         "logo_max_width": 170,
         "main_linklist": "main-menu",
         "right_linklist": "",
         "mobile_main_linklist": "main-menu",
         "btn_label": "View All",
-        "btn_url": "#",
+        "btn_url": "shopify://collections/all",
         "main_linklist_style": "none",
         "email_text": "sales@spicersnz.co.nz",
         "phone_number": "0800 774 237",
