@@ -46,7 +46,7 @@
     "type_menu_font": "madera_n8",
     "type_menu_base_size": 16,
     "show_entry_popup": true,
-    "popup_delay": 6,
+    "popup_delay": 2,
     "popup_return": "7",
     "entry_popup_heading": "Welcome to our new site!",
     "entry_popup_top_text": "<p>If this is your first time here, you'll notice a few upgrades to the sign in process... <em>like no more passwords!!</em></p><p>Simply enter the email address assigned to your Account and you'll be in! If you run into any troubles, can't see your pricing or company details, please let us know and will get straight onto it.</p><p><strong>We also recommend Logging In before browsing so everything is ready to go!</strong></p><p>For assistance, please contact us on <a href=\"tel:0800774237\">0800 774 237</a> or sales@spicersnz.co.nz</p>",
