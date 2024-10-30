@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "alternateHeader_bg_color": "#ffffff",
@@ -45,18 +45,18 @@
     "type_base_size": 16,
     "type_menu_font": "madera_n8",
     "type_menu_base_size": 16,
-    "show_entry_popup": false,
-    "popup_delay": 3,
-    "popup_return": "2000",
+    "show_entry_popup": true,
+    "popup_delay": 6,
+    "popup_return": "7",
     "entry_popup_heading": "Welcome to our new site!",
-    "entry_popup_top_text": "<p>If this is your first time shopping with us and you have an existing account, please give us a quick call to ensure you're all set to go!<\/p><p>Freecall: 0800 800 668<\/p>",
-    "popup_logo": "shopify:\/\/shop_images\/business-dog-paws-on-keyboard.jpg",
+    "entry_popup_top_text": "<p>If this is your first time here, you'll notice a few upgrades to the sign in process... <em>like no more passwords!!</em></p><p>Simply enter the email address assigned to your Account and you'll be in! If you run into any troubles, can't see your pricing or company details, please let us know and will get straight onto it.</p><p><strong>We also recommend Logging In before browsing so everything is ready to go!</strong></p><p>For assistance, please contact us on <a href=\"tel:0800774237\">0800 774 237</a> or sales@spicersnz.co.nz</p>",
+    "popup_logo": "shopify://shop_images/Copy_of_NEW_WEBSITE.png",
     "popup_image_position": "left",
     "entry_popup_newsletter": false,
     "entry_popup_showFormLabels": true,
     "entry_popup_social": false,
     "enable_cookie_popup": false,
-    "cookie_popup_content": "<p>This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.<\/p>",
+    "cookie_popup_content": "<p>This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.</p>",
     "cart_type": "drawer",
     "header_cart_icon_style": "basket",
     "show_header_cart_subtotal": true,
@@ -87,24 +87,24 @@
     "custom_price0_text": "Free",
     "hide_price0_box_and_button": false,
     "author_name_1": "Spicers NZ",
-    "author_logo_1": "shopify:\/\/shop_images\/t4.jpg",
+    "author_logo_1": "shopify://shop_images/t4.jpg",
     "author_biography_1": "",
     "author_name_2": "",
-    "author_logo_2": "shopify:\/\/shop_images\/t6.jpg",
+    "author_logo_2": "shopify://shop_images/t6.jpg",
     "author_biography_2": "",
     "share_facebook": false,
     "share_twitter": false,
     "share_pinterest": false,
-    "social_twitter_link": "https:\/\/nz.linkedin.com\/company\/spicers-nz-limited",
-    "social_facebook_link": "https:\/\/www.facebook.com\/SpicersNZLimited\/",
+    "social_twitter_link": "https://nz.linkedin.com/company/spicers-nz-limited",
+    "social_facebook_link": "https://www.facebook.com/SpicersNZLimited/",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/spicersnz\/",
+    "social_instagram_link": "https://www.instagram.com/spicersnz/",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "currency_code_enable": false,
-    "favicon": "shopify:\/\/shop_images\/Icon.png",
+    "favicon": "shopify://shop_images/Icon.png",
     "customer_image_overlay_color": "#000000",
     "show_customer_breadcrumbs": true,
     "blog_show_author": true,
@@ -123,7 +123,7 @@
     ],
     "blocks": {
       "4139971114690857691": {
-        "type": "shopify:\/\/apps\/wishlist-king\/blocks\/wishlist-button-collection\/194f5011-a43c-4b22-b12e-eaf20dc4506a",
+        "type": "shopify://apps/wishlist-king/blocks/wishlist-button-collection/194f5011-a43c-4b22-b12e-eaf20dc4506a",
         "disabled": true,
         "settings": {
           "button_style": "plain_accent_1",
@@ -143,7 +143,7 @@
         }
       },
       "14197025361042770389": {
-        "type": "shopify:\/\/apps\/wishlist-king\/blocks\/app-settings-main\/194f5011-a43c-4b22-b12e-eaf20dc4506a",
+        "type": "shopify://apps/wishlist-king/blocks/app-settings-main/194f5011-a43c-4b22-b12e-eaf20dc4506a",
         "disabled": true,
         "settings": {
           "theme_preset": "pursuit",
@@ -167,12 +167,12 @@
           "font_text_scale": 100,
           "access_mode": "UNRESTRICTED",
           "wishlist_mode": "PRODUCT",
-          "wishlist_path": "\/apps\/wishlist",
+          "wishlist_path": "/apps/wishlist",
           "money_show_currency_code": true
         }
       },
       "3915993389370480168": {
-        "type": "shopify:\/\/apps\/wishlist-king\/blocks\/wishlist-link-floating\/194f5011-a43c-4b22-b12e-eaf20dc4506a",
+        "type": "shopify://apps/wishlist-king/blocks/wishlist-link-floating/194f5011-a43c-4b22-b12e-eaf20dc4506a",
         "disabled": true,
         "settings": {
           "button_style": "solid_accent_2",
@@ -196,18 +196,18 @@
         }
       },
       "13655089695959051254": {
-        "type": "shopify:\/\/apps\/wishlist-king\/blocks\/code-access\/194f5011-a43c-4b22-b12e-eaf20dc4506a",
+        "type": "shopify://apps/wishlist-king/blocks/code-access/194f5011-a43c-4b22-b12e-eaf20dc4506a",
         "disabled": true,
         "settings": {
           "version": "main"
         }
       },
       "6680288666557934739": {
-        "type": "shopify:\/\/apps\/wishlist-king\/blocks\/wishlist-page\/194f5011-a43c-4b22-b12e-eaf20dc4506a",
+        "type": "shopify://apps/wishlist-king/blocks/wishlist-page/194f5011-a43c-4b22-b12e-eaf20dc4506a",
         "disabled": true,
         "settings": {
           "column_width": "md",
-          "wishlist_empty_link": "shopify:\/\/collections\/all",
+          "wishlist_empty_link": "shopify://collections/all",
           "page_max_width": 1200,
           "page_padding_top": 30,
           "page_padding_bottom": 80,
@@ -220,7 +220,7 @@
           "cta_button": "add_to_cart",
           "cta_button_style": "solid_accent_2",
           "alignment": "center",
-          "image_aspect_ratio": "1\/1",
+          "image_aspect_ratio": "1/1",
           "image_object_fit": "cover",
           "show_vendor": false,
           "show_product_title": true,
@@ -229,14 +229,14 @@
         }
       },
       "10605408327587305396": {
-        "type": "shopify:\/\/apps\/eg-auto-add-to-cart\/blocks\/app-embed\/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
+        "type": "shopify://apps/eg-auto-add-to-cart/blocks/app-embed/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
         "disabled": false,
         "settings": {
           "version": "v3"
         }
       },
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {
         }
@@ -278,13 +278,13 @@
       "popup_delay": 0,
       "popup_return": "7",
       "entry_popup_heading": "Be the first to know...",
-      "entry_popup_top_text": "<p>Sign up for our newsletter to receive exclusive offers and coupons.<\/p>",
-      "popup_logo": "shopify:\/\/shop_images\/footer-bg.jpg",
+      "entry_popup_top_text": "<p>Sign up for our newsletter to receive exclusive offers and coupons.</p>",
+      "popup_logo": "shopify://shop_images/footer-bg.jpg",
       "popup_image_position": "right",
       "entry_popup_newsletter": true,
       "entry_popup_social": true,
       "enable_cookie_popup": false,
-      "cookie_popup_content": "<p>This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.<\/p>",
+      "cookie_popup_content": "<p>This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.</p>",
       "cart_type": "drawer",
       "header_cart_icon_style": "basket",
       "show_header_cart_subtotal": true,
@@ -310,19 +310,19 @@
       "custom_price0_text": "Free",
       "hide_price0_box_and_button": false,
       "author_name_1": "",
-      "author_logo_1": "shopify:\/\/shop_images\/t4.jpg",
+      "author_logo_1": "shopify://shop_images/t4.jpg",
       "author_biography_1": "",
       "author_name_2": "",
-      "author_logo_2": "shopify:\/\/shop_images\/t6.jpg",
+      "author_logo_2": "shopify://shop_images/t6.jpg",
       "author_biography_2": "",
-      "social_twitter_link": "https:\/\/twitter.com\/shopify",
-      "social_facebook_link": "https:\/\/facebook.com\/shopify",
-      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
-      "social_instagram_link": "http:\/\/instagram.com\/shopify",
-      "social_tumblr_link": "http:\/\/shopify.tumblr.com",
-      "social_snapchat_link": "https:\/\/www.snapchat.com\/add\/shopify",
-      "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
-      "social_vimeo_link": "https:\/\/vimeo.com\/shopify",
+      "social_twitter_link": "https://twitter.com/shopify",
+      "social_facebook_link": "https://facebook.com/shopify",
+      "social_pinterest_link": "https://pinterest.com/shopify",
+      "social_instagram_link": "http://instagram.com/shopify",
+      "social_tumblr_link": "http://shopify.tumblr.com",
+      "social_snapchat_link": "https://www.snapchat.com/add/shopify",
+      "social_youtube_link": "https://www.youtube.com/shopify",
+      "social_vimeo_link": "https://vimeo.com/shopify",
       "currency_code_enable": false,
       "customer_image_overlay_color": "#000",
       "show_customer_breadcrumbs": true,
@@ -335,11 +335,11 @@
       "popup_delay": 3,
       "popup_return": "7",
       "entry_popup_heading": "Adventure awaits!",
-      "entry_popup_top_text": "<p>Sign up for our newsletter in order to receive exclusive coupons and special offers.<\/p>",
-      "popup_logo": "shopify:\/\/shop_images\/entry-popup.jpg",
+      "entry_popup_top_text": "<p>Sign up for our newsletter in order to receive exclusive coupons and special offers.</p>",
+      "popup_logo": "shopify://shop_images/entry-popup.jpg",
       "popup_image_position": "left",
       "enable_cookie_popup": false,
-      "cookie_popup_content": "<p>Cookie Popup Content<\/p>",
+      "cookie_popup_content": "<p>Cookie Popup Content</p>",
       "custom_price0_text": "Free",
       "hide_price0_box_and_button": false,
       "hide_prices": false,
@@ -383,14 +383,14 @@
       "empty_cart_featured_collection_1": "apparel",
       "empty_cart_featured_collection_2": "bike-helmets",
       "empty_cart_featured_collection_3": "goggles",
-      "social_twitter_link": "https:\/\/twitter.com\/shopify",
-      "social_facebook_link": "https:\/\/facebook.com\/shopify",
-      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
-      "social_instagram_link": "http:\/\/instagram.com\/shopify",
-      "social_tumblr_link": "http:\/\/shopify.tumblr.com",
-      "social_snapchat_link": "https:\/\/www.snapchat.com\/add\/shopify",
-      "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
-      "social_vimeo_link": "https:\/\/vimeo.com\/shopify",
+      "social_twitter_link": "https://twitter.com/shopify",
+      "social_facebook_link": "https://facebook.com/shopify",
+      "social_pinterest_link": "https://pinterest.com/shopify",
+      "social_instagram_link": "http://instagram.com/shopify",
+      "social_tumblr_link": "http://shopify.tumblr.com",
+      "social_snapchat_link": "https://www.snapchat.com/add/shopify",
+      "social_youtube_link": "https://www.youtube.com/shopify",
+      "social_vimeo_link": "https://vimeo.com/shopify",
       "discount_mode": "percentage",
       "align_height": true,
       "collection_height": 200,
@@ -436,10 +436,10 @@
       "show_entry_popup": true,
       "popup_delay": 3,
       "popup_return": "7",
-      "entry_popup_top_text": "<p>Description<\/p>",
+      "entry_popup_top_text": "<p>Description</p>",
       "popup_image_position": "left",
       "enable_cookie_popup": false,
-      "cookie_popup_content": "<p>Cookie Popup Content<\/p>",
+      "cookie_popup_content": "<p>Cookie Popup Content</p>",
       "cart_type": "drawer",
       "header_cart_icon_style": "cart",
       "show_header_cart_subtotal": false,
@@ -459,14 +459,14 @@
       "hide_cart_icon": false,
       "custom_price0_text": "Free",
       "hide_price0_box_and_button": false,
-      "social_twitter_link": "https:\/\/twitter.com\/shopify",
-      "social_facebook_link": "https:\/\/facebook.com\/shopify",
-      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
-      "social_instagram_link": "http:\/\/instagram.com\/shopify",
-      "social_tumblr_link": "http:\/\/shopify.tumblr.com",
-      "social_snapchat_link": "https:\/\/www.snapchat.com\/add\/shopify",
-      "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
-      "social_vimeo_link": "https:\/\/vimeo.com\/shopify",
+      "social_twitter_link": "https://twitter.com/shopify",
+      "social_facebook_link": "https://facebook.com/shopify",
+      "social_pinterest_link": "https://pinterest.com/shopify",
+      "social_instagram_link": "http://instagram.com/shopify",
+      "social_tumblr_link": "http://shopify.tumblr.com",
+      "social_snapchat_link": "https://www.snapchat.com/add/shopify",
+      "social_youtube_link": "https://www.youtube.com/shopify",
+      "social_vimeo_link": "https://vimeo.com/shopify",
       "cookie_popup_heading": "Cookie Popup Heading",
       "show_vendor": true,
       "enable_ajax": true
