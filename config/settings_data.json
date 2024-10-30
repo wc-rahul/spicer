@@ -53,7 +53,7 @@
     "popup_logo": "shopify://shop_images/Copy_of_NEW_WEBSITE.jpg",
     "popup_image_position": "left",
     "entry_popup_newsletter": false,
-    "entry_popup_showFormLabels": true,
+    "entry_popup_showFormLabels": false,
     "entry_popup_social": false,
     "enable_cookie_popup": false,
     "cookie_popup_content": "<p>This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.This site uses cookies to enhance user experience.</p>",
