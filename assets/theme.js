@@ -7212,10 +7212,10 @@ theme.Product = (function () {
         }
       }
 
-      var selector = parentForm.querySelector(".single-option-selector");
-      if (selector) {
-        selector.dispatchEvent(new Event("change", { bubbles: true }));
-      }
+      // var selector = parentForm.querySelector(".single-option-selector");
+      // if (selector) {
+      //   selector.dispatchEvent(new Event("change", { bubbles: true }));
+      // }
 
       if (_this.productData.options.length == 1) {
         for (var v = 0; v < _this.productData.variants.length; v++) {
