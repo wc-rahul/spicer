@@ -37,7 +37,7 @@
           "type": "question",
           "settings": {
             "question": "How can I open a trading Account?",
-            "answer": "<p>Opening an account with us is simple! Just get in touch with our Accounts department and we'll send you over an Application Form - accounts@spicersnz.co.nz</p>"
+            "answer": "<p>Opening an account with us is simple! Just get in touch with our Accounts department and we'll send you over an Application Form - <a href=\"mailto:accounts@spicersnz.co.nz\" title=\"mailto:accounts@spicersnz.co.nz\">accounts@spicersnz.co.nz</a></p>"
           }
         },
         "943f91fa-624f-45f0-830e-8b0b43af26ce": {
