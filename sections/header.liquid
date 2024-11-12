@@ -1676,7 +1676,7 @@
                           </li>
                         {% endfor %}
                         <li class="mob-menu-btn">
-                          <a href="{{ section.settings.btn_url }}" class="mobile-menu-btn btn btn--tertiary">
+                          <a href="{{ link.url | absolute_url }}" class="mobile-menu-btn btn btn--tertiary">
                            <span> {{ section.settings.btn_label }}</span>
                             <span>{% include 'icon' with 'tail-right' %}</span>
                           </a>
@@ -1685,8 +1685,7 @@
                     {% else %}
                       <a href="{{ link.url }}"
                         class="mobile-nav__sublist-link"
-                        {% if link.current %} aria-current="page"{% endif %}
-                      >
+                        {% if link.current %} aria-current="page"{% endif %} >
                         <span class="mobile-nav__label">{{ link.title | escape }}</span>
                       </a>
                     {% endif %}
@@ -2109,11 +2108,6 @@
       "id": "btn_label",
       "label": "Button Label",
       "default": "View All"
-    },
-    {
-      "type": "url",
-      "id": "btn_url",
-      "label": "Button URL"
     },
       {
         "type":"select",
