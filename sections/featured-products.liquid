@@ -314,11 +314,10 @@
   "wrapAround": true,
   "dragThreshold": 15,
 	"watchCSS": false,
- "cellAlign": "left",
+  "cellAlign": "left",
   "pauseAutoPlayOnHover": true,
   "autoPlay": {% if section.settings.enable_autoplay %}{{ section.settings.cycle_speed | times: 1000 }}{% else %}false{% endif %},
-  "pageDots": {% if section.settings.show_dots %}true{% else %}false{% endif %},
-	"groupCells": {{products_per_row}}
+  "pageDots": {% if section.settings.show_dots %}true{% else %}false{% endif %}
 }
 {%- endcapture -%}
 
