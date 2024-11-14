@@ -36,7 +36,7 @@
     "color_body_bg": "#f7f7f7",
     "product_label_sale_color": "#003da6",
     "product_label_2_color": "#000000",
-    "menu": "",
+    "menu": "shop-by-category",
     "type_header_font": "madera_n8",
     "type_header_base_size": 34,
     "type_header_letterSpacing": 2,
@@ -118,9 +118,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "4139971114690857691": {
         "type": "shopify://apps/wishlist-king/blocks/wishlist-button-collection/194f5011-a43c-4b22-b12e-eaf20dc4506a",
@@ -238,8 +236,7 @@
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   },
