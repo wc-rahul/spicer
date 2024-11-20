@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -40,8 +40,8 @@
           "type": "block",
           "settings": {
             "heading": "Nathan Pene",
-            "content": "<p>General Manager - Spicers Paper<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot7_Nathan.jpg",
+            "content": "<p>General Manager - Spicers Paper</p>",
+            "image": "shopify://shop_images/Headshot7_Nathan.jpg",
             "url": ""
           }
         },
@@ -49,8 +49,8 @@
           "type": "block",
           "settings": {
             "heading": "Steve Edmonds",
-            "content": "<p>Regional Manager - Wellington<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Steve.jpg",
+            "content": "<p>Regional Manager - Wellington</p>",
+            "image": "shopify://shop_images/Headshot_Steve.jpg",
             "url": ""
           }
         },
@@ -58,8 +58,8 @@
           "type": "block",
           "settings": {
             "heading": "Greg Quirke",
-            "content": "<p>Regional Manager - South Island<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Greg.jpg",
+            "content": "<p>Regional Manager - South Island</p>",
+            "image": "shopify://shop_images/Headshot_Greg.jpg",
             "url": ""
           }
         },
@@ -67,8 +67,8 @@
           "type": "block",
           "settings": {
             "heading": "Andrew Jackson",
-            "content": "<p>National Sales Manager & Category Manager - Commercial Print<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Andrew.jpg",
+            "content": "<p>National Sales Manager & Category Manager - Commercial Print</p>",
+            "image": "shopify://shop_images/Headshot_Andrew.jpg",
             "url": ""
           }
         }
@@ -94,8 +94,8 @@
           "type": "block",
           "settings": {
             "heading": "Brooke Painter",
-            "content": "<p>Category Manager - Digital Print<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot4_Brooke.jpg",
+            "content": "<p>Category Manager - Digital Print</p>",
+            "image": "shopify://shop_images/Headshot4_Brooke.jpg",
             "url": ""
           }
         },
@@ -103,8 +103,8 @@
           "type": "block",
           "settings": {
             "heading": "David White",
-            "content": "<p>Category Manager - Labels & Synthetic<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot5_David.jpg",
+            "content": "<p>Category Manager - Labels & Synthetic</p>",
+            "image": "shopify://shop_images/Headshot5_David.jpg",
             "url": ""
           }
         },
@@ -112,17 +112,17 @@
           "type": "block",
           "settings": {
             "heading": "Leigh Burton",
-            "content": "<p>Category Manager - Office Papers<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Leigh.jpg",
+            "content": "<p>Category Manager - Office Papers</p>",
+            "image": "shopify://shop_images/Headshot_Leigh.jpg",
             "url": ""
           }
         },
         "block_gkBN46": {
           "type": "block",
           "settings": {
-            "heading": "Mark Longley",
-            "content": "<p>Category Manager - Retail Packaging<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Mark.jpg",
+            "heading": "Daniel Jones",
+            "content": "<p>Category Manager - Packaging</p>",
+            "image": "shopify://shop_images/Headshot_Daniel.jpg",
             "url": ""
           }
         }
@@ -148,8 +148,8 @@
           "type": "block",
           "settings": {
             "heading": "Kerry Richmond",
-            "content": "<p>Account Manager - Wellington<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Kerry.jpg",
+            "content": "<p>Account Manager - Wellington</p>",
+            "image": "shopify://shop_images/Headshot_Kerry.jpg",
             "url": ""
           }
         },
@@ -157,8 +157,8 @@
           "type": "block",
           "settings": {
             "heading": "Nigel Williams",
-            "content": "<p>Account Manager - South Island<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Nigel.jpg",
+            "content": "<p>Account Manager - South Island</p>",
+            "image": "shopify://shop_images/Headshot_Nigel.jpg",
             "url": ""
           }
         },
@@ -166,8 +166,8 @@
           "type": "block",
           "settings": {
             "heading": "Kayden Wilson",
-            "content": "<p>Sales Representative<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot6_Kayden.jpg",
+            "content": "<p>Sales Representative</p>",
+            "image": "shopify://shop_images/Headshot6_Kayden.jpg",
             "url": ""
           }
         },
@@ -175,8 +175,8 @@
           "type": "block",
           "settings": {
             "heading": "Jamie Low",
-            "content": "<p>Account Manager<\/p>",
-            "image": "shopify:\/\/shop_images\/Headshot_Jamie.jpg",
+            "content": "<p>Account Manager</p>",
+            "image": "shopify://shop_images/Headshot_Jamie.jpg",
             "url": ""
           }
         }
