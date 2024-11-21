@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -27,7 +27,7 @@
         "rte_icon_width": 30,
         "section_title": "Need to Contact Us?",
         "subtitle": "",
-        "text": "<p>Phone: (09) 925 3000 or Freephone 0800 774 237<br\/>Facsimile: (09) 925 3005<\/p><p>Email: <a href=\"mailto:sales@spicersnz.co.nz\" target=\"_blank\" title=\"mailto:sales@spicersnz.co.nz\">sales@spicersnz.co.nz<\/a><\/p>",
+        "text": "<p>Phone: (09) 925 3000 or Freephone 0800 774 237<br/>Facsimile: (09) 925 3005</p><p>Email: <a href=\"mailto:sales@spicersnz.co.nz\" target=\"_blank\" title=\"mailto:sales@spicersnz.co.nz\">sales@spicersnz.co.nz</a></p><p>For Credit Application Forms and Account Enquiries, please email accounts@spicersnz.co.nz</p>",
         "text_size": "medium"
       }
     },
@@ -53,17 +53,17 @@
           "type": "block",
           "settings": {
             "heading": "Auckland",
-            "content": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161 <br\/>New Zealand<\/p>",
-            "image": "shopify:\/\/shop_images\/Auckland_Spicers_9feceb40-fa69-4844-bf3f-e6914c8ff6e2.png",
-            "url": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9308924,174.8653811,16z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
+            "content": "<p>1 Lady Fisher Place<br/>East Tamaki, Auckland<br/>New Zealand<br/><br/>PO Box 204 328<br/>Highbrook, Manukau 2161 <br/>New Zealand</p>",
+            "image": "shopify://shop_images/Auckland_Spicers_9feceb40-fa69-4844-bf3f-e6914c8ff6e2.png",
+            "url": "https://www.google.com/maps/dir//1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013/@-36.9308924,174.8653811,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
           }
         },
         "block_GFpAMa": {
           "type": "block",
           "settings": {
             "heading": "Palmerston North",
-            "content": "<p>142 Benmore Avenue<br\/>Cloverlea, Palmerston North<br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
-            "image": "shopify:\/\/shop_images\/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
+            "content": "<p>142 Benmore Avenue<br/>Cloverlea, Palmerston North<br/>New Zealand<br/><br/>PO Box 1320<br/>Palmerston North 4440<br/>New Zealand</p>",
+            "image": "shopify://shop_images/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
             "url": ""
           }
         },
@@ -71,18 +71,18 @@
           "type": "block",
           "settings": {
             "heading": "Wellington",
-            "content": "<p>Unilever Buildings 4 & 5<br\/>480 Jackson Street<br\/>Petone,Wellington<br\/>New Zealand<\/p>",
-            "image": "shopify:\/\/shop_images\/Spicers_Wellington.png",
-            "url": "https:\/\/www.google.com\/maps\/dir\/\/480+Jackson+Street,+Petone,+Lower+Hutt\/@-41.2303359,174.8115591,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d38abca32f2aa25:0xa8106ab1496f2f26!2m2!1d174.8939605!2d-41.2304944?entry=ttu"
+            "content": "<p>Unilever Buildings 4 & 5<br/>480 Jackson Street<br/>Petone,Wellington<br/>New Zealand</p>",
+            "image": "shopify://shop_images/Spicers_Wellington.png",
+            "url": "https://www.google.com/maps/dir//480+Jackson+Street,+Petone,+Lower+Hutt/@-41.2303359,174.8115591,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d38abca32f2aa25:0xa8106ab1496f2f26!2m2!1d174.8939605!2d-41.2304944?entry=ttu"
           }
         },
         "block_HkGXVL": {
           "type": "block",
           "settings": {
             "heading": "Christchurch",
-            "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
-            "image": "shopify:\/\/shop_images\/Christchurch_Spicers.png",
-            "url": "https:\/\/www.google.com\/maps\/dir\/\/Spicers+Christchurch+Hayton+Road,+Wigram,+Christchurch\/@-43.5517643,172.5669332,17.32z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d32200731c5c8b9:0x3a3e4e3be7a17b2!2m2!1d172.5678513!2d-43.551433?entry=ttu"
+            "content": "<p>137 Hayton Road<br/>Wigram, Christchurch<br/>New Zealand<br/><br/>PO Box 832<br/>Christchurch Mail Centre, Christchurch 8140<br/>New Zealand</p>",
+            "image": "shopify://shop_images/Christchurch_Spicers.png",
+            "url": "https://www.google.com/maps/dir//Spicers+Christchurch+Hayton+Road,+Wigram,+Christchurch/@-43.5517643,172.5669332,17.32z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d32200731c5c8b9:0x3a3e4e3be7a17b2!2m2!1d172.5678513!2d-43.551433?entry=ttu"
           }
         }
       },
@@ -135,7 +135,7 @@
         "bg_image_opacity": 70,
         "section_title": "Contact Us",
         "subtitle": "",
-        "subheading": "<p>Please fill out the form below and we’ll get back to you within 24 hours.<\/p>",
+        "subheading": "<p>Please fill out the form below and we’ll get back to you within 24 hours.</p>",
         "button_style": "primary"
       }
     },
