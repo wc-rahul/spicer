@@ -45,7 +45,7 @@
     "type_base_size": 16,
     "type_menu_font": "madera_n8",
     "type_menu_base_size": 16,
-    "show_entry_popup": true,
+    "show_entry_popup": false,
     "popup_delay": 2,
     "popup_return": "7",
     "entry_popup_heading": "Welcome to our new site!",
