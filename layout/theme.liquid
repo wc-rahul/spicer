@@ -249,7 +249,8 @@
     }
   </script>
 
-  {{ content_for_header }}
+  {% if false %}{{ content_for_header }}{% endif %}
+  {% render 'content-for-header' %}
 </head>
 
 <body class="template-{{ request.page_type | handle }} {% if settings.hide_cart_icon %} hide_cart_icon {% endif %} {% if settings.hide_cart_buttons %} hide_cart_buttons {% endif %} {% if settings.hide_prices %} hide_prices {% endif %} ">
