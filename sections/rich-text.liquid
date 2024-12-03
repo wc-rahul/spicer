@@ -6,7 +6,7 @@
 {% assign section_color = section.settings.section_color %}
 
 <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="rich-text" class="fade-in-animation">
-  <div class='rich-text ' {% if bg_color != blank or  bg_color != 'rgba(0,0,0,0)' %}style='background-color: {{bg_color}}; {% endif %}'>
+  <div class="rich-text" {% if bg_color != blank or bg_color != 'rgba(0,0,0,0)' %}style="background-color: {{bg_color}};" {% endif %}>
 
     <style>
       {% if section_color != blank %}

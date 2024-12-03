@@ -1136,15 +1136,13 @@
                   <ul>
                     
                     {% if customer %}
-                    <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
-                    {% comment %} <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>{{ 'customer.account.address_book' | t
-                        }}</a></li> {% endcomment %}
-                    <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>    
-                    <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
-                    <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+                      <li><a rel="nofollow" href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
+                      <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>
+                      <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
+                      <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
                     {% else %}
-                    <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
-                    <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+                      <li><a rel="nofollow" href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
+                      <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
                     {% endif %}
                   </ul>
                 </div>
@@ -1416,15 +1414,13 @@
                       <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered critical-hidden customer_nav_dropdown" id="Customer_nav_dropdown">
                         <ul>
                           {% if customer %}
-                          <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
-                          {% comment %} <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>{{ 'customer.account.address_book' | t
-                              }}</a></li> {% endcomment %}
-                          <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>    
-                          <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
-                          <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+                            <li><a rel="nofollow" href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
+                            <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>
+                            <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
+                            <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
                           {% else %}
-                          <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
-                          <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+                            <li><a rel="nofollow" href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
+                            <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
                           {% endif %}
                         </ul>
                       </div>
@@ -1473,15 +1469,13 @@
                       <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered critical-hidden customer_nav_dropdown" id="Customer_nav_dropdown">
                         <ul>
                           {% if customer %}
-                          <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
-                          {% comment %} <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>{{ 'customer.account.address_book' | t
-                              }}</a></li> {% endcomment %}
-                          <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>    
-                          <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
-                          <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+                          <li><a rel="nofollow" href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
+                            <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>
+                            <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
+                            <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
                           {% else %}
-                          <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
-                          <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+                            <li><a rel="nofollow" href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
+                            <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
                           {% endif %}
                         </ul>
                       </div>
@@ -1787,17 +1781,16 @@
       	
         {% if shop.customer_accounts_enabled %}
         <div class='mobile-nav-footer-block'>
-          <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="site-header__account">
+          <a rel="nofollow" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="site-header__account">
             {% include 'icon-login' %}
             {% if customer %}
               {% if customer.name != blank %}
                 <span>{{ customer.name }}</span>
               {% else %}
                 <span>My Account</span>
-              {% endif %}  
-
+              {% endif %}
             {% else %}
-            <span>{{ 'layout.customer.log_in' | t }}</span>
+              <span>{{ 'layout.customer.log_in' | t }}</span>
             {% endif %}
           </a>
         </div>
