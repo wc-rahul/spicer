@@ -71,7 +71,7 @@
 <div id="AjaxinatePagination" {% if pagination_mode == 'scroll' %} hidden {% endif %}>
   {% if paginate.next %}
   <center>
-    <a class='btn btn--secondary' href="{{ paginate.next.url }}">
+        <a class='btn btn--secondary' href="{{ paginate.next.url | remove: '?page=1' }}">
       <span>{{ 'general.pagination.load_more' | t }}</span>
     </a>
   </center>
@@ -81,43 +81,36 @@
 <div class="paginate-wrap">
   <div class="product-viewed">You’ve viewed {{ paginate.current_offset | plus:limit }} of {{ collection.all_products_count }} products</div>
   <ol class="list--inline pagination">
-    {%- if paginate.previous-%}
+      {% if paginate.previous %}
     <li >
-      <a class="prev-btn" href="{{ paginate.previous.url }}">
+          <a class="prev-btn" href="{{ paginate.previous.url | remove: '?page=1' }}">
         {% render 'icon' with 'chevron-left' %}
-        {% comment %} {{ 'general.pagination.previous' | t }} {% endcomment %}
       </a>
     </li>   
-    {%- endif -%}
+      {% endif %}
 
+      {% for part in paginate.parts %}
+      <li>
+          {% if part.is_link %}
+            <a href="{{ part.url | remove: '?page=1' }}">
+          <span class="visuallyhidden">page</span> {{ part.title }}
+        </a>
+          {% else %}
+            {% if part.title == paginate.current_page %}
+              <span class="active" aria-current="page">{{ part.title }}</span>
+            {% else %}
+              <span>{{ part.title }}</span>
+            {% endif %}
+          {% endif %}
+    </li>
+      {% endfor %}
 
-    {%- for part in paginate.parts -%}
-    {%- if part.is_link -%}
-    <li>
-      <a href="{{ part.url }}">
-        <span class="visuallyhidden">page</span> {{ part.title }}
-      </a>
-    </li>
-    {%- else -%}
-    {%- if part.title == paginate.current_page -%}
-    <li class="active" aria-current="page">
-      {{ part.title }}
-    </li>
-    {%- else -%}
-    <li>
-      {{ part.title }}
-    </li>
-    {%- endif -%}
-    {%- endif -%}
-    {%- endfor -%}
-
-    {%- if paginate.next -%}
+      {% if paginate.next %}
     <li >
-      <a class="next-btn" href="{{ paginate.next.url }}">
-        {% comment %} {{ 'general.pagination.next' | t }} {% endcomment %}
+          <a class="next-btn" href="{{ paginate.next.url | remove: '?page=1' }}">
         {% render 'icon' with 'chevron-right' %}            </a>
     </li>
-    {%- endif -%}
+      {% endif %}
   </ol>
 </div>
 {% endif %}
