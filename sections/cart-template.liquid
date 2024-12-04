@@ -1,16 +1,14 @@
 {%- capture section_settings -%}
-{
-"type": {{ settings.cart_type | json }},
-"itemCount": {{ cart.item_count }},
-"totalPrice": {{ cart.total_price }},
-"drawer": true,
-"hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
-}
+  {
+    "type": {{ settings.cart_type | json }},
+    "itemCount": {{ cart.item_count }},
+    "totalPrice": {{ cart.total_price }},
+    "drawer": true,
+    "hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
+  }
 {%- endcapture -%}
 
-
 <link rel="stylesheet" href="{{ 'cart-page.css' | asset_url }}" type="text/css">
-
 
 <div>
   {% assign banner_image = section.settings.image %}
@@ -25,7 +23,6 @@
 
 
   <div class="page-width" data-section-id="{{ section.id }}" data-section-type="cart-template"  data-section-settings='{{ section_settings }}'>
-
     <div class="PageContent {% if cart.item_count == 0 %} hide{% endif %}" >
 
       <form action="{{ routes.cart_url }}" method="post" novalidate class="Cart">
@@ -36,60 +33,57 @@
           <div class="cart__footer">
             <div class='grid'>
               {%- if settings.cart_notes_enable -%}
-              <div class='grid__item medium-up--one-half'>
-                <div class='cart__block'>
-                  <div class='cart_block__title h6'>
-                    <span>{{ 'cart.general.note' | t }}</span>
-                  </div>
-                  <div class='cart_block__content'>
-                    <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes placeholder='{{ "cart.general.note_placeholder" | t }}'>{{ cart.note }}</textarea>
-                    <button type="button" class="CartSpecialInstructionsSubmit btn btn-gray">{{ 'cart.general.add_note' | t }}</button>
-
-                  </div>
-                </div>
-              </div>
-              {%- endif -%}
-
-
-              {%- if section.settings.show_shipping_estimator -%}
-              <div class='grid__item medium-up--one-half'>
-                <div class='cart__block'>
-                  <div class='cart_block__title h6'>
-                    <span>{{ 'cart.shipping_estimator.title' | t }}</span>
-                  </div>
-                  <div class='cart_block__content'>
-
-
-                    <div class="ShippingEstimator__Form">
-                      <div class="ShippingEstimator__Country Form__Select ShippingEstimator__Field">
-                        {%- render 'icon' with 'select-arrow' -%}
-                        <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}"
-                                data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">
-                          {{ all_country_option_tags }}
-                        </select>
-                      </div>
-
-                      <input type="text" class="ShippingEstimator__City ShippingEstimator__Field Form__Input" name="city" placeholder="{{ 'cart.shipping_estimator.city' | t }}">
-
-
-                      <div class="ShippingEstimator__Province Form__Select ShippingEstimator__Field" style="display: none">
-                        {%- render 'icon' with 'select-arrow' -%}
-                        <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
-                      </div>
-
-                      <input type="text" class="ShippingEstimator__Zip Form__Input ShippingEstimator__Field" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+                <div class='grid__item medium-up--one-half'>
+                  <div class='cart__block'>
+                    <div class='cart_block__title h6'>
+                      <span>{{ 'cart.general.note' | t }}</span>
+                    </div>
+                    <div class='cart_block__content'>
+                      <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes placeholder='{{ "cart.general.note_placeholder" | t }}'>{{ cart.note }}</textarea>
+                      <button type="button" class="CartSpecialInstructionsSubmit btn btn-gray">{{ 'cart.general.add_note' | t }}</button>
 
                     </div>
-                    <button type="button" class="ShippingEstimator__Submit btn ShippingEstimator__Field btn-gray">{{ 'cart.shipping_estimator.estimate' | t }}</button>
-
-
                   </div>
                 </div>
-              </div>      
               {%- endif -%}
 
-            </div>
+              {%- if section.settings.show_shipping_estimator -%}
+                <div class='grid__item medium-up--one-half'>
+                  <div class='cart__block'>
+                    <div class='cart_block__title h6'>
+                      <span>{{ 'cart.shipping_estimator.title' | t }}</span>
+                    </div>
+                    <div class='cart_block__content'>
 
+
+                      <div class="ShippingEstimator__Form">
+                        <div class="ShippingEstimator__Country Form__Select ShippingEstimator__Field">
+                          {%- render 'icon' with 'select-arrow' -%}
+                          <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}"
+                                  data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">
+                            {{ all_country_option_tags }}
+                          </select>
+                        </div>
+
+                        <input type="text" class="ShippingEstimator__City ShippingEstimator__Field Form__Input" name="city" placeholder="{{ 'cart.shipping_estimator.city' | t }}">
+
+
+                        <div class="ShippingEstimator__Province Form__Select ShippingEstimator__Field" style="display: none">
+                          {%- render 'icon' with 'select-arrow' -%}
+                          <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
+                        </div>
+
+                        <input type="text" class="ShippingEstimator__Zip Form__Input ShippingEstimator__Field" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+
+                      </div>
+                      <button type="button" class="ShippingEstimator__Submit btn ShippingEstimator__Field btn-gray">{{ 'cart.shipping_estimator.estimate' | t }}</button>
+
+
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
           </div>
         </div>
         <div class='Cart_SidebarSide'>
@@ -108,8 +102,6 @@
                </span>
             </div>
 
-                
-            
             {%- assign cartDiscounts = 'template ' | split: ' ' -%}
             {%- if cart.cart_level_discount_applications.size > 0 -%}
             {%- assign cartDiscounts = cart.cart_level_discount_applications -%}
@@ -195,7 +187,7 @@
     </div>
 
     <div class="empty-page-content{% if cart.item_count > 0 %} hide{% endif %} text-center" data-empty-page-content>
-      <h2>{{ 'cart.general.title' | t }}</h2>
+      <h1 class="h2">{{ 'cart.general.title' | t }}</h1>
       <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
       <div class="cookie-message">
         <p>{{ 'cart.general.cookies_required' | t }}</p>
@@ -208,43 +200,40 @@
   </div>
 </div>
 
-  <script type="module" src="{{ 'dynamic-icon.js' | asset_url }}"></script>
-
-
+<script type="module" src="{{ 'dynamic-icon.js' | asset_url }}"></script>
 
 {% schema %}
 {
   "name": "t:sections.cart-template.name",
   "settings": [
-	{
-		"type":"image_picker",
-	"id":"image",
-	"label":"t:sections.cart-template.settings.image.label"
-	},
-
-{
-		"type":"color",
-		"id":"image_overlay_color",
-		"label":"t:sections.cart-template.settings.image_overlay_color.label",
-		"default": "#000"
-		},
-      {
-        "type": "range",
-        "id": "image_overlay_opacity",
-       "label": "t:sections.cart-template.settings.image_overlay_opacity.label",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-       "unit": "t:sections.cart-template.settings.image_overlay_opacity.unit",
-        "default": 40
-      },
-	{
-		"type":"checkbox",
-	"id":"show_breadcrumbs",
-	"label":"t:sections.cart-template.settings.show_breadcrumbs.label",
-	"default": true
-	},
-  {
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.cart-template.settings.image.label"
+    },
+    {
+      "type": "color",
+      "id": "image_overlay_color",
+      "label": "t:sections.cart-template.settings.image_overlay_color.label",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "label": "t:sections.cart-template.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.cart-template.settings.image_overlay_opacity.unit",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:sections.cart-template.settings.show_breadcrumbs.label",
+      "default": true
+    },
+    {
       "type": "checkbox",
       "id": "show_shipping_estimator",
       "label": "t:sections.cart-template.settings.show_shipping_estimator.label",
