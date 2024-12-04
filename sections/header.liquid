@@ -699,41 +699,39 @@
 
 
 {% capture header_cart_icon %}
-<div class='header_cart_info  btn btn--primary {% if show_cart_subtotal %}show_cart_subtotal{% endif %}'     id="HeaderCart" data-link-type="{{ settings.cart_type }}" data-cart-count-bubble>
-  {% if show_cart_subtotal %}
-  <span class='cart_total_info'>
-    <span class='cart_total_label'> {{ 'sections.header.total' | t }}</span>
-    <span class='cart_total_price h6'>
-      {% if settings.currency_code_enable %}
-      {{ cart.total_price | money_with_currency }}
-      {% else %}
-      {{ cart.total_price | money }}
-      {% endif %}
+  <div class='header_cart_info btn btn--primary {% if show_cart_subtotal %}show_cart_subtotal{% endif %}'
+       id="HeaderCart" data-link-type="{{ settings.cart_type }}" data-cart-count-bubble>
+    {% if show_cart_subtotal %}
+    <span class='cart_total_info'>
+      <span class='cart_total_label'>{{ 'sections.header.total' | t }}</span>
+      <span class='cart_total_price h6'>
+        {% if settings.currency_code_enable %}
+          {{ cart.total_price | money_with_currency }}
+        {% else %}
+          {{ cart.total_price | money }}
+        {% endif %}
+      </span>
     </span>
-  </span>
-  {% endif %}
-  
-  <a href='{{ routes.cart_url }}' class='cart_icon ' >
-    {%- render 'icon', icon: cart_icon_style -%}
-    <span class='header_cart_count {% if cart.item_count == 0 %} shide{% endif %}' data-cart-count>{{ cart.item_count }}</span>
-  </a>
-</div>
+    {% endif %}
+
+    <a href='{{ routes.cart_url }}' class='cart_icon ' >
+      {%- render 'icon', icon: cart_icon_style -%}
+      <span class='header_cart_count {% if cart.item_count == 0 %} shide{% endif %}' data-cart-count>{{ cart.item_count }}</span>
+    </a>
+  </div>
 {% endcapture %}
 
 {% capture logo_element %}
-
-<div class="logo_element">
-
-  {% if request.page_type == 'index' %}
-  <h1 class="h4 site-header__logo">
+  <div class="logo_element">
+    {% if request.page_type == 'index' %}
+      <h1 class="h4 site-header__logo">
     {% else %}
-    <div class="h4 site-header__logo">
-      {% endif %}
-      {% if section.settings.logo != blank or  alternate_logo != blank %}
+      <div class="h4 site-header__logo">
+    {% endif %}
+
+    {% if section.settings.logo != blank or  alternate_logo != blank %}
       {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
       <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
-
-
         {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
         <img class="js main_logo"
              src="{{ section.settings.logo | img_url: '300x300' }}"
@@ -755,28 +753,27 @@
         </noscript>
 
         {% if alternate_logo != blank and enable_overlap_header %}
-        {% capture alternate_logo_alt %}{{ alternate_logo.alt | default: shop.name }}{% endcapture %}
-        <img class="js  hide alternate_logo"
-             src="{{ alternate_logo | img_url: '300x300' }}"
-             srcset="{{ alternate_logo | img_url: '300x300' }} 1x, {{ alternate_logo | img_url: '300x300', scale: 2 }} 2x"
-             loading="lazy"
-             width="{{alternate_logo.width}}"
-             height="{{alternate_logo.height}}"
-             alt="{{ alternate_logo_alt | escape }}"
-             style="max-width: {{ section.settings.logo_max_width }}px">
+          {% capture alternate_logo_alt %}{{ alternate_logo.alt | default: shop.name }}{% endcapture %}
+          <img class="js  hide alternate_logo"
+               src="{{ alternate_logo | img_url: '300x300' }}"
+               srcset="{{ alternate_logo | img_url: '300x300' }} 1x, {{ alternate_logo | img_url: '300x300', scale: 2 }} 2x"
+               loading="lazy"
+               width="{{alternate_logo.width}}"
+               height="{{alternate_logo.height}}"
+               alt="{{ alternate_logo_alt | escape }}"
+               style="max-width: {{ section.settings.logo_max_width }}px">
         {% endif %}
-
       </a>
-      {% else %}
+    {% else %}
       <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
-      {% endif %}
-      {% if request.page_type == 'index' %}
-      </h1>
-    {% else %}  
-    </div>
-  {% endif %}
-</div>
+    {% endif %}
 
+    {% if request.page_type == 'index' %}
+      </h1>
+    {% else %}
+  </div>
+  {% endif %}
+  </div>
 {% endcapture %}
 
 {% capture top_navitagion_links %}
@@ -1065,93 +1062,84 @@
       {% endif %} {% endcomment %}
       
       <div class='{% if section.settings.align_logo == 'left' %} header_top__wrapper {% else %} grid__item   {% if section.settings.align_logo == 'center' %} medium-up--two-fifths {% else %}  medium-up--one-half tablet--two-thirds {% endif %} {% endif %}'>
-
-
         {% if section.settings.align_logo == 'left' %}
-        <div class='medium-up--one-fifth grid__item logo_element-wrapper'>
-          {{logo_element}}
+          <div class='medium-up--one-fifth grid__item logo_element-wrapper'>
+            {{logo_element}}
 
-          <style>
-            .site-header .header_top__wrapper .logo_element-wrapper {
-              max-width: {{ section.settings.logo_max_width }}px;
-              width:100%;
-            }
-            @media screen and (min-width:750px) {
-            .site-header .header_top__wrapper .logo_element-wrapper {
-                min-width: {{ section.settings.logo_max_width }}px;
+            <style>
+              .site-header .header_top__wrapper .logo_element-wrapper {
+                max-width: {{ section.settings.logo_max_width }}px;
+                width:100%;
               }
-            }
-          </style>
-        </div>
-        <div class='grid__item site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}'>
-          <div class="site-header__icons-wrapper">
-            {{ search_bar }}
-            {{ header_cart_icon }}
-            {% unless navigation_menu_handle == blank %}
-            <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
-              {% include 'icon-hamburger' %}
-              {% include 'icon-close' %}
-            </button>
-            {% endunless %}
+              @media screen and (min-width:750px) {
+              .site-header .header_top__wrapper .logo_element-wrapper {
+                  min-width: {{ section.settings.logo_max_width }}px;
+                }
+              }
+            </style>
           </div>
-        </div>
+          <div class='grid__item site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}'>
+            <div class="site-header__icons-wrapper">
+              {{ search_bar }}
+              {{ header_cart_icon }}
+              {% unless navigation_menu_handle == blank %}
+                <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
+                  {% include 'icon-hamburger' %}
+                  {% include 'icon-close' %}
+                </button>
+              {% endunless %}
+            </div>
+          </div>
         {% endif %}
 
-
-
-
         {% unless  section.settings.align_logo == 'left'  %}
-        <div class='header_top_left_side'>
-          {{top_navitagion_links}}
-        </div>
+          <div class='header_top_left_side'>
+            {{top_navitagion_links}}
+          </div>
         {% endunless %}
-
       </div>
 
       {% if section.settings.align_logo == 'center' %}
-      <div class='medium-up--one-fifth grid__item'>
-        {{logo_element}}
-      </div>
+        <div class='medium-up--one-fifth grid__item'>
+          {{logo_element}}
+        </div>
       {% endif %}
 
       {% if section.settings.align_logo != 'left' %}
       <div class='grid__item {% if section.settings.align_logo == 'center' %} medium-up--two-fifths {% else %}  medium-up--one-half tablet--one-third {% endif %} '>
         <ul class='top_navigation_links right_column'>
-
           {% if shop.customer_accounts_enabled %}
-          <li>
+            <li>
+              <div class='customer_nav_menu__wrapper'>
+                <div class="site-nav--has-dropdown  site-nav--has-centered-dropdown customer_nav_dropdown__wrapper" data-has-dropdowns>
+                  <button class="site-nav__link site-nav__link--main customer_nav_button site-nav__link--button" type="button" aria-expanded="false" aria-controls="Customer_nav_dropdown">
 
-            <div class='customer_nav_menu__wrapper'>
-              <div class="site-nav--has-dropdown  site-nav--has-centered-dropdown customer_nav_dropdown__wrapper" data-has-dropdowns>
-                <button class="site-nav__link site-nav__link--main customer_nav_button site-nav__link--button" type="button" aria-expanded="false" aria-controls="Customer_nav_dropdown">
-
-                  {% if customer %}
-                  {% include 'icon-login' %}<span class="site-nav__label">{{ 'layout.customer.welcome' | t }} {{ customer.name }}</span>{% include 'icon-chevron-down' %}
-                  {% else %}
-                  {% include 'icon-login' %}
-                  <span>{{ 'layout.customer.log_in' | t }}</span>
-                  {% endif %}
-                </button>
-                <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered critical-hidden customer_nav_dropdown" id="Customer_nav_dropdown">
-                  <ul>
-                    
                     {% if customer %}
-                    <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
-                    {% comment %} <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>{{ 'customer.account.address_book' | t
-                        }}</a></li> {% endcomment %}
-                    <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>    
-                    <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
-                    <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+                    {% include 'icon-login' %}<span class="site-nav__label">{{ 'layout.customer.welcome' | t }} {{ customer.name }}</span>{% include 'icon-chevron-down' %}
                     {% else %}
-                    <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
-                    <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+                    {% include 'icon-login' %}
+                    <span>{{ 'layout.customer.log_in' | t }}</span>
                     {% endif %}
-                  </ul>
+                  </button>
+                  <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered critical-hidden customer_nav_dropdown" id="Customer_nav_dropdown">
+                    <ul>
+
+                      {% if customer %}
+                      <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
+                      {% comment %} <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>{{ 'customer.account.address_book' | t
+                          }}</a></li> {% endcomment %}
+                      <li><a target="_blank" href="https://reportportal.spicersnz.co.nz/">My Account</a></li>
+                      <li><a href='https://shopify.com/{{ shop.id }}/account/profile'>Profile</a></li>
+                      <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+                      {% else %}
+                      <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
+                      <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+                      {% endif %}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-
-          </li>
+            </li>
           {% endif %}
 
           {%- if show_selectors -%}

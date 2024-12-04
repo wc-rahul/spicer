@@ -2854,7 +2854,7 @@ form.product-item__action-list + .open-quick-view--btn {
     bottom: -10px; } }
 .index-tabs-collections-wrapper .index-tabs_nav__wrapper.navigation_style_normal .index-tabs_nav .index-tabs_nav--item.active:after {
   background: var(--color-btn-primary); }
-.index-tabs-collections-wrapper .index-tabs_nav__wrapper.navigation_style_normal .index-tabs_nav .index-tabs_nav--item h3 {
+.index-tabs-collections-wrapper .index-tabs_nav__wrapper.navigation_style_normal .index-tabs_nav .index-tabs_nav--item .h3 {
   margin: 0;
   text-transform: uppercase;
   font-size: calc(((var(--font-size-header)) / (var(--font-size-base))) * .5em); }
