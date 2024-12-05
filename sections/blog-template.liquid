@@ -131,20 +131,8 @@
              
               <div id="{{ img_wrapper_id }}" class="article__grid-image-wrapper js">
                 <div class="article__grid-image-container">
-                  <img id="{{ img_id }}"
-                       class="article__grid-image zoom-fade-animation-element"
-                       srcset="{%- if article.image.width >= 375 -%}{{ article.image | img_url: '375x' }} 375w,{%- endif -%}
-                        {%- if article.image.width >= 535 -%}{{ article.image | img_url: '535x' }} 535w,{%- endif -%}
-                        {%- if article.image.width >= 720 -%}{{ article.image | img_url: '720x' }} 750w,{%- endif -%}
-                        {%- if article.image.width >= 940 -%}{{ article.image | img_url: '940x' }} 940w,{%- endif -%}
-                        {%- if article.image.width >= 1066 -%}{{ article.image | img_url: '1066x' }} 1066w{%- endif -%}"
-                       src="{{ article.image | img_url: '535x' }}"
-                       sizes="(min-width: 750px) calc(100vw / {{ items_per_row }}), 100vw"
-                       loading="lazy"
-                       width="{{ article.image.width }}"
-                       height="{{ article.image.height }}"
-                       alt="{{article.image.alt | default: article.title }}">
-                    {% render 'load_spinner' %}
+	                {%- render 'image' with image: article.image, size: 's', image_id: img_id, image_class: 'article__grid-image zoom-fade-animation-element od-optimised' -%}
+                  {% render 'load_spinner' %}
                 </div>
               </div>
               <noscript>

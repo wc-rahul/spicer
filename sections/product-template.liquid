@@ -1235,10 +1235,8 @@
                  data-image-width='{{ image.width }}'
                  data-image-height='{{ image.height }}'
                  data-image-id="{{ image.id }}"
-                 data-image-url='{{ image | img_url:"2000x" }}'
-      
-             >
-                <img src="{{ image |  img_url: 'master' }}" width="440" height="{{ 440 | divided_by: image.aspect_ratio | ceil }}"/>
+                 data-image-url='{{ image | img_url:"2000x" }}'>
+                {%- render 'image' with image: image, size: 's', image_id: img_id, image_class: 'od-optimised' -%}
                 </div>
             </div>
           {% endunless %}

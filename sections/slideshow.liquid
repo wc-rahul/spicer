@@ -270,20 +270,7 @@
 
               {% if block_mobile_image != blank %}
               <div class=" slideshow__image_wrapper medium-up--hide">
-                <img 
-                     class="slideshow__image box"
-                     srcset="{%- if block_mobile_image.width >= 375 -%}{{ block_mobile_image | img_url: '375x' }} 375w,{%- endif -%}
-                             {%- if block_mobile_image.width >= 720 -%}{{ block_mobile_image | img_url: '720x' }} 750w,{%- endif -%}
-                             {%- if block_mobile_image.width >= 1066 -%}{{ block_mobile_image | img_url: '1066x' }} 1066w,{%- endif -%}
-                             {%- if block_mobile_image.width >= 1500 -%}{{ block_mobile_image | img_url: '1500x' }} 1500w{%- endif -%}"
-                     src="{{ block_mobile_image | img_url: '535x' }}"
-                     sizes="100vw"
-                     loading="lazy"
-                     width="{{ block_mobile_image.width }}"
-                     height="{{ block_mobile_image.height }}"
-                     aria-label="{{ block_mobile_image.alt | default: block.settings.slide_title }}"
-                     alt="{{ block_mobile_image.alt | default: block.settings.slide_title }}"
-                     style="object-position:{{ block_mobile_image.presentation.focal_point }};">
+                {%- render 'image' with image: block_mobile_image, size: 's', image_class: 'slideshow__image box od-optimised' -%}
 
                 <div class="slideshow__overlay" id='slideshow__overlay_{{block.id}}'></div>
               </div>          

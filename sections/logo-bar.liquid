@@ -204,15 +204,18 @@
       <li class="zoom-fade-animation-element-wrapper logo-bar__item grid__item grid__item--{{section.id}} {{grid_item_width}}" {{ block.shopify_attributes }}>
         <div class="grid-view-item">
           {% if block.settings.link != blank %}
-          <a href="{{ block.settings.link }}" class="logo-bar__link">
-            {% endif %}
+            <a href="{{ block.settings.link }}" class="logo-bar__link">
+          {% endif %}
             {% if block.settings.image != blank %}
-            {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt, 'logo-bar__image zoom-fade-animation-element' }}
+              {%- render 'image' with image: block.settings.image, size: 'xs', image_class: 'logo-bar__image zoom-fade-animation-element od-optimised' -%}
+              {% comment %}
+                {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt, 'logo-bar__image zoom-fade-animation-element' }}
+              {% endcomment %}
             {% else %}
-            {{ 'logo' | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
+              {{ 'logo' | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
             {% endif %}
-            {% if block.settings.link != blank %}
-          </a>
+          {% if block.settings.link != blank %}
+            </a>
           {% endif %}
         </div>
       </li>

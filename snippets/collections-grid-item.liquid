@@ -39,18 +39,7 @@
       {% unless collection_image == blank %}
       <div class='collection-grid-item__image-wrapper'>
         <div style="padding-top:{% unless collection_image == blank %}{{ 1 | divided_by: collection_image.aspect_ratio | times: 100 }}%{% else %}100%{% endunless %};">
-          <img src="{{collection_image | img_url:'535x'}}" 
-               srcset="{%- if collection_image.width >= 375 -%}{{ collection_image | img_url: '375x' }} 375w,{%- endif -%}
-                       {%- if collection_image.width >= 720 -%}{{ collection_image | img_url: '720x' }} 750w,{%- endif -%}
-                       {%- if collection_image.width >= 1066  and items_per_row < 3 -%}{{ collection_image | img_url: '1066x' }} 1066w{%- endif -%}"
-               sizes="(min-width: 750px) calc(100vw / {{ items_per_row }}), 100vw"
-               loading="lazy"
-               width="{{ collection_image.width }}"
-               height="{{ collection_image.height }}"
-               class="zoom-fade-animation-element"
-               alt="{{ collection_image.alt | default: collection.title }}"
-               style="{% if max_img_width == '0px' %} width: auto; {% else %} max-width: {{max_img_width}} {% endif %}"
-               >
+          {%- render 'image' with image: collection_image, size: 'xs', image_class: 'zoom-fade-animation-element od-optimised' -%}
           {% render 'load_spinner' %}
         </div>
       </div>
