@@ -114,36 +114,43 @@
     
     <div class='blog_page_layout layout_{{layout}}'> 
       {% if show_sidebar %}
-      {% include 'blog-sidebar' %}
+        {% include 'blog-sidebar' %}
       {% endif %}
 
       <div class='blogs-wrapper'>
         <ul {% if pagination_mode != 'standart' %} id="AjaxinateContainer" {% endif %} class="grid grid--uniform zoom-fade-animation">
           {% for article in blog.articles %}
-          <li class="zoom-fade-animation-element-wrapper grid__item {{grid_item_width}}">
-        <article class='article_block' aria-labelledby="FeaturedBlogTitle-{{ forloop.index0 }}-{{ section.id }}">
-        
-            <a href="{{ article.url }}" class="article__link">
-              {% if article.image %}
-              {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
-              {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+            <li class="zoom-fade-animation-element-wrapper grid__item {{grid_item_width}}">
+              <article class='article_block' aria-labelledby="FeaturedBlogTitle-{{ forloop.index0 }}-{{ section.id }}">
 
-             
-              <div id="{{ img_wrapper_id }}" class="article__grid-image-wrapper js">
-                <div class="article__grid-image-container">
-	                {%- render 'image' with image: article.image, size: 'xs', image_id: img_id, image_class: 'article__grid-image zoom-fade-animation-element od-optimised' -%}
-                  {% render 'load_spinner' %}
+              <a href="{{ article.url }}" class="article__link">
+                {% if article.image %}
+                {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+                {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+
+                <div id="{{ img_wrapper_id }}" class="article__grid-image-wrapper js">
+                  <div class="article__grid-image-container">
+
+                    {% if forloop.first %}
+                      {%- render 'image' with image: article.image, size: 'xs', preload: true, lazyload: false, image_id: img_id, image_class: 'article__grid-image zoom-fade-animation-element od-optimised' -%}
+                    {% else %}
+                      {%- render 'image' with image: article.image, size: 'xs', image_id: img_id, image_class: 'article__grid-image zoom-fade-animation-element od-optimised' -%}
+                    {% endif %}
+
+
+                    {% render 'load_spinner' %}
+                  </div>
                 </div>
-              </div>
-              <noscript>
-                <div class="article__grid-image-wrapper">
-                  {{ article | img_url: '345x345', scale: 2 | img_tag: article.title, 'article__grid-image' }}
-                </div>
-              </noscript>
-              {% endif %}
+                <noscript>
+                  <div class="article__grid-image-wrapper">
+                    {{ article | img_url: '345x345', scale: 2 | img_tag: article.title, 'article__grid-image' }}
+                  </div>
+                </noscript>
+                {% endif %}
 
-            </a> 
+              </a>
 
+<<<<<<< Updated upstream
           <div class='article_block_info'>
              <h4 class="article__title" id="FeaturedBlogTitle-{{ forloop.index0 }}-{{ section.id }}">
                 <a href="{{ article.url }}">
@@ -155,18 +162,24 @@
             
             {% if settings.blog_show_author %}
             {% assign original_author_name = article.author %}
+=======
+            <div class='article_block_info'>
+               <div class="article__title h4" id="FeaturedBlogTitle-{{ forloop.index0 }}-{{ section.id }}">
+                  <a href="{{ article.url }}">{{ article.title }}</a>
+               </div>
 
-            {% assign show_default_author_info = true %}
-            
-            {% for i in (1..3) %}
-            {% capture custom_author_name_handle %}author_name_{{i}}{% endcapture %}
-            {% capture custom_author_logo_handle %}author_logo_{{i}}{% endcapture %}
-            {% capture custom_author_biography_handle %}author_biography_{{i}}{% endcapture %}
+              {% if settings.blog_show_author %}
+              {% assign original_author_name = article.author %}
+>>>>>>> Stashed changes
 
-            {% assign author_name = settings[custom_author_name_handle] %}
-            {% assign author_logo = settings[custom_author_logo_handle] %}
-            {% assign author_biography = settings[custom_author_biography_handle] %}
+              {% assign show_default_author_info = true %}
 
+              {% for i in (1..3) %}
+              {% capture custom_author_name_handle %}author_name_{{i}}{% endcapture %}
+              {% capture custom_author_logo_handle %}author_logo_{{i}}{% endcapture %}
+              {% capture custom_author_biography_handle %}author_biography_{{i}}{% endcapture %}
+
+<<<<<<< Updated upstream
             {% if author_name == original_author_name %}
 			 {% assign show_default_author_info = false %}
             
@@ -182,73 +195,89 @@
               {% else %}
               {{ 'blogs.article.by_author' | t: author: article.author }}
               {% endif %}
+=======
+              {% assign author_name = settings[custom_author_name_handle] %}
+              {% assign author_logo = settings[custom_author_logo_handle] %}
+              {% assign author_biography = settings[custom_author_biography_handle] %}
+>>>>>>> Stashed changes
 
-            </span>
+              {% if author_name == original_author_name %}
+                {% assign show_default_author_info = false %}
 
+                 <span class="article__author {% if author_logo == blank %} text_name {% endif %}">
 
-            {% break %}
-            {% endif %}
-            {% endfor %}
-            {% if show_default_author_info %}
+                {% if author_logo != blank %}
+                <img src='{{ author_logo | img_url:"150x" }}'
+                     alt='{{article.author}}'
+                     srcset="{{ author_logo | img_url: '150x' }} 1x, {{ author_logo | img_url: '150x', scale: 2 }} 2x"
+                     loading="lazy"
+                     width="{{author_logo.width}}"
+                     height="{{author_logo.height}}"/>
+                {% else %}
+                {{ 'blogs.article.by_author' | t: author: article.author }}
+                {% endif %}
 
-            <span class="article__author  text_name">
-              {{ 'blogs.article.by_author' | t: author: article.author }}
-            </span>
-
-            {% endif %}
-            {% endif %}            
-            
-
-            <div class="article__grid-meta">
-              {% if section.settings.blog_show_date %}
-              <span class="article__date">
-                {{ article.published_at | time_tag: format: 'date' }}
               </span>
+
+
+              {% break %}
+              {% endif %}
+              {% endfor %}
+              {% if show_default_author_info %}
+
+              <span class="article__author  text_name">
+                {{ 'blogs.article.by_author' | t: author: article.author }}
+              </span>
+
+              {% endif %}
               {% endif %}
 
-              {% if blog.comments_enabled? and article.comments_count > 0 %}
-              <div class='article__comment_info'>
-                <a href="{{ article.url }}#comments" class="article__comment-count">
-                  {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-                </a>
+
+              <div class="article__grid-meta">
+                {% if section.settings.blog_show_date %}
+                <span class="article__date">
+                  {{ article.published_at | time_tag: format: 'date' }}
+                </span>
+                {% endif %}
+
+                {% if blog.comments_enabled? and article.comments_count > 0 %}
+                <div class='article__comment_info'>
+                  <a href="{{ article.url }}#comments" class="article__comment-count">
+                    {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                  </a>
+                </div>
+                {% endif %}
+
+              </div>
+
+              {% if section.settings.show_excerpt %}
+              <div class="article__list-excerpt">
+                {% if article.excerpt != blank %}
+                {{ article.excerpt }}
+                {% else %}
+                {{ article.content  | strip_html |  truncatewords: 30 }}
+                {% endif %}
               </div>
               {% endif %}
 
-            </div>
-            
-            
-            
-            
-            {% if section.settings.show_excerpt %}
-            <div class="article__list-excerpt">
-              {% if article.excerpt != blank %}
-            	{{ article.excerpt }}
-              {% else %}
-              {{ article.content  | strip_html |  truncatewords: 30 }}
-              {% endif %}
-            </div>
-            {% endif %}
-            
-            <div class="article__list-btn">
-              <a href='{{ article.url }}' class='btn btn--secondary'>
-                <span>{{ 'blogs.article.read_more' | t }}</span>
-                 {% include 'icon' with 'tail-right' %}
-              </a>
-            </div>
+              <div class="article__list-btn">
+                <a href='{{ article.url }}' class='btn btn--secondary'>
+                  <span>{{ 'blogs.article.read_more' | t }}</span>
+                   {% include 'icon' with 'tail-right' %}
+                </a>
+              </div>
 
-          </div>
-        </article>
-      </li>
+            </div>
+          </article>
+        </li>
           {% endfor %}
         </ul>
 
         {%- if paginate.pages > 1 -%}
-        {% include 'pagination', paginate: paginate, pagination_mode : pagination_mode %}
+          {% include 'pagination', paginate: paginate, pagination_mode : pagination_mode %}
         {%- endif -%}
-
       </div>
     </div>
-    
   </div>
 </section>
 
