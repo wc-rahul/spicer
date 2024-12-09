@@ -40,7 +40,7 @@
   {%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
   {%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
 
-  <link rel="preload" href="{{ 'core.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'core.min.css' | asset_url }}" as="style">
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
@@ -107,8 +107,7 @@
   {% include 'css-variables' %}
 
   <link rel="stylesheet" href="{{ 'flickity.min.css' | asset_url }}" type="text/css">
-
-  <link rel="stylesheet" href="{{ 'core.css' | asset_url }}" type="text/css">
+  <link rel="stylesheet" href="{{ 'core.min.css' | asset_url }}" type="text/css">
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css">
   <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" type="text/css">
 
@@ -188,7 +187,7 @@
       moneyFormat: {{ shop.money_format | json }},
       moneyFormatWithCurrency: {{ shop.money_with_currency_format | json }},
       show_preOrder_btn: {{settings.show_preOrder_btn}} ,
-        stylesheet: "{{ 'core.css' | asset_url }}",
+        stylesheet: "{{ 'core.min.css' | asset_url }}",
          pageType: {{ request.page_type | json }},
             modules: {
         Core: `{{ 'core.js' | asset_url }}`
@@ -198,7 +197,6 @@
       }
     };
 
-       
     window.routes = {
       rootUrl: {{ routes.root_url | json }}, 
       cartUrl: {{ routes.cart_url | json }},
