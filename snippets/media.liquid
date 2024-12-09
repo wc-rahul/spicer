@@ -83,18 +83,20 @@ as a custom ALT tag
     {% when 'image' %}
       {% capture zoom_media_id %}ImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
      
-      <div
-     
-        style="padding-top:{{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100}}%;"
+      <div style="padding-top:{{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100}}%;"
            class="product-single__media image_type {% if product.media.size > 1 %} product-single__media--has-thumbnails{% endif %}"
            data-image-width='{{media.width}}'
            data-image-height='{{media.height}}'
            data-image-id="{{media.id}}"
-           data-image-url='{{ media | img_url:"2000x" }}'
+           data-image-url='{{ media | img_url:"2000x" }}'>
 
-       >
-        <img 
-             class="feature-row__image {{ media_class }}"
+        {% if template contains 'product' %}
+          {% if media.preview_image %}
+            <link rel="preload" href="{{ media.preview_image | img_url: '535x' }}" as="image">
+          {% endif %}
+        {% endif %}
+
+        <img class="feature-row__image {{ media_class }}"
              srcset="{%- if media.preview_image.width >= 375 -%}{{ media.preview_image | img_url: '375x' }} 375w,{%- endif -%}
                      {%- if media.preview_image.width >= 720 -%}{{ media.preview_image | img_url: '720x' }} 750w,{%- endif -%}
                      {%- if media.preview_image.width >= 1066 -%}{{ media.preview_image | img_url: '1066x' }} 1066w,{%- endif -%}
@@ -106,7 +108,7 @@ as a custom ALT tag
              sizes="(min-width: 750px) {% if section.settings.media_size == 'medium' %}600px
                     {% elsif section.settings.media_size == 'large' %}800px
                     {% elsif section.settings.media_size == 'full' %}100vw{% endif %}, 100vw"
-             loading="lazy"
+             fetchpriority="high"
              width="{{ media.preview_image.width }}"
              height="{{ media.preview_image.height }}"
 	          alt="{{ media_alt| escape }}"
