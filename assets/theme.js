@@ -6336,8 +6336,8 @@ theme.FeaturedProducts = (function () {
       var slidesCount = sliderEl.querySelectorAll(".product-item-block").length;
       var groupCells = slider_options.groupCells;
 
-      console.log('slidesCount',slidesCount);
-      console.log('groupCells', groupCells);
+      //console.log('slidesCount',slidesCount);
+      //console.log('groupCells', groupCells);
 
       if (slidesCount <= groupCells) {
         slider_custom_arrows.classList.add("hide"); // Hide arrows if not enough slides
@@ -8378,9 +8378,7 @@ theme.SlideshowSection.prototype = Object.assign(
       );
 
       this.container.dispatchEvent(new Event('slider_slide_changed', { bubbles: true }));
-
-
-      console.log('slider_slide_changed init');
+      //console.log('slider_slide_changed init');
     },
 
     _onSliderSlideChanged: function(slideIndex) {

@@ -54,6 +54,10 @@
 {% assign show_dots = section.settings.show_dots %}
 {% assign slideshow_width = section.settings.slideshow_width %}
 
+{% assign above_the_fold = false %}
+{% if template == 'index' %}
+  {% assign above_the_fold = true %}
+{% endif %}
 
 <div data-section-id="{{ section.id }}" data-section-type="slideshow-section" class="fade-in-animation">
   <div class='slideshow-section-wrapper {% if slideshow_width == 'wrapper' %} page-width {% endif %}'>
@@ -232,9 +236,7 @@
               }
 
             </style>
-      
-
-                       
+              
             {% else %}
               {% if block_image == blank %}
               <div class="slideshow__image">
@@ -245,35 +247,22 @@
                <div class="slideshow__overlay" id='slideshow__overlay_{{block.id}}'></div>
               </div>
               {% else %}
+
               <div class="{% if block_mobile_image != blank %} small--hide  {% endif %} slideshow__image_wrapper">
-                <img 
-                     class="slideshow__image box"
-                     srcset="{%- if block_image.width >= 375 -%}{{ block_image | img_url: '375x' }} 375w,{%- endif -%}
-                             {%- if block_image.width >= 720 -%}{{ block_image | img_url: '720x' }} 750w,{%- endif -%}
-                             {%- if block_image.width >= 1066 -%}{{ block_image | img_url: '1066x' }} 1066w,{%- endif -%}
-                             {%- if block_image.width >= 1500 -%}{{ block_image | img_url: '1500x' }} 1500w,{%- endif -%}
-                             {%- if block_image.width >= 1780 -%}{{ block_image | img_url: '1780x' }} 1780w,{%- endif -%}
-                             {%- if block_image.width >= 2000 -%}{{ block_image | img_url: '2000x' }} 2000w,{%- endif -%}
-                             {%- if block_image.width >= 2800 -%}{{ block_image | img_url: '2800x' }} 2800w{%- endif -%}"
-                     src="{{ block_image | img_url: '750x' }}"
-                     sizes="100vw"
-                     loading="lazy"
-                     width="{{ block_image.width }}"
-                     height="{{ block_image.height }}"
-                     
-                     aria-label="{{ block_image.alt | default: block.settings.slide_title }}"
-                     alt="{{ block_image.alt | default: block.settings.slide_title  }}"
-                      style="object-position:{{ block_image.presentation.focal_point }};">
+                {%- render 'image' with image: block_image,
+                  size: 'l',
+                  preload: above_the_fold,
+                  image_class: 'slideshow__image box od-optimised--tablet'
+                -%}
 
               <div class="slideshow__overlay" id='slideshow__overlay_{{block.id}}'></div>
               </div>
 
               {% if block_mobile_image != blank %}
-              <div class=" slideshow__image_wrapper medium-up--hide">
-                {%- render 'image' with image: block_mobile_image, size: 's', image_class: 'slideshow__image box od-optimised' -%}
-
-                <div class="slideshow__overlay" id='slideshow__overlay_{{block.id}}'></div>
-              </div>          
+                <div class=" slideshow__image_wrapper medium-up--hide">
+                  {%- render 'image' with image: block_mobile_image, size: 's', preload: above_the_fold, image_class: 'slideshow__image box od-optimised--mobile' -%}
+                  <div class="slideshow__overlay" id='slideshow__overlay_{{block.id}}'></div>
+                </div>
               {% endif %}
               <noscript>
                 <div class="slideshow__image"{% if block_image %}{% unless block_image.alt == blank %} role="img" aria-label="{{ block_image.alt | escape }}"{% endunless %} style="background-image: url('{{ block_image | img_url: '2048x' }}'); background-position: {{ block.settings.alignment }};"{% endif %}>
@@ -422,48 +411,38 @@
     </div>
     {% endif %}
   </div>
-  
-  
+
   <script>
     var header = document.querySelector('.shopify-section-header');
-
-
-      var isSlideshowFirstSection = false;
-      var main_wrapper = document.querySelector('#MainContent');
-      if(main_wrapper) {
-        var first_shopifySection = main_wrapper.querySelectorAll('.shopify-section')[0];
-        if(first_shopifySection) {
-          if(first_shopifySection.classList.contains('index-section--slideshow')) {
-            isSlideshowFirstSection = true; 
-
-            if(first_shopifySection.querySelector('.slideshow-section-wrapper').classList.contains('page-width')) {
-              isSlideshowFirstSection = false; 
-            }
-            
-
+    var isSlideshowFirstSection = false;
+    var main_wrapper = document.querySelector('#MainContent');
+    if (main_wrapper) {
+      var first_shopifySection = main_wrapper.querySelectorAll('.shopify-section')[0];
+      if (first_shopifySection) {
+        if (first_shopifySection.classList.contains('index-section--slideshow')) {
+          isSlideshowFirstSection = true;
+          if (first_shopifySection.querySelector('.slideshow-section-wrapper').classList.contains('page-width')) {
+            isSlideshowFirstSection = false;
           }
         }
       }
-   
-    
-      if(!isSlideshowFirstSection) {
-        document.querySelector('.shopify-section-header').classList.add('showAlternateHeader');
-      }
+    }
+
+    if (!isSlideshowFirstSection) {
+      document.querySelector('.shopify-section-header').classList.add('showAlternateHeader');
+    }
 
   </script>
-  
-
 </div>
 
 {% if section.settings.removeBottomMargin %}
-<style>
-  #shopify-section-{{ section.id }} {
-    padding-bottom:0;
-    margin-bottom:0;
-  }
-</style>
-  {% endif %}
-
+  <style>
+    #shopify-section-{{ section.id }} {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  </style>
+{% endif %}
 
 {% schema %}
 {
@@ -471,8 +450,7 @@
   "class": "index-section index-section--flush index-section--slideshow",
   "max_blocks": 6,
   "settings": [
-
-{
+  {
       "type": "select",
       "id": "slideshow_width",
       "label": "t:sections.slideshow.settings.slideshow_width.label",

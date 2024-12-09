@@ -5,6 +5,7 @@
 {%liquid
 	assign image = image | default: ''
 	assign lazyload = lazyload | default: true
+	assign preload = preload | default: false
 	assign sizes = '150,375,750,1100,1500,1780,2000,3000,3840' | split: ','
 	assign size = size | default: 's'
 	assign size_override = size_override | default: ''
@@ -46,4 +47,5 @@
      srcset="{{ image_sources }}"
      sizes="{{ size_override | default: image_sizes }}"
      alt="{{ image.alt | escape }}"
-     {% if lazyload %}loading="lazy"{% endif %} />
+     {% if preload == true %}fetchpriority="high"{% endif %}
+     {% if lazyload and preload != true %}loading="lazy"{% endif %} />
