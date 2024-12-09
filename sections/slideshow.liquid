@@ -249,9 +249,7 @@
               {% else %}
 
               <div class="{% if block_mobile_image != blank %} small--hide  {% endif %} slideshow__image_wrapper">
-                {%- render 'image' with image: block_image,
-                  size: 'l',
-                  preload: above_the_fold,
+                {%- render 'image' with image: block_image, size: 'l', preload: above_the_fold,
                   image_class: 'slideshow__image box od-optimised--tablet'
                 -%}
 
