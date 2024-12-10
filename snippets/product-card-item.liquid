@@ -217,14 +217,14 @@
   {%- endif -%}
 
 
-{% if settings.show_quick_view and request.page_type != 'password' %}
-  {%  unless isComplementary_product %}
-<button type="button" class="btn btn--primary open-quick-view--btn"  aria-controls="modal-quick-view" data-product-url="{{ product.url }}">
-  <span>  {{ 'collections.general.quick_view' | t }}</span>
-  {% include 'icon' with 'tail-right' %}
-</button>
-{%  endunless %}
-{% endif %}
+  {% if settings.show_quick_view and request.page_type != 'password' %}
+    {%  unless isComplementary_product %}
+      <button type="button" class="btn btn--primary open-quick-view--btn"  aria-controls="modal-quick-view" data-product-url="{{ product.url }}">
+        <span>  {{ 'collections.general.quick_view' | t }}</span>
+        {% include 'icon' with 'tail-right' %}
+      </button>
+    {%  endunless %}
+  {% endif %}
 {% endcapture %}
 
 {% assign color_swatch_size = 0 %}
@@ -249,7 +249,7 @@
 
               {%- for variant in product.variants -%}
                 {%- if variant[variant_option] == value -%}
-                {%- assign variant_for_value = variant -%}
+                  {%- assign variant_for_value = variant -%}
                 {%- break -%}
                 {%- endif -%}
               {%- endfor -%}
@@ -263,10 +263,11 @@
                     {% assign product_img_width = variant_for_value.featured_media.width %}
                     {% assign product_img_height = variant_for_value.featured_media.height %}
                     {% assign product_img_ratio = variant_for_value.featured_media.aspect_ratio %}
+
                     {% if max_img_height < product_img_height %}
-                    {% assign max_img_width = max_img_height | times: product_img_ratio | append:"px"%}
+                      {% assign max_img_width = max_img_height | times: product_img_ratio | append:"px"%}
                     {% else %}
-                    {% assign max_img_width = product_img_height | times: product_img_ratio | append:"px"%}
+                      {% assign max_img_width = product_img_height | times: product_img_ratio | append:"px"%}
                     {% endif %}
                   {% endif %}
                 {%- endif -%}
@@ -293,29 +294,35 @@
                   {% endif %}
                   tabindex="-1"
                   aria-hidden="true">
+
                 <label class="color-swatch__item"
                   for="{{ color_id }}"
-                  style="{% if use_variant_image_for_grid_swatches %}background-color:#fff;
-                    {% if variant_for_value.featured_media != blank %}
-
-                      background-image: url({{ variant_for_value.featured_media  | img_url:"101x" }});
+                  style=" {% if use_variant_image_for_grid_swatches %}background-color:#fefefe;
+                    {% if variant_for_value.featured_media != blank and variant_for_value.metafields.swatch.colour == blank %}
+                      background-image: url({{ variant_for_value.featured_media  | img_url:"43x" }});
                     {% else %}
-                      {% render 'color_swatch_customization', default_value: value %}
+                      {% unless variant_for_value.metafields.swatch.colour != blank %}
+                        {% render 'color_swatch_customization', default_value: value %}
+                      {% endunless %}
                     {% endif %}
                   {% else %}
-                    {% if color_swatch_image != blank %}background-color:#fff;background-image: url({{ color_swatch_image | img_url: '64x64' }});
+                    {% if color_swatch_image != blank %}background-color:#f2f2f2;background-image: url({{ color_swatch_image | img_url: '64x64' }});
                     {% else %}
                       {% render 'color_swatch_customization', default_value: value %}
                     {% endif %}
                   {% endif %}"
                   title="{{ value | escape }}">
+                  {% if variant_for_value.metafields.swatch.colour != blank %}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="50" fill="{{ variant_for_value.metafields.swatch.colour }}" />
+                    </svg>
+                  {% endif %}
                 </label>
                 <a href="{{ product.url }}" class="color-swatch__item-link active-{{ forloop.index }} {% if forloop.last %} active{% endif %}">+{{ option.values.size | minus: forloop.index0 }}</a>
               </a>
 
               {% assign color_swatch_size = color_swatch_size | plus: 1 %}
               {% if forloop.index > swatch_limit %} {% break %} {% endif %}
-
             {%- endfor -%}
           {%- endif -%}
         {%- endfor -%}
