@@ -42,8 +42,8 @@
 
 <img class="{{ image_class }}"
      id="{{ image_id }}"
-     width="{{ image.width }}"
-     height="{{ image.height }}"
+     width="{{ image.width | default: 220 }}"
+     height="{{ image.height | default: 220 }}"
      srcset="{{ image_sources }}"
      sizes="{{ size_override | default: image_sizes }}"
      alt="{{ image.alt | escape }}"

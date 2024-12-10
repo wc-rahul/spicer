@@ -500,7 +500,7 @@
                 <div style="padding-top:{% unless preview_image == blank %}{{ 1 | divided_by: preview_image.aspect_ratio | times: 100 }}%{% else %}100%{% endunless %};">
               {% endif %}
 
-              {%- render 'image' with image: preview_image, image_mobile: preview_image, size: 'xs', image_class: 'list-view-item__image product-card__image zoom-fade-animation-element od-optimised', image_id: img_id  -%}
+                {%- render 'image' with image: preview_image, image_mobile: preview_image, size: 'xs', image_class: 'list-view-item__image product-card__image zoom-fade-animation-element od-optimised', image_id: img_id  -%}
                 
                 {%- if has_alternate_image -%}
                   {% assign alternate_media = product.media[1].preview_image %}

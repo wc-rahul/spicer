@@ -546,31 +546,20 @@
 
 
             {%- if social_icons and block.settings.show_social_icons -%}
-            <ul class="list--inline site-footer__social-icons social-icons site-footer__icon-list">
-              {%- for social in socials -%}
-              {%- assign social_link = social | prepend: 'social_' | append: '_link' | downcase -%}
-              {%- assign icon_link = social | prepend: 'icon-' | downcase -%}
-              {%- if settings[social_link] != blank -%}
-              <li class="social-icons__item btn btn--primary">
-                <a class="social-icons__link " href="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
-                  {%- include icon_link -%}
-                  <span class="icon__fallback-text">{{ social }}</span>
-                </a>
-              </li>
-              {%- endif -%}
-              {%- endfor -%}
-
-              {% comment %}
-              {%- if request.page_type == 'blog' or request.page_type == 'article' -%}
-              <li>
-                <a class="social-icons__link" href="{{ shop.url }}{{ blog.url }}.atom">
-                  {% include 'icon-rss' %}
-                  <span class="icon__fallback-text">RSS</span>
-                </a>
-              </li>
-              {%- endif -%}
-              {% endcomment %}
-            </ul>
+	            <ul class="list--inline site-footer__social-icons social-icons site-footer__icon-list">
+	              {%- for social in socials -%}
+		              {%- assign social_link = social | prepend: 'social_' | append: '_link' | downcase -%}
+		              {%- assign icon_link = social | prepend: 'icon-' | downcase -%}
+		              {%- if settings[social_link] != blank -%}
+			              <li class="social-icons__item btn btn--primary">
+			                <a class="social-icons__link " href="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
+			                  {%- include icon_link -%}
+			                  <span class="icon__fallback-text">{{ social }}</span>
+			                </a>
+			              </li>
+		              {%- endif -%}
+	              {%- endfor -%}
+	            </ul>
             {% endif %}
 
 
