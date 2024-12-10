@@ -32,7 +32,7 @@
   <article class='page-width-small article-page  {% unless section.settings.show_share_buttons %} show_full_rte {% endunless %}'>
 
     {% if header_image == blank %}
-    <div class="section-header text-left section-header_without_image">
+      <div class="section-header text-left section-header_without_image">
 
       <h1 class="article__title h2" id="title-0">{{ article.title }}</h1>
 
@@ -65,6 +65,10 @@
       </div>
 
     </div>
+    {% else %}
+      <div class="visuallyhidden visually-hidden section-header text-left section-header_without_image">
+        <h1 class="article__title h2" id="title-0">{{ article.title }}</h1>
+      </div>
     {% endif %}
 
     {% if article.image != blank and use_featured_image == false %}
