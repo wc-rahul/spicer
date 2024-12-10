@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -40,17 +40,8 @@
           "type": "block",
           "settings": {
             "heading": "Kylie Taylor",
-            "content": "<p><strong>General Manager - Universal Packaging<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Kylie.png",
-            "url": ""
-          }
-        },
-        "block_mazPhJ": {
-          "type": "block",
-          "settings": {
-            "heading": "Jed Goudie",
-            "content": "<p><strong>Business Manager<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Jed.png",
+            "content": "<p>General Manager - Universal Packaging</p>",
+            "image": "shopify://shop_images/Kylie.png",
             "url": ""
           }
         },
@@ -58,16 +49,35 @@
           "type": "block",
           "settings": {
             "heading": "Darrin Kennedy",
-            "content": "<p><strong>National Sales Manager<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/DK.png",
+            "content": "<p>National Sales Manager</p>",
+            "image": "shopify://shop_images/DK.png",
+            "url": ""
+          }
+        },
+        "block_mazPhJ": {
+          "type": "block",
+          "settings": {
+            "heading": "Ash Tyson",
+            "content": "<p>Business Development Manager - Auckland</p>",
+            "image": "shopify://shop_images/Ash.png",
+            "url": ""
+          }
+        },
+        "block_3LQdBD": {
+          "type": "block",
+          "settings": {
+            "heading": "Sharyn Kidd",
+            "content": "<p>Business Development Manager - Auckland</p>",
+            "image": "shopify://shop_images/Sharyn.png",
             "url": ""
           }
         }
       },
       "block_order": [
         "block_UXNUyB",
+        "block_W3FbYw",
         "block_mazPhJ",
-        "block_W3FbYw"
+        "block_3LQdBD"
       ],
       "settings": {
         "layout": "grid",
@@ -84,8 +94,8 @@
           "type": "block",
           "settings": {
             "heading": "Stacey Edwards",
-            "content": "<p><strong>Team Leader - Palmerston North Branch<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Stacey.png",
+            "content": "<p><strong>Team Leader - Palmerston North Branch</strong></p>",
+            "image": "shopify://shop_images/Stacey.png",
             "url": ""
           }
         },
@@ -93,8 +103,8 @@
           "type": "block",
           "settings": {
             "heading": "Alan Trask",
-            "content": "<p><strong>Inventory Controller<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Alan.png",
+            "content": "<p><strong>Inventory Controller</strong></p>",
+            "image": "shopify://shop_images/Alan.png",
             "url": ""
           }
         },
@@ -102,8 +112,8 @@
           "type": "block",
           "settings": {
             "heading": "Sarah Menefy",
-            "content": "<p><strong>Service Co-Ordinator<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Sarah.png",
+            "content": "<p><strong>Service Co-Ordinator</strong></p>",
+            "image": "shopify://shop_images/Sarah.png",
             "url": ""
           }
         },
@@ -111,8 +121,8 @@
           "type": "block",
           "settings": {
             "heading": "Kelly Phillips",
-            "content": "<p><strong>Sales & Administration Support<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Kelly.png",
+            "content": "<p><strong>Sales & Administration Support</strong></p>",
+            "image": "shopify://shop_images/Kelly.png",
             "url": ""
           }
         }
@@ -132,61 +142,6 @@
         "mobile_carousel": false
       }
     },
-    "featured_blocks_qbbzGm": {
-      "type": "featured-blocks",
-      "blocks": {
-        "block_VJnntx": {
-          "type": "block",
-          "disabled": true,
-          "settings": {
-            "heading": "Brae Rusling",
-            "content": "<p><strong>Warehouse & Logistics<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Brae.png",
-            "url": ""
-          }
-        },
-        "block_KFGUFh": {
-          "type": "block",
-          "settings": {
-            "heading": "Ash Tyson",
-            "content": "<p><strong>Business Development Manager - Auckland<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Ash.png",
-            "url": ""
-          }
-        },
-        "block_j7XEw3": {
-          "type": "block",
-          "settings": {
-            "heading": "Sharyn Kidd",
-            "content": "<p><strong>Business Development Manager - Auckland<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Sharyn.png",
-            "url": ""
-          }
-        },
-        "block_WWV6Td": {
-          "type": "block",
-          "settings": {
-            "heading": "Pip Beets",
-            "content": "<p><strong>Business Development Manager - Wellington<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Pip.png",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "block_VJnntx",
-        "block_KFGUFh",
-        "block_j7XEw3",
-        "block_WWV6Td"
-      ],
-      "settings": {
-        "layout": "grid",
-        "title": "",
-        "subtitle": "",
-        "image_style": "circle",
-        "mobile_carousel": false
-      }
-    },
     "featured_blocks_MW6hkJ": {
       "type": "featured-blocks",
       "blocks": {
@@ -194,8 +149,8 @@
           "type": "block",
           "settings": {
             "heading": "Tina Smith",
-            "content": "<p><strong>Business Development Manager - South Island<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Tina.png",
+            "content": "<p>Business Development Manager - South Island</p>",
+            "image": "shopify://shop_images/Tina.png",
             "url": ""
           }
         },
@@ -203,8 +158,8 @@
           "type": "block",
           "settings": {
             "heading": "Dean Godfrey",
-            "content": "<p><strong>Business Development Manager - South Island<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Dean.png",
+            "content": "<p>Business Development Manager - South Island</p>",
+            "image": "shopify://shop_images/Dean.png",
             "url": ""
           }
         },
@@ -212,18 +167,17 @@
           "type": "block",
           "settings": {
             "heading": "Jordan Armstrong",
-            "content": "<p><strong>Technical Services & Sales<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Jordan.png",
+            "content": "<p>Technical Services & Sales</p>",
+            "image": "shopify://shop_images/Jordan.png",
             "url": ""
           }
         },
         "block_8mXptd": {
           "type": "block",
-          "disabled": true,
           "settings": {
-            "heading": "Jodie Stewart",
-            "content": "<p><strong>Finance & Admin Manager<\/strong><\/p>",
-            "image": "shopify:\/\/shop_images\/Yodie.png",
+            "heading": "Jana Venter",
+            "content": "<p>Technical Sales</p>",
+            "image": "shopify://shop_images/KB5_9953_29ed1f6b-007b-4254-9cb0-26e62404d662.jpg",
             "url": ""
           }
         }
@@ -241,6 +195,20 @@
         "image_style": "circle",
         "mobile_carousel": false
       }
+    },
+    "divider_9NPJEC": {
+      "type": "Divider",
+      "settings": {
+        "divider-visibility": "showboth",
+        "hd_border_color": "#aaaaaa",
+        "divider_border": false,
+        "divider_spacing": 20,
+        "div_width": 80,
+        "hd_border": 2,
+        "border_line": 1,
+        "div_style": "solid",
+        "border_rad": 2
+      }
     }
   },
   "order": [
@@ -248,7 +216,7 @@
     "divider_H8hKKK",
     "featured_blocks_xrRYxE",
     "featured_blocks_FMyrXQ",
-    "featured_blocks_qbbzGm",
-    "featured_blocks_MW6hkJ"
+    "featured_blocks_MW6hkJ",
+    "divider_9NPJEC"
   ]
 }
