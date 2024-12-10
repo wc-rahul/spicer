@@ -48,16 +48,6 @@
   
   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
 
-  {%- if canonical_url != blank  -%}
-    {% if template == 'collection' %}
-    <link rel="canonical" href="{{ canonical_url |  split: '?' |  first}}">
-    {% elsif template == 'search' %}
-    <link rel="canonical" href="{{ canonical_url | split: "?" | first }}">
-    {% else %}
-    <link rel="canonical" href="{{ canonical_url }}">
-    {% endif %}
-  {%- endif -%}
-
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
   {%- endif -%}
