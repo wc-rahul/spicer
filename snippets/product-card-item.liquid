@@ -23,6 +23,13 @@
     {% endif %}
 {% endif %}
 
+{% if template contains 'collection' %}
+  {% for product in collection.products limit: 4  %}
+    {% if product.media[0] %}
+      <link rel="preload" href="{{ product.media[0] | img_url: '360x' }}" as="image">
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {%- capture product_labels -%}
   {%- for tag in product.tags -%}
@@ -393,20 +400,24 @@
 
                 <label class="color-swatch__item test-122"
                   for="{{ color_id }}"
-                  style="
-                          {% if use_variant_image_for_grid_swatches %}
+                  style="{% if use_variant_image_for_grid_swatches and variant_for_value.metafields.swatch.colour == blank %}
                           background-color:#fff;
                           background-image: url({{ variant_for_value.featured_media  | img_url:"100x" }});
-                          {% else %}
-                            {% if color_swatch_image != blank %}
-                            background-color:#fff;
-                            background-image: url({{ color_swatch_image | img_url: '64x64' }});
+                        {% else %}
+                            {% if color_swatch_image != blank and variant_for_value.metafields.swatch.colour == blank %}
+                              background-color:#fff;
+                              background-image: url({{ color_swatch_image | img_url: '64x64' }});
                             {% else %}
-                              {% render 'color_swatch_customization', default_value: value %}
+                              {% unless variant_for_value.metafields.swatch.colour != blank %}
+                                {% render 'color_swatch_customization', default_value: value %}
+                              {% endunless %}
                           {% endif %}
-                            {% endif %}
-                          "
-                  title="{{ value | escape }}">
+                            {% endif %}" title="{{ value | escape }}">
+                          {% if variant_for_value.metafields.swatch.colour != blank %}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                              <circle cx="20" cy="20" r="20" fill="{{ variant_for_value.metafields.swatch.colour }}" />
+                            </svg>
+                          {% endif %}
                 </label>
                 <a href="{{ product.url }}" class="color-swatch__item-link active-{{ forloop.index }} {% if forloop.last %} active{% endif %}">+{{ option.values.size | minus: forloop.index0 }}</a>
               </a>
@@ -507,7 +518,13 @@
                 <div style="padding-top:{% unless preview_image == blank %}{{ 1 | divided_by: preview_image.aspect_ratio | times: 100 }}%{% else %}100%{% endunless %};">
               {% endif %}
 
-                {%- render 'image' with image: preview_image, image_mobile: preview_image, size: 'xs', image_class: 'list-view-item__image product-card__image zoom-fade-animation-element od-optimised', image_id: img_id  -%}
+                {% assign main_list_img = preview_image | image_url: width: 375 %}
+
+                  {% if forloop.index < 3 %}
+                    {%- render 'image' with image: main_list_img, preload: true, lazyload: false, size: 'xs', image_class: 'list-view-item__image product-card__image zoom-fade-animation-element od-optimised', image_id: img_id  -%}
+                  {% else %}
+                    {%- render 'image' with image: main_list_img, size: 'xs', image_class: 'list-view-item__image product-card__image zoom-fade-animation-element od-optimised', image_id: img_id  -%}
+                  {% endif %}
                 
                 {%- if has_alternate_image -%}
                   {% assign alternate_media = product.media[1].preview_image %}
@@ -523,10 +540,12 @@
                     {% endif %}
                   {% endif %}
 
-                  {%- render 'image' with image: alternate_media, image_mobile: alternate_media, size: 'xs', image_class: 'item__image product-card__image product-card__image--alternate od-optimised' -%}
+                  {% assign alternate_list_img = alternate_media | image_url: width: 440 %}
+                  {% assign alternate_list_img_mobile = alternate_media | image_url: width: 350 %}
+
+                  {%- render 'image' with image: alternate_list_img, image_mobile: alternate_list_img_mobile, size: 'xs', image_class: 'item__image product-card__image product-card__image--alternate od-optimised--alternate' -%}
                  {% endif %}
 
-                
                 {% render 'load_spinner' %}
                 {% if settings.align_height %}
                   </div>

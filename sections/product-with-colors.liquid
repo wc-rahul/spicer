@@ -834,7 +834,7 @@
 {% if template contains 'product' %}
   {% if product.media[0] %}
     {%- assign src_width = product.media[0].width | append: 'x' -%}
-    <link rel="preload" href="{{ product.media[0] | img_url: '375x' }}" as="image" media="(max-width: 900px)">
+    <link rel="preload" href="{{ product.media[0] | img_url: '440x' }}" as="image" media="(max-width: 900px)">
     <link rel="preload" href="{{ product.media[0] | img_url: src_width }}" as="image" media="(min-width: 901px)">
   {% endif %}
 {% endif %}
@@ -1017,7 +1017,8 @@
                    data-image-height='{{ image.height }}'
                    data-image-id="{{ image.id }}"
                    data-image-url='{{ image | img_url:"2000x" }}'>
-                  {%- render 'image' with image: image, size: 'm', preload: true, lazyload: false,image_id: img_id, image_class: 'main-product--image od-optimised' -%}
+                  {% assign main_img = image | image_url: width: 750 %}
+                  {%- render 'image' with image: main_img, preload: true, lazyload: false,image_id: img_id, image_class: 'main-product--image od-optimised--main-with-colour' -%}
                   </div>
               </div>
             {% endunless %}
