@@ -23,9 +23,8 @@
         },
         "f7579f87-bf3c-4c53-9a56-533113ce2d77": {
           "type": "block",
-          "disabled": true,
           "settings": {
-            "content": "<p><strong>Announcement bar text</strong></p>",
+            "content": "<p><strong>Holiday Trading: </strong>We will be closed from midday Friday 20th December to Wednesday 8th January. We wish you all a happy and safe holiday break!</p>",
             "link": ""
           }
         }
@@ -161,7 +160,6 @@
         "right_linklist": "",
         "mobile_main_linklist": "main-menu",
         "btn_label": "View All",
-        "btn_url": "{{ section.settings.search_popular_products.metafields.url.mobile_menu_link.value }}",
         "main_linklist_style": "none",
         "email_text": "sales@spicersnz.co.nz",
         "phone_number": "0800 774 237",
