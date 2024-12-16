@@ -148,7 +148,7 @@
         "ca44420f-3c95-41e4-acda-c8ca2ec345a8"
       ],
       "settings": {
-        "elevate_section": true,
+        "elevate_section": false,
         "hide_mobile": false,
         "section_style": "grid",
         "title": "",
