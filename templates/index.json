@@ -39,12 +39,12 @@
         "image_ECntdq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Spicers_Home_Page_2.jpg",
+            "image": "shopify://shop_images/Spicers_Home_Page_3.jpg",
             "color_image_overlay": "#000",
             "image_overlay_opacity": 0,
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "text_alignment": "left center",
-            "slide_title": "Take a walk on the wild side",
+            "slide_title": "Stick to Nature",
             "heading_size": 70,
             "mob_heading_size": 40,
             "subheading": "WITH MANTER IPANEMA X-DRY WS",
