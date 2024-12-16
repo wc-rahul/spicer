@@ -50,11 +50,11 @@
             "subtitle_size": 18,
             "mob_subtitle_size": 18,
             "subhead_pos": "bottom",
-            "button_label": "",
+            "button_label": "SHOP NOW",
             "button_link": "",
-            "button_style_2": "primary",
-            "button_label_2": "",
-            "button_link_2": ""
+            "button_style_2": "white",
+            "button_label_2": "SHOP NOW",
+            "button_link_2": "https://spicersnz.co.nz/search?q=ipanema*%20AND%20product_type:*&type=product"
           }
         }
       },
