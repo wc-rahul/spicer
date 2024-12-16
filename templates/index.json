@@ -61,9 +61,9 @@
         "image_HKCDU9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_1.jpg",
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_2.jpg",
             "color_image_overlay": "#000",
-            "image_overlay_opacity": 40,
+            "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "left center",
             "slide_title": "Seasons Greetings",
