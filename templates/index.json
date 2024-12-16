@@ -12,6 +12,28 @@
     "1657285967afba02c0": {
       "type": "slideshow",
       "blocks": {
+        "image_HKCDU9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_3.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 0,
+            "text_color": "#ffffff",
+            "text_alignment": "left center",
+            "slide_title": "Seasons Greetings",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "FROM SPICERS & UNIVERSAL PACKAGING",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "bottom",
+            "button_label": "TRADING TIMES",
+            "button_link": "",
+            "button_style_2": "white",
+            "button_label_2": "TRADING TIMES",
+            "button_link_2": "shopify://blogs/spicers-nz/holiday-trading"
+          }
+        },
         "1657285966fbda115a-0": {
           "type": "image",
           "disabled": true,
@@ -57,34 +79,12 @@
             "button_label_2": "SHOP NOW",
             "button_link_2": "https://spicersnz.co.nz/search?q=ipanema*%20AND%20product_type:*&type=product"
           }
-        },
-        "image_HKCDU9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_3.jpg",
-            "color_image_overlay": "#000",
-            "image_overlay_opacity": 0,
-            "text_color": "#ffffff",
-            "text_alignment": "left center",
-            "slide_title": "Seasons Greetings",
-            "heading_size": 70,
-            "mob_heading_size": 40,
-            "subheading": "FROM SPICERS & UNIVERSAL PACKAGING",
-            "subtitle_size": 18,
-            "mob_subtitle_size": 18,
-            "subhead_pos": "bottom",
-            "button_label": "TRADING TIMES",
-            "button_link": "",
-            "button_style_2": "white",
-            "button_label_2": "TRADING TIMES",
-            "button_link_2": "shopify://blogs/spicers-nz/holiday-trading"
-          }
         }
       },
       "block_order": [
+        "image_HKCDU9",
         "1657285966fbda115a-0",
-        "image_ECntdq",
-        "image_HKCDU9"
+        "image_ECntdq"
       ],
       "settings": {
         "slideshow_width": "full",
