@@ -15,11 +15,11 @@
         "image_HKCDU9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_4.jpg",
-            "mobile_image": "shopify://shop_images/Copy_of_Copy_of_TOTAL_HOME_PAGE_Xmas_1.jpg",
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_5.jpg",
+            "mobile_image": "shopify://shop_images/Spicers_Mobile_Website.jpg",
             "color_image_overlay": "#000",
             "image_overlay_opacity": 0,
-            "text_color": "#ffffff",
+            "text_color": "#333f4c",
             "text_alignment": "left center",
             "slide_title": "Seasons Greetings",
             "heading_size": 70,
