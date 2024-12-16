@@ -40,7 +40,7 @@
           "settings": {
             "image": "shopify://shop_images/Copy_of_Copy_of_TOTAL_HOME_PAGE_-_Xmas.jpg",
             "color_image_overlay": "#000",
-            "image_overlay_opacity": 40,
+            "image_overlay_opacity": 100,
             "text_color": "#ffffff",
             "text_alignment": "left center",
             "slide_title": "Take a walk on the wild side",
