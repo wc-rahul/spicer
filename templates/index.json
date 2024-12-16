@@ -34,10 +34,33 @@
             "button_label_2": "",
             "button_link_2": ""
           }
+        },
+        "image_ECntdq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_Copy_of_TOTAL_HOME_PAGE_-_Xmas.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "left center",
+            "slide_title": "Take a walk on the wild side",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "WITH MANTER IPANEMA X-DRY WS",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "bottom",
+            "button_label": "",
+            "button_link": "",
+            "button_style_2": "primary",
+            "button_label_2": "",
+            "button_link_2": ""
+          }
         }
       },
       "block_order": [
-        "1657285966fbda115a-0"
+        "1657285966fbda115a-0",
+        "image_ECntdq"
       ],
       "settings": {
         "slideshow_width": "full",
