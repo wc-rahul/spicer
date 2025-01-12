@@ -12,30 +12,6 @@
     "1657285967afba02c0": {
       "type": "slideshow",
       "blocks": {
-        "image_HKCDU9": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_5.jpg",
-            "mobile_image": "shopify://shop_images/Spicers_Mobile_Website.jpg",
-            "color_image_overlay": "#000000",
-            "image_overlay_opacity": 0,
-            "text_color": "#333f4c",
-            "text_alignment": "left center",
-            "slide_title": "Seasons Greetings",
-            "heading_size": 70,
-            "mob_heading_size": 40,
-            "subheading": "FROM SPICERS & UNIVERSAL PACKAGING",
-            "subtitle_size": 18,
-            "mob_subtitle_size": 18,
-            "subhead_pos": "bottom",
-            "button_label": "TRADING TIMES",
-            "button_link": "",
-            "button_style_2": "white",
-            "button_label_2": "TRADING TIMES",
-            "button_link_2": "shopify://blogs/spicers-nz/holiday-trading"
-          }
-        },
         "image_ECntdq": {
           "type": "image",
           "settings": {
@@ -57,6 +33,28 @@
             "button_style_2": "white",
             "button_label_2": "SHOP NOW",
             "button_link_2": "https://spicersnz.co.nz/search?q=ipanema*%20AND%20product_type:*&type=product"
+          }
+        },
+        "image_VtpiHg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_NanoEcho.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 0,
+            "text_color": "#333f4c",
+            "text_alignment": "left center",
+            "slide_title": "It's time to cut back and step forward.",
+            "heading_size": 60,
+            "mob_heading_size": 40,
+            "subheading": "with NanoEcho Machine Wrap",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "bottom",
+            "button_label": "",
+            "button_link": "shopify://products/machine-wrap-nanoecho",
+            "button_style_2": "white",
+            "button_label_2": "Inspired to change? Click here.",
+            "button_link_2": "shopify://products/machine-wrap-nanoecho"
           }
         },
         "1657285966fbda115a-0": {
@@ -85,8 +83,8 @@
         }
       },
       "block_order": [
-        "image_HKCDU9",
         "image_ECntdq",
+        "image_VtpiHg",
         "1657285966fbda115a-0"
       ],
       "settings": {
