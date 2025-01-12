@@ -23,6 +23,7 @@
         },
         "f7579f87-bf3c-4c53-9a56-533113ce2d77": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "content": "<p><strong>Holiday Trading: </strong>We will be closed from midday Friday 20th December to Wednesday 8th January. We wish you all a happy and safe holiday break!</p>",
             "link": ""
