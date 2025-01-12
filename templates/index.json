@@ -38,10 +38,11 @@
         "image_VtpiHg": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_NanoEcho.jpg",
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_NanoEcho_2.jpg",
+            "mobile_image": "shopify://shop_images/Copy_of_Spicers_Mobile_Website.jpg",
             "color_image_overlay": "#000",
             "image_overlay_opacity": 0,
-            "text_color": "#333f4c",
+            "text_color": "#ffffff",
             "text_alignment": "left center",
             "slide_title": "It's time to cut back and step forward.",
             "heading_size": 60,
@@ -50,8 +51,8 @@
             "subtitle_size": 18,
             "mob_subtitle_size": 18,
             "subhead_pos": "bottom",
-            "button_label": "",
-            "button_link": "shopify://products/machine-wrap-nanoecho",
+            "button_label": "Inspired to change? Click here.",
+            "button_link": "",
             "button_style_2": "white",
             "button_label_2": "Inspired to change? Click here.",
             "button_link_2": "shopify://products/machine-wrap-nanoecho"
