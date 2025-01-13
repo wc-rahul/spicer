@@ -58,6 +58,25 @@
             "button_link_2": "shopify://products/machine-wrap-nanoecho"
           }
         },
+        "video_ygjC4h": {
+          "type": "video",
+          "settings": {
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "html5_video_url": "https://cdn.shopify.com/videos/c/o/v/551561ed6c1c4d75a68206c45d745bc7.mp4",
+            "color_video_overlay": "#000",
+            "text_color": "#ffffff",
+            "video_overlay_opacity": 0,
+            "text_alignment": "left center",
+            "slide_title": "If you’ve got the freight, we’ve got the goods.",
+            "subheading": "",
+            "button_style": "primary",
+            "button_label": "Pack with universal now",
+            "button_link": "",
+            "button_style_2": "white",
+            "button_label_2": "Pack with Universal! Shop Now.",
+            "button_link_2": "shopify://collections/industrial-packaging"
+          }
+        },
         "1657285966fbda115a-0": {
           "type": "image",
           "disabled": true,
@@ -86,6 +105,7 @@
       "block_order": [
         "image_ECntdq",
         "image_VtpiHg",
+        "video_ygjC4h",
         "1657285966fbda115a-0"
       ],
       "settings": {
