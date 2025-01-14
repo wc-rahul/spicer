@@ -44,9 +44,9 @@
           </a>
         </div>
         <div class="CartItem__Info">
-          <h5 class="CartItem__Title">
+          <div class="CartItem__Title h5">
             <a href="{{ line_item.url }}">{{ line_item.product.title }}</a>
-          </h5>
+          </div>
           <div class="variant-details">
             {% if line_item.variant.metafields.custom.product_quantity_note %}
               <div class="options">
@@ -314,9 +314,9 @@
           </a>
         </div>
         <div class="CartItem__Info">
-          <h5 class="CartItem__Title">
+          <div class="CartItem__Title h5">
             <a href="{{ line_item.url }}">{{ line_item.product.title }}</a>
-          </h5>
+          </div>
           {%- unless line_item.product.has_only_default_variant -%}
           <p class="CartItem__Variant">{{ line_item.variant.title }}</p>
           {%- endunless -%}
