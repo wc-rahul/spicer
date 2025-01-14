@@ -154,7 +154,7 @@
   </button>
 
   {% else %}
-  <a href="{{ routes.account_login_url }}" class="btn product-form__cart-submit btn--primary login-price">
+  <a rel="nofollow" href="{{ routes.account_login_url }}" class="btn product-form__cart-submit btn--primary login-price">
     <span> {{ 'products.product.login_to_see_price' | t }}</span></a>
   {% endif %}
 </div>

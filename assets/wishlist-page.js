@@ -460,7 +460,7 @@ class WishlistProductCard extends WishlistElement {
   renderCta({ product, variant }) {
     if(!this.app.customer){
         return html`
-          <a href=${this.app.routes.accountLoginUrl} class="btn product-form__cart-submit btn--primary login-price"> 
+          <a rel="nofollow" href=${this.app.routes.accountLoginUrl} class="btn product-form__cart-submit btn--primary login-price"> 
           <span>Login To See Price</span> 
           </a>
          `;
