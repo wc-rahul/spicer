@@ -3537,6 +3537,8 @@ padding-top: 5px;
   flex-direction: column-reverse; }
 [data-section-type="featured-blocks"] .featured-block .featured-block-content-wrapper {
   position: relative; }
+[data-section-type="featured-blocks"] .featured-block .featured-block-content-wrapper address {
+  font-style: normal }
 [data-section-type="featured-blocks"] .featured-block .featured-block-content-wrapper .featured-block-content {
   width: 100%;
   text-align: center;
