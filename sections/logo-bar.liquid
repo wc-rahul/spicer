@@ -99,36 +99,36 @@
 
 
 <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="logo-bar" class="">
-
   <div class="page-width">
-    
      {% if section.settings.subtitle != blank  or  section.settings.title != blank %}
-    <div class="section-header text-left homepage_subtitle_style_{{settings.homepage_subtitle_color}} {% if section.settings.show_arrows and enable_carousel %} section-header-wrapper {% endif %}">
-      {% if section.settings.subtitle != blank %}
-     <span class='h5'>{{ section.settings.subtitle  }}</span>
-      {% endif %}
-      {% if section.settings.title != blank %}
-      <h2>{{ section.settings.title | escape }}</h2>
-      {% endif %}
-      {% if section.settings.button_label != blank %}
-        <a href="{{ section.settings.btn_url }}" class="btn btn--tertiary logo-btn small-hide">
-          {{ section.settings.button_label }}
-          {% include 'icon' with 'tail-right' %}
-        </a>
-      {% endif %}
-      
-      {% if section.settings.show_arrows and enable_carousel %}
-        <div class='slider_custom_arrows'>
-          <a href="javascript:void(0)" id='button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
-            {% include 'icon' with 'tail-left' %}
-          </a>
-          <a href="javascript:void(0)" id='button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
+      <div class="section-header text-left homepage_subtitle_style_{{settings.homepage_subtitle_color}} {% if section.settings.show_arrows and enable_carousel %} section-header-wrapper {% endif %}">
+        {% if section.settings.subtitle != blank %}
+          <span class='h5'>{{ section.settings.subtitle  }}</span>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <div class="h2">{{ section.settings.title | escape }}</div>
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+          <a href="{{ section.settings.btn_url }}" class="btn btn--tertiary logo-btn small-hide">
+            {{ section.settings.button_label }}
             {% include 'icon' with 'tail-right' %}
           </a>
-        </div>
-      {% endif %}
-      
-    </div>
+        {% endif %}
+
+        {% if section.settings.show_arrows and enable_carousel %}
+          <div class='slider_custom_arrows'>
+            <a href="javascript:void(0)" id='button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
+              {% include 'icon' with 'tail-left' %}
+            </a>
+            <a href="javascript:void(0)" id='button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
+              {% include 'icon' with 'tail-right' %}
+            </a>
+          </div>
+        {% endif %}
+
+      </div>
      {% endif %}
 
 

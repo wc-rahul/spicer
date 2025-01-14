@@ -6,23 +6,19 @@
 {% assign image_overlay_opacity = section.settings.image_overlay_opacity %}
 {% render 'custom_page_header' image: header_image, heading: header_heading, show_breadcrumbs: show_breadcrumbs, show_heading: true, image_overlay_color: image_overlay_color, image_overlay_opacity: image_overlay_opacity %}
 
-
-
 {% assign layout = section.settings.layout %}
 {% assign show_sidebar = false %}
 
-
-
 {% for block in section.blocks %}
-{% if block.type != 'top_bar' %}
-{% assign show_sidebar = true %}
-{% endif %}
+	{% if block.type != 'top_bar' %}
+		{% assign show_sidebar = true %}
+	{% endif %}
 {% endfor %}
 
 {% assign show_top_bar_tags = false %}
 
 {% if section.settings.show_tags_dropdown %}
-{% assign show_top_bar_tags = true %}
+	{% assign show_top_bar_tags = true %}
 {% endif %}
 
 {% assign show_top_bar_menu = false %}
@@ -157,14 +153,10 @@
             </a> 
 
           <div class='article_block_info'>
-             <h4 class="article__title" id="FeaturedBlogTitle-{{ forloop.index0 }}-{{ section.id }}">
-                <a href="{{ article.url }}">
-                {{ article.title }}
-               </a>
-              </h4>
-          
-            
-            
+             <div class="article__title h4" id="FeaturedBlogTitle-{{ forloop.index0 }}-{{ section.id }}">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+             </div>
+
             {% if settings.blog_show_author %}
             {% assign original_author_name = article.author %}
 
@@ -180,9 +172,9 @@
             {% assign author_biography = settings[custom_author_biography_handle] %}
 
             {% if author_name == original_author_name %}
-			 {% assign show_default_author_info = false %}
+			        {% assign show_default_author_info = false %}
             
-            <span class="article__author {% if author_logo == blank %} text_name {% endif %}">
+               <span class="article__author {% if author_logo == blank %} text_name {% endif %}">
               
               {% if author_logo != blank %}
               <img src='{{ author_logo | img_url:"150x" }}' 
@@ -265,42 +257,36 @@
 </section>
 
 {% if pagination_mode != 'standart' %}
-<script src="{{ 'ajaxinate.js' | asset_url }}" defer="defer"></script>  
+	<script src="{{ 'ajaxinate.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 
-
-
-
 {% endpaginate %}
-
-
 
 {% schema %}
 {
   "name": "t:sections.blog-template.name",
   "settings": [
-
-	{
-		"type":"image_picker",
-		"id":"header_image",
-		"label":"t:sections.blog-template.settings.header_image.label"
-		},
-{
-		"type":"color",
-		"id":"image_overlay_color",
-		"label":"t:sections.blog-template.settings.image_overlay_color.label",
-		"default": "#000"
-		},
-      {
-        "type": "range",
-        "id": "image_overlay_opacity",
-       "label": "t:sections.blog-template.settings.image_overlay_opacity.label",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-       "unit": "t:sections.blog-template.settings.image_overlay_opacity.unit",
-        "default": 40
-      },
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "t:sections.blog-template.settings.header_image.label"
+    },
+    {
+      "type": "color",
+      "id": "image_overlay_color",
+      "label": "t:sections.blog-template.settings.image_overlay_color.label",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "label": "t:sections.blog-template.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.blog-template.settings.image_overlay_opacity.unit",
+      "default": 40
+    },
     {
       "type": "select",
       "id": "layout",
@@ -317,62 +303,62 @@
         }
       ]
     },
-		{
-		"type":"checkbox",
-		"id":"show_breadcrumbs",
-		"label":"t:sections.blog-template.settings.show_breadcrumbs.label",
-		"default": true
-		},
- {
-          "type": "link_list",
-          "id": "menu",
-          "label": "t:sections.blog-template.settings.link_list.label",
-          "info": "t:sections.blog-template.settings.link_list.info"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_tags_dropdown",
-          "label": "t:sections.blog-template.settings.show_tags_dropdown.label",
-		"default": true
-        },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:sections.blog-template.settings.show_breadcrumbs.label",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:sections.blog-template.settings.link_list.label",
+      "info": "t:sections.blog-template.settings.link_list.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags_dropdown",
+      "label": "t:sections.blog-template.settings.show_tags_dropdown.label",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "blog_show_date",
       "label": "t:sections.blog-template.settings.blog_show_date.label",
       "default": true
     },
-	{
-		"type":"checkbox",
-		"id":"show_excerpt",
-		"label":"t:sections.blog-template.settings.show_excerpt.label",
-		"default": true
-		},
-	{
-	"type":"header",
-	"content":"t:sections.blog-template.settings.pagination_header.content"
-	},
-{
-	"type":"select",
-	"id":"pagination_mode",
-	"label":"t:sections.blog-template.settings.pagination_mode.label",
-	"options": [
-		{
-			"label":"t:sections.blog-template.settings.pagination_mode.options__1.label",
-			"value":"standart"
-		},
-		{
-			"label":"t:sections.blog-template.settings.pagination_mode.options__2.label",
-			"value":"click"
-		},
-		{
-			"label":"t:sections.blog-template.settings.pagination_mode.options__3.label",
-			"value":"scroll"
-		}
-	],
-	"default": "standart"
-	}
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "t:sections.blog-template.settings.show_excerpt.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.blog-template.settings.pagination_header.content"
+    },
+    {
+      "type": "select",
+      "id": "pagination_mode",
+      "label": "t:sections.blog-template.settings.pagination_mode.label",
+      "options": [
+        {
+          "label": "t:sections.blog-template.settings.pagination_mode.options__1.label",
+          "value": "standart"
+        },
+        {
+          "label": "t:sections.blog-template.settings.pagination_mode.options__2.label",
+          "value": "click"
+        },
+        {
+          "label": "t:sections.blog-template.settings.pagination_mode.options__3.label",
+          "value": "scroll"
+        }
+      ],
+      "default": "standart"
+    }
   ],
- "blocks": [
+  "blocks": [
     {
       "type": "featured_posts",
       "name": "t:sections.blog-template.blocks.featured_posts.name",
@@ -384,14 +370,13 @@
           "label": "t:sections.blog-template.blocks.featured_posts.settings.title.label",
           "default": "Popular posts"
         },
-       
         {
           "type": "checkbox",
           "id": "show_date",
           "label": "t:sections.blog-template.blocks.featured_posts.settings.show_date.label",
           "default": true
         },
-	{
+        {
           "type": "checkbox",
           "id": "show_comments",
           "label": "t:sections.blog-template.blocks.featured_posts.settings.show_comments.label",
@@ -424,7 +409,7 @@
         }
       ]
     },
-{
+    {
       "type": "links",
       "name": "t:sections.blog-template.blocks.links.name",
       "settings": [
@@ -436,20 +421,20 @@
         }
       ]
     },
-	{
+    {
       "type": "search",
       "name": "t:sections.blog-template.blocks.search.name",
-		"limit":1,
+      "limit": 1,
       "settings": [
         {
           "type": "checkbox",
           "id": "show_search_form",
           "label": "t:sections.blog-template.blocks.search.settings.show_search_form.label",
-		"default": true
+          "default": true
         }
       ]
     },
-	{
+    {
       "type": "categories",
       "name": "t:sections.blog-template.blocks.categories.name",
       "settings": [
@@ -457,10 +442,10 @@
           "type": "checkbox",
           "id": "show_tags",
           "label": "t:sections.blog-template.blocks.categories.settings.show_tags.label",
-		"default": true
+          "default": true
         }
       ]
     }
-	]
+  ]
 }
 {% endschema %}

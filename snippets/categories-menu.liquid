@@ -99,15 +99,15 @@
 
 
             {% if mega_menu_block.settings.image_heading != blank %}
-            <div class='menu_block-image_heading'>
-              <h3>{{mega_menu_block.settings.image_heading }}</h3>
+              <div class="menu_block-image_heading">
+                <div class="h3">{{- mega_menu_block.settings.image_heading -}}</div>
 
-              {% if mega_menu_block.settings.image_link != blank %}
-              <div class='image_link_icon'>
-                <span> {%- render 'icon', icon: 'chevron-right' -%}</span>
+                {% if mega_menu_block.settings.image_link != blank %}
+                  <div class='image_link_icon'>
+                    <span>{%- render 'icon', icon: 'chevron-right' -%}</span>
+                  </div>
+                {% endif %}
               </div>
-              {% endif %}
-          </div>
             {% endif %}
           
           {% endif %}

@@ -35,8 +35,13 @@
       {% render 'breadcrumbs' %}
     {% endif %}
 
-    {% if heading != blank and show_heading %}
-    <h1 class='h2 page_header_heading'>{{heading}}</h1>
+    {% if heading != blank and show_heading and template != 'article' %}
+      <h1 class='h2 page_header_heading'>{{heading}}</h1>
+    {% endif %}
+
+
+    {% if heading != blank and show_heading and template == 'article' %}
+      <div class='h2 page_header_heading'>{{heading}}</div>
     {% endif %}
 
     {% if collection.description != blank %}
@@ -44,42 +49,6 @@
       {{ collection.description }}
     </div>
     {% endif %}
-
-    
-    
-    
-    {% comment %} {% if show_collection_filters_toolbar %}
-    <div class='custom_header-filters-toolbar-block'>
-      <div class="filters-toolbar">
-
-        {% if filters_view_mode != 'no_sidebar' %}
-        <button type='button' class='btn btn--primary open_mobile_sidebar'><span>{{ 'collections.sidebar.mobile_open_button' | t }}</span></button>
-        {% endif %}
-        <button type="button" class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %}" aria-label="{{ 'collections.general.grid' | t }}" data-action="change-layout" data-layout-mode="grid">{% render 'icon', icon: 'grid' %}</button>
-        <button type="button" class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %}" aria-label="{{ 'collections.general.list' | t }}" data-action="change-layout" data-layout-mode="list">{% render 'icon', icon: 'list' %}</button>
-
-        {% if sort_enable %}
-        <div class="toolbar_sort_by-block filters-toolbar__item-child">
-          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-          <label class="filters-toolbar__label select-label" for="SortBy">{{ 'collections.sorting.title' | t }}</label>
-          <div class="filters-toolbar__input-wrapper select-group">
-            <select name="sort_by" id="SortBy"
-                    class="filters-toolbar__input hidden"
-                    aria-describedby="a11y-refresh-page-message a11y-selection-message"
-                    data-default-sortby="{{ collection.default_sort_by }}"
-                    data-select-input
-                    >
-              {%- for option in collection.sort_options -%}
-              <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
-              {%- endfor -%}
-            </select>
-            {% render 'icon-chevron-down' %}
-          </div>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-	{% endif %} {% endcomment %}
 
   {% if subcollections %}
     {% assign subcollection_menu_handle = collection.handle |  append: '-sub' %}  

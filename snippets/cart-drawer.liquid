@@ -226,7 +226,7 @@
   .Cart-Drawer .cart-drawer-container.empty_cart_buttons {
     margin-top: 0;
   }
-  h3.Drawer__Title.title-hidden {
+  .Drawer__Title.title-hidden {
     position: absolute;
     width: 0;
     height: 0;
@@ -252,28 +252,26 @@
 
 {% assign always_show_cart_related_collection = settings.always_show_cart_related_collection %}
 {%- capture section_settings -%}
-{
-"type": {{ settings.cart_type | json }},
-"itemCount": {{ cart.item_count }},
-"totalPrice": {{ cart.total_price }},
-"drawer": true,
-"hasShippingEstimator": false
-}
+  {
+  "type": {{ settings.cart_type | json }},
+  "itemCount": {{ cart.item_count }},
+  "totalPrice": {{ cart.total_price }},
+  "drawer": true,
+  "hasShippingEstimator": false
+  }
 {%- endcapture -%}
  
 <div id="sidebar-cart" class="Drawer Cart-Drawer" data-section-type="cart-template" data-section-settings='{{ section_settings }}'  aria-modal="true" role="dialog" tabindex="-1">
   <div class="Drawer__Header cart-drawer-container">
-    
     {%- if cart.item_count == 0 -%}
-    <h3 class="Drawer__Title" data-cart-heading>Your Cart is Empty </h3>
-    {% else %}  
-    <h3 class="Drawer__Title">Your Cart
-      (<span class='drawer_cart_count' data-cart-count>{{ cart.item_count }}</span>):
-    </h3>
+      <div class="Drawer__Title h3" data-cart-heading>Your Cart is Empty </div>
+    {% else %}
+      <div class="Drawer__Title h3">Your Cart (<span class='drawer_cart_count' data-cart-count>{{ cart.item_count }}</span>):</div>
     {% endif %}
-    <h3 class="Drawer__Title title-hidden" data-cart-heading-count>Your Cart
-      (<span class='drawer_cart_count' data-cart-count>{{ cart.item_count }}</span>):
-    </h3>
+
+    <div class="Drawer__Title title-hidden h3" data-cart-heading-count>Your Cart(<span class='drawer_cart_count' data-cart-count>{{ cart.item_count }}</span>):
+    </div>
+
     <button class="Drawer__Close" data-action="close-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'sections.header.close_cart' | t }}">
       {%- render 'icon' with 'close' -%}
     </button>

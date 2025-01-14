@@ -1325,8 +1325,6 @@ slate.Variants = (function() {
      * @return {event} variantPriceChange
      */
     _updatePrice: function(variant, form) {
-
-
       if (
         variant.price === this.currentVariant.price &&
         variant.compare_at_price === this.currentVariant.compare_at_price &&
@@ -1334,7 +1332,6 @@ slate.Variants = (function() {
       ) {
         return;
       }
-
 
       this.container.dispatchEvent(
         new CustomEvent('variantPriceChange', {
@@ -6850,22 +6847,6 @@ theme.Product = (function () {
           isReviewAccordion = true;
         }
       });
-      // if(isReviewAccordion) {
-      //   document.addEventListener('click', function(e){
-      //     var el = e.target;
-
-      //     if(el.classList.contains('spr-summary-actions-newreview') || el.closest('.spr-summary-actions-newreview')) {
-      //       if(!el.classList.contains('spr-summary-actions-newreview')) {
-      //         el = el.closest('.spr-summary-actions-newreview');
-      //       }
-      //       var accrodionParent = el.closest('.product_accordion__content');
-      //       if(accrodionParent) {
-      //         var reviewsForm = el.closest('#shopify-product-reviews');
-      //         accrodionParent.style.height = reviewsForm.clientHeight + 'px';
-      //       }
-      //     }
-      //   });
-      // }
     }
 
     var tabing = container.querySelector(".tabing");
@@ -7132,7 +7113,6 @@ theme.Product = (function () {
           }
 
           // Update options right away.
-
           if (checkOptions()) {
             Shopify.updateOptionsInSelector(0);
             if (product.options.length > 1) Shopify.updateOptionsInSelector(1);
@@ -7146,7 +7126,7 @@ theme.Product = (function () {
           )[0];
           if (firstSelectEl) {
             firstSelectEl.addEventListener("change", function () {
-              console.log("change in first");
+              //console.log("change in first");
               if (checkOptions()) {
                 Shopify.updateOptionsInSelector(1);
               }
@@ -7159,13 +7139,16 @@ theme.Product = (function () {
             });
           }
 
+          if (!parentForm) {
+            console.error('parentForm is not found.');
+            return;
+          }
+
           // When there is an update in the second dropdown.
-          var secondSelectEl = parentForm.querySelectorAll(
-            ".single-option-selector"
-          )[1];
+          var secondSelectEl = parentForm.querySelectorAll(".single-option-selector")[1];
           if (secondSelectEl) {
             secondSelectEl.addEventListener("change", function () {
-              console.log("change in second");
+              //console.log("change in second");
               if (checkOptions()) {
                 if (product.options.length === 3) {
                   Shopify.updateOptionsInSelector(2);
@@ -7174,8 +7157,6 @@ theme.Product = (function () {
               return true;
             });
           }
-
-
         }
       };
 
@@ -7199,11 +7180,6 @@ theme.Product = (function () {
           observer.observe(parentForm, config);
         }
       }
-
-      // var selector = parentForm.querySelector(".single-option-selector");
-      // if (selector) {
-      //   selector.dispatchEvent(new Event("change", { bubbles: true }));
-      // }
 
       if (_this.productData.options.length == 1) {
         for (var v = 0; v < _this.productData.variants.length; v++) {
@@ -7236,7 +7212,9 @@ theme.Product = (function () {
           selectors.forEach(function (select, index) {
             select.dispatchEvent(new Event("change", { bubbles: true }));
           });
-          selector.dispatchEvent(new Event("change", { bubbles: true }));
+          if (selector) {
+            selector.dispatchEvent(new Event("change", { bubbles: true }));
+          }
         }
       }
     }
@@ -8043,13 +8021,17 @@ theme.Product = (function () {
     },
 
     _updatePrice: async function (evt, form) {
-
       var variant = evt.detail.variant;
       const pricePerPackContainer = document.querySelector('[data-price-per]')
       let formData = new FormData(evt.detail.form)
 
       if (form) {
         formData = new FormData(form)
+      }
+
+      if (!this.priceContainer) {
+        console.error('Price container not found.');
+        return;
       }
 
       var regularPrices = this.priceContainer.querySelectorAll(
