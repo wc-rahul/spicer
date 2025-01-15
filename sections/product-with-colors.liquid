@@ -806,9 +806,7 @@
 
   }
 </style>
-<style>
 
-</style>
 {% assign use_variant_image_for_swatches = true %}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
@@ -832,6 +830,14 @@
 {%- assign initial_media_index = forloop.index0 -%}
 {% endif %}
 {% endfor %}
+
+{% if template contains 'product' %}
+  {% if product.media[0] %}
+    {%- assign src_width = product.media[0].width | append: 'x' -%}
+    <link rel="preload" href="{{ product.media[0] | img_url: '440x' }}" as="image" media="(max-width: 900px)">
+    <link rel="preload" href="{{ product.media[0] | img_url: src_width }}" as="image" media="(min-width: 901px)">
+  {% endif %}
+{% endif %}
 
 
 {% assign show_preOrderButton = false %}
@@ -1010,10 +1016,9 @@
                    data-image-width='{{ image.width }}'
                    data-image-height='{{ image.height }}'
                    data-image-id="{{ image.id }}"
-                   data-image-url='{{ image | img_url:"2000x" }}'
-        
-               >
-                  <img src="{{ image |  img_url: 'master' }}" width="{{image.width}}" height="{{image.height}}" />
+                   data-image-url='{{ image | img_url:"2000x" }}'>
+                  {% assign main_img = image | image_url: width: 750 %}
+                  {%- render 'image' with image: main_img, preload: true, lazyload: false,image_id: img_id, image_class: 'main-product--image od-optimised--main-with-colour' -%}
                   </div>
               </div>
             {% endunless %}

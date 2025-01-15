@@ -733,14 +733,8 @@
       {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
       <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
         {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
-        <img class="js main_logo"
-             src="{{ section.settings.logo | img_url: '300x300' }}"
-             srcset="{{ section.settings.logo | img_url: '300x300' }} 1x, {{ section.settings.logo | img_url: '300x300', scale: 2 }} 2x"
-             loading="lazy"
-             width="{{section.settings.logo.width}}"
-             height="{{section.settings.logo.height}}"
-             alt="{{ logo_alt | escape }}"
-             style="max-width: {{ section.settings.logo_max_width }}px">
+        <link rel="preload" href="{{ section.settings.logo }}" as="image">
+        {%- render 'image' with image: section.settings.logo, size: 'xs', preload: true, lazyload: false, image_id: img_id, image_class: 'js main_logo od-optimised' -%}
         <noscript>
           {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
           <img src="{{ section.settings.logo | img_url: image_size }}"

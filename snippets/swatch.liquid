@@ -17,15 +17,16 @@
 {% assign option_index = 0 %}
 
 {% for option in product.options %}
-  
   {% if option == swatch %}
     {% assign found_option = true %}
     {% assign option_index = forloop.index0 %}
+
     <style>
       label[for="product-select-option-{{ option_index }}"] { display: none; }
       #product-select-option-{{ option_index }} { display: none; }
       #product-select-option-{{ option_index }} + .custom-style-select-box { display: none !important; }
     </style>
+
     <script>
       window.addEventListener('load', function () {
       {% if qvScope %}
@@ -35,133 +36,132 @@
       {% endif %}
       });
     </script>
+
     {% assign downcased_option = swatch | downcase %}
     {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
       {% assign is_color = true %}
     {% endif %}
 
-{%  if custom_swatch_option_name_arr.size > 0 %}
-  {%  for custom_option_name in custom_swatch_option_name_arr %}
-    {%  assign downcase_custom_swatch_option_name  = custom_option_name | downcase %}
- {%  if downcase_custom_swatch_option_name == downcased_option  %}
-       {% assign is_color = true %}
-   {% break %}
-      {%  endif %}
-    {% endfor %}
-  {%  endif %}
-   
+    {% if custom_swatch_option_name_arr.size > 0 %}
+      {% for custom_option_name in custom_swatch_option_name_arr %}
+        {% assign downcase_custom_swatch_option_name = custom_option_name | downcase %}
+        {% if downcase_custom_swatch_option_name == downcased_option %}
+          {% assign is_color = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 
 {% unless found_option %}
-<div class="swatch error">
-  <p>You included the snippet swatch.liquid with the name of a product option — <code>'{{ swatch }}'</code> — that does not belong to your product.</p>
-  <p>Use <code>{% raw %}{% render 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
-  <p>Example: <code>{% raw %}{% render 'swatch' with 'Color' %}{% endraw %}</code></p>
-  <p><strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is <code>'Color'</code>.</p>
-</div>
+  <div class="swatch error">
+    <p>You included the snippet swatch.liquid with the name of a product option — <code>'{{ swatch }}'</code> — that does not belong to your product.</p>
+    <p>Use <code>{% raw %}{% render 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+    <p>Example: <code>{% raw %}{% render 'swatch' with 'Color' %}{% endraw %}</code></p>
+    <p><strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is <code>'Color'</code>.</p>
+  </div>
 {% else %}
 
- 
 <div class=" clearfix form_bg_row" >
   <div class='swatch' data-option-index="{{ option_index }}">
-  <div class="header">{{ swatch }} </div>
-  {% assign values = '' %}
-        
+    <div class="header">{{ swatch }} </div>
+
+    {% assign values = '' %}
     {%- assign current_variant = product.selected_or_first_available_variant -%}
-    
     {% assign group_products = product.metafields.custom.group_product_variant.value %}
-    
-     {% assign all_variant = product.variants %}
+    {% assign all_variant = product.variants %}
 
      {% if group_products  %}
-     
        {% for group_product in group_products %}
-
           {% assign all_variant = all_variant | concat:group_product.variants %}
-
         {% endfor %}
      {% endif %}
 
-
     <div class='swatch_elements_wrapper this??'>
       {% for variant in all_variant %}
+        {% assign value = variant.options[option_index] %}
+        {% unless values contains value %}
+          {% assign values = values | join: ',' %}
+          {% assign values = values | append: ',' | append: value %}
+          {% assign values = values | split: ',' %}
 
-      {% assign value = variant.options[option_index] %}
-      {% unless values contains value %}
-      {% assign values = values | join: ',' %}
-      {% assign values = values | append: ',' | append: value %}
-      {% assign values = values | split: ',' %}
-
-      {% assign selected_option = false %}
-      {% if current_variant.options contains value %}
-      {% assign selected_option = true %} 
-      {% endif %}
-
-      <div  data-value="{{ value | escape }}" class="swatch-element {% if is_color %}color {% endif %} swatch_{{ value | handle }} {% if product.options.size == 1 %}{% if variant.available %}available{% else %}soldout{% endif %} {% endif %} {% if variant.available %}var_available{% else %}var_soldout{% endif %}">
-
-        <input class="{% if forloop.first %} swatch-click {% endif %}" id="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if selected_option  %}  {% endif %} />
-        {% if is_color %}
-        <label for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" 
-               title="{{value}}"
-               style=" {% if variant.image != blank %}
-                      background-image: url({{ variant.image | img_url:"100x" }});
-                      {% else %}
-                      {% render 'color_swatch_customization', default_value: value %}
-                      {% endif %} 
-                      "
-               >
-          {% unless type == 'no-cross' %}
-          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
-          {% endunless %}
-          <span class='swatch_check_icon'>{% render 'icon' with 'check' %}</span>
-        </label>
-
-        {% else %}
-        <label for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}"
-               >
-          {{ value }}
-          {% unless type == 'no-cross' %}
-          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
-          {% endunless %}
-        </label>
-        {% endif %}
-
-        {% if is_color %}
-        <div class="tooltip">
-          <div class="clr-wrp"  style="
-            background-color:#fff;
-            background-image: url({{ variant.featured_media  | img_url:"100x" }}) ">
-            
-            {% comment %} {% if use_variant_image_for_swatches %}
-              {% else %}
-              {% render 'color_swatch_customization', default_value: value %}
-              {% endif %} {% endcomment %}
-        </div><div class="cls-wrp-val">{{ value }}</div></div>
-        {% endif %}
-      </div>
-      {% endunless %}
-      {% if variant.available %}
-      <script>
-        {% if qvScope %}
-        var qvScope = document.querySelector('#{{ qvScope }} .swatch[data-option-index="{{ option_index }}"] .swatch_{{ value | handle }}');
-          if(qvScope) {
-          qvScope.classList.remove('soldout');
-          qvScope.classList.add('available');
-          qvScope.querySelector('[type="radio"]').removeAttribute('disabled');
-          }
-
-          {% else %}
-
-          var swatch = document.querySelector('.swatch[data-option-index="{{ option_index }}"] .swatch_{{ value | handle }}');
-          if(swatch) {
-          swatch.classList.remove('soldout');
-          swatch.classList.add('available');
-          swatch.querySelector('[type="radio"]').removeAttribute('disabled');
-          }                                                                   
+          {% assign selected_option = false %}
+          {% if current_variant.options contains value %}
+            {% assign selected_option = true %}
           {% endif %}
-      </script>
-      {% endif %}
+
+          <div data-value="{{ value | escape }}"
+               class="swatch-element {% if is_color %}color {% endif %}
+               swatch_{{ value | handle }}
+                {% if product.options.size == 1 %}{% if variant.available %}available{% else %}soldout{% endif %} {% endif %} {% if variant.available %}var_available{% else %}var_soldout{% endif %}">
+
+            <input class="{% if forloop.first %} swatch-click {% endif %}" id="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if selected_option  %}  {% endif %} />
+
+            {% if is_color %}
+              <label for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}"
+                     title="{{value}}"
+                     style="{% if variant.image != blank and variant.metafields.swatch.colour == blank %}
+                              background-image: url({{ variant.image | img_url:"84x" }});
+                            {% else %}
+                              {% unless variant_for_value.metafields.swatch.colour != blank %}
+                                {% render 'color_swatch_customization', default_value: value %}
+                              {% endunless %}
+                            {% endif %}">
+
+                {% if variant.metafields.swatch.colour != blank %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                    <circle cx="40" cy="40" r="40" fill="{{ variant.metafields.swatch.colour }}" />
+                  </svg>
+                {% endif %}
+
+                {% unless type == 'no-cross' %}
+                  <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
+                {% endunless %}
+
+                <span class='swatch_check_icon'>{% render 'icon' with 'check' %}</span>
+              </label>
+            {% else %}
+              <label for="swatch-{{section.id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}">
+                {{ value }}
+                {% unless type == 'no-cross' %}
+                  <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" width="{{image.width}}" height="{{image.height}}" />
+                {% endunless %}
+              </label>
+            {% endif %}
+
+            {% if is_color %}
+              <div class="tooltip">
+                <div class="clr-wrp"  style="
+                  background-color:#fff;
+                  background-image: url({{ variant.featured_media  | img_url:"100x" }}) "></div>
+                <div class="cls-wrp-val">{{ value }}</div>
+              </div>
+            {% endif %}
+          </div>
+        {% endunless %}
+
+        {% if variant.available %}
+          <script>
+            {% if qvScope %}
+            var qvScope = document.querySelector('#{{ qvScope }} .swatch[data-option-index="{{ option_index }}"] .swatch_{{ value | handle }}');
+              if(qvScope) {
+              qvScope.classList.remove('soldout');
+              qvScope.classList.add('available');
+              qvScope.querySelector('[type="radio"]').removeAttribute('disabled');
+              }
+
+              {% else %}
+
+              var swatch = document.querySelector('.swatch[data-option-index="{{ option_index }}"] .swatch_{{ value | handle }}');
+              if(swatch) {
+              swatch.classList.remove('soldout');
+              swatch.classList.add('available');
+              swatch.querySelector('[type="radio"]').removeAttribute('disabled');
+              }
+              {% endif %}
+          </script>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

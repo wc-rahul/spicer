@@ -1059,6 +1059,18 @@
 {% endif %}
 {% endfor %}
 
+{% comment %}
+
+{% if template contains 'product' %}
+  {% if product.media[0] %}
+    {%- assign src_width = product.media[0].width | append: 'x' -%}
+    <link rel="preload" href="{{ product.media[0] | img_url: '440x' }}" as="image" media="(max-width: 900px)">
+    <link rel="preload" href="{{ product.media[0] | img_url: src_width }}" as="image" media="(min-width: 901px)">
+  {% endif %}
+{% endif %}
+
+{% endcomment %}
+
 
 {% assign show_preOrderButton = false %}
 {% if current_variant.inventory_policy == 'continue' and settings.show_preOrder_btn and current_variant.inventory_quantity <= 0 %}
@@ -1228,17 +1240,14 @@
         {%- for image in product.images -%}
           {% unless image.attached_to_variant? %}
             <div class='product-single__media__slide  ' data-media-id="{{ image.id }}" data-media-index="{{ forloop.index0 }}">
-              <div
-   
-              style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;"
+              <div style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;"
                  class="product-single__media image_type {% if product.image.size > 1 %} product-single__media--has-thumbnails{% endif %}"
                  data-image-width='{{ image.width }}'
                  data-image-height='{{ image.height }}'
                  data-image-id="{{ image.id }}"
-                 data-image-url='{{ image | img_url:"2000x" }}'
-      
-             >
-                <img src="{{ image |  img_url: 'master' }}" width="440" height="{{ 440 | divided_by: image.aspect_ratio | ceil }}"/>
+                 data-image-url='{{ image | img_url:"2000x" }}'>
+                  {% assign main_img = image | image_url: width: 750 %}
+                  {%- render 'image' with image: main_img, preload: true, lazyload: false, image_class: 'main-product--image od-optimised--main' -%}
                 </div>
             </div>
           {% endunless %}

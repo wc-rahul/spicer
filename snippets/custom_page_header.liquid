@@ -10,21 +10,11 @@
 
   {% render 'image-style', image: image, height: 500, wrapper_id: image_wrapper_id, img_id: image_id %}
 
-  <img class="custom-page-header-img"
-       srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
-               {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
-               {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
-               {%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
-               {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
-               {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
-               {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
-       src="{{ image | img_url: '750x' }}"
-       sizes="100vw"
-       loading="lazy"
-       alt="{{image.alt | default: heading }}"
-       width="{{ image.width }}"
-       height="{{ image.height }}"
-       style="object-position:{{ image.presentation.focal_point }};">
+  {% if template contains 'collection' %}
+    <link rel="preload" href="{{ image }}" as="image">
+  {% endif %}
+
+  {%- render 'image' with image: image, size: 'l', preload: true, image_class: 'custom-page-header-img od-optimised' -%}
   
   <div class='custom_page_header_opacity'></div>
 
@@ -45,9 +35,9 @@
     {% endif %}
 
     {% if collection.description != blank %}
-    <div class='collection-description rte'>
-      {{ collection.description }}
-    </div>
+      <div class='collection-description rte'>
+        {{ collection.description }}
+      </div>
     {% endif %}
 
   {% if subcollections %}
@@ -105,21 +95,19 @@
       opacity: {{image_overlay_opacity}}%;
     }
   </style>
-
-
 </div>
 {% else %}
-{% if show_heading or show_breadcrumbs %}
-<div class="page-width">
-  <div class="section-header">
-    {% if heading != blank and show_heading %}
-    <h1 class=' h2 page_header_heading'>{{heading}}</h1>
-    {% endif %}
-    {% if show_breadcrumbs %}
-    {% render 'breadcrumbs' %}
-    {% endif %}
+  {% if show_heading or show_breadcrumbs %}
+  <div class="page-width">
+    <div class="section-header">
+      {% if heading != blank and show_heading %}
+      <h1 class=' h2 page_header_heading'>{{heading}}</h1>
+      {% endif %}
+      {% if show_breadcrumbs %}
+      {% render 'breadcrumbs' %}
+      {% endif %}
 
+    </div>
   </div>
-</div>
-{% endif %}
+  {% endif %}
 {% endif %}

@@ -134,8 +134,6 @@
 
   <div class="grid product-single ">
     <div class="grid__item product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %}" data-product-single-media-group>
-      
-      
       <div class='product-single__media__carousel {% if enable_image_zoom %} product_image__zoom {% endif %}' data-product-main-slider data-flickity-config='{{ flickity_options }}' >
       {% unless section_onboarding %}
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}

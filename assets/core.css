@@ -4866,7 +4866,7 @@ section[data-section-type="rich-text"] ul li {
   font-style: var(--font-style-body);
   font-weight: var(--font-weight-body)
 }
- 
+
 [data-section-type=video-section] {
   margin: 0 auto
 }
