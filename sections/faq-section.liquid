@@ -72,20 +72,23 @@
 		    "@context": "https://schema.org",
 		    "@type": "FAQPage",
 		    "mainEntity": [
-          {% for block in section.blocks %}
-		        {
-			        "@type": "Question",
-			        "name": {{ block.settings.question | strip_html | json }},
-					    "acceptedAnswer":{
-						    "@type":"Answer",
-						    "text": {{ block.settings.answer | strip_html | json }}
-					    }
-		        }{%- if forloop.last == false -%},{%- endif -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.question  -%}
+			        {
+				        "@type": "Question",
+				        "name": {{- block.settings.question | strip_html | json -}},
+						    "acceptedAnswer":{
+							    "@type":"Answer",
+							    "text": {{- block.settings.answer | strip_html | json -}}
+						  }
+
+		        }{%- if forloop.last == false -%},{%- endif -%}{%- endif -%}
 				  {%- endfor -%}
 		    ]
 		  }
-    </script>
-  {% endif %}
+
+	  </script>
+	{% endif %}
 </div>
 
 </div>
