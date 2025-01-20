@@ -71,14 +71,14 @@
         {% endif %}
 
         {% if section.settings.show_arrows %}
-        <div class='slider_custom_arrows'>
-          <a href="javascript:void(0)" id='button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
-            {% include 'icon' with 'tail-left' %}
-          </a>
-          <a href="javascript:void(0)" id='button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
-            {% include 'icon' with 'tail-right' %}
-          </a>
-        </div>
+          <div class='slider_custom_arrows'>
+            <button id='button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
+              {% include 'icon' with 'tail-left' %}
+            </a>
+            <button id='button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
+              {% include 'icon' with 'tail-right' %}
+            </button>
+          </div>
         {% endif %}
         
       </div>

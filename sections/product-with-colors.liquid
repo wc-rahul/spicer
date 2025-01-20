@@ -134,10 +134,10 @@
     line-height: 120%;
     text-decoration: underline;
   }
-  a.btn.btn--primary.enqr-btn {
+  .btn.btn--primary.enqr-btn {
     width: 100%;
   }
-  a.btn.btn--primary.enqr-btn {
+  .btn.btn--primary.enqr-btn {
     width: 100%;
     color: white;
   }
@@ -1119,25 +1119,23 @@
 }
 {%- endcapture -%}
 
-                  <div class='complementary-products-slider_custom_arrows slider_custom_arrows'>
-          <a href="javascript:void(0)" id='complementary_button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
+       <div class='complementary-products-slider_custom_arrows slider_custom_arrows'>
+          <button id='complementary_button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
             {% include 'icon' with 'tail-left' %}
-          </a>
-          <a href="javascript:void(0)" id='complementary_button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
+          </button>
+          <button id='complementary_button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
             {% include 'icon' with 'tail-right' %}
-          </a>
+          </button>
         </div>
           
         <div class='complementary-products-slider  {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %}' data-flickity-config='{{ flickity_options }}'>
            {%- if recommendations.performed and recommendations.products_count > 0 -%}
-          {%- assign max_height = 250 -%}
-
-             <div class=" complementary_grid">
-              <div class='complementary_products_slide'>
-      {%- for prod in recommendations.products limit: block.settings.product_list_limit offset: continue -%}
-     {% assign modulo_index = forloop.index | modulo:products_per_page %}
-           
-              {% include 'product-card-item', enable_quick_add: enable_quick_add, block:block,isComplementary_product: true,list: true, max_height: max_height, product: prod, show_vendor: false,products_per_row: 1 %}
+              {%- assign max_height = 250 -%}
+              <div class=" complementary_grid">
+                <div class='complementary_products_slide'>
+                {%- for prod in recommendations.products limit: block.settings.product_list_limit offset: continue -%}
+                  {% assign modulo_index = forloop.index | modulo:products_per_page %}
+                  {% include 'product-card-item', enable_quick_add: enable_quick_add, block:block,isComplementary_product: true,list: true, max_height: max_height, product: prod, show_vendor: false,products_per_row: 1 %}
          
         {%  if modulo_index == 0  and recommendations_products_size != forloop.index %}
              </div>
@@ -1458,12 +1456,12 @@
               <div class='qty_container'>
                 <label class='header' for="Quantity-{{ block.id }}">{{ 'products.product.quantity' | t }}:</label>
                 <div class="qty product-page-qty">
-                  <a href='javascript:void(0);' class="minus_btn qty_btn" ></a>
+                  <button class="minus_btn qty_btn" ></button>
                   <input type="text" id="Quantity-{{ block.id }}"
                          name="quantity" value="1" min="1" pattern="[0-9]*"
                          class="product-form__input product-form__input--quantity"
                          data-quantity-input>
-                  <a href='javascript:void(0);' class="plus_btn qty_btn" ></a>
+                  <button class="plus_btn qty_btn" ></button>
                 </div>
               </div>   
               <div class="qty-tooltip-wrap">

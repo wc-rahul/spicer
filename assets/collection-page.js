@@ -327,7 +327,7 @@ theme.Collection = (function() {
     }
 
 
-    var check_filter_value_btns = container.querySelectorAll('.advanced-filter a');
+    var check_filter_value_btns = container.querySelectorAll('.advanced-filter .check_filter_value');
     if(check_filter_value_btns.length) {
       check_filter_value_btns.forEach(function (item,index) {
         item.addEventListener('click',function (e) {

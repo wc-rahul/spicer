@@ -78,10 +78,15 @@
     line-height: 120%;
     letter-spacing: 0.07px;
   }
-  a.nav-bar__link.link.categories_main_link span {
+  .nav-bar__link.link.categories_main_link {
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .nav-bar__link.link.categories_main_link span {
     color: #003da6;
   }
-  a.nav-bar__link.link.categories_main_link .icon {
+  .nav-bar__link.link.categories_main_link .icon {
     width: 12px;
     height: 12px;
     fill: #003da6;
@@ -649,26 +654,21 @@
 
 {% capture categories_linklist %}
   {% if section.settings.categories_linklist != blank %}
-  <div class='categories_menu  emphasize_link'>
- 
-    {%- assign categories_linklist_handle = section.settings.categories_linklist  -%}
-    {%- assign categories_menu = linklists[categories_linklist_handle] -%}
+	  <div class='categories_menu emphasize_link'>
+	    {%- assign categories_linklist_handle = section.settings.categories_linklist  -%}
+	    {%- assign categories_menu = linklists[categories_linklist_handle] -%}
 
-
-    <ul class="nav-bar__linklist list--unstyled" data-type="menu">
-      <li class="nav-bar__item  item-has-mega-menu">
-        <a href="javascript:void(0)" class="nav-bar__link link categories_main_link" data-type="menuitem" aria-expanded="false" aria-haspopup="true">
-          {%- render 'icon', icon: 'hamburger-mobile' -%}
-          <span> {{ categories_menu.title }}</span>
-        </a>
-
-       
-
-        {%- capture index -%}categories-menu{%- endcapture -%}
-        {%- render 'categories-menu', menu: categories_menu, index: index -%}    
-      </li>
-    </ul>
-</div>
+	    <ul class="nav-bar__linklist list--unstyled" data-type="menu">
+	      <li class="nav-bar__item  item-has-mega-menu">
+	        <button class="nav-bar__link link categories_main_link" data-type="menuitem" aria-expanded="false" aria-haspopup="true">
+	          {%- render 'icon', icon: 'hamburger-mobile' -%}
+	          <span> {{ categories_menu.title }}</span>
+	        </button>
+	        {%- capture index -%}categories-menu{%- endcapture -%}
+	        {%- render 'categories-menu', menu: categories_menu, index: index -%}
+	      </li>
+	    </ul>
+		</div>
   {% endif %}
 {% endcapture %}
 
@@ -797,52 +797,50 @@
 
 {% capture search_bar %}
 
- <div class="search-bar__interior dfg {%  unless show_search_filter %} without_search_filter {%  endunless %}">
-            
-            <button type="button"
-                    class="header-search-button"
-                  >
+          <div class="search-bar__interior dfg {%  unless show_search_filter %} without_search_filter {%  endunless %}">
+            <button type="button" class="header-search-button">
               {% include 'icon' with 'search-icon' %}
               <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
             </button>
             
             <div class="search-form__container" data-search-form-container>
-              
               {% if show_search_filter != blank %}
-              {% assign search_categories_menu = linklists[search_categories_linklist] %}
-              <div class='search_categories_menu  site-nav--has-dropdown site-nav--has-centered-dropdown' data-has-dropdowns >
-
-                <button class="site-nav__link site-nav__link--main search_categories_button  site-nav__link--button btn btn--secondary" type="button" aria-expanded="false" aria-controls="Search_categories_menu__dropdown">
-                  <span class="search_categories_button__label">{{ 'sections.header.all_categories' | t }}</span>
-                  {% include 'icon-chevron-down' %}
-                </button>
-
-                <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered search_categories_dropdown critical-hidden" id="Search_categories_menu__dropdown">
-                  <ul id='search-product-type' data-search-type="*">
-                    <li><a data-value='{{ 'sections.header.all_categories' | t }}' href="javascript:void(0)">{{ 'sections.header.all_categories' | t }}</a></li>
-                    {%- for product_type in shop.types -%}
-                    {%- if product_type != blank -%}
-                    <li><a data-value='{{  product_type }}' href="javascript:void(0)">{{ product_type | escape}}</a></li>
-                    {%- endif -%}
-                    {%- endfor -%}
-                  </ul>
-                </div>
-              </div>
+	              {% assign search_categories_menu = linklists[search_categories_linklist] %}
+	              <div class='search_categories_menu  site-nav--has-dropdown site-nav--has-centered-dropdown' data-has-dropdowns>
+	                <button class="site-nav__link site-nav__link--main search_categories_button  site-nav__link--button btn btn--secondary" type="button" aria-expanded="false" aria-controls="Search_categories_menu__dropdown">
+	                  <span class="search_categories_button__label">{{ 'sections.header.all_categories' | t }}</span>
+	                  {% include 'icon-chevron-down' %}
+	                </button>
+	                <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered search_categories_dropdown critical-hidden" id="Search_categories_menu__dropdown">
+	                  <ul id="search-product-type" data-search-type="*">
+	                    <li>
+	                      <button data-value='{{ 'sections.header.all_categories' | t }}'>
+	                        {{ 'sections.header.all_categories' | t }}
+	                      </button>
+	                    </li>
+	                    {%- for product_type in shop.types -%}
+	                      {%- if product_type != blank -%}
+	                        <li>
+	                          <button data-value="{{  product_type }}">{{ product_type | escape}}</button>
+	                        </li>
+	                      {%- endif -%}
+	                    {%- endfor -%}
+	                  </ul>
+	                </div>
+	              </div>
               {% endif %}
+
               <form class="search-form search-bar__form" action="{{ routes.search_url }}" method="get" role="search">
                 <div class="search-form__input-wrapper">
-      <label for="predictive-search-drawer-input" class="visually-hidden"></label>
-                  <input
-                         type="text"
-                         name="q"
-                  id="predictive-search-drawer-input"
+                  <label for="predictive-search-drawer-input" class="visually-hidden"></label>
+                  <input type="text"
+                         name="q" id="predictive-search-drawer-input"
                          data-predictive-search-drawer-input
                          placeholder="{{ 'general.search.placeholder' | t }}"
                          aria-label="{{ 'general.search.placeholder' | t }}"
-                          autocomplete="off" 
+                         autocomplete="off"
                          autocorrect="off" 
-                         class="search-form__input search-bar__input"                        
-                         />
+                         class="search-form__input search-bar__input" />
                   <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
                   <div class="predictive-search-wrapper predictive-search-wrapper--drawer ">
 

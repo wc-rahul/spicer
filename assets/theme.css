@@ -1361,7 +1361,11 @@ footer .localization_form {
 
 @media screen and (max-width:749px) {
   [data-section-type="quotes"] .section-header .slider_custom_arrows {
-    position: relative; }
+    position: relative;}
+
+  [data-section-type="quotes"] .section-header.text-center .slider_custom_arrows {
+    justify-content: center;
+  }
 
   [data-section-type="quotes"] .section-header .slider_custom_arrows .btn:first-child {
     margin-left: 0; }
@@ -3394,6 +3398,30 @@ padding-top: 5px;
   right: 0;
   display: flex;
   align-items: center; }
+
+[data-section-type="featured-blog"] .section-header .slider_custom_arrows .button-prev,
+[data-section-type="featured-blog"] .section-header .slider_custom_arrows .button-next,
+[data-section-type="quotes"] .section-header .slider_custom_arrows .button-next,
+[data-section-type="quotes"] .section-header .slider_custom_arrows .button-prev {
+  position: relative;
+  top: 0;
+}
+
+[data-section-type="featured-blog"] .section-header .slider_custom_arrows .btn:not([disabled]):hover:after,
+[data-section-type="quotes"] .section-header .slider_custom_arrows .btn:not([disabled]):hover:after{
+  display: none;
+}
+
+[data-section-type="featured-blog"] .section-header .slider_custom_arrows .button-prev,
+[data-section-type="quotes"] .section-header .slider_custom_arrows .button-prev  {
+  left: 0;
+}
+
+[data-section-type="quotes"] .section-header .slider_custom_arrows .button-next,
+[data-section-type="featured-blog"] .section-header .slider_custom_arrows .button-next {
+  right: 0;
+}
+
 @media screen and (min-width: 750px) {
   [data-section-type="featured-blog"] .section-header.disabled_desktop_slider .slider_custom_arrows {
     display: none; } }
@@ -3425,7 +3453,10 @@ padding-top: 5px;
 }
 @media screen and (max-width:749px) {
   [data-section-type="featured-blog"] .section-header .slider_custom_arrows {
-    position: relative; }
+    position: relative;}
+
+  [data-section-type="featured-blog"] .section-header.text-center .slider_custom_arrows {
+    justify-content: center }
 
   .featured-blog__slider .grid__item {
     padding: 0;
@@ -8909,3 +8940,4 @@ margin-left: 5px;
   margin-top: 20px;
 }
 .tab-content ul { list-style: disc !important; }
+

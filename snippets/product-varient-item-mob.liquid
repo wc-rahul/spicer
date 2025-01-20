@@ -86,10 +86,10 @@
     <span class="qty-label">QTY:</span>
     <div class='qty_container'>
       <div class="qty product-page-qty">
-        <a href='javascript:void(0);' class="minus_btn qty_btn"></a>
+        <button class="minus_btn qty_btn"></button>
         <input type="text" id="Quantity-{{ current_variant.id }}" name="quantity" value="1" min="1" pattern="[0-9]*"
           class="product-form__input product-form__input--quantity" data-quantity-input>
-        <a href='javascript:void(0);' class="plus_btn qty_btn"></a>
+        <button class="plus_btn qty_btn"></button>
       </div>
     </div>
     {% if variant.metafields.custom.quantity_notes != blank %}

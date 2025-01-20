@@ -189,10 +189,10 @@
                    ></label> 
             {% endif %}
 
-            <a href='javascript: void(0);' class='check_filter_value'>
+            <div class='check_filter_value'>
               <span class="filter-label">{{filter_value.label }}</span>
               <span class="count-label">({{ filter_value.count }})</span>
-            </a>
+            </div>
           </li>
           {%- endfor -%}
 
@@ -276,9 +276,9 @@
           {%- endcase -%}         
         </ul>
 
-        <a href="javascript: void(0);" class="show_more_options" data-default-text="{{ 'collections.sidebar.show_all_html' | t: category:  filter.label  }}">
+        <div class="show_more_options" data-default-text="{{ 'collections.sidebar.show_all_html' | t: category:  filter.label  }}">
           <span>{{ 'collections.sidebar.show_all_html' | t:  category:  filter.label }}</span>
-        </a>
+        </div>
       </div>
 
 
@@ -361,10 +361,10 @@
         {% endif %}
         {% endfor %}
         {% endfor %}
-      </ul><!--  if linklists[linklist_title].links != ''  -->
-      <a href="javascript: void(0);" class="show_more_options" data-default-text="{{ 'collections.sidebar.show_all_html' | t: category: cat_item  }}">
+      </ul>
+      <div class="show_more_options" data-default-text="{{ 'collections.sidebar.show_all_html' | t: category: cat_item  }}">
         <span>{{ 'collections.sidebar.show_all_html' | t: category: cat_item  }}</span>
-      </a>
+      </div>
     </div>
     {% endif %}
 
@@ -405,9 +405,9 @@
         {% endif %}
         {% endfor %}
       </ul>
-      <a href="javascript: void(0);" class="show_more_options" data-default-text="{{ 'collections.sidebar.show_all_html' | t: category: cat_item  }}">
+      <div class="show_more_options" data-default-text="{{ 'collections.sidebar.show_all_html' | t: category: cat_item  }}">
         <span>{{ 'collections.sidebar.show_all_html' | t:  category: cat_item }}</span>
-      </a>
+      </div>
     </div>
     {% endunless %}
 
