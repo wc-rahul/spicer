@@ -137,10 +137,10 @@
     line-height: 120%;
     text-decoration: underline;
   }
-  a.btn.btn--primary.enqr-btn {
+  .btn.btn--primary.enqr-btn {
     width: 100%;
   }
-  a.btn.btn--primary.enqr-btn {
+  .btn.btn--primary.enqr-btn {
     width: 100%;
     color: white;
   }
@@ -580,11 +580,9 @@
               {% endif %}
 
                {%  when 'enquiry_btn' %}
-                <a href="javascript:void(0);" class="btn btn--primary enqr-btn">Enquire Now</a>
-                {% comment %} <a href="#" class="wishlist-btn">+ Add To Favourites</a> {% endcomment %}
+                  <button class="btn btn--primary enqr-btn">Enquire Now</button>
                {%  when 'product_type' %}
-                <div class="product-type">{{ product.type }}</div>
-
+                  <div class="product-type">{{ product.type }}</div>
                {%  when 'complementary' %}
 
           {%  assign enable_quick_add = block.settings.enable_quick_add %}
@@ -611,14 +609,13 @@
   "pageDots": false
 }
 {%- endcapture -%}
-
-                  <div class='complementary-products-slider_custom_arrows slider_custom_arrows'>
-          <a href="javascript:void(0)" id='complementary_button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
+       <div class='complementary-products-slider_custom_arrows slider_custom_arrows'>
+          <button id='complementary_button_prev_{{section.id}}' class='button-prev btn btn--circle-arrow' aria-label="Previous" aria-describedby="button previous">
             {% include 'icon' with 'tail-left' %}
-          </a>
-          <a href="javascript:void(0)" id='complementary_button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
+          </button>
+          <button id='complementary_button_next_{{section.id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next">
             {% include 'icon' with 'tail-right' %}
-          </a>
+          </button>
         </div>
           
         <div class='complementary-products-slider  {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %}' data-flickity-config='{{ flickity_options }}'>
@@ -955,12 +952,12 @@
               <div class='qty_container'>
                 <label class='header' for="Quantity-{{ block.id }}">{{ 'products.product.quantity' | t }}:</label>
                 <div class="qty product-page-qty">
-                  <a href='javascript:void(0);' class="minus_btn qty_btn" ></a>
+                  <button class="minus_btn qty_btn" ></button>
                   <input type="text" id="Quantity-{{ block.id }}"
-                         name="quantity" value="1" min="1" pattern="[0-9]*"
-                         class="product-form__input product-form__input--quantity"
-                         data-quantity-input>
-                  <a href='javascript:void(0);' class="plus_btn qty_btn" ></a>
+                     name="quantity" value="1" min="1" pattern="[0-9]*"
+                     class="product-form__input product-form__input--quantity"
+                     data-quantity-input>
+                  <button class="plus_btn qty_btn" ></button>
                 </div>
               </div>             
             </div>
@@ -1679,7 +1676,7 @@
     line-height: 120%;
     margin: 0 0 20px 0;
   }
-  a.cnt-shop {
+  .cnt-shop {
     width: 100%;
     display: block;
     text-align: center;
@@ -1785,7 +1782,7 @@
 
           {% endform %}
       </div>
-      <a href="javascript:void(0)" class="cnt-shop ">{{ section.settings.continue_button_label }}</a>
+      <button class="cnt-shop">{{ section.settings.continue_button_label }}</button>
     </div>
   </div>
 </div>

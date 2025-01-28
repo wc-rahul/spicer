@@ -33,9 +33,9 @@
       {% endif %}
     </div>
     {% if section.settings.show_close_option %}
-    <a href='javascript:void(0)' class='AnnouncementBar__close_button' aria-label="{{ 'sections.header.close_announcement_bar' | t }}">
-      {% include 'icon-close' %}
-    </a>
+      <button class="AnnouncementBar__close_button btn--link" aria-label="{{ 'sections.header.close_announcement_bar' | t }}">
+        {% include 'icon-close' %}
+      </button>
     {% endif %}
   </div>
 </section>

@@ -133,64 +133,54 @@
 
 </style>
 
-
-
 <section id="section-{{ section.id }}" class="fade-in-animation" data-section-id="{{ section.id }}" data-section-type="index-accordion">
-
   {% assign image = section.settings.image %}
   {% assign mobile_image = section.settings.mobile_image %}
-    {% assign content_side = section.settings.content_side %}
+	{% assign content_side = section.settings.content_side %}
 
-  
-  
   {% capture section_content%} 
     {% if section.settings.title != blank or  section.settings.subtitle != blank %}
-    <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
-      {% if section.settings.subtitle != blank  %}
-     <span class='h5'>{{ section.settings.subtitle  }}</span>
-      {% endif %}
-      {% if section.settings.title != blank  %}
-      <h2>{{ section.settings.title }}</h2>
-      {% endif %}
-    </header>
+      <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+        {% if section.settings.subtitle != blank  %}
+          <span class='h5'>{{ section.settings.subtitle  }}</span>
+        {% endif %}
+
+        {% if section.settings.title != blank  %}
+          <h2>{{ section.settings.title }}</h2>
+        {% endif %}
+      </header>
     {% endif %}
 
     {% if section.blocks.size > 0 %}
-    <div class='homepage_accordion' id='homepage_accordion-{{ section.id }}'>
-      {% for block in section.blocks %}
-      <div class='homepage_accordion__block'>
-        <a href="javascript:void(0)" class='h5 question' data-id="{{block.id}}">
-        <span>{{ block.settings.question }}</span>
-        {% render 'icon' with "plus" %}
-        {% render 'icon' with "minus" %}
-        </a>
-        <div class='answer'>
-          <div class='answer_content'>
-            {{ block.settings.answer}}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
+	    <div class='homepage_accordion' id='homepage_accordion-{{ section.id }}'>
+	      {% for block in section.blocks %}
+		      <div class='homepage_accordion__block'>
+		        <button class='h5 question' data-id="{{block.id}}">
+		          <span>{{ block.settings.question }}</span>
+		          {% render 'icon' with "plus" %}
+		          {% render 'icon' with "minus" %}
+		        </button>
+		        <div class='answer'>
+		          <div class='answer_content'>
+		            {{ block.settings.answer}}
+		          </div>
+		        </div>
+		      </div>
+	      {% endfor %}
+	    </div>
     {% endif %}
   
      {% if section.blocks.size == 0 %}
-    <div class="placeholder-noblocks">
-      {{ 'homepage.onboarding.no_content' | t }}
-    </div>
-  {% endif %}
-  
+      <div class="placeholder-noblocks">
+        {{ 'homepage.onboarding.no_content' | t }}
+      </div>
+    {% endif %}
   {% endcapture %}
-  
-  
 
-
-  
   <div class='section_bg {% if content_side == 'full_width' %} full_height {% endif %}'>
     {% if image != blank %}  
       <div class="blank-img"></div>
-        <img 
-             class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
+        <img class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
              srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
                 {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
                 {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
@@ -286,7 +276,7 @@
 {% schema %}
   {
     "name": "t:sections.index-accordion.name",
-	"class": "index-section bg_image_with_custom_content accordion",
+		"class": "index-section bg_image_with_custom_content accordion",
     "settings": [
 		{
 		"type":"image_picker",

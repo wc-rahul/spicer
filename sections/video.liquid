@@ -21,22 +21,20 @@
 
       </div> 
       <div class='section-tabs-content'>
-
         <div class='index-tabs_nav__wrapper {% if section.blocks.size == 1 %} single_tab {% endif %}'>
-          <div class='index-tabs_nav  '> 
+          <div class="index-tabs_nav">
             {% for block in section.blocks %}
-            {% if  block.settings.heading != blank %}
-            <div class='index-tabs_nav--item {% if forloop.first %} active {% endif %}' data-index="{{forloop.index0}}" data-href='tab_{{block.settings.heading | handle }}_{{block.id}}' aria-label="{{ block.settings.heading}}">
-              <h3>{{ block.settings.heading }}</h3>
-            </div>
-            {% endif %}
+	            {% if  block.settings.heading != blank %}
+		            <div class='index-tabs_nav--item {% if forloop.first %} active {% endif %}' data-index="{{forloop.index0}}" data-href='tab_{{block.settings.heading | handle }}_{{block.id}}' aria-label="{{ block.settings.heading}}">
+		              <h3>{{ block.settings.heading }}</h3>
+		            </div>
+	            {% endif %}
             {% endfor %}
           </div>
         </div>
 
-
         {% for block in section.blocks %}
-        <div class='index-tabs-content_block {% if forloop.first %} active  {% endif %}' id='tab_{{block.settings.heading | handle  }}_{{block.id}}'>
+          <div class='index-tabs-content_block {% if forloop.first %} active  {% endif %}' id='tab_{{block.settings.heading | handle  }}_{{block.id}}'>
 
           {% assign content = block.settings.content %}
           {% assign btn_text = block.settings.btn_text %}

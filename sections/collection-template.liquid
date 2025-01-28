@@ -222,8 +222,7 @@
     font-weight: 600;
     letter-spacing: 0.08px;
   }
-  .collection-sidebar .category-filters-area-list li.advanced-filter a {
-    
+  .collection-sidebar .category-filters-area-list li.advanced-filter .check_filter_value {
     color: var(--text-secondary, #776B6B);
     font-family: Foundry Sterling;
     font-size: 14px;
@@ -233,6 +232,8 @@
     letter-spacing: 0.07px;
     display: flex;
     justify-content: space-between;
+    text-decoration: none;
+    background-color: transparent;
   }
   .collection-sidebar .category-filters-area-section {
     padding: 16px 0;
@@ -252,7 +253,7 @@
   .collection-sidebar .category-filters-section-title.active svg.icon.icon--minus{
     display: block;
   }
-  .collection-sidebar .category-filters-area-list li.advanced-filter a:before {
+  .collection-sidebar .category-filters-area-list li.advanced-filter .check_filter_value:before {
     top: 4px;
     left: 0;
     width: 16px;
@@ -260,7 +261,7 @@
     border: 1px solid #776B6B;
     border-radius: 3px;
   }
-  .collection-sidebar .category-filters-area-list li.advanced-filter.active-filter a:after {
+  .collection-sidebar .category-filters-area-list li.advanced-filter.active-filter .check_filter_value:after {
     content: "";
     display: block;
     position: absolute;
@@ -272,10 +273,6 @@
     top: 5px;
     left: 5px;
     transform: rotate(42deg);
-  }
-  .collection-sidebar .category-filters-area-list li.advanced-filter.active-filter a:before {
-    /* border-color: #003da6;
-    background: #003da6; */
   }
   .product-item__swatches .list-view .color-swatch__item-link.active-6{
     display: block;
