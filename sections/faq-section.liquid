@@ -40,36 +40,55 @@
 <div class="page-width-small" data-section-type="page-accordion" >
 	
   {% if section.blocks.size > 0 %}
-  <div class='faq_accordion' id='accordion-{{ section.id }}'>
-    {% for block in section.blocks %}
-    {% if block.type == 'question' %}
-    <div class='accordion__block'>
-      <h5 class='question' data-id="{{block.id}}">
-        {% render 'icon' with "plus" %}
-        {% render 'icon' with "minus" %}
-        <span>{{ block.settings.question }}</span>
+	  <div class='faq_accordion' id='accordion-{{ section.id }}'>
+	    {% for block in section.blocks %}
+		    {% if block.type == 'question' %}
+			    <div class='accordion__block'>
+			      <div class='question h5' data-id="{{block.id}}">
+			        {% render 'icon' with "plus" %}
+			        {% render 'icon' with "minus" %}
+			        <span>{{ block.settings.question }}</span>
+			      </div>
+			      <div class='answer'>
+			        <div class='answer_content'>
+			          {{ block.settings.answer}}
+			        </div>
+			      </div>
+			    </div>
+				{% else %}
+			    <div class='heading_block section-header'>
+			      {% if block.settings.subheading != blank %}
+			        <span class='h5'>{{ block.settings.subheading  }}</span>
+			      {% endif %}
+			      {% if  block.settings.heading  != blank %}
+			      <h2> {{ block.settings.heading }}</h2>
+			      {% endif %}
+			    </div>
+		    {% endif %}
+	    {% endfor %}
+	  </div>
+	  <script type="application/ld+json">
+		  {
+		    "@context": "https://schema.org",
+		    "@type": "FAQPage",
+		    "mainEntity": [
+          {%- for block in section.blocks -%}
+            {%- if block.settings.question  -%}
+			        {
+				        "@type": "Question",
+				        "name": {{- block.settings.question | strip_html | json -}},
+						    "acceptedAnswer":{
+							    "@type":"Answer",
+							    "text": {{- block.settings.answer | strip_html | json -}}
+						  }
 
-      </h5>
-      <div class='answer'>
-        <div class='answer_content'>
-          {{ block.settings.answer}}
-        </div>
-      </div>
-    </div>
-    {% else %}
-    <div class='heading_block section-header'>
-      {% if block.settings.subheading != blank %}
-        <span class='h5'>{{ block.settings.subheading  }}</span>
-      {% endif %}
-      {% if  block.settings.heading  != blank %}
-      <h2> {{ block.settings.heading }}</h2>
-      {% endif %}
-    </div>
-    {% endif %}
-    
-    {% endfor %}
-  </div>
-  {% endif %}
+		        }{%- if forloop.last == false -%},{%- endif -%}{%- endif -%}
+				  {%- endfor -%}
+		    ]
+		  }
+
+	  </script>
+	{% endif %}
 </div>
 
 </div>
