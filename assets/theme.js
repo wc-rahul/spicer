@@ -853,6 +853,7 @@ slate.Variants = (function() {
     this._initGallery();
     this.singleOptions.forEach(
       function(option) {
+        console.log(option);
         option.addEventListener('change', this._onSelectChange.bind(this));
       }.bind(this)
     );
@@ -1091,19 +1092,20 @@ slate.Variants = (function() {
      */
     _onSelectChange: function(e) {
       var variant = this._getVariantFromOptions();
-          //  console.log("variant found",variant);
       if(this.enabledPickAnOption) {
         var form = this.container.querySelector('.product-form');
         var submit_btn = form.querySelector('[type="submit"]');
         var submit_btn_text = form.querySelector('[data-add-to-cart-text]');
+        var unavailable_btn = form.querySelector('.unavailable-button');
 
         if (!variant) {
           console.log("variant not found");
           form.classList.add('disabled_btns');
-            if(submit_btn) {
-              submit_btn.disabled = true;
-              submit_btn_text.innerHTML = "Unavailable";
-            }
+          if(submit_btn) {
+            submit_btn.disabled = true;
+            submit_btn.classList.add('hide');
+            unavailable_btn.classList.remove('hide');
+          }
           return;
         } else {
 
@@ -1112,11 +1114,15 @@ slate.Variants = (function() {
 
             form.classList.remove('disabled_btns');
             if(submit_btn) {
+              submit_btn.classList.remove('hide');
+              unavailable_btn.classList.add('hide');
               submit_btn.disabled = false;
               submit_btn_text.innerHTML = "Add To Cart";
             }
           }
         }
+
+        console.log("after return", variant)
       }
 
       this._updateMasterSelect(variant);
@@ -7084,6 +7090,7 @@ theme.Product = (function () {
       };
 
       Shopify.linkOptionSelectors = function (product) {
+
         if (product) {
           // Building our mapping object.
           for (var i = 0; i < product.variants.length; i++) {
@@ -7172,7 +7179,7 @@ theme.Product = (function () {
           ) {
             observer.disconnect();
           }
-          var config = { childList: true, subtree: true };
+          var config = { childList: true, subtree: true, attributes: false };
           var observer = new MutationObserver(function () {
             Shopify.linkOptionSelectors(_this.productData);
             observer.disconnect();
