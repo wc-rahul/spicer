@@ -1566,17 +1566,6 @@
                   {% include 'icon-spinner' %}
                 </span>
               </button>
-
-            <button aria-disabled="true"
-            class="btn product-form__cart-submit btn--primary unavailable-button hide">
-              <span>
-                  Unavailable
-              </span>
-              {%- render 'icon', icon: cart_icon_style -%}
-              <span class="hide" data-loader>
-                {% include 'icon-spinner' %}
-              </span>
-            </button>
               {% endif %}
               
               {% if block.settings.enable_payment_button %}
