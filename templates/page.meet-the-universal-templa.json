@@ -40,6 +40,7 @@
           "type": "block",
           "settings": {
             "heading": "Kylie Taylor",
+            "content_html": "",
             "content": "<p>General Manager - Universal Packaging</p>",
             "image": "shopify://shop_images/Kylie.png",
             "url": ""
@@ -49,6 +50,7 @@
           "type": "block",
           "settings": {
             "heading": "Darrin Kennedy",
+            "content_html": "",
             "content": "<p>National Sales Manager</p>",
             "image": "shopify://shop_images/DK.png",
             "url": ""
@@ -57,16 +59,19 @@
         "block_mazPhJ": {
           "type": "block",
           "settings": {
-            "heading": "Ash Tyson",
-            "content": "<p>Business Development Manager - Auckland</p>",
-            "image": "shopify://shop_images/Ash.png",
+            "heading": "Jana Venter",
+            "content_html": "",
+            "content": "<p>Technical Sales</p>",
+            "image": "shopify://shop_images/KB5_9953_29ed1f6b-007b-4254-9cb0-26e62404d662.jpg",
             "url": ""
           }
         },
         "block_3LQdBD": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "heading": "Sharyn Kidd",
+            "content_html": "",
             "content": "<p>Business Development Manager - Auckland</p>",
             "image": "shopify://shop_images/Sharyn.png",
             "url": ""
@@ -94,6 +99,7 @@
           "type": "block",
           "settings": {
             "heading": "Stacey Edwards",
+            "content_html": "",
             "content": "<p><strong>Team Leader - Palmerston North Branch</strong></p>",
             "image": "shopify://shop_images/Stacey.png",
             "url": ""
@@ -103,6 +109,7 @@
           "type": "block",
           "settings": {
             "heading": "Alan Trask",
+            "content_html": "",
             "content": "<p><strong>Inventory Controller</strong></p>",
             "image": "shopify://shop_images/Alan.png",
             "url": ""
@@ -112,6 +119,7 @@
           "type": "block",
           "settings": {
             "heading": "Sarah Menefy",
+            "content_html": "",
             "content": "<p><strong>Service Co-Ordinator</strong></p>",
             "image": "shopify://shop_images/Sarah.png",
             "url": ""
@@ -121,6 +129,7 @@
           "type": "block",
           "settings": {
             "heading": "Kelly Phillips",
+            "content_html": "",
             "content": "<p><strong>Sales & Administration Support</strong></p>",
             "image": "shopify://shop_images/Kelly.png",
             "url": ""
@@ -142,6 +151,64 @@
         "mobile_carousel": false
       }
     },
+    "featured_blocks_4Mkmgj": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_NAtFKb": {
+          "type": "block",
+          "settings": {
+            "heading": "Sharyn Kidd",
+            "content_html": "",
+            "content": "<p>Business Development Manager - Auckland</p>",
+            "image": "shopify://shop_images/Sharyn.png",
+            "url": ""
+          }
+        },
+        "block_JtCtz4": {
+          "type": "block",
+          "settings": {
+            "heading": "Ash Tyson",
+            "content_html": "",
+            "content": "<p>Business Development Manager - Auckland</p>",
+            "image": "shopify://shop_images/Ash.png",
+            "url": ""
+          }
+        },
+        "block_JFjxex": {
+          "type": "block",
+          "settings": {
+            "heading": "Gaylene O'Neill",
+            "content_html": "",
+            "content": "<p>Business Development Manager - Auckland</p>",
+            "image": "shopify://shop_images/Gaylene.jpg",
+            "url": ""
+          }
+        },
+        "block_86CFUG": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "heading": "Block title",
+            "content_html": "",
+            "content": "<p>Default text</p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_NAtFKb",
+        "block_JtCtz4",
+        "block_JFjxex",
+        "block_86CFUG"
+      ],
+      "settings": {
+        "layout": "grid",
+        "title": "",
+        "subtitle": "",
+        "image_style": "circle",
+        "mobile_carousel": false
+      }
+    },
     "featured_blocks_MW6hkJ": {
       "type": "featured-blocks",
       "blocks": {
@@ -149,6 +216,7 @@
           "type": "block",
           "settings": {
             "heading": "Tina Smith",
+            "content_html": "",
             "content": "<p>Business Development Manager - South Island</p>",
             "image": "shopify://shop_images/Tina.png",
             "url": ""
@@ -158,6 +226,7 @@
           "type": "block",
           "settings": {
             "heading": "Dean Godfrey",
+            "content_html": "",
             "content": "<p>Business Development Manager - South Island</p>",
             "image": "shopify://shop_images/Dean.png",
             "url": ""
@@ -167,6 +236,7 @@
           "type": "block",
           "settings": {
             "heading": "Jordan Armstrong",
+            "content_html": "",
             "content": "<p>Technical Services & Sales</p>",
             "image": "shopify://shop_images/Jordan.png",
             "url": ""
@@ -174,8 +244,10 @@
         },
         "block_8mXptd": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "heading": "Jana Venter",
+            "content_html": "",
             "content": "<p>Technical Sales</p>",
             "image": "shopify://shop_images/KB5_9953_29ed1f6b-007b-4254-9cb0-26e62404d662.jpg",
             "url": ""
@@ -216,6 +288,7 @@
     "divider_H8hKKK",
     "featured_blocks_xrRYxE",
     "featured_blocks_FMyrXQ",
+    "featured_blocks_4Mkmgj",
     "featured_blocks_MW6hkJ",
     "divider_9NPJEC"
   ]
