@@ -1078,9 +1078,11 @@ slate.Variants = (function() {
       var variants = this.product.variants;
 
       var found = variants.find(function(variant) {
-        return selectedValues.every(function(values) {
+        const matching = selectedValues.every(function(values) {
           return variant[values.index] === values.value;
         });
+
+        return matching ? variant : undefined;
       });
 
       return found;
@@ -7126,8 +7128,11 @@ theme.Product = (function () {
           )[0];
           if (firstSelectEl) {
             firstSelectEl.addEventListener("change", function () {
+              var secondEl = parentForm.querySelectorAll(
+                ".single-option-selector"
+              )[1];
               //console.log("change in first");
-              if (checkOptions()) {
+              if (checkOptions() && (secondEl && !secondEl.value || !secondEl)) {
                 Shopify.updateOptionsInSelector(1);
               }
               if (product.options.length === 3) {
