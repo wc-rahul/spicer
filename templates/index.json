@@ -60,7 +60,6 @@
         },
         "video_ygjC4h": {
           "type": "video",
-          "disabled": true,
           "settings": {
             "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "html5_video_url": "https://cdn.shopify.com/videos/c/o/v/551561ed6c1c4d75a68206c45d745bc7.mp4",
