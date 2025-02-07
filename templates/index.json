@@ -40,7 +40,7 @@
           "settings": {
             "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_NanoEcho_2.jpg",
             "mobile_image": "shopify://shop_images/Copy_of_Spicers_Mobile_Website.jpg",
-            "color_image_overlay": "#000",
+            "color_image_overlay": "#000000",
             "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "left center",
@@ -64,7 +64,7 @@
           "settings": {
             "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "html5_video_url": "https://cdn.shopify.com/videos/c/o/v/551561ed6c1c4d75a68206c45d745bc7.mp4",
-            "color_video_overlay": "#000",
+            "color_video_overlay": "#000000",
             "text_color": "#ffffff",
             "video_overlay_opacity": 0,
             "text_alignment": "left center",
@@ -111,8 +111,8 @@
       ],
       "settings": {
         "slideshow_width": "full",
-        "slideshow_height": "adapt",
-        "slideshow_mobile_height": "adapt",
+        "slideshow_height": "small",
+        "slideshow_mobile_height": "large",
         "text_size": "medium",
         "show_buttons": true,
         "show_dots": true,
