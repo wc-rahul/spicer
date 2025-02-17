@@ -77,6 +77,29 @@
             "button_link_2": "shopify://products/machine-wrap-nanoecho"
           }
         },
+        "image_m87kXy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_Ipanema.jpg",
+            "mobile_image": "shopify://shop_images/Copy_of_Spicers_Mobile_Website_2.jpg",
+            "color_image_overlay": "#000",
+            "image_overlay_opacity": 40,
+            "text_color": "#ffffff",
+            "text_alignment": "left center",
+            "slide_title": "Love Print. Love Paper",
+            "heading_size": 70,
+            "mob_heading_size": 40,
+            "subheading": "#LoveColorCopy",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "top",
+            "button_label": "SHOP NOW!",
+            "button_link": "",
+            "button_style_2": "white",
+            "button_label_2": "FALL IN LOVE TODAY",
+            "button_link_2": "https://spicersnz.co.nz/search?q=color%20copy*%20AND%20product_type:*&type=product"
+          }
+        },
         "1657285966fbda115a-0": {
           "type": "image",
           "disabled": true,
@@ -106,6 +129,7 @@
         "video_ygjC4h",
         "image_ECntdq",
         "image_VtpiHg",
+        "image_m87kXy",
         "1657285966fbda115a-0"
       ],
       "settings": {
