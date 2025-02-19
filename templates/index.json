@@ -82,8 +82,8 @@
           "settings": {
             "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_Ipanema.jpg",
             "mobile_image": "shopify://shop_images/Copy_of_Spicers_Mobile_Website_2.jpg",
-            "color_image_overlay": "#000",
-            "image_overlay_opacity": 40,
+            "color_image_overlay": "#000000",
+            "image_overlay_opacity": 0,
             "text_color": "#ffffff",
             "text_alignment": "left center",
             "slide_title": "Love Print. Love Paper",
