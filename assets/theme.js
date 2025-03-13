@@ -1079,10 +1079,10 @@ slate.Variants = (function() {
 
       var found = variants.find(function(variant) {
         const matching = selectedValues.every(function(values) {
-          console.log("variant[values.index]", variant[values.index])
-          console.log("values.value", values.value)
-          console.log("rs1", variant[values.index] == values.value)
-          console.log("rs2", variant[values.index] === values.value)
+          // console.log("variant[values.index]", variant[values.index])
+          // console.log("values.value", values.value)
+          // console.log("rs1", variant[values.index] == values.value)
+          // console.log("rs2", variant[values.index] === values.value)
           
           return variant[values.index] === values.value;
         });
