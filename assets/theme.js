@@ -1079,6 +1079,8 @@ slate.Variants = (function() {
 
       var found = variants.find(function(variant) {
         const matching = selectedValues.every(function(values) {
+          console.log("variant[values.index]", variant[values.index])
+          console.log("values.value", values.value)
           return variant[values.index] === values.value;
         });
 
