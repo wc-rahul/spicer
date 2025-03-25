@@ -7137,7 +7137,7 @@ theme.Product = (function () {
                 ".single-option-selector"
               )[1];
               //console.log("change in first");
-              if (checkOptions() && (secondEl && !secondEl.value || !secondEl)) {
+              if (checkOptions()) {
                 Shopify.updateOptionsInSelector(1);
               }
               if (product.options.length === 3) {
