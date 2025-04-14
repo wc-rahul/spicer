@@ -12,6 +12,29 @@
     "1657285967afba02c0": {
       "type": "slideshow",
       "blocks": {
+        "image_m87kXy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_Ipanema_1.jpg",
+            "mobile_image": "shopify://shop_images/Copy_of_Spicers_Mobile_Website_3.jpg",
+            "color_image_overlay": "#000000",
+            "image_overlay_opacity": 0,
+            "text_color": "#ffffff",
+            "text_alignment": "left center",
+            "slide_title": "Sustainability meets Durability:",
+            "heading_size": 60,
+            "mob_heading_size": 40,
+            "subheading": "WATER RESISTANT FIBERSKIN",
+            "subtitle_size": 18,
+            "mob_subtitle_size": 18,
+            "subhead_pos": "bottom",
+            "button_label": "SHOP NOW!",
+            "button_link": "",
+            "button_style_2": "white",
+            "button_label_2": "FIND OUT THE LATEST NEWS",
+            "button_link_2": "shopify://blogs/spicers-nz"
+          }
+        },
         "video_ygjC4h": {
           "type": "video",
           "settings": {
@@ -77,29 +100,6 @@
             "button_link_2": "shopify://products/machine-wrap-nanoecho"
           }
         },
-        "image_m87kXy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Copy_of_Spicers_Home_Page_-_Ipanema_1.jpg",
-            "mobile_image": "shopify://shop_images/Copy_of_Spicers_Mobile_Website_3.jpg",
-            "color_image_overlay": "#000000",
-            "image_overlay_opacity": 0,
-            "text_color": "#ffffff",
-            "text_alignment": "left center",
-            "slide_title": "Sustainability meets Durability:",
-            "heading_size": 60,
-            "mob_heading_size": 40,
-            "subheading": "WATER RESISTANT FIBERSKIN",
-            "subtitle_size": 18,
-            "mob_subtitle_size": 18,
-            "subhead_pos": "bottom",
-            "button_label": "SHOP NOW!",
-            "button_link": "",
-            "button_style_2": "white",
-            "button_label_2": "FIND OUT THE LATEST NEWS",
-            "button_link_2": "shopify://blogs/spicers-nz"
-          }
-        },
         "1657285966fbda115a-0": {
           "type": "image",
           "disabled": true,
@@ -126,10 +126,10 @@
         }
       },
       "block_order": [
+        "image_m87kXy",
         "video_ygjC4h",
         "image_ECntdq",
         "image_VtpiHg",
-        "image_m87kXy",
         "1657285966fbda115a-0"
       ],
       "settings": {
