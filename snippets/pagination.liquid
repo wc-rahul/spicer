@@ -71,7 +71,7 @@
 <div id="AjaxinatePagination" {% if pagination_mode == 'scroll' %} hidden {% endif %}>
   {% if paginate.next %}
   <center>
-        <a class='btn btn--secondary' href="{{ paginate.next.url | remove: '?page=1' }}">
+        <a class='btn btn--secondary' href="{{ paginate.next.url }}">
       <span>{{ 'general.pagination.load_more' | t }}</span>
     </a>
   </center>
@@ -83,7 +83,11 @@
   <ol class="list--inline pagination">
       {% if paginate.previous %}
     <li >
-          <a class="prev-btn" href="{{ paginate.previous.url | remove: '?page=1' }}">
+	    {%- assign preview_part_url = paginate.previous.url  -%}
+	    {%- if paginate.current_page == 2 -%}
+	      {%- assign preview_part_url = paginate.previous.url | replace: '?page=1', '' -%}
+	    {%- endif -%}
+          <a class="prev-btn" href="{{ preview_part_url }}">
         {% render 'icon' with 'chevron-left' %}
       </a>
     </li>   
@@ -91,8 +95,13 @@
 
       {% for part in paginate.parts %}
       <li>
+	      {%- assign part_url = part.url -%}
+	      {%- assign part_number = part_url | split: '?page=' | last -%}
+	      {%- if part_number == '1' -%}
+	        {%- assign part_url = part_url | replace: '?page=1', '' -%}
+	      {%- endif -%}
           {% if part.is_link %}
-            <a href="{{ part.url | remove: '?page=1' }}">
+            <a href="{{ part_url }}">
           <span class="visuallyhidden">page</span> {{ part.title }}
         </a>
           {% else %}
@@ -107,7 +116,7 @@
 
       {% if paginate.next %}
     <li >
-          <a class="next-btn" href="{{ paginate.next.url | remove: '?page=1' }}">
+          <a class="next-btn" href="{{ paginate.next.url }}">
         {% render 'icon' with 'chevron-right' %}            </a>
     </li>
       {% endif %}
