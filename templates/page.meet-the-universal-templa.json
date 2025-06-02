@@ -58,6 +58,7 @@
         },
         "block_mazPhJ": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "heading": "Jana Venter",
             "content_html": "",
