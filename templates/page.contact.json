@@ -59,16 +59,6 @@
             "url": "https://www.google.com/maps/dir//1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013/@-36.9308924,174.8653811,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09bedacff7:0x1e6f0707c5fe8719!2m2!1d174.870531!2d-36.9308925?entry=ttu"
           }
         },
-        "block_GFpAMa": {
-          "type": "block",
-          "settings": {
-            "heading": "Palmerston North",
-            "content_html": "<address>142 Benmore Avenue<br>Cloverlea, Palmerston North<br>New Zealand</address><br>",
-            "content": "<p>PO Box 1320<br/>Palmerston North 4440<br/>New Zealand</p>",
-            "image": "shopify://shop_images/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
-            "url": ""
-          }
-        },
         "block_HnTjny": {
           "type": "block",
           "settings": {
@@ -88,13 +78,23 @@
             "image": "shopify://shop_images/Christchurch_Spicers.png",
             "url": "https://www.google.com/maps/dir//Spicers+Christchurch+Hayton+Road,+Wigram,+Christchurch/@-43.5517643,172.5669332,17.32z/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d32200731c5c8b9:0x3a3e4e3be7a17b2!2m2!1d172.5678513!2d-43.551433?entry=ttu"
           }
+        },
+        "block_GFpAMa": {
+          "type": "block",
+          "settings": {
+            "heading": "Palmerston North (Sales & Service)",
+            "content_html": "<address>2-6 Coleman Place<br>Palmerston North<br>New Zealand</address><br>",
+            "content": "<p>PO Box 1320<br/>Palmerston North 4440<br/>New Zealand</p>",
+            "image": "shopify://shop_images/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "block_nVDYbW",
-        "block_GFpAMa",
         "block_HnTjny",
-        "block_HkGXVL"
+        "block_HkGXVL",
+        "block_GFpAMa"
       ],
       "settings": {
         "layout": "grid",
