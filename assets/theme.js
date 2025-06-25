@@ -7011,7 +7011,7 @@ theme.Product = (function () {
               item.style.display = "flex";
               if (itemRadioBtn) {
                 itemRadioBtn.removeAttribute("disabled");
-                itemRadioBtn.checked = false;
+                //itemRadioBtn.checked = false;
               }
             } else {
               item.classList.add("soldout");
