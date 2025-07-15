@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -18,27 +18,27 @@
           "type": "call_to_action",
           "settings": {
             "icon": "star",
-            "custom_icon": "shopify:\/\/shop_images\/chat-square_100x_2x_bbc81d57-ab68-4fbd-8bdf-7cd1a69be9a5.png",
+            "custom_icon": "shopify://shop_images/chat-square_100x_2x_bbc81d57-ab68-4fbd-8bdf-7cd1a69be9a5.png",
             "heading": "Our Locations",
-            "content": "<p>We have store locations in Auckland, Palmerston North, Wellington and Christchurch - New Zealand<\/p>"
+            "content": "<p>We have store locations in Auckland, Palmerston North, Wellington and Christchurch - New Zealand</p>"
           }
         },
         "7d5cc56a-0113-420e-affb-1c7a52b1beed": {
           "type": "call_to_action",
           "settings": {
             "icon": "star",
-            "custom_icon": "shopify:\/\/shop_images\/chat-square_4_100x_2x_2c8cfa6c-5531-4b82-9d94-83e7b1adc7d1.png",
+            "custom_icon": "shopify://shop_images/chat-square_4_100x_2x_2c8cfa6c-5531-4b82-9d94-83e7b1adc7d1.png",
             "heading": "Send a message",
-            "content": "<p><a href=\"mailto:sales@totalsupply.co.nz\" target=\"_blank\" title=\"mailto:sales@totalsupply.co.nz\">sales@spicersnz.co.nz<\/a><\/p>"
+            "content": "<p><a href=\"mailto:sales@spicersnz.co.nz\" target=\"_blank\" title=\"mailto:sales@spicersnz.co.nz\">sales@spicersnz.co.nz</a></p>"
           }
         },
         "71bd4ca2-1195-4071-a36c-f7efc3f39dd8": {
           "type": "call_to_action",
           "settings": {
             "icon": "star",
-            "custom_icon": "shopify:\/\/shop_images\/chat-square_2_100x_2x_ed8e823e-0477-4963-9d2a-06d183d21705.png",
-            "heading": "<a href=\"tel:0800774237\" title=\"tel:0800774237\">0800 774 237<\/a>",
-            "content": "<p>Give as a call and talk to one of our specialists.<\/p>"
+            "custom_icon": "shopify://shop_images/chat-square_2_100x_2x_ed8e823e-0477-4963-9d2a-06d183d21705.png",
+            "heading": "<a href=\"tel:0800774237\" title=\"tel:0800774237\">0800 774 237</a>",
+            "content": "<p>Give as a call and talk to one of our specialists.</p>"
           }
         },
         "link_list_8kHNgA": {
@@ -74,7 +74,7 @@
           "type": "newsletter",
           "settings": {
             "title": "Sign up to our newsletter",
-            "text": "<p>Sign up for our newsletter to stay informed about our latest deals, news, products and upcoming events!<\/p>"
+            "text": "<p>Sign up for our newsletter to stay informed about our latest deals, news, products and upcoming events!</p>"
           }
         }
       },
