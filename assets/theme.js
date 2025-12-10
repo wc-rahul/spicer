@@ -1109,7 +1109,7 @@ slate.Variants = (function() {
           form.classList.add('disabled_btns');
             if(submit_btn) {
               submit_btn.disabled = true;
-              submit_btn_text.innerHTML = "Unavailable";
+              submit_btn_text.innerHTML = "Pick an Option";
             }
           return;
         } else {
@@ -7027,7 +7027,7 @@ theme.Product = (function () {
             parentForm.querySelectorAll(
               '.swatch[data-option-index="' +
                 selectorIndex +
-                '"] .swatch-element input:checked'
+                '"] .swatch-element input'
             )
           );
           if (inputElements.length == 0) {

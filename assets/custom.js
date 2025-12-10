@@ -262,7 +262,6 @@ document.querySelectorAll('.readmore-description').forEach(element => {
 
 
 window.navigation.addEventListener("navigate", (event) => {
-  event.transitionWhile(new Promise(resolve => {
       setTimeout(() => {
           const url = window.location.href;
           const urlObject = new URL(url);
@@ -305,9 +304,7 @@ window.navigation.addEventListener("navigate", (event) => {
           stockContainer.appendChild(p);
 
           console.log("Quantity for Variant ID", variantIdFromURL, "is:", quantity);
-          resolve();
       }, 0);
-  }));
 });
 
 function createSvg(fillColor) {
