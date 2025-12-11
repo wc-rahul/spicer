@@ -155,16 +155,6 @@
     "featured_blocks_4Mkmgj": {
       "type": "featured-blocks",
       "blocks": {
-        "block_NAtFKb": {
-          "type": "block",
-          "settings": {
-            "heading": "Sharyn Kidd",
-            "content_html": "",
-            "content": "<p>Business Development Manager - Auckland</p>",
-            "image": "shopify://shop_images/Sharyn.png",
-            "url": ""
-          }
-        },
         "block_JtCtz4": {
           "type": "block",
           "settings": {
@@ -185,6 +175,16 @@
             "url": ""
           }
         },
+        "block_NAtFKb": {
+          "type": "block",
+          "settings": {
+            "heading": "Steven Crilly",
+            "content_html": "",
+            "content": "<p>Business Development Manager - Wellington</p>",
+            "image": "shopify://shop_images/Steven_Crilly_Pallet.jpg",
+            "url": ""
+          }
+        },
         "block_86CFUG": {
           "type": "block",
           "disabled": true,
@@ -197,9 +197,9 @@
         }
       },
       "block_order": [
-        "block_NAtFKb",
         "block_JtCtz4",
         "block_JFjxex",
+        "block_NAtFKb",
         "block_86CFUG"
       ],
       "settings": {
