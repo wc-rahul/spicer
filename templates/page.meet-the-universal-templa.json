@@ -58,12 +58,11 @@
         },
         "block_mazPhJ": {
           "type": "block",
-          "disabled": true,
           "settings": {
-            "heading": "Jana Venter",
-            "content_html": "",
+            "heading": "Jordan Armstrong",
+            "content_html": "Technical Services &amp; Sales",
             "content": "<p>Technical Sales</p>",
-            "image": "shopify://shop_images/KB5_9953_29ed1f6b-007b-4254-9cb0-26e62404d662.jpg",
+            "image": "shopify://shop_images/Jordan.png",
             "url": ""
           }
         },
@@ -91,65 +90,6 @@
         "subtitle": "",
         "image_style": "circle",
         "mobile_carousel": true
-      }
-    },
-    "featured_blocks_FMyrXQ": {
-      "type": "featured-blocks",
-      "blocks": {
-        "block_gkBN46": {
-          "type": "block",
-          "settings": {
-            "heading": "Stacey Edwards",
-            "content_html": "",
-            "content": "<p><strong>Team Leader - Palmerston North Branch</strong></p>",
-            "image": "shopify://shop_images/Stacey.png",
-            "url": ""
-          }
-        },
-        "block_LpX8Hh": {
-          "type": "block",
-          "settings": {
-            "heading": "Alan Trask",
-            "content_html": "",
-            "content": "<p><strong>Inventory Controller</strong></p>",
-            "image": "shopify://shop_images/Alan.png",
-            "url": ""
-          }
-        },
-        "block_qxynLg": {
-          "type": "block",
-          "settings": {
-            "heading": "Sarah Menefy",
-            "content_html": "",
-            "content": "<p><strong>Service Co-Ordinator</strong></p>",
-            "image": "shopify://shop_images/Sarah.png",
-            "url": ""
-          }
-        },
-        "block_jNayfz": {
-          "type": "block",
-          "settings": {
-            "heading": "Kelly Phillips",
-            "content_html": "",
-            "content": "<p><strong>Sales & Administration Support</strong></p>",
-            "image": "shopify://shop_images/Kelly.png",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "block_gkBN46",
-        "block_LpX8Hh",
-        "block_qxynLg",
-        "block_jNayfz"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "grid",
-        "title": "",
-        "subtitle": "",
-        "image_style": "circle",
-        "mobile_carousel": false
       }
     },
     "featured_blocks_4Mkmgj": {
@@ -269,6 +209,65 @@
         "mobile_carousel": false
       }
     },
+    "featured_blocks_FMyrXQ": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_gkBN46": {
+          "type": "block",
+          "settings": {
+            "heading": "Stacey Edwards",
+            "content_html": "",
+            "content": "<p><strong>Team Leader - Palmerston North Branch</strong></p>",
+            "image": "shopify://shop_images/Stacey.png",
+            "url": ""
+          }
+        },
+        "block_LpX8Hh": {
+          "type": "block",
+          "settings": {
+            "heading": "Alan Trask",
+            "content_html": "",
+            "content": "<p><strong>Inventory Controller</strong></p>",
+            "image": "shopify://shop_images/Alan.png",
+            "url": ""
+          }
+        },
+        "block_qxynLg": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "heading": "Sarah Menefy",
+            "content_html": "",
+            "content": "<p><strong>Service Co-Ordinator</strong></p>",
+            "image": "shopify://shop_images/Sarah.png",
+            "url": ""
+          }
+        },
+        "block_jNayfz": {
+          "type": "block",
+          "settings": {
+            "heading": "Kelly Phillips",
+            "content_html": "",
+            "content": "<p><strong>Sales & Administration Support</strong></p>",
+            "image": "shopify://shop_images/Kelly.png",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_gkBN46",
+        "block_LpX8Hh",
+        "block_qxynLg",
+        "block_jNayfz"
+      ],
+      "settings": {
+        "layout": "grid",
+        "title": "",
+        "subtitle": "",
+        "image_style": "circle",
+        "mobile_carousel": false
+      }
+    },
     "divider_9NPJEC": {
       "type": "Divider",
       "settings": {
@@ -288,9 +287,9 @@
     "main",
     "divider_H8hKKK",
     "featured_blocks_xrRYxE",
-    "featured_blocks_FMyrXQ",
     "featured_blocks_4Mkmgj",
     "featured_blocks_MW6hkJ",
+    "featured_blocks_FMyrXQ",
     "divider_9NPJEC"
   ]
 }
