@@ -65,24 +65,12 @@
             "image": "shopify://shop_images/Jordan.png",
             "url": ""
           }
-        },
-        "block_3LQdBD": {
-          "type": "block",
-          "disabled": true,
-          "settings": {
-            "heading": "Sharyn Kidd",
-            "content_html": "",
-            "content": "<p>Business Development Manager - Auckland</p>",
-            "image": "shopify://shop_images/Sharyn.png",
-            "url": ""
-          }
         }
       },
       "block_order": [
         "block_UXNUyB",
         "block_W3FbYw",
-        "block_mazPhJ",
-        "block_3LQdBD"
+        "block_mazPhJ"
       ],
       "settings": {
         "layout": "grid",
@@ -124,23 +112,12 @@
             "image": "shopify://shop_images/Steven_Crilly_Pallet.jpg",
             "url": ""
           }
-        },
-        "block_86CFUG": {
-          "type": "block",
-          "disabled": true,
-          "settings": {
-            "heading": "Block title",
-            "content_html": "",
-            "content": "<p>Default text</p>",
-            "url": ""
-          }
         }
       },
       "block_order": [
         "block_JtCtz4",
         "block_JFjxex",
-        "block_NAtFKb",
-        "block_86CFUG"
+        "block_NAtFKb"
       ],
       "settings": {
         "layout": "grid",
@@ -176,21 +153,10 @@
         "block_bEDHey": {
           "type": "block",
           "settings": {
-            "heading": "Jordan Armstrong",
+            "heading": "Jackson Jones",
             "content_html": "",
-            "content": "<p>Technical Services & Sales</p>",
-            "image": "shopify://shop_images/Jordan.png",
-            "url": ""
-          }
-        },
-        "block_8mXptd": {
-          "type": "block",
-          "disabled": true,
-          "settings": {
-            "heading": "Jana Venter",
-            "content_html": "",
-            "content": "<p>Technical Sales</p>",
-            "image": "shopify://shop_images/KB5_9953_29ed1f6b-007b-4254-9cb0-26e62404d662.jpg",
+            "content": "<p>Sales Support</p>",
+            "image": "shopify://shop_images/Website_Template_Jackson.jpg",
             "url": ""
           }
         }
@@ -198,8 +164,7 @@
       "block_order": [
         "block_QzjbaR",
         "block_gjmwMB",
-        "block_bEDHey",
-        "block_8mXptd"
+        "block_bEDHey"
       ],
       "settings": {
         "layout": "grid",
