@@ -1,0 +1,286 @@
+{% assign block_id = block.id | append: menu | replace: '_', '' | replace: '-', '' | downcase  %}
+
+
+  <div class="mega-menu__grid mega-menu__grid-vertical-navigation-{{ block_id }}" data-menu-grid-id="MegaMenuList-4-{{ menu }}" > 
+    <vertical-nav-{{ block_id}} class=" block-vertical-nav block-vertical-nav-{{ block_id }}" {{ block.shopify_attributes }}>
+      
+      <ul class="block-vertical-nav__list-{{ block_id }}">
+        <h4 class="block-vertical-nav__submenu-title-{{ block_id }}">{{ menu.title }}</h4>
+        {% for link in linklists[menu].links %}
+          <li class="block-vertical-nav__item-{{ block_id }}{% if forloop.first %} active{% endif %}">
+            <a href="{{ link.url }}" class="block-vertical-nav__link-{{ block_id }}">
+              <span>{{ link.title }}</span>
+              {% if link.links.size > 0 %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.14672 1.4042C9.18036 1.32252 9.23368 1.25043 9.30192 1.19435C9.37016 1.13826 9.45122 1.09992 9.53786 1.08274C9.62451 1.06556 9.71406 1.07007 9.79854 1.09587C9.88302 1.12168 9.95981 1.16797 10.0221 1.23063L14.3078 5.51634C14.3577 5.56611 14.3973 5.62522 14.4243 5.69031C14.4513 5.75539 14.4652 5.82516 14.4652 5.89563C14.4652 5.96609 14.4513 6.03587 14.4243 6.10095C14.3973 6.16603 14.3577 6.22515 14.3078 6.27491L10.0221 10.5606C9.92148 10.6612 9.78505 10.7177 9.64279 10.7177C9.50053 10.7177 9.36409 10.6612 9.2635 10.5606C9.16291 10.46 9.1064 10.3236 9.1064 10.1813C9.1064 10.0391 9.16291 9.90265 9.2635 9.80206L12.6353 6.43134H1.07136C0.929279 6.43134 0.793018 6.3749 0.692552 6.27443C0.592086 6.17397 0.535645 6.03771 0.535645 5.89563C0.535645 5.75355 0.592086 5.61729 0.692552 5.51682C0.793018 5.41635 0.929279 5.35991 1.07136 5.35991H12.6353L9.2635 1.9892C9.18823 1.91425 9.13694 1.81862 9.11615 1.71446C9.09536 1.6103 9.10599 1.5023 9.14672 1.4042Z" fill="#1F1F1F"/>
+                </svg> 
+              {% endif %}
+            </a>
+            
+            {% if link.links.size > 0 %}
+              <div class="block-vertical-nav__submenu-{{ block_id }}{% if forloop.first %} open{% endif %}">
+                <h4 class="block-vertical-nav__submenu-title-{{ block_id }}">{{ link.title }}</h4>
+                <ul class="block-vertical-nav__submenu-list-{{ block_id }}">
+                  {% for child_link in link.links %}
+                    <li class="block-vertical-nav__submenu-item-{{ block_id }}">
+                      <a href="{{ child_link.url }}" class="block-vertical-nav__submenu-link-{{ block_id }}">
+                        <span>{{ child_link.title }}</span>
+                        {% if child_link.links.size > 0 %}
+                          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.14672 1.4042C9.18036 1.32252 9.23368 1.25043 9.30192 1.19435C9.37016 1.13826 9.45122 1.09992 9.53786 1.08274C9.62451 1.06556 9.71406 1.07007 9.79854 1.09587C9.88302 1.12168 9.95981 1.16797 10.0221 1.23063L14.3078 5.51634C14.3577 5.56611 14.3973 5.62522 14.4243 5.69031C14.4513 5.75539 14.4652 5.82516 14.4652 5.89563C14.4652 5.96609 14.4513 6.03587 14.4243 6.10095C14.3973 6.16603 14.3577 6.22515 14.3078 6.27491L10.0221 10.5606C9.92148 10.6612 9.78505 10.7177 9.64279 10.7177C9.50053 10.7177 9.36409 10.6612 9.2635 10.5606C9.16291 10.46 9.1064 10.3236 9.1064 10.1813C9.1064 10.0391 9.16291 9.90265 9.2635 9.80206L12.6353 6.43134H1.07136C0.929279 6.43134 0.793018 6.3749 0.692552 6.27443C0.592086 6.17397 0.535645 6.03771 0.535645 5.89563C0.535645 5.75355 0.592086 5.61729 0.692552 5.51682C0.793018 5.41635 0.929279 5.35991 1.07136 5.35991H12.6353L9.2635 1.9892C9.18823 1.91425 9.13694 1.81862 9.11615 1.71446C9.09536 1.6103 9.10599 1.5023 9.14672 1.4042Z" fill="#1F1F1F"/>
+                          </svg> 
+                        {% endif %}
+                      </a>
+                      
+                      {% if child_link.links.size > 0 %}
+                        <div class="block-vertical-nav__sub-submenu-{{ block_id }}">
+                          <h4 class="block-vertical-nav__submenu-title-{{ block_id }}">{{ child_link.title }}</h4>
+                          <ul class="block-vertical-nav__sub-submenu-list-{{ block_id }}">
+                            {% for grandchild_link in child_link.links %}
+                              <li class="block-vertical-nav__sub-submenu-item-{{ block_id }}">
+                                <a href="{{ grandchild_link.url }}" class="block-vertical-nav__sub-submenu-link-{{ block_id }}">
+                                  <span>{{ grandchild_link.title }}</span>
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </vertical-nav-{{ block_id }}>
+  </div>
+
+{% style %}
+ .mega-menu__grid-vertical-navigation-{{ block_id }} {
+  grid-column: span {{dropdwon_split_columns}};
+ }
+  .block-vertical-nav-{{ block_id }} {
+    background-color: transparent;
+    /* border-radius: {{ block.settings.border_radius }}px; */
+    padding: 10px;
+    padding-left: 0;
+    width: calc(100% / 2);
+    min-width: 200px;
+    position: relative;
+    height: 100%;
+    grid-column: span {{dropdwon_split_columns}};
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .block-vertical-nav__list-{{ block_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .block-vertical-nav__item-{{ block_id }} {
+    position: static;
+    border-bottom: 1px solid transparent;
+  }
+
+  .block-vertical-nav__item-{{ block_id }}:last-child {
+    border-bottom: none;
+  }
+
+  .block-vertical-nav__link-{{ block_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: var(--menu-child-font-color);
+    text-decoration: none;
+    font-size:  var(--menu-child-font-size);
+    font-weight:var(--menu-child-font-weight);
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+   
+  }
+
+  .block-vertical-nav__link-{{ block_id }}:hover {
+    background-color: #f5f5f5;
+    color:var(--menu-child-font-color);
+  }
+
+  .block-vertical-nav__item-{{ block_id }}.active > .block-vertical-nav__link-{{ block_id }},
+  .block-vertical-nav__item-{{ block_id }}:hover > .block-vertical-nav__link-{{ block_id }} {
+    background-color: #f5f5f5;
+    color: var(--menu-child-font-color);
+  }
+
+  .block-vertical-nav__arrow-{{ block_id }} {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .block-vertical-nav__submenu-{{ block_id }} {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: transparent;
+    border-radius: 0px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+    width: calc(100% / 3);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    /* border: 1px solid {{ block.settings.border_color }}; */
+    padding: 10px;
+    margin-left: 8px;
+  }
+
+  .block-vertical-nav__submenu-title-{{ block_id }} {
+    padding: 10px;
+    font-size: var(--menu-child-font-size);
+    font-weight: 400;
+    color: var(--menu-child-font-color);
+    margin: 0;
+    /* border-bottom: 1px solid #e0e0e0; */
+    margin-bottom: 5px;
+    padding-left: 0;
+  }
+
+  .block-vertical-nav__item-{{ block_id }}.active > .block-vertical-nav__submenu-{{ block_id }} {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .block-vertical-nav__submenu-list-{{ block_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .block-vertical-nav__submenu-item-{{ block_id }} {
+    position: static;
+    /* border-bottom: 1px solid {{ block.settings.border_color }}; */
+  }
+
+  .block-vertical-nav__submenu-item-{{ block_id }}:last-child {
+    border-bottom: none;
+  }
+
+  .block-vertical-nav__submenu-link-{{ block_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: var(--menu-child-font-color);
+    text-decoration: none;
+    font-size: var(--menu-child-font-size);
+    font-weight: var(--menu-child-font-weight);
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+   
+  }
+
+  .block-vertical-nav__submenu-link-{{ block_id }}:hover {
+    background-color: #f5f5f5;
+    color: var(--menu-child-font-color);
+  }
+
+  .block-vertical-nav__submenu-item-{{ block_id }}:hover > .block-vertical-nav__submenu-link-{{ block_id }} {
+    background-color: #f5f5f5;
+    color: var(--menu-child-font-color);
+  }
+
+  .block-vertical-nav__sub-submenu-{{ block_id }} {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: transparent;
+    border-radius:0px;
+    border-left: 1px solid #e0e0e0;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+    width:calc(100% / 3);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+    z-index: 1001;
+    /* border: 1px solid transparent; */
+    padding: 10px;
+    margin-left: 8px;
+  }
+
+  .block-vertical-nav__sub-submenu-item-{{ block_id }} {
+    border-bottom: 1px solid transparent;
+  }
+
+  .block-vertical-nav__sub-submenu-item-{{ block_id }}:last-child {
+    border-bottom: none;
+  }
+
+  .block-vertical-nav__sub-submenu-link-{{ block_id }} {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: var(--menu-child-font-color);
+    text-decoration: none;
+    font-size: var(--menu-child-font-size);
+    font-weight:var(--menu-child-font-weight);
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .block-vertical-nav__sub-submenu-link-{{ block_id }}:hover {
+    background-color: #f5f5f5;
+    color: var(--menu-child-font-color);
+  }
+
+  @media screen and (max-width: 768px) {
+    .block-vertical-nav-{{ block_id }} {
+      width: 100%;
+    }
+
+    .block-vertical-nav__submenu-{{ block_id }},
+    .block-vertical-nav__sub-submenu-{{ block_id }} {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      background-color: {{ block.settings.mobile_submenu_background_color }};
+      margin-left: 20px;
+      margin-top: 8px;
+      display: none;
+      width: auto;
+      padding: 8px 0;
+    }
+
+    .block-vertical-nav__item-{{ block_id }}.active > .block-vertical-nav__submenu-{{ block_id }},
+    .block-vertical-nav__submenu-item-{{ block_id }}.active > .block-vertical-nav__sub-submenu-{{ block_id }} {
+      display: block;
+    }
+
+    .block-vertical-nav__arrow-{{ block_id }} {
+      transition: transform 0.2s ease;
+    }
+
+    .block-vertical-nav__item-{{ block_id }}.active .block-vertical-nav__arrow-{{ block_id }},
+    .block-vertical-nav__submenu-item-{{ block_id }}.active .block-vertical-nav__arrow-{{ block_id }} {
+      transform: rotate(90deg);
+    }
+  }
+{% endstyle %}

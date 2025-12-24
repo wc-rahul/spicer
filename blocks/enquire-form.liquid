@@ -1,0 +1,155 @@
+{% liquid
+  assign product = block.settings.product
+  assign button_class = 'add-to-cart-button'
+
+  if block.settings.style_class != blank
+    assign button_class = button_class | append: ' ' | append: block.settings.style_class
+  endif
+
+  assign heading_tag = block.settings.type_preset
+
+  if heading_tag == blank
+    assign heading_tag = 'h2'
+  endif
+
+  if heading_tag == 'paragraph'
+    assign heading_tag = 'p'
+  endif
+
+  if heading_tag == 'custom'
+    assign heading_tag = 'h2'
+  endif
+%}
+
+
+{% if block.settings.enable_enquire_form %}
+<div class="enquire-form-block">
+    {% if block.settings.btn_label != blank %}
+        <button type="button" class="{{ button_class }} enquire-form" data-shopify-form-trigger="true">{{ block.settings.btn_label }}</button>
+    {% endif %}
+
+    <div class="enquire_drawer">
+        <div class="rd_top">
+            {% if block.settings.title != blank %}<{{ heading_tag }} class="enquire-form-title">{{ block.settings.title }}</{{ heading_tag }}>{% endif %}
+            <span class="rd_close">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.625 4.375L4.375 15.625" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.625 15.625L4.375 4.375" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+        <div class="rd_middle">
+            {% if product != blank %}
+                <div class="rdm_product">
+                    <div class="rdm_pd_media">
+                        {{ product.featured_image| image_url: width: 800 | image_tag: alt: product.title }}
+                    </div>
+                    <h6>{{ product.title }}</h6>
+                </div>
+            {% endif %}
+            {% if block.settings.desc != blank %}<div class="enquire-form-desc">{{ block.settings.desc }}</div>{% endif %}
+        </div>
+        <div class="rd_form">
+            <div class="enquire-form-app">{% content_for 'blocks' %}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Enquire Form",
+  "settings": [
+    {
+        "type": "checkbox",
+        "id": "enable_enquire_form",
+        "label": "Enable Enquire Form",
+        "default": true
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:settings.product"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Heading",
+      "info": "Main heading displayed above the Enquire form."
+    },
+    {
+      "type": "select",
+      "id": "type_preset",
+      "label": "t:settings.preset",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "paragraph",
+          "label": "t:options.paragraph"
+        },
+        {
+          "value": "h1",
+          "label": "t:options.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:options.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:options.h4"
+        },
+        {
+          "value": "h5",
+          "label": "t:options.h5"
+        },
+        {
+          "value": "h6",
+          "label": "t:options.h6"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "info": "t:info.edit_presets_in_theme_settings"
+    },
+    {
+      "type": "richtext",
+      "id": "desc",
+      "label": "Form Description",
+      "info": "Short message or instructions shown before the form opens."
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Text",
+      "info": "Text displayed on the button that opens the Enquire form."
+    },
+    {
+      "type": "select",
+      "id": "style_class",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:options.primary"
+        },
+        {
+          "value": "button-secondary",
+          "label": "t:options.secondary"
+        }
+      ],
+      "default": "button-secondary"
+    }
+  ],
+  "blocks": [{ "type": "@app" }]
+}
+{% endschema %}

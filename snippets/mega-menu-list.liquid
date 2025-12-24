@@ -1,0 +1,280 @@
+{% comment %}
+  Renders mega menu list markup and optional featured content.
+
+  Accepts:
+  - parent_link {linklist}: The linklist to render
+  - id {string}: Unique ID to assign ul in markup
+  - grid_columns_count {number}: Number of grid columns to display in the mega menu
+  - grid_columns_count_collection_images {number}: Number of grid columns to display in the mega menu when menu_content_type is 'collection_images'
+  - menu_content_type {string}: The type of content to render, options: ['featured_products', 'featured_collections', 'collection_images', 'text'] (default: 'text')
+  - content_aspect_ratio {number}: The aspect ratio to display the content images if applicable (optional)
+  - image_border_radius {number}: The border radius used for the content images (optional)
+{% endcomment %}
+
+{% liquid
+  comment
+    open_column_span tracks when a vertical column in the mega menu is open. Links will be stacked
+    in the column until the code closes the column span.
+  endcomment
+  assign open_column_span = false
+  assign column_count = 0
+  assign links_before_wrap = 10
+  assign max_menu_columns = grid_columns_count | default: 6
+  assign max_menu_columns_tablet = grid_columns_count_tablet | default: 4
+%}
+{% assign menu_content_type = menu_content_type %}
+
+{{ left_menu }}
+
+<div class="right_cnt_mega">
+  <ul
+    data-menu-list-id="MegaMenuList-{{ id }}-{{ parent_link }}"
+    class="mega-menu__list list-unstyled"
+    role="menu"
+    style="--menu-image-border-radius: {{ image_border_radius }}px;"
+  >
+    {% for link in parent_link.links %}
+      {% liquid
+        # Decide whether to open a column span, and how many columns of the grid to span
+        if forloop.first or open_column_span == false
+          assign open_column_span = true
+
+          # Don't allow orphan links in a column
+          assign break_after_modulo = link.links.size | modulo: links_before_wrap
+          if break_after_modulo == 1
+            assign links_before_wrap = links_before_wrap | minus: 1
+          endif
+          assign break_after_float = links_before_wrap | times: 1.0
+          assign column_span = link.links.size | divided_by: break_after_float | ceil | at_least: 1
+          assign column_count = column_count | plus: column_span
+          assign should_break_columns = true
+          assign span_class = 'mega-menu__column mega-menu__column--span-' | append: column_span
+          if menu_content_type == 'collection_images'
+            assign should_break_columns = false
+            # temporary fix to use 8 column grid (spanning 2) when fewer than 5 collection image links
+            if parent_link.links.size < 5
+              assign span_class = span_class | append: ' mega-menu__column--collection-image'
+            endif
+          endif
+          echo '<span class="' | append: span_class | append: '">'
+        endif
+      %}
+      <li>
+        <a
+          href="{{ link.url }}"
+          class="mega-menu__link {% if link.links != blank %}mega-menu__link--parent{% endif %}"
+          role="menuitem"
+        >
+          {% if menu_content_type == 'collection_images' %}
+            {%- if block.settings.nu_promo_tile == '1' -%}
+              {{
+                block.settings.promo_image
+                | image_url: width: 1024
+                | image_tag: loading: 'lazy', class: 'mega-menu__link-image', sizes: 'auto'
+              }}
+            {%- endif -%}
+          {% endif %}
+          <span
+            class="mega-menu__link-title"
+          >
+            {{- link.title -}}
+          </span>
+        </a>
+        {% if link.links != blank %}
+          <ul
+            class="list-unstyled"
+            {% if should_break_columns %}
+              style="column-count: {{ column_span }};"
+            {% endif %}
+            role="menu"
+          >
+            {% for childLink in link.links %}
+              {% assign break_after_modulo = forloop.index | modulo: links_before_wrap %}
+              <li
+                {% if break_after_modulo == 0 and should_break_columns %}
+                  style="break-after: column;"
+                {% endif %}
+              >
+                <a
+                  href="{{ childLink.url }}"
+                  class="mega-menu__link"
+                  role="menuitem"
+                >
+                  <span class="mega-menu__link-title">{{- childLink.title -}}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+
+      {% liquid
+        # Check conditions for closing the span at the end of each iteration, then close the span if needed
+        assign next_linklist = parent_link.links[forloop.index]
+
+        if forloop.last
+          assign open_column_span = false
+        elsif menu_content_type == 'collection_images'
+          assign open_column_span = false
+        elsif next_linklist.links != blank
+          assign open_column_span = false
+        elsif link.links != blank and next_linklist.links == blank
+          assign open_column_span = false
+        endif
+
+        if open_column_span == false
+          echo '</span>'
+        endif
+      %}
+    {% endfor %}
+  </ul>
+  {{ extra_blocks }}
+</div>
+
+{% liquid
+  # decide how many grid columns are needed for the menu list, and how many columns are needed for the featured content
+  # prioritize a minimum of 1 featured_collection (2 columns), and minimum 2 featured_products (2 columns)
+  assign min_products = 2
+  assign max_products = 2
+  assign min_products_tablet = 1
+  assign max_products_tablet = 2
+  assign min_collections = 1
+
+  if menu_content_type == 'featured_products'
+    # desktop breakpoint
+    assign temp_column_count = column_count | plus: min_products
+    if temp_column_count > max_menu_columns
+      assign max_product_columns = 2
+    else
+      assign max_product_columns = max_menu_columns | minus: column_count | at_most: max_products
+    endif
+
+    assign max_product_columns = max_product_columns | at_most: collection_object.products.size
+
+    assign max_featured_products = 2
+    assign max_menu_columns = 4
+
+    # tablet breakpoint
+    assign temp_column_count = column_count | plus: min_products_tablet
+
+    if temp_column_count > max_menu_columns_tablet
+      assign max_product_columns_tablet = 1
+    else
+      assign max_product_columns_tablet = max_menu_columns_tablet | minus: column_count | at_most: max_products_tablet
+    endif
+
+    assign max_product_columns_tablet = max_product_columns_tablet | at_most: collection_object.products.size
+
+    assign max_featured_products_tablet = max_product_columns_tablet
+    assign max_menu_columns_tablet = max_menu_columns_tablet | minus: max_product_columns_tablet
+  endif
+
+  if menu_content_type == 'featured_collections'
+    # desktop breakpoint
+    assign min_featured_collection_columns = 1
+    assign temp_column_count = column_count | plus: min_featured_collection_columns
+
+    if temp_column_count > max_menu_columns
+      assign max_collection_columns = 2
+    else
+      assign max_collection_columns = 2
+    endif
+
+    assign max_featured_collections = 2
+    assign max_menu_columns = 4
+
+    # tablet breakpoint
+    assign max_collection_columns_tablet = 1
+    assign max_featured_collections_tablet = 1
+    assign max_menu_columns_tablet = max_menu_columns_tablet | minus: max_collection_columns_tablet
+  endif
+%}
+{% comment %}
+  <style>
+    [data-menu-grid-id="MegaMenuList-{{ id }}-{{ parent_link }}"] {
+
+        --menu-columns-desktop: {{ column_count | plus: promo_card_number }};
+        --menu-columns-tablet: {{ 4 }};
+    }
+
+    [data-menu-list-id="MegaMenuList-{{ id }}-{{ parent_link }}"] {
+        --menu-columns-desktop: {{ column_count }};
+        --menu-columns-tablet: {{ 4 | minus: promo_card_number }};
+    }
+    [slot="overflow"] [data-menu-list-id="MegaMenuList-{{ id }}-{{ parent_link }}"]  {
+     --menu-columns-tablet: {{ 4 }};
+   }
+   {% if menu_content_type == 'text' %}
+    [data-menu-grid-id="MegaMenuList-{{ id }}-{{ parent_link }}"] {
+
+      --menu-columns-desktop: {{ column_count  }};
+      --menu-columns-tablet: {{ 4 }};
+    }
+  {% endif %}
+  </style>
+{% endcomment %}
+{% comment %} NEW STYLES {% endcomment %}
+{% style %}
+    [data-menu-list-id="MegaMenuList-{{ id }}-{{ parent_link }}"] {
+        --menu-columns-desktop: {{ menu_width }};
+        --menu-columns-tablet: {{ column_count  }} ;
+    }
+    [data-menu-grid-id="MegaMenuList-{{ id }}-{{ parent_link }}"] {
+      --menu-columns-desktop: {{dropdwon_split_columns}};
+      --menu-columns-tablet:  1 ;
+      grid-column: span {{dropdwon_split_columns}};
+      grid-auto-columns: 1fr;
+  }
+{% endstyle %}
+
+{% comment %}
+  {% case menu_content_type %}
+    {% when 'featured_products' %}
+      <ul
+        class="mega-menu__content-list list-unstyled"
+        style="--menu-content-columns-desktop: {{ promo_card_number }}; --menu-content-columns-tablet: {{ promo_card_number }}; --resource-card-corner-radius: {{ image_border_radius }}px;"
+      >
+
+
+          {{ products_mega_menu }}
+          {% comment %} {% paginate collection_object.products by max_featured_products %}
+            {% for item in collection_object.products %}
+              <li class="mega-menu__content-list-item {% if forloop.index > max_featured_products_tablet %} mega-menu__content-list-item--hidden-tablet{% endif %}">
+                {% render 'resource-card',
+                  resource: item,
+                  resource_type: 'product',
+                  image_hover: true,
+                  image_width: 300,
+                  image_aspect_ratio: content_aspect_ratio
+                %}
+              </li>
+            {% endfor %}
+          {% endpaginate %} {% endcomment %}
+
+      </ul>
+    {% when 'featured_collections' %}
+      {% assign collection_handles = collection_handles | split: ',' | uniq %}
+      <ul
+        class="mega-menu__content-list list-unstyled"
+        style="--menu-content-columns-desktop: {{ promo_card_number }}; --menu-content-columns-tablet: {{ promo_card_number }}; --resource-card-corner-radius: {{ image_border_radius }}px;"
+      >
+        <span
+          class="mega-menu__content-column mega-menu__content-column--collections"
+          style="--menu-content-columns-desktop: {{ promo_card_number }}; --menu-content-columns-tablet: {{ promo_card_number }};"
+        >
+          {{ collections_mega_menu }}
+          {% comment %} {% for handle in collection_handles limit: max_featured_collections %}
+            <li class="mega-menu__content-list-item{% if forloop.index > max_featured_collections_tablet %} mega-menu__content-list-item--hidden-tablet{% endif %}">
+              {% render 'resource-card',
+                resource: collections[handle],
+                resource_type: 'collection',
+                style: 'overlay',
+                image_width: 600,
+                image_aspect_ratio: content_aspect_ratio
+              %}
+            </li>
+          {% endfor %} {% endcomment %}
+        </span>
+      </ul>
+  {% endcase %}
+{% endcomment %}

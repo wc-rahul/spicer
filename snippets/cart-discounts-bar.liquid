@@ -1,0 +1,520 @@
+{% if theme_settings == true %}
+
+    {% assign block = settings %}
+{%endif %}
+{% if block_settings.type == '@theme' %}
+
+    {% assign block = block_settings.settings %}
+{% endif %}
+{% if block_settings.type == '@theme' and block_settings.settings.progress_bar_settings_block == true %}
+
+    {% assign block = settings %}
+{% endif %}
+
+{% assign total_excluding_gift_cards = 0 %}
+
+{% for item in cart.items %}
+   
+  {% if item.product.gift_card?  == false%}
+    {% assign total_excluding_gift_cards = total_excluding_gift_cards | plus: item.original_line_price %}
+  {% endif %}
+{% endfor %}
+
+{%- liquid
+   assign total_before_discounts = total_excluding_gift_cards  | money_without_currency | replace: "," ,""
+  
+-%}
+    <div class=" data-cart-progress-bar cart-progress-bar color-{{ block.color_scheme }} color-{{ block.cart_color_scheme }}" data-cart-total="{{ total_before_discounts }}" 
+    style="--padding-block-start: {{ block.padding-block-start | default: 0 }}px; --padding-block-end:{{- block.padding-block-end | default: 0 -}}px; 
+    --padding-inline-start:{{ block.padding-inline-start | default: 0 }}px; --padding-inline-end:{{- block.padding-inline-end | default: 0 -}}px; 
+    {% if cart.empty? %} visibility: hidden;
+    height: 0px; {% endif %}"
+    data-threshold-first="{{ block.first_threshold_discounts }}"
+    data-threshold-second="{{ block.second_threshold_discounts }}"
+    data-threshold-third="{{ block.third_threshold_discounts }}"
+    data-threshold-first-percent="{{block.first_discount_percentage}}"
+    data-threshold-second-percent="{{block.second_discount_percentage}}"
+    data-threshold-third-percent="{{block.third_discount_percentage}}"
+    data-cart-progress-bar >
+        <style>
+            --padding-block-start: {{ block.padding-block-start | default: 0 }}px; --padding-block-end:{{- block.padding-block-end | default: 0 -}}px; 
+            --padding-inline-start:{{ block.padding-inline-start | default: 0 }}px; --padding-inline-end:{{- block.padding-inline-end | default: 0 -}}px; 
+        </style>
+        
+        <div style="width: 100%; text-align: center; line-height:10px;">
+            <span class="progress_bar_top_message initial_message">You're </span>
+            <span class="progress_bar_top_message initial_message" id="amount-away">$10.02</span>
+            <span class="progress_bar_top_message initial_message"> away from </span>
+            <span class="progress_bar_top_message initial_message" id="amount-away_percent">20% off </span>
+            <div class="progress_bar_top_message initial_message empty_space"></div>
+             
+            <span class="progress_bar_top_message" id="final_message_progress_bar">{{block.final_message}}</span>
+    
+        </div>
+        
+    <div class="progress-container">
+        <div class="progress-bar mini-cart"></div> <!-- Dynamic progress bar -->
+        {% if block.enable_first_thershold%}
+            <div class="progress-step" data-threshold="{{block.first_threshold_discounts}}" data-discount="{{block.first_discount_percentage}}">
+                <div class="progress-icon">
+                    <div class="icon_bar_discount">
+                    
+                        {% if block.discount_image_1 != blank %}
+                            {{ block.discount_image_1 }}
+                        {% else %}
+                            {% render 'svg-tag-discounts' %}
+                        {% endif %}
+                  
+                    </div>
+                </div>
+                <p class="message_tresholds">{{block.first_threshold_message}}</p>
+            </div>
+        {% endif %}
+        {% if block.enable_second_thershold%}
+            <div class="progress-step" data-threshold="{{block.second_threshold_discounts}}" data-discount="{{block.second_discount_percentage}}">
+                <div class="progress-icon">
+                    <div class="icon_bar_discount">
+                        {% if block.discount_image_2 != blank %}
+                            {{ block.discount_image_2 }}
+                        {% else %}
+                            {% render 'svg-tag-discounts' %}
+                    {% endif %}
+                    </div>
+                </div>
+                <p class="message_tresholds">{{block.second_threshold_message}}</p>
+            </div>
+        {% endif %}
+        {% if block.enable_third_thershold%}
+            <div class="progress-step " data-threshold="{{block.third_threshold_discounts}}" data-discount="{{block.third_discount_percentage}}">
+                <div class="progress-icon">
+                    <div class="icon_bar_discount">
+                        {% if block.discount_image_3 != blank %}
+                            {{ block.discount_image_3 }}
+                        {% else %}
+                           {% render 'svg-tag-discounts' %}
+                    {% endif %}
+                    </div>
+                </div>
+                <p class="message_tresholds">{{block.third_threshold_message}}</p>
+            </div>
+        {% endif %}
+    </div>
+    <style>
+
+        {% if  block.enable_third_thershold == false and block.enable_second_thershold == false%}
+            .progress-step .progress-icon {
+                margin-right: 0px !important;
+            }
+            .mini-cart.progress-bar:before {
+                transition: width 0.3s ease;  
+            }
+            .message_tresholds{
+                display: flex;
+                justify-content: flex-end;
+            }
+        {% endif %}
+        .cart-progress-bar {
+            text-align: center;
+            max-width: var(--sidebar-width);
+            padding-top: var(--padding-block-start, 0);
+            padding-bottom: var(--padding-block-end, 0);
+            padding-right:var(--padding-inline-start, 0);
+            padding-left:var(--padding-inline-end, 0);
+          }
+          .cart-progress-bar p {
+            {% comment %} margin-bottom: 10px; {% endcomment %}
+          }
+          .progress-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px auto;
+          }
+          
+          .progress-step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+          }
+          
+          .progress-step .progress-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #EEEEEE;
+            margin: 0 auto 5px;
+            position: relative;
+            z-index: 2;
+          }
+          .progress-step p {
+            color: rgb(var(--color-foreground));
+          }
+          .progress-bar.mini-cart {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background:gray;
+            background: rgb(var(--color-button), 0.1); 
+            background: rgb(from var(--color-foreground) r g b / 10%);
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 3px;
+            display:block;
+          }
+          .mini-cart.progress-bar:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: var(--progress-width);
+            background:black;
+            background: rgb(var(--color-button)); 
+            background: var(--color-primary-button-background);
+            border-radius: 3px; 
+          }
+          .icon_bar_discount {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-right: -0.5px;
+            align-items: center;
+            justify-content: center;
+            max-width: 36px;
+            height: 36px;
+          }
+          .message_tresholds{
+            color: rgb(var(--color-foreground));
+            font-family: var(--font-heading-family);
+            font-size:calc(var(--font-heading-scale) * 1.5rem);
+            font-weight: 400;
+            line-height: 18.20px;
+            word-wrap: break-word;
+        }
+        {% if block.third_threshold_message != blank and block.enable_third_thershold%}
+            .message_tresholds{
+             min-height:36px;
+            }
+       {% endif %}
+       {% if block.second_threshold_message != blank and block.enable_second_thershold%}
+        .message_tresholds{
+            min-height:36px;
+        }
+       {% endif %}
+       {% if block.first_threshold_message != blank and block.enable_first_thershold%}
+        .message_tresholds{
+            min-height:36px;
+        }
+       {% endif %}
+        .message_tresholds:empty{
+        
+            display:block;
+        }
+        .progress-step.completed .progress-icon { 
+            background:black;
+            background: rgb(var(--color-button)); 
+            background: var(--color-primary-button-background);
+        }
+        .progress-step.completed svg path {
+            stroke: white;
+            stroke: rgb(var(--color-button-text));
+            stroke: var(--color-primary-button-text);
+        }
+        .progress_bar_top_message{
+            color: rgb(var(--color-foreground)); 
+            font-size: calc(var(--font-heading-scale) * 1.5rem);
+            font-family: var(--font-body-family); 
+            font-weight: 400; 
+            line-height: 18.20px; 
+            word-wrap: break-word;
+            position: relative;
+        }
+        .empty_space{
+            min-height:18.20px; 
+        }
+        span#amount-away {
+            font-weight: 600;
+        }
+        #final_message_progress_bar{
+            display:none;
+       }
+       .icon_bar_discount svg {
+            max-width: 20px;
+            max-height: 20px;
+        }
+          
+    </style>
+    <script>
+        (function () {
+          const barSelector = '[data-cart-progress-bar]';
+          const progressBar = document.querySelector(barSelector);
+          if (!progressBar) return;
+            const thresholds = [
+                {
+                  value: parseFloat(progressBar.dataset.thresholdFirst || 0),
+                  discount: progressBar.dataset.thresholdFirstPercent || '0'
+                },
+                {
+                  value: parseFloat(progressBar.dataset.thresholdSecond || 0),
+                  discount: progressBar.dataset.thresholdSecondPercent || '0'
+                },
+                {
+                  value: parseFloat(progressBar.dataset.thresholdThird || 0),
+                  discount: progressBar.dataset.thresholdThirdPercent || '0'
+                }
+              ];
+          const initial_message = document.querySelectorAll(".initial_message");
+          function fetchCart() {
+            return fetch('/cart.js').then(res => res.json());
+          }
+        
+          function updateProgressBar(cart) {
+            const barSelector = '[data-cart-progress-bar]';
+            const progressBar = document.querySelector(barSelector);
+            if (!progressBar) return;
+              const thresholds = [
+                  {
+                    value: parseFloat(progressBar.dataset.thresholdFirst || 0),
+                    discount: progressBar.dataset.thresholdFirstPercent || '0'
+                  },
+                  {
+                    value: parseFloat(progressBar.dataset.thresholdSecond || 0),
+                    discount: progressBar.dataset.thresholdSecondPercent || '0'
+                  },
+                  {
+                    value: parseFloat(progressBar.dataset.thresholdThird || 0),
+                    discount: progressBar.dataset.thresholdThirdPercent || '0'
+                  }
+                ];
+            const initial_message = document.querySelectorAll(".initial_message");
+
+              const stepElements = progressBar.querySelectorAll('.progress-step');
+              const total = cart.items.reduce((sum, item) => {
+                return item.product_type === 'Gift Card' ? sum : sum + item.original_line_price;
+              }, 0) / 100;
+              const maxThreshold = Math.max(...thresholds.map(t => t.value));
+              const progressPercent = Math.min((total / maxThreshold) * 100, 100).toFixed(2);
+              progressBar.style.setProperty('--progress-width', progressPercent + '%');
+          
+              const next = thresholds.find(t => t.value > total);
+              const amountAwayEl = document.getElementById('amount-away');
+              const amountAwayPercentEl = document.getElementById('amount-away_percent');
+              const finalMessageEl = document.getElementById('final_message_progress_bar');
+          
+              if (next && amountAwayEl && amountAwayPercentEl) {
+                amountAwayEl.innerText = `$${(next.value - total).toFixed(2)}`;
+                amountAwayPercentEl.innerText = `${next.discount}`;
+                if (finalMessageEl) finalMessageEl.style.display = 'none';
+              } else if (finalMessageEl) {
+                finalMessageEl.style.display = 'block';
+                initial_message.forEach(msg => msg.style.display = 'none');
+              }
+          
+              // Add/remove "completed" class
+              stepElements.forEach((step, index) => {
+                const threshold = thresholds[index];
+                if (threshold) {
+                  if (total >= threshold.value) {
+                    step.classList.add('completed');
+                  } else {
+                    step.classList.remove('completed');
+                  }
+                }
+              });
+           
+          }
+          function triggerUpdate() {
+            fetchCart().then(updateProgressBar).catch(console.error);
+          }
+        
+          // Hook into fetch() to catch all cart updates
+          const originalFetch = window.fetch;
+          window.fetch = function () {
+            return originalFetch.apply(this, arguments).then(response => {
+              const url = arguments[0];
+              if (typeof url === 'string' && url.includes('/cart')) {
+                //setTimeout(triggerUpdate, 700);
+              }
+              return response;
+            });
+          };
+            // here new code
+
+            {% comment %} function observeCartChanges() {
+                const cartObserver = new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                    const isValidRequestType = ['xmlhttprequest', 'fetch'].includes(entry.initiatorType);
+                    const isCartChangeRequest = /\/cart\//.test(entry.name);
+                    if (isValidRequestType && isCartChangeRequest) {
+                    // handle cart request
+                    console.log("cart request", entry)
+                    triggerUpdate();
+                    }
+                });
+                });
+                cartObserver.observe({ entryTypes: ["resource"] });
+            }
+            observeCartChanges(); {% endcomment %}
+          
+          document.addEventListener('cart:update', () => {
+            fetch('/cart.js')
+            .then(res => res.json())
+            .then(cart => {
+               updateProgressBar(cart);
+            })
+            .catch(console.error);
+            
+          });
+        
+          // Initial load
+          document.addEventListener('DOMContentLoaded', () => { 
+            triggerUpdate();
+          
+         });
+
+        })();
+
+        
+        </script>
+        
+    </div>
+
+
+    {% comment %} settings to add in theme settings when the snippet is used without the block
+    {
+        "type": "header",
+        "content": "Discounts Progress Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "progress_bar",
+        "label": "Show Discounts Progress Bar",
+        "default": false,
+        "info": "You'll see the progress bar only within the cart drawer interface. The discounts are visual only and require corresponding automatic discount rules in Shopify to be applied during checkout."
+  
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_first_thershold",
+        "label": "Enable First Threshold",
+        "default": true,
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "first_threshold_discounts",
+        "label": "First Threshold",
+        "default": "25.00",
+        "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'. This field is required to display the step.",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "first_discount_percentage",
+        "label": "First Discount Percentage",
+        "default": "10% Off",
+         "visible_if": "{{ settings.progress_bar == true }}"
+       
+      },
+      {
+        "type": "text",
+        "id": "first_threshold_message",
+        "label": "First Threshold Message",
+        "default": "Spend $25.00<br>get 10% off",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "liquid",
+        "id": "discount_image_1",
+        "label": "SVG code for the icon",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_second_thershold",
+        "label": "Enable Second Threshold",
+        "default": true,
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "second_threshold_discounts",
+        "label": "Second Threshold",
+        "default": "50.00",
+         "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'."
+          ,
+         "visible_if": "{{ settings.progress_bar == true }}"
+        },
+      {
+        "type": "text",
+        "id": "second_discount_percentage",
+        "label": "Second Discount Percentage",
+        "default": "20% Off",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "second_threshold_message",
+        "label": "Second Threshold Message",
+        "default": "Spend $50.00<br>get 20% off",
+         "visible_if": "{{ settings.progress_bar == true }}"
+        
+      },
+
+      {
+        "type": "liquid",
+        "id": "discount_image_2",
+        "label": "SVG code for the icon",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_third_thershold",
+        "label": "Enable Third Threshold",
+        "default": true,
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "third_threshold_discounts",
+        "label": "Third Threshold",
+        "default": "75.00",
+         "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'.",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "third_discount_percentage",
+        "label": "Third Discount Percentage",
+        "default": "30% Off",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "third_threshold_message",
+        "label": "Third Threshold Message",
+        "default": "Spend $75.00<br>get 30% off",
+         "visible_if": "{{ settings.progress_bar == true }}"
+        
+      },
+      {
+        "type": "liquid",
+        "id": "discount_image_3",
+        "label": "SVG code for the icon",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      },
+      {
+        "type": "text",
+        "id": "final_message",
+        "label": "Final Message",
+        "default": "You have reached all discounts (discounts applied at checkout)",
+         "visible_if": "{{ settings.progress_bar == true }}"
+      }
+    ]
+
+
+{% endcomment %}
+

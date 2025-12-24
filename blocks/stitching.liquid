@@ -1,0 +1,397 @@
+
+{%- liquid
+    for product_option in block.settings.product.options_with_values
+      assign swatch_count = product_option.values | map: 'swatch' | compact | size
+  
+      if swatch_count > 0
+        assign product_has_swatches = true
+      endif
+    endfor
+  -%}
+  
+{% comment %} collection swatches {% endcomment %}
+{% assign group_tag = block.settings.group_tag %}
+{% assign group = blank %}
+{% for tag in block.settings.product.tags %}
+	{% if tag contains group_tag %}
+		{% assign group = tag | downcase %}
+	{% endif %}
+{% endfor %}
+
+{% if group != blank %}
+	{% assign collections = collections[group] %}
+	{% assign products_stitching = collections.products %}
+{% endif %}
+
+  {% if products_stitching and block.settings.render_collections_logic %}
+    <product-stitching
+      data-product-id="{{ block.settings.product.id }}"
+      data-product-url="{{ block.settings.product.url }}"
+      style="
+        --overflow-list-alignment: {{ block.settings.product_swatches_alignment }};
+        --overflow-list-alignment-mobile: {{ block.settings.product_swatches_alignment_mobile }};
+        --product-stitching-alignment: {% if block.settings.product_swatches_alignment == 'flex-start' %}start{% elsif block.settings.product_swatches_alignment == 'flex-end' %}end{% else %}center{% endif %};
+        --product-stitching-alignment-mobile: {% if block.settings.product_swatches_alignment_mobile == 'flex-start' %}start{% elsif block.settings.product_swatches_alignment_mobile == 'flex-end' %}end{% else %}center{% endif %};
+        --product-stitching-padding-block-start: {{ block.settings.product_swatches_padding_top }}px;
+        --product-stitching-padding-block-end: {{ block.settings.product_swatches_padding_bottom }}px;
+        --product-stitching-padding-inline-start: {{ block.settings.product_swatches_padding_left }}px;
+        --product-stitching-padding-inline-end: {{ block.settings.product_swatches_padding_right }}px;
+      "
+      {{ block.shopify_attributes }}
+    >
+      {% render 'variant-stitching', product_resource: block.settings.product , products_stitching: products_stitching %}
+    </product-stitching>
+  {% endif %}
+
+  {% if block.settings.render_collections_logic == false and block.settings.stitching_context == 'product_page' %}
+    {% render 'stitching-fetch-collections', product: block.settings.product , block: block %}
+  {% endif %}
+
+  {% if block.settings.render_collections_logic == false and block.settings.stitching_context == 'product_card' %}
+    {% render 'stitching-fetch-collections-card', product: block.settings.product , block: block %}
+  {% endif %}
+
+  {% # theme-check-disable %}
+  {% stylesheet %}
+    li.variant-option__swatch.product_stitching_item::marker {
+    content: '';
+   }
+    product-stitching {
+      width: 100%;
+      display: flex;
+      justify-content: var(--product-stitching-alignment);
+      flex-direction: row;
+      position: relative;
+      overflow: hidden;
+      gap: 0;
+  
+      @media (width < 750px) {
+        justify-content: var(--product-stitching-alignment-mobile);
+      }
+    }
+  
+    stitching-product-picker-component {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+    }
+  
+    stitching-product-picker-component .variant-option--swatches {
+      padding-block: calc(
+          var(--product-stitching-padding-block-start) + var(--focus-outline-offset) + var(--focus-outline-width)
+        )
+        calc(var(--product-stitching-padding-block-end) + var(--focus-outline-offset) + var(--focus-outline-width));
+      padding-inline: calc(
+          var(--product-stitching-padding-inline-start) + var(--focus-outline-offset) + (1.5 * var(--focus-outline-width))
+        )
+        calc(var(--product-stitching-padding-inline-end) + var(--focus-outline-offset) + var(--focus-outline-width));
+    }
+  
+    .variant-option--swatches {
+      overflow-list::part(list) {
+        gap: var(--gap-sm);
+      }
+  
+      overflow-list[defer]::part(list) {
+        flex-wrap: nowrap;
+      }
+    }
+  
+    .hidden-swatches__count {
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      color: rgb(from var(--color-foreground) r g b / 40%);
+      background-color: transparent;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+  
+      &:before {
+        /* This doesn't work in Safari without the counter-reset. https://stackoverflow.com/a/40179718 */
+        counter-reset: overflow-count var(--overflow-count);
+        content: '+' counter(overflow-count);
+        line-height: 1;
+        cursor: pointer;
+      }
+    }
+  
+    .hidden-swatches__count:hover {
+      color: rgb(from var(--color-foreground) r g b / 100%);
+    }
+    .product_stitching_item .variant-option__button-label:has([data-option-available='false']) {
+    --variant-picker-stroke-color: rgba(from var(--color-variant-text) r g b / 60%);
+
+    background-color: inherit;
+    color: rgba(from var(--color-variant-text) r g b / 60%);
+    border-color: var(--color-selected-variant-border);
+  }
+  .variant-option__button-label:has([data-option-available='false']) {
+    color: rgba(from var(--color-variant-text) r g b / 60%);
+  }
+  .product_stitching_item {
+     cursor: pointer;
+  }
+  {% endstylesheet %}
+  
+  {% schema %}
+  {
+    "name": "Stitching",
+    "tag": null,
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "t:settings.product"
+      },
+      {
+        "type": "checkbox",
+        "id": "render_collections_logic",
+        "label": "Render Swatches using Collections logic",
+        "default": true,
+        "info":"when true it will get the siblings products from the collection, when false it will fetch the product from collections/all/ this approach does not need to have a collection"
+      },
+      {
+        "type": "select",
+        "id": "stitching_context",
+        "label": "Stitching context",
+        "options": [
+          { "value": "product_page", "label": "Product page" },
+          { "value": "product_card", "label": "Product card" }
+        ],
+        "default": "product_page"
+      },
+      {
+        "type": "text",
+        "id": "stitching_label",
+        "label": "Stitching label",
+        "default": "Color",
+        "visible_if": "{{ block.settings.stitching_context == 'product_page' }}"
+      },
+      {
+        "type": "text",
+        "id": "group_tag",
+        "label": "Group tag",
+        "default": "group-",
+        "info": "it will use these prefix to find the products in the collection"
+      },
+      {
+        "type": "select",
+        "id": "product_swatches_alignment",
+        "label": "t:settings.alignment",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "t:options.left"
+          },
+          {
+            "value": "center",
+            "label": "t:options.center"
+          },
+          {
+            "value": "flex-end",
+            "label": "t:options.right"
+          }
+        ],
+        "default": "flex-start"
+      },
+      {
+        "type": "select",
+        "id": "product_swatches_alignment_mobile",
+        "label": "t:settings.alignment_mobile",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "t:options.left"
+          },
+          {
+            "value": "center",
+            "label": "t:options.center"
+          },
+          {
+            "value": "flex-end",
+            "label": "t:options.right"
+          }
+        ],
+        "default": "flex-start"
+      },
+      
+      {
+        "type": "header",
+        "content": "t:content.padding",
+        "visible_if": "{{ block.settings.hide_padding == false }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_padding",
+        "label": "t:settings.hide_padding",
+        "default": false,
+        "visible_if": "{{ false }}"
+      },
+      {
+        "type": "range",
+        "id": "product_swatches_padding_top",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 4,
+        "visible_if": "{{ block.settings.hide_padding == false }}"
+      },
+      {
+        "type": "range",
+        "id": "product_swatches_padding_bottom",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0,
+        "visible_if": "{{ block.settings.hide_padding == false }}"
+      },
+      {
+        "type": "range",
+        "id": "product_swatches_padding_left",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0,
+        "visible_if": "{{ block.settings.hide_padding == false }}"
+      },
+      {
+        "type": "range",
+        "id": "product_swatches_padding_right",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0,
+        "visible_if": "{{ block.settings.hide_padding == false }}"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stitching",
+        "category": "Product",
+        "settings": {
+          "product": "{{ closest.product }}"
+        }
+      }
+    ]
+  }
+  {% endschema %}
+  {% # theme-check-enable %}
+
+
+  {% if block.settings.stitching_context != 'product_card' and block.settings.render_collections_logic  %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+                const preloadedSections = {};
+                function preloadSections() {
+                    const productPaths = [
+                        {%- for product in products_stitching -%}
+                            '{{ product.url }}'{% if forloop.last == false %},{% endif %}
+                        {%- endfor -%}
+                    ];
+                    productPaths.forEach(path => {
+                        const request = new XMLHttpRequest();
+                        request.open('GET', `${path}?sections={{ section.id }}`, true);
+                        request.onload = function() {
+                            if (this.status >= 200 && this.status < 400) {
+                                // Success: Store the HTML content in the preloadedSections object
+                                preloadedSections[path] = JSON.parse(this.responseText);
+                                console.log("preloadedSections", preloadedSections)
+                            } else {
+                                console.error('Error fetching section:', this.statusText);
+                            }
+                        };
+                        request.onerror = function() {
+                            console.error('Request failed');
+                        };
+                        request.send();
+                    });
+                }
+                function getProductPath(url) {
+                    const urlParts = url.split('?'); // Split the URL at the query string
+                    return urlParts[0]; // Return the part before the query string
+                }
+                function updateSection(url) {
+                    const section_id = '{{ section.id }}';
+                    const sectionContainer = document.querySelector('#shopify-section-' + section_id );
+                    var productPath = getProductPath(url);
+                    if (preloadedSections[productPath]) {
+                        sectionContainer.innerHTML = preloadedSections[productPath]['{{section.id}}'];
+                    } else {
+                        console.error('No preloaded section found for:', productPath);
+                    }
+                    attachColorSwatchEventListeners();
+                }
+                function attachColorSwatchEventListeners() {
+                    const colorItems = document.querySelectorAll(".product_stitching_item:not(.product_stitching_item_card)");
+                    colorItems.forEach(item => {
+                        item.addEventListener("click", function(event) {
+                            console.log("item", item)
+                            event.preventDefault();
+                            const productUrl = this.dataset.productHandle;
+                            const productPath = getProductPath(productUrl);
+                            // Update the URL to reflect the new product variant
+                            history.pushState({ path: productPath }, '', productPath);
+                            updateSection(productPath);
+                        });
+                    });
+                }
+                preloadSections();
+                // Listen for the popstate event to handle browser back/forward navigation
+                window.addEventListener('popstate', function(event) {
+                    if (event.state && event.state.path) {
+                        updateSection(event.state.path);
+                    }
+                });
+                // Initial attachment of event listeners
+                attachColorSwatchEventListeners();  
+            });
+    </script>
+
+
+
+{% endif %}
+{% if block.settings.stitching_context == 'product_card' and block.settings.render_collections_logic %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.addEventListener("click", function (event) {
+        const item = event.target.closest(".product_stitching_item_card");
+        if (!item) return;
+    
+        event.preventDefault();
+    
+        const productHandle = item.dataset.productHandle;
+        const card = item.closest(".product-card-link");
+        const blockId = card?.dataset.blockId;
+        if (!card || !productHandle) return;
+        fetch(`${productHandle}?view=product_card_template`)
+          .then((res) => res.text())
+          .then((htmlString) => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, "text/html");
+            const newCard = doc.querySelector(".product-card-link");
+    
+            if (newCard) {
+              card.replaceWith(newCard); // replaces the full card (DOM node and all)
+            } else {
+              console.warn("Updated product card not found");
+            }
+          })
+          .catch((err) =>
+            console.error("Error fetching stitched product card:", err)
+          );
+      });
+    });
+    
+    </script>
+{% endif %}

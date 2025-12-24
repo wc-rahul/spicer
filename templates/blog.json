@@ -1,65 +1,112 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "blog-template",
+      "type": "main-blog",
       "blocks": {
-        "cef8534a-66f4-4631-9fc2-ff3d452969eb": {
-          "type": "search",
+        "title": {
+          "type": "text",
+          "name": "Title",
           "settings": {
-            "show_search_form": true
-          }
+            "text": "<p>{{ closest.blog.title }}<\/p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
-        "545d681e-3101-43f2-9ae8-534e7b7c7ba8": {
-          "type": "links",
+        "static-blog-post-card": {
+          "type": "_blog-post-card",
+          "static": true,
           "settings": {
-            "menu": ""
-          }
-        },
-        "54b06a0f-f189-4a4d-bced-b43d8eaedef4": {
-          "type": "featured_posts",
-          "settings": {
-            "title": "Recent Posts",
-            "show_date": false,
-            "show_comments": false,
-            "article_1": "spicers-nz\/spicers-is-officially-toitu-net-carbonzero-certified",
-            "article_2": "spicers-nz\/ecofoil®-digital-brings-your-colours-to-life",
-            "article_3": "spicers-nz\/paper-flexible-packaging-films",
-            "article_4": "",
-            "article_5": ""
-          }
-        },
-        "8bc430df-7743-4bae-a7be-57678342de45": {
-          "type": "categories",
-          "settings": {
-            "show_tags": true
-          }
+            "alignment": "left"
+          },
+          "blocks": {
+            "heading": {
+              "type": "_heading",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
+                "type_preset": "h4",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "text": "",
+                "read_only": true,
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 10,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-details": {
+              "type": "_blog-post-info-text",
+              "name": "t:names.details",
+              "static": true,
+              "settings": {
+                "show_date": true,
+                "show_author": false,
+                "type_preset": "",
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "image": {
+              "type": "_blog-post-image",
+              "static": true,
+              "settings": {
+                "height": "large",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 4
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
         }
       },
       "block_order": [
-        "cef8534a-66f4-4631-9fc2-ff3d452969eb",
-        "545d681e-3101-43f2-9ae8-534e7b7c7ba8",
-        "54b06a0f-f189-4a4d-bced-b43d8eaedef4",
-        "8bc430df-7743-4bae-a7be-57678342de45"
+        "title"
       ],
       "settings": {
-        "image_overlay_color": "#232323",
-        "image_overlay_opacity": 60,
-        "layout": "list",
-        "show_breadcrumbs": false,
-        "menu": "",
-        "show_tags_dropdown": false,
-        "blog_show_date": false,
-        "show_excerpt": true,
-        "pagination_mode": "standart"
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 48
       }
     }
   },

@@ -1,0 +1,82 @@
+{%- if block.settings.promo_image != blank -%}
+<div class="promo_blocks {% if block.settings.size == '2' %} double_size{% endif %}" href="{{ block.settings.btn_url }}">
+    <div class="image_promo_blocks_one">
+    <a href="{{ block.settings.btn_url }}">
+        {{
+          block.settings.promo_image
+          | image_url: width: 1024
+          | image_tag: loading: 'lazy', class: 'mega-menu__link-image', sizes: 'auto'
+        }}
+    </a>
+      <div class="menu_image_text_overlay">
+        {% if block.settings.promo_head != blank %}
+          <h4 class="menu_img_title font-800">{{ block.settings.promo_head }}</h4>
+        {% endif %}
+        {% if  block.settings.promo_sub != blank %}
+          <p class="menu_img_desc">{{ block.settings.promo_sub }}</p>
+        {% endif %}
+        {% if block.settings.btn_label != blank %}
+          <a class="menu_img_btn btn-outline" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+</div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Promotion Card",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "promo_image",
+      "label": "Promo Image"
+    },
+    {
+        "type": "select",
+        "id": "size",
+        "label": "Select Promo Width",
+        "options": [
+            {
+                "label": "one",
+                "value": "1"
+            },
+            {
+                "label": "two",
+                "value": "2"
+            }
+        ],
+        "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "promo_head",
+      "label": "Promo Heading",
+      "default": "Promo"
+    },
+    {
+      "type": "text",
+      "id": "promo_sub",
+      "label": "Promo Subtitle",
+      "default": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Promotion Card"
+    }
+  ]
+}
+{% endschema %}

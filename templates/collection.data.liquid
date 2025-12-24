@@ -1,0 +1,57 @@
+{% layout none %}
+{%- assign template-w = '123x' | escape -%}
+
+{% paginate collection.products by 100 %}
+[
+  {%- for product in collection.products -%}
+  {%- assign color = 'transparent' -%}
+  {%- for tag in product.tags -%}
+    {%- if tag contains 'colour:' -%}
+      {%- assign color = tag | remove_first: 'colour:' -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {% assign image_swatch_metaobject = '' %}
+  {% for prod in product.metafields.shopify.color-pattern.value%}
+    {% assign color_swatch =  prod.color %} 
+    {% assign image_swatch_metaobject =  prod.image | image_url %} 
+    {% break %}
+  {% endfor %}
+  {%- unless forloop.first -%},{%- endunless -%}
+  {
+    "id": {{ product.id | json }},
+    "featured_image": {{ product.featured_image | img_url: '123x' | replace: '123x', template-w | json }},
+    "title": {{ product.title | json }},
+    "selected_or_first_available_variant": {{product.selected_or_first_available_variant | json }},
+    "selected_or_first_available_variant_quantity": [{% for i in (1..product.selected_or_first_available_variant.inventory_quantity) %}{%- unless forloop.first -%},{%- endunless -%}{{i}}{% endfor%}],
+    "color": {{ color | json }},
+    "price": {{ product.price | json }},
+    "url": {{ product.url | json }},
+    "handle": {{product.handle | json}},
+    "available": {{ product.available | json }},
+    "tags": {{product.tags | json }},
+    "options_with_values": {{product.options_with_values | json}},
+    "has_only_default_variant": {{product.has_only_default_variant | json}},
+    "swatch_image": {{product.metafields.swatch.swatch_image | json }},
+    "category": {{product.category | json }},
+    "color_swatch_metafield" : "{{ color_swatch }}",
+    "image_swatch_metaobject" : "{{ image_swatch_metaobject }}",
+    "bundle_additional_products": {{product.metafields.more_colours.collection_additional_products | json }},
+    "variants": [
+    {%- for variant in product.variants -%}
+      {%- unless forloop.first -%},{%- endunless -%}
+      {
+        "id": {{ variant.id | json }},
+        "title": {{ variant.title | json }},
+        "available": {{ variant.available | json }},
+        "price": {{ variant.price | json }},
+        "sku": {{ variant.sku | json }},
+        "inventory_quantity": {{ variant.inventory_quantity | json }},
+        "image": {{ variant.image.src | json }}
+      }
+    {%- endfor -%}
+    ]
+  }
+  {%- endfor -%}
+]
+{% endpaginate %}

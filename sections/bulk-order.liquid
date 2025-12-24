@@ -1,0 +1,240 @@
+{% comment %} {% assign product = section.settings.product %}
+
+<section class="bulk-order-section">
+  <div class="bulk-order-header">
+    <h2>{{ section.settings.heading }}</h2>
+
+    <div class="filter-search">
+      <input
+        type="text"
+        id="variantSearch"
+        placeholder="Filter by Colour, Finish or Size"
+      />
+    </div>
+  </div>
+
+  <!-- Swatches -->
+  <div class="swatch-wrapper">
+    {% assign shown_colours = '' %}
+    {% for variant in product.variants %}
+      {% assign colour = variant.option1 %}
+      {% unless shown_colours contains colour %}
+        {% assign shown_colours = shown_colours | append: colour | append: ',' %}
+        <div
+          class="swatch"
+          data-colour="{{ colour | downcase }}"
+          title="{{ colour }} - {{ variant.title }}"
+        >
+          {% if variant.metafields.custom.swatch_image %}
+            <img
+              src="{{ variant.metafields.custom.swatch_image | image_url: width: 60 }}"
+              alt="{{ colour }}"
+            >
+          {% else %}
+            <span>{{ colour }}</span>
+          {% endif %}
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+
+  <button class="clear-filters" id="clearFilters">
+    Clear All Filters
+  </button>
+
+  <!-- Bulk Order Table -->
+  <div class="bulk-table">
+    <table>
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Description</th>
+          <th>Stock</th>
+          <th>Size</th>
+          <th>Price / Unit</th>
+          <th>QTY</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="variantTable">
+        {% for variant in product.variants %}
+          <tr
+            class="variant-row"
+            data-search="{{ variant.option1 | downcase }} {{ variant.option2 | downcase }} {{ variant.option3 | downcase }} {{ variant.title | downcase }}"
+          >
+            <td>{{ variant.sku }}</td>
+
+            <td>
+              {{ variant.title }}
+              {% if variant.metafields.custom.tooltip_info %}
+                <span class="tooltip">
+                  ℹ
+                  <span class="tooltip-text">
+                    {{ variant.metafields.custom.tooltip_info }}
+                  </span>
+                </span>
+              {% endif %}
+            </td>
+
+            <td>
+              {% if variant.available %}
+                <span class="in-stock">● In stock</span>
+              {% else %}
+                <span class="out-stock">Out of stock</span>
+              {% endif %}
+            </td>
+
+            <td>{{ variant.option2 }}</td>
+
+            <td>
+              {{ variant.price | money }}
+              {% if variant.metafields.custom.price_per %}
+                / {{ variant.metafields.custom.price_per }}
+              {% endif %}
+            </td>
+
+            <td>
+              <div class="qty-box">
+                <button class="qty-minus">−</button>
+                <input type="number" value="1" min="1">
+                <button class="qty-plus">+</button>
+              </div>
+            </td>
+
+            <td>
+              <button
+                class="add-to-cart"
+                data-id="{{ variant.id }}"
+              >
+                Add to Order
+              </button>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+.bulk-order-section { padding: 40px 0; }
+.bulk-order-header { display: flex; justify-content: space-between; align-items: center; }
+.filter-search input { padding: 10px; width: 260px; }
+
+.swatch-wrapper { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.swatch { width: 36px; height: 36px; border-radius: 50%; cursor: pointer; overflow: hidden; border: 1px solid #ddd; }
+.swatch img { width: 100%; height: 100%; object-fit: cover; }
+
+.clear-filters { margin-bottom: 20px; }
+
+.bulk-table table { width: 100%; border-collapse: collapse; }
+.bulk-table th, .bulk-table td { padding: 12px; border-bottom: 1px solid #eee; }
+
+.qty-box { display: flex; align-items: center; }
+.qty-box button { width: 30px; height: 30px; }
+.qty-box input { width: 50px; text-align: center; }
+
+.add-to-cart { background: #0b3ea8; color: #fff; padding: 10px 16px; border: none; cursor: pointer; }
+
+.tooltip { position: relative; cursor: pointer; }
+.tooltip-text {
+  display: none;
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 6px;
+  font-size: 12px;
+  top: 20px;
+  left: 0;
+  white-space: nowrap;
+}
+.tooltip:hover .tooltip-text { display: block; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const searchInput = document.getElementById('variantSearch');
+  const rows = document.querySelectorAll('.variant-row');
+  const swatches = document.querySelectorAll('.swatch');
+
+  function filterTable(value) {
+    value = value.toLowerCase();
+    rows.forEach(row => {
+      row.style.display = row.dataset.search.includes(value) ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('keyup', function () {
+    filterTable(this.value);
+  });
+
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', function () {
+      const colour = this.dataset.colour;
+      searchInput.value = colour;
+      filterTable(colour);
+    });
+  });
+
+  document.getElementById('clearFilters').addEventListener('click', function () {
+    searchInput.value = '';
+    rows.forEach(row => row.style.display = '');
+  });
+
+  document.querySelectorAll('.qty-plus').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.previousElementSibling;
+      input.value = parseInt(input.value) + 1;
+    });
+  });
+
+  document.querySelectorAll('.qty-minus').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.nextElementSibling;
+      if (input.value > 1) input.value--;
+    });
+  });
+
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const row = btn.closest('tr');
+      const qty = row.querySelector('input').value;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: btn.dataset.id,
+          quantity: qty
+        })
+      });
+    });
+  });
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "Bulk Order Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Bulk Order"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bulk Order Table"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}

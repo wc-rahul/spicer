@@ -1,0 +1,233 @@
+
+{% assign groupTagPrefix = block.settings.group_tag %}
+{% for tag in product.tags %}
+  {% if tag contains groupTagPrefix %}
+  {% assign productGroup = tag %}
+  {% endif %}
+{% endfor %}
+
+{% for prod in product.metafields.shopify.color-pattern.value%}
+  {% assign color_name =  prod.label %} 
+  {% break %}
+{% endfor %}
+
+<colour-swatches-product-card {% if block.settings.do_not_crop != blank %}class="swatch-not-cropped"{% endif %} style="
+    --overflow-list-alignment: {{ block.settings.product_swatches_alignment }};
+    --overflow-list-alignment-mobile: {{ block.settings.product_swatches_alignment_mobile }};
+    --product-stitching-alignment: {% if block.settings.product_swatches_alignment == 'flex-start' %}start{% elsif block.settings.product_swatches_alignment == 'flex-end' %}end{% else %}center{% endif %};
+    --product-stitching-alignment-mobile: {% if block.settings.product_swatches_alignment_mobile == 'flex-start' %}start{% elsif block.settings.product_swatches_alignment_mobile == 'flex-end' %}end{% else %}center{% endif %};
+    --product-stitching-padding-block-start: {{ block.settings.product_swatches_padding_top }}px;
+    --product-stitching-padding-block-end: {{ block.settings.product_swatches_padding_bottom }}px;
+    --product-stitching-padding-inline-start: {{ block.settings.product_swatches_padding_left }}px;
+    --product-stitching-padding-inline-end: {{ block.settings.product_swatches_padding_right }}px;
+  ">
+    {% if block.settings.stitching_context != 'product_card'%}
+        <legend>
+        {{ block.settings.stitching_label }}
+            <span class="variant-option__swatch-value">{{ color_name }}</span>
+        </legend>
+    {% endif %}
+    <div>
+        <div class="colour-swatches__container-wrapper" style="position:relative;">
+            <div class="colour-swatches__container" style="position:relative; z-index:2;">
+            <fieldset class="variant-option variant-option--buttons variant-option--swatches">
+            </fieldset>
+            </div>
+            <ul id="placeholder_swatches_{{ product.id }}" class="pdp-colour-swatch__color-list_placeholder" data-product-colors="" style="position:absolute; top:0; left:0; width:100%; z-index:1;">
+            {% render 'stich-placeholder', block:block %}
+            </ul>
+        </div>
+    </div>
+
+
+    <script type="application/json" class="swatches-settings">
+    {
+        "image_type": {{settings.show_variant_image | json }},
+        "groupTag":  {{productGroup | json }},
+        "colour": {{colourTag | replace: block.settings.colour_tag, "" | json }},
+        "colourTagPrefix": {{block.settings.colour_tag | json }},
+        "swatchUrl": {{ "swatch.jpg" | file_img_url: '50x' | json  }},
+        "hideIfEmpty": true,
+        "location": "{{ template }}",
+        "product_handle" : "{{ product.handle }}",
+        "hiddeOptionsOutOfStock": {{ block.settings.hide_if_do_not_stock | json }},
+        "stitching_context": "{{ block.settings.stitching_context }}",
+        "product_id": "{{ product.id }}"
+    }
+    </script>
+</colour-swatches-product-card>
+
+<style>
+  colour-swatches-product-card .variant-option--buttons{
+    flex-wrap: nowrap;
+  }
+  .colour-swatches__container-wrapper {
+    position: relative;
+    min-height: 34px;
+    padding-block: calc(var(--product-stitching-padding-block-start) + var(--focus-outline-offset) + var(--focus-outline-width)) calc(var(--product-stitching-padding-block-end) + var(--focus-outline-offset) + var(--focus-outline-width));
+    padding-inline: calc(var(--product-stitching-padding-inline-start) + var(--focus-outline-offset) + (1.5 * var(--focus-outline-width))) calc(var(--product-stitching-padding-inline-end) + var(--focus-outline-offset) + var(--focus-outline-width));
+}
+  }
+  .colour-swatches__container {
+    position: relative;
+    z-index: 2;
+  }
+  #placeholder_swatches.pdp-colour-swatch__color-list_placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  #placeholder_swatches.hidden {
+    display: none;
+  }
+  .pdp-colour-swatch__color-list {
+    display: flex;
+    column-gap: 16px;
+    padding: 10px 0;
+    min-height:52px;
+    margin: 0px 0px;
+}
+.pdp-colour-swatch__color-list_placeholder {
+  display: flex;
+  column-gap: 16px;
+  padding: 0px 0;
+  min-height:30px;
+  margin: 0px 0px;
+  opacity: 0.2;
+}
+
+.pdp-colour-swatch__color-item {
+    width: 32px;
+    text-align: center;
+    min-height: 32px;
+}
+#placeholder_swatches .pdp-colour-swatch__color-item a {
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+  display: block;
+  position: relative;
+  border: 0.5px solid lightgray;
+}
+.pdp-colour-swatch__color-item a {
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: relative;
+    border: 0.5px solid black;
+}
+
+.pdp-colour-swatch__color-item a:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    transition: all 125ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    border: 2px solid transparent;
+}
+
+.pdp-colour-swatch__color-item a:hover:after {
+    border-color: #7F7F7F;
+    inset: -4px;
+}
+
+.pdp-colour-swatch__color-item a[style*="#fff"] {
+    box-shadow: 0 0 0 1px black;
+}
+
+.pdp-colour-swatch__color-item--active a {
+    outline: 1px solid black;
+    border: 2px solid white;
+    box-shadow: none;
+}
+ul, li{
+  list-style: none;
+}
+.colour-swatches__container input,
+.colour-swatches__container img {
+max-width: 50px;
+max-height: calc(50px + 10px);
+object-fit: cover;
+height: 100%;
+width: 100%;
+border-radius: 2px;
+}
+.colour-swatches__container input.current.selected,
+.colour-swatches__container input.current {
+    border: 1px solid black;
+}
+.colour-swatches__container {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, 50px);
+    grid-gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .colour-swatches__container a.selected,
+  .colour-swatches__container a:hover {
+    border: 1px solid #353535;
+    border-radius: 2px;
+  }
+  .colour-swatches__container a {
+    position: relative;
+    width:  var(--swatch-width);
+    height:  var(--swatch-width);
+    overflow: hidden;
+  }
+  
+  .colour-swatches__container input[data-available="false"] {
+    filter: grayscale(0.2);
+  }
+  .pdp-colour-swatch__color-item a[data-available="false"]:before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -2px;
+    width: 28px;
+    border-top: 2px solid rgb(18, 18, 18, 0.1);
+    transform: rotate(-45deg);
+    z-index: 10;
+  }
+  .colour-swatches__container label[data-available="false"]{
+    position: absolute;
+    content: "";
+    left: -3px;
+    top: 64%;
+    width: 57px;
+    border-top: 2px solid lightgray;
+    transform: rotate(-36deg);
+    z-index: 10;
+    max-width: 93px;
+    max-height: 38px;
+    height: 2px;
+  }
+  .colour-swatches__container label[data-available="true"]{
+  display:none;
+  }
+
+  
+  .swatch-not-cropped .colour-swatches__container input,
+  .swatch-not-cropped .colour-swatches__container a {
+    width: auto;
+    height: auto;
+  }
+  
+  .swatch-not-cropped .colour-swatches__container input,
+  .swatch-not-cropped .colour-swatches__container img {
+    object-fit: fill;
+  }
+  
+  colour-swatches-product-card.swatch-empty--hide {
+    display: none;
+  }
+  .pdp-colour-swatch__color-item [data-available="false"]{
+  opacity: .7;
+  outline: 1px solid rgba(18, 18, 18, 0.1);
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  }
+ 
+</style>

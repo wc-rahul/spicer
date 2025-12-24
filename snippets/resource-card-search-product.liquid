@@ -1,0 +1,245 @@
+{% doc %}
+  This snippet is used to render a product card.
+  It is used in the product block, featured product block, and the product card block.
+  The product object is null or when placeholders are rendered.
+
+  @param {object} product - The product object
+  @param {object} children - The children of the product card
+  @param {object} [block] - The block object
+  @param {number} [product_card_gap] - The gap between the product card children (overrides block settings)
+{% enddoc %}
+
+{% style %}
+  {% if request.visual_preview_mode %}
+    product-card-link {
+      width: 100%;
+      min-width: 250px;
+    }
+  {% endif %}
+{% endstyle %}
+
+{% liquid
+  assign has_quick_add = false
+  if settings.quick_add and product.available
+    assign has_quick_add = true
+  endif
+
+  assign has_mobile_quick_add = false
+  if has_quick_add and settings.mobile_quick_add
+    assign has_mobile_quick_add = true
+  endif
+
+  assign product_card_id = 'product-card-link-' | append: block.id | append: '-' | append: product.id
+  assign product_card_gap_value = product_card_gap | default: block.settings.product_card_gap
+
+  if settings.transition_to_main_product
+    assign featured_image = product.selected_or_first_available_variant.featured_image
+    if featured_image == blank
+      assign featured_image = product.featured_media.preview_image
+    endif
+
+    if featured_image != blank
+      assign featured_media_url = featured_image | image_url: width: 500
+    endif
+  endif
+
+  assign onboarding = false
+  if product.id == empty
+    assign onboarding = true
+  endif
+%}
+
+{%- if settings.transition_to_main_product -%}
+  <product-card-link
+    data-product-id="{{ product.id }}"
+    data-featured-media-url="{{ featured_media_url }}"
+    data-product-transition="{{ settings.transition_to_main_product }}"
+  >
+{%- endif -%}
+<product-card
+  class="product-card"
+  data-product-id="{{ product.id }}"
+  data-product-variants-size="{{ product.variants.size }}"
+  id="product-card-{{ block.id }}"
+  data-product-transition="{{ settings.transition_to_main_product }}"
+  {{ block.shopify_attributes }}
+>
+  <a
+    id="{{ product_card_id | md5 }}"
+    {% unless onboarding %}
+      href="{{ product.selected_or_first_available_variant.url }}"
+      on:click="/navigateToProduct"
+    {% endunless %}
+    class="product-card__link"
+    ref="productCardLink"
+  >
+    <span class="visually-hidden">
+      {{ product.title }}
+    </span>
+  </a>
+  <div
+    class="
+      product-card__content
+      layout-panel-flex
+      layout-panel-flex--column
+      product-grid__card
+      spacing-style
+      border-style
+      gap-style
+      {% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}{% endif %}
+    "
+    style="
+   
+      {% render 'border-override', settings: block.settings %}
+      {% render 'layout-panel-style', settings: block.settings %}
+      {% render 'spacing-style', settings: block.settings %}
+      {% render 'gap-style', value: product_card_gap_value, name: 'product-card-gap' %}
+      --quick-add-display: {% if has_quick_add %}flex{% else %}none{% endif %};
+      --quick-add-mobile-display: {% if has_mobile_quick_add %}flex{% else %}none{% endif %};
+      --border-radius: {{ settings.card_corner_radius }}px; 
+      {% if block.settings.padding-inline-start > 0 %}--zoom-out-padding-inline-start: min(var(--padding-xs), {{ block.settings.padding-inline-start | times: 0.7}}px);{% endif %}
+      {% if block.settings.padding-inline-end > 0 %}--zoom-out-padding-inline-end: min(var(--padding-xs), {{ block.settings.padding-inline-end | times: 0.7}}px);{% endif %}
+      {% if block.settings.padding-block-start > 0 %}--zoom-out-padding-block-start: min(var(--padding-xs), {{ block.settings.padding-block-start | times: 0.7}}px);{% endif %}
+      {% if block.settings.padding-block-end > 0 %}--zoom-out-padding-block-end: min(var(--padding-xs), {{ block.settings.padding-block-end | times: 0.7}}px);{% endif %}
+    "
+  >
+    {% capture children %}
+        {% unless product == blank %}
+          {% if settings.show_badges_search %}
+            {% render 'product-card-badges', product: product %}
+          {% endif %}
+          {%  if settings.quick_add or settings.mobile_quick_add %}
+            {% render 'quick-add', product_search:product, section_id: section.id  , type: 'search-product' %}
+          {% endif %}
+        {% endunless %}
+      {% endcapture %}
+      
+      {% render 'card-gallery', children: children , type: 'search-product' , product_search: product %}
+      {% assign product_vendor = '<p>' | append: product.vendor | append: '</p>' %}
+      {% assign product_title = '<p>' | append: product.title | append: '</p>' %}
+      {% if settings.show_vendor_search %}
+        {% render 'text', fallback_text: product_vendor, block: block %}
+      {% endif %}
+      {% if settings.show_title_search %}
+        {% render 'text', fallback_text: product_title, block: block %}
+      {% endif %}
+      
+     {% if settings.show_price_search %}
+      {% comment %} price {% endcomment %}
+      <product-price
+        class="text-block {{ text_block_classes }} text-{{ block.settings.alignment }} {{ block.settings.type_preset | default: 'paragraph' }} spacing-style{% if product == blank and request.design_mode == false %} hidden{% endif %}"
+        data-block-id="{{ block.id }}"
+        data-product-id="{{ product.id }}"
+        style="
+          {% render 'typography-style', settings: block.settings %}
+          {% render 'spacing-style', settings: block.settings %}
+          --width: {{ block.settings.width }};
+        "
+        {{ block.shopify_attributes }}
+      >
+        {% render 'price',
+          show_unit_price: true,
+          product_resource: product,
+          show_sale_price_first: block.settings.show_sale_price_first
+        %}
+      
+        {% if block.settings.show_tax_info %}
+          <div class="tax-note">
+            {%- if cart.duties_included and cart.taxes_included -%}
+              {{ 'content.duties_and_taxes_included' | t }}
+            {%- elsif cart.taxes_included -%}
+              {{ 'content.taxes_included' | t }}
+            {%- elsif cart.duties_included -%}
+              {{ 'content.duties_included' | t }}
+            {%- endif -%}
+      
+            {%- if shop.shipping_policy.body != blank -%}
+              {{ 'content.shipping_policy' | t }}
+            {%- endif -%}
+          </div>
+        {% endif %}
+      
+        {%- if selected_variant != blank and block.settings.show_installments -%}
+          <div class="installments">
+            {%- assign product_form_installment_id = 'product-form-installment-' | append: block.id -%}
+            {%- form 'product', product_resource, id: product_form_installment_id, class: 'payment-terms' -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ selected_variant.id }}"
+              >
+              {{ form | payment_terms }}
+            {%- endform -%}
+          </div>
+        {%- endif -%}
+      </product-price>
+      {% endif %}
+    {% comment %}  {% endcomment %}
+  </div>
+</product-card>
+{%- if settings.transition_to_main_product -%}
+  </product-card-link>
+{%- endif -%}
+
+{% stylesheet %}
+  product-card-link {
+    width: 100%;
+  }
+
+  .product-card__placeholder-image svg {
+    height: 100%;
+  }
+
+  @media screen and (width < 750px) {
+    .product-card slideshow-arrows .slideshow-control {
+      display: none;
+    }
+  }
+
+  /* Hide the variant swatches for product cards that show a swatches variant picker */
+  :is(.product-card):has(swatches-variant-picker-component) .quick-add .variant-option--swatches {
+    display: none;
+  }
+
+  /* Hide "Add" button for single option product cards that show a swatches variant picker */
+  :is(.product-card):has(.quick-add__product-form-component--single-option):has(swatches-variant-picker-component)
+    .quick-add__button--choose {
+    display: none;
+  }
+
+  /* Hide "add" button for multi-variant product cards that don't show a swatches variant picker */
+  :is(.product-card):has(.quick-add__product-form-component--multi-variant):not(:has(swatches-variant-picker-component))
+    .quick-add__button--add {
+    display: none;
+  }
+
+  /* Hover effect for single variant product cards and product blocks */
+
+  /* stylelint-disable selector-max-specificity */
+  :is(.product-card):has(.quick-add__product-form-component--single-variant) .card-gallery:hover {
+    & .quick-add__button--choose {
+      display: none;
+    }
+
+    & .quick-add__button--add {
+      display: grid;
+    }
+  }
+
+  /* style for predictive search product card */
+ #predictive-search-products .product-badges--top-left{
+    top: 8px;
+    left: 8px;
+  }
+  #predictive-search-products .product-badges--top-right{
+    top: 8px;
+    right: 8px;
+  }
+  #predictive-search-products .product-badges--bottom-left{
+    bottom: 8px;
+    left: 8px;
+  }
+  /* #predictive-search-products .quick-add{
+    inset: 12.8px !important;
+   } */
+{% endstylesheet %}

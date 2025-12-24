@@ -1,0 +1,108 @@
+<div
+    class="mega-menu__grid 22"
+    data-menu-grid-id="MegaMenuList-{{block.settings.menu.links.size}}-{{ block.settings.menu }}"
+  > 
+    {% assign id = "MegaMenuList-{{ parent_link.links.size }}" %}
+    {% render 'mega-menu-list',
+        parent_link: {{block.settings.menu}},
+        id: block.settings.menu.links.size,
+        grid_columns_count: 5,
+        grid_columns_count_tablet: 4,
+        grid_columns_count_collection_images: 8,
+        menu_content_type: menu_content_type,
+        content_aspect_ratio: content_aspect_ratio,
+        image_border_radius: image_border_radius,
+        products_mega_menu: products_mega_menu,
+        collections_mega_menu: collections_mega_menu,
+        promo_card_number: promo_card_number,
+        extra_blocks: blocks,
+        menu_width: {{block.settings.menu_width}},
+        dropdwon_split_columns: {{block.settings.dropdwon_split_columns}}
+    %}
+
+</div>
+
+{% schema %}
+{
+  "name": "List Navigation",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Menu Settings"
+    },
+    {
+      "type": "select",
+      "id": "dropdwon_split_columns",
+      "label": "Column space",
+      "info": "if > 1, the block will take the column space of the number of columns you select",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }, {
+          "value": "5",
+          "label": "5 columns"
+        },
+        {
+          "value": "6",
+          "label": "6 columns"
+        },
+      ],
+      "default": "1"
+    },
+    
+    {
+      "type": "select",
+      "id": "menu_width",
+      "label": " Menu columns",
+      "info": "Number of columns the menu will have",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }, {
+          "value": "5",
+          "label": "5 columns"
+        },
+      ],
+      "default": "3"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "List Navigation"
+    }
+  ]
+}
+{% endschema %}

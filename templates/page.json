@@ -1,214 +1,62 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {
-        "image_overlay_color": "#000000",
-        "image_overlay_opacity": 40,
-        "show_breadcrumbs": false,
-        "show_page_content": true
-      }
-    },
-    "shop_the_look_RNtjhU": {
-      "type": "shop-the-look",
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Auckland_Spicers_9feceb40-fa69-4844-bf3f-e6914c8ff6e2.png",
-        "title": "Auckland",
-        "subtitle": "",
-        "button_title": "Get Directions",
-        "button_url": "https:\/\/www.google.com\/maps\/dir\/\/1+Lady+Fisher+Place,+East+T%C4%81maki,+Auckland+2013\/@-36.9296978,174.7895544,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d0d4c09fdaf2387:0xb0dc8abb02c7a16c!2m2!1d174.8719554!2d-36.9297263?entry=ttu",
-        "button_style": "white",
-        "content": "<p>1 Lady Fisher Place<br\/>East Tamaki, Auckland<br\/>New Zealand<br\/><br\/>PO Box 204 328<br\/>Highbrook, Manukau 2161<br\/>New Zealand<\/p>",
-        "text_color": "#ffffff",
-        "content_side": "left",
-        "color_image_overlay": "",
-        "image_overlay_opacity": 82,
-        "show_vendor": false,
-        "hotspot_size": "small"
-      }
-    },
-    "shop_the_look_aUexed": {
-      "type": "shop-the-look",
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Palmy_Universal_Packaging_86f8f244-090d-45de-8929-aab3b5698d7e.png",
-        "title": "Palmerston North",
-        "subtitle": "",
-        "button_title": "Get Directions",
-        "button_url": "https:\/\/www.google.com\/maps\/dir\/\/Universal+Packaging+Limited,+Benmore+Avenue,+Cloverlea,+Palmerston+North\/@-40.3414552,175.5511507,13z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d404cd0a419caff:0xc91c3904b0913ffe!2m2!1d175.592436!2d-40.341528?entry=ttu",
-        "button_style": "white",
-        "content": "<p>142 Benmore Avenue<br\/>Cloverlea, Palmerston North <br\/>New Zealand<br\/><br\/>PO Box 1320<br\/>Palmerston North 4440<br\/>New Zealand<\/p>",
-        "text_color": "#ffffff",
-        "content_side": "left",
-        "color_image_overlay": "",
-        "image_overlay_opacity": 82,
-        "show_vendor": true,
-        "hotspot_size": "small"
-      }
-    },
-    "shop_the_look_A4idUY": {
-      "type": "shop-the-look",
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled_design_44.png",
-        "title": "Wellington",
-        "subtitle": "",
-        "button_title": "Get Directions",
-        "button_url": "https:\/\/www.google.com\/maps\/dir\/\/480+Jackson+Street,+Petone,+Lower+Hutt\/@-41.2303359,174.8115591,12z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d38abca32f2aa25:0xa8106ab1496f2f26!2m2!1d174.8939605!2d-41.2304944?entry=ttu",
-        "button_style": "white",
-        "content": "<p>Unilever Buildings 4 & 5<br\/>480 Jackson Street<br\/>Petone, Wellington<br\/>New Zealand<\/p>",
-        "text_color": "#ffffff",
-        "content_side": "left",
-        "color_image_overlay": "",
-        "image_overlay_opacity": 82,
-        "show_vendor": false,
-        "hotspot_size": "small"
-      }
-    },
-    "shop_the_look_LRpqUf": {
-      "type": "shop-the-look",
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Christchurch_Spicers.png",
-        "title": "Christchurch",
-        "subtitle": "",
-        "button_title": "Get Directions",
-        "button_url": "https:\/\/www.google.com\/maps\/dir\/\/Spicers+Wellington+Jackson+Street,+Petone,+Lower+Hutt\/@-41.2304225,174.8526752,13z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x6d38abb88f4e588b:0x742d8e0b08609d8f!2m2!1d174.8939605!2d-41.2304944?entry=ttu",
-        "button_style": "white",
-        "content": "<p>137 Hayton Road<br\/>Wigram, Christchurch<br\/>New Zealand<br\/><br\/>PO Box 832<br\/>Christchurch Mail Centre, Christchurch 8140<br\/>New Zealand<\/p>",
-        "text_color": "#ffffff",
-        "content_side": "left",
-        "color_image_overlay": "",
-        "image_overlay_opacity": 82,
-        "show_vendor": false,
-        "hotspot_size": "small"
-      }
-    },
-    "divider_xNnU9P": {
-      "type": "Divider",
-      "settings": {
-        "divider-visibility": "showboth",
-        "hd_border_color": "#aaaaaa",
-        "divider_border": false,
-        "divider_spacing": 59,
-        "div_width": 80,
-        "hd_border": 2,
-        "border_line": 1,
-        "div_style": "solid",
-        "border_rad": 2
-      }
-    },
-    "locations_ld_json_XdhhCi": {
-      "type": "locations-ld-json",
       "blocks": {
-        "location_LnzzYf": {
-          "type": "location",
+        "heading": {
+          "type": "text",
+          "name": "Title",
           "settings": {
-            "name": "",
-            "address": "",
-            "locality": "",
-            "region": "",
-            "country": "",
-            "post_code": "",
-            "telephone": "",
-            "price_range": ""
-          }
+            "text": "<h1>{{ closest.page.title }}<\/h1>",
+            "type_preset": "h1",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "color": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "background": false,
+            "background_color": "#00000026",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
-        "location_E4nUGR": {
-          "type": "location",
-          "settings": {
-            "name": "Spicers NZ Ltd Auckland",
-            "address": "1 Lady Fisher Place",
-            "locality": "East Tamaki",
-            "region": "Auckland",
-            "country": "NZ",
-            "post_code": "204 328",
-            "telephone": "(09) 966 9362",
-            "price_range": "$$$"
-          }
-        },
-        "location_PWrcyX": {
-          "type": "location",
-          "settings": {
-            "name": "Spicers NZ Ltd Wellington",
-            "address": "Unilever Buildings 4 & 5, 480 Jackson Street",
-            "locality": "Petone",
-            "region": "Wellington",
-            "country": "NZ",
-            "post_code": "5012",
-            "telephone": "(09) 966 9362",
-            "price_range": "$$$"
-          }
-        },
-        "location_XkVBVA": {
-          "type": "location",
-          "settings": {
-            "name": "Spicers NZ Ltd Christchurch",
-            "address": "137 Hayton Road",
-            "locality": "Wigram",
-            "region": "Christchurch",
-            "country": "NZ",
-            "post_code": "8140",
-            "telephone": "(09) 966 9362",
-            "price_range": "$$$"
-          }
-        },
-        "location_FAVdwH": {
-          "type": "location",
-          "settings": {
-            "name": "Spicers NZ Ltd Palmerston North",
-            "address": "142 Benmore Avenue",
-            "locality": "Palmerston North",
-            "region": "Palmerston North",
-            "country": "NZ",
-            "post_code": "4412",
-            "telephone": "(09) 966 9362",
-            "price_range": "$$$"
-          }
-        },
-        "location_rmqWyf": {
-          "type": "location",
-          "settings": {
-            "name": "",
-            "address": "",
-            "locality": "",
-            "region": "",
-            "country": "",
-            "post_code": "",
-            "telephone": "",
-            "price_range": ""
-          }
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
-        "location_LnzzYf",
-        "location_E4nUGR",
-        "location_PWrcyX",
-        "location_XkVBVA",
-        "location_FAVdwH",
-        "location_rmqWyf"
+        "heading",
+        "page-content"
       ],
       "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
       }
     }
   },
   "order": [
-    "main",
-    "shop_the_look_RNtjhU",
-    "shop_the_look_aUexed",
-    "shop_the_look_A4idUY",
-    "shop_the_look_LRpqUf",
-    "divider_xNnU9P",
-    "locations_ld_json_XdhhCi"
+    "main"
   ]
 }

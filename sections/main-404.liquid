@@ -1,80 +1,188 @@
-<div class="page-width-small">
-  <div class="empty-page-content text-left page-404-content ">
-    <h3> {% if section.settings.subtitle != blank %}{{ section.settings.subtitle }}{% else %}{{ 'general.404.suptitle' | t }}{% endif %} </h3>
-    <h1 class='mega-title--large mega-title'>{% if section.settings.title != blank %}{{ section.settings.title }}{% else %}{{ 'general.404.title' | t }}{% endif %}</h1>
-    {% if section.settings.text != blank %}{{ section.settings.text }}{% endif %}
-   <div class='btn_wrapper'>
-      {% if section.settings.button_1_text != blank and section.settings.button_1_link != blank %}
-     <a href="{{ section.settings.button_1_link }}" class="btn btn--primary"><span>{{ section.settings.button_1_text }}</span></a>
-      {% else %}
-     <a href="{{ routes.root_url }}" class="btn btn--primary"><span>{{ 'general.404.link' | t }}</span></a>
-      {% endif %}
-     
-      {% if section.settings.button_2_text != blank and section.settings.button_2_link != blank %}
-     <a href="{{ section.settings.button_2_link }}" class="btn btn--transparent_secondary"><span>{{ section.settings.button_2_text }}</span></a>
-      {% else %}
-     <a href="{{ routes.root_url }}" class="btn btn--transparent_secondary"><span>{{ 'general.404.contact_btn' | t }}</span></a>
-      {% endif %}
-    </div>
-    
-    {% if section.settings.show_social %}
-    {% include 'social-sharing' %} 
-    {% endif %}
-    
-    
-    <div class='page-404-footer'>
-    	 <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="
+    section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}
+    {% if section.settings.section_height != "" %} {{ section.settings.section_height | prepend: "section--height-" }}{% endif %}
+  "
+>
+  <div>
+    <div
+      class="
+        spacing-style
+        layout-panel-flex
+        layout-panel-flex--column
+        section-content-wrapper
+        mobile-column
+      "
+      style="
+        {% render 'layout-panel-style', settings: section.settings %}
+        {% render 'spacing-style', settings: section.settings %}
+      "
+    >
+      {% content_for 'blocks' %}
     </div>
   </div>
 </div>
 
-
 {% schema %}
-  {
-    "name": "t:sections.page404.name",
-    "settings": [
-
-      {
-          "type": "text",
-          "id": "title",
-          "label": "t:sections.page404.settings.title.label"
-      },	
-      {
-          "type": "text",
-          "id": "subtitle",
-           "label": "t:sections.page404.settings.subtitle.label"
-      },
-      {
-          "type": "richtext",
-          "id": "text",
-            "label": "t:sections.page404.settings.text.label",
-		"default": "<p>The page you are looking for does not exist.</p>"
-      },
-	  {
-          "type": "text",
-          "id": "button_1_text",
-          "label": "t:sections.page404.settings.button_1_text.label"
-      },
-	  {
-          "type": "url",
-          "id": "button_1_link",
-           "label": "t:sections.page404.settings.button_1_link.label"
-      },
-	  {
-          "type": "text",
-          "id": "button_2_text",
-          "label": "t:sections.page404.settings.button_2_text.label"
-      },
-	  {
-          "type": "url",
-          "id": "button_2_link",
-          "label": "t:sections.page404.settings.button_2_link.label"
-      },
-	  {
-          "type": "checkbox",
-          "id": "show_social",
-         "label": "t:sections.page404.settings.show_social.label"
-      }
-    ]
-  }
+{
+  "name": "t:names.404",
+  "class": "section-wrapper",
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "_divider"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "content_direction",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "column",
+          "label": "t:options.vertical"
+        }
+      ],
+      "default": "column",
+      "visible_if": "{{ section.settings.horizontal_alignment_flex_direction_column == 'fake-value' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "t:settings.height",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "small",
+          "label": "t:options.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:options.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:options.large"
+        },
+        {
+          "value": "full-screen",
+          "label": "t:options.full_screen"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment_flex_direction_column",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_flex_direction_column",
+      "label": "t:settings.position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ]
+}
 {% endschema %}

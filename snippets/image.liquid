@@ -1,51 +1,32 @@
-{% comment %}
-  OD Image snippet
-  - output image tag with srcset and sizes without requiring lazysizes.js
-{% endcomment %}
-{%liquid
-	assign image = image | default: ''
-	assign lazyload = lazyload | default: true
-	assign preload = preload | default: false
-	assign sizes = '150,323,375,750,1100,1500,1780,2000,3000,3840' | split: ','
-	assign size = size | default: 's'
-	assign size_override = size_override | default: ''
-	assign image_sources = ''
-	assign image_sizes = ''
-	assign image_class = image_class | default: ''
-	assign image_id = image_id | default: ''
+{% doc %}
+  Renders the <img> element using provided image object
 
-	case size
-		when 'xs'
-			assign image_sizes = '(max-width: 990px) 100vw, 25vw'
-		when 's'
-			assign image_sizes = '(max-width: 990px) 100vw, 33.3vw'
-		when 'm'
-			assign image_sizes = '(max-width: 990px) 100vw, 50vw'
-		when 'l'
-			assign image_sizes = '(max-width: 990px) 100vw, 75vw'
-		when 'xl'
-			assign image_sizes = '(max-width: 990px) 100vw, 100vw'
-	endcase
+  @param {object} image - image object
+  @param {number} [height] - custom image height
+  @param {string} [class] - additional classes
+  @param {string} [text_fallback] - text to display if image is blank
+  @param {boolean} [unset_image_tag] - if true, ignores the image focal point
+  @param {string} [style] - additional styles
 
-	for image_size in sizes
-		assign image_size_number = image_size | plus: 0
-		if image.width < image_size_number
-			break
-		endif
-		assign src_size = image_size | append: 'x'
-		assign image_link = image | img_url: src_size
-		assign source_width = src_size | replace: 'x', '' | append: 'w,'
-		assign source = image_link | append: ' ' | append: source_width
-		assign image_sources = image_sources | append: source
-	endfor
-%}
+  @example
+  {% render 'image', image: product.featured_image, height: 300, class: 'product-image' %}
+{% enddoc %}
+{% if image != blank %}
+  {% assign image_height = height | default: image.height %}
+  {% assign image_height_2x = height | default: image_height | times: 2 %}
+  {% assign image_height_3x = height | default: image_height | times: 3 %}
 
-<img class="{{ image_class }}"
-     id="{{ image_id }}"
-     width="{{ image.width | default: 220 }}"
-     height="{{ image.height | default: 220 }}"
-     srcset="{{ image_sources }}"
-     sizes="{{ size_override | default: image_sizes }}"
-     alt="{{ image.alt | escape }}"
-     {% if preload == true %}fetchpriority="high"{% endif %}
-     {% if lazyload and preload != true %}loading="lazy"{% endif %} />
+  {% capture image_srcset -%}
+    {{ image | image_url: height: image_height }} 1x, {{ image | image_url: height: image_height_2x }} 2x, {{ image | image_url: height: image_height_3x }} 3x
+  {%- endcapture %}
+
+  {% assign style_value = style | default: '' %}
+
+  {% if unset_image_tag %}
+    {% assign style_value = style_value | append: 'object-position: inherit;' %}
+  {% endif %}
+
+  {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value }}
+{% elsif text_fallback %}
+  {{ text_fallback }}
+{% endif %}

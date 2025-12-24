@@ -1,0 +1,45 @@
+{%- style -%}
+  .megamenu_{{ block.id }}{width:100%;max-width:100%;}
+  .megamenu_{{ block.id }} .right_cnt_mega{gap:24px;width:100%;max-width:100%;display:flex;padding:24px 12px 24px 24px;justify-content:center;}
+  .megamenu_{{ block.id }} .mega-menu__list{--coloumn-grid-menulink:1;
+  --menu-vertical-gap:24px;width:100%;display:flex;flex-direction:column;flex-wrap:wrap;
+  max-width:100%;
+  grid-template-columns:repeat(var(--coloumn-grid-menulink),1fr);}
+{%- endstyle -%}
+  {% assign id = 'MegaMenuList-1' %}
+  <header-singlemenu>
+      <div class="megamenu_{{ block.id }}">
+          {% render 'mega-menu-list',
+            parent_link: block.settings.menu,
+            id: block.settings.menu.links.size,
+            grid_columns_count: 1,
+            grid_columns_count_tablet: 1,
+            grid_columns_count_collection_images: 0,
+            menu_content_type: '',
+            content_aspect_ratio: '1:1',
+            image_border_radius: '20',
+            promo_card_number: 0
+          %}
+      </div>
+  </header-singlemenu>
+
+
+{% schema %}  
+{
+  "name": "Simple Menu",
+  "tag": null,
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Simple Menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,30 @@
+{%  liquid  
+    assign low_stock_threshold = settings.cart_callout_low_stock_threshold
+    if item.variant.metafields.custom.low_stock_threshold != blank
+      assign low_stock_threshold = item.variant.metafields.custom.low_stock_threshold
+    endif
+    %}
+    
+    <p class="cart-call-out caption-with-letter-spacing hidden" data-call-out="{{ item.variant_id }}" style="color: {{ settings.cart_callout_recently_added_color }};"> {{ 'sections.cart.callouts.recently_added' | t }} </p>
+    
+    {% if item.variant.inventory_quantity <= low_stock_threshold %}
+    <p class="cart-call-out caption-with-letter-spacing" style="color: {{ settings.cart_callout_low_stock_color }};"> {{'sections.cart.callouts.low_stock' | t: qyt: item.variant.inventory_quantity  }} </p>
+    {% endif %}
+
+{% stylesheet %}
+.cart-call-out {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 0;
+}
+
+.cart-call-out::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  display: block;
+}
+{% endstylesheet %}
