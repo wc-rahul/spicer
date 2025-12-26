@@ -19,7 +19,6 @@
       assign strikethrough_color_mix = '#fff'
     endif
   %}
-
   <variant-picker
     class="variant-picker spacing-style variant-picker--{{ block.settings.alignment }}"
     style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block.settings %}"
@@ -93,7 +92,6 @@
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
               {% endif %}
-
               <label class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}">
                 <input
                   type="radio"
@@ -154,7 +152,6 @@
     </form>
   </variant-picker>
 {% endunless %}
-
 
 {% stylesheet %}
   .variant-picker {

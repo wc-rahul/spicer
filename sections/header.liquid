@@ -55,6 +55,7 @@
     content_for 'block', type: '_header-logo', id: 'header-logo'
   endcapture
 
+<<<<<<< HEAD
 
   capture menu
     content_for 'block', type: '_header-menu-list', id: 'header-menu-list'
@@ -63,15 +64,57 @@
 
   capture mobile_menu
     content_for 'block', type: 'mobile-drawer-menu', id: 'mobile-drawer-menu'
+=======
+  capture menuone
+    content_for 'block', type: '_header-menu', id: 'header-menu'
+  endcapture
+  capture menutwo
+    content_for 'block', type: '_header-menu', id: 'header-menu-2'
+  endcapture
+  capture menuthree
+    content_for 'block', type: '_header-menu', id: 'header-menu-3'
+  endcapture
+  capture menufour
+    content_for 'block', type: '_header-menu', id: 'header-menu-4'
+  endcapture
+  capture menufive
+    content_for 'block', type: '_header-menu', id: 'header-menu-5'
+  endcapture
+  capture menusix
+    content_for 'block', type: '_header-menu', id: 'header-menu-6'
+  endcapture
+  
+
+  capture mobile_menu_one
+    content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'mobile'
+  endcapture
+  capture mobile_menu_two
+    content_for 'block', type: '_header-menu', id: 'header-menu-2', variant: 'mobile'
+  endcapture
+  capture mobile_menu_three
+    content_for 'block', type: '_header-menu', id: 'header-menu-3', variant: 'mobile'
+  endcapture
+  capture mobile_menu_four
+    content_for 'block', type: '_header-menu', id: 'header-menu-4', variant: 'mobile'
+  endcapture
+  capture mobile_menu_five
+    content_for 'block', type: '_header-menu', id: 'header-menu-5', variant: 'mobile'
+  endcapture
+  capture mobile_menu_six
+    content_for 'block', type: '_header-menu', id: 'header-menu-6', variant: 'mobile'
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
   endcapture
 
   capture top_menu
     content_for 'block', type: '_header-top-menu', id: 'header-top_menu'
   endcapture
 
+<<<<<<< HEAD
   capture actions
     render 'header-actions'
   endcapture
+=======
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
 
   capture navigation_bar content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'navigation_bar', transparent: transparent
    
@@ -179,6 +222,25 @@
     assign class = class | append: ' ' | append: collapse_header_paddings_class
   endif
 %}
+<<<<<<< HEAD
+=======
+{% capture menu %}
+  {{ menuone }}
+  {{ menutwo }}
+  {{ menuthree }}
+  {{ menufour }}
+  {{ menufive }}
+  {{ menusix }}
+{% endcapture %}
+{% capture mobile_menu %}
+  {{ mobile_menu_one }}
+  {{ mobile_menu_two }}
+  {{ mobile_menu_three }}
+  {{ mobile_menu_four }}
+  {{ mobile_menu_five }}
+  {{ mobile_menu_six }}
+{% endcapture %}
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
 
 <script type="application/ld+json">
   {
@@ -652,6 +714,7 @@
   .menu-list__list-item.simple_menu_nav .mega-menu{display: block;}
   .menu-list__list-item.simple_menu_nav .right_cnt_mega{padding: 0;}
   .menu-list__list-item.simple_menu_nav span.mega-menu__column{display: flex;flex-direction: column;gap: 12px;}
+<<<<<<< HEAD
   .menu_logo_list{display: flex;flex-direction: row;gap: 16px;flex-wrap: wrap;padding: 24px;margin: 0;height: max-content;}
   .menu_logo_item{display: flex;max-width: calc(33.33% - 16px * 2 / 3);min-height: 100px;border: 1px solid var(--color-border);border-radius: 8px;padding: 20px;}
   .menu_logo_item .logo_img_link{display: flex;flex-direction: column;justify-content: center;align-items: center;}
@@ -664,6 +727,10 @@
   .promo_blocks .menu_img_title{font-size: 24px;font-family: inherit;font-weight: 900;color: #fff;white-space: normal;}
   .promo_blocks .menu_img_desc{font-size: 16px;font-family: inherit;font-weight: 700;color: #fff;white-space: normal;}
   .promo_blocks .btn{--button-color:#fff;--button-border-color:#fff;--button-background-color:transparent;}
+=======
+  .menu_logo_list{display: flex;flex-direction: row;gap: 16px;flex-wrap: wrap;padding: 0;}
+  .menu_logo_item{display: flex;max-width: calc(33.33% - 10.67px);}
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
 {% endstylesheet %}
 
 {% schema %}

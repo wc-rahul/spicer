@@ -2404,6 +2404,7 @@
   },
   "order": [
     "main",
+<<<<<<< HEAD
     "section_UMzPyD",
     "section_4ifxak",
     "section_pEKMYK",
@@ -2411,5 +2412,8 @@
     "section_TfpDBP",
     "product_video_D3HMkW",
     "product_recommendations_dpKMt9"
+=======
+    "product-recommendations"
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
   ]
 }
