@@ -1,0 +1,82 @@
+{% comment %} <style>
+    .badge--in-cart {
+        position: absolute;
+        background-color: {{ settings.in_cart_badge_bg_color }};
+        color: {{ settings.in_cart_badge_text_color }};
+        {% if settings.in_cart_badge_position == 'top left' %}
+            top: 5px;
+            left: 5px;
+        {% elsif settings.in_cart_badge_position == 'top right' %}
+            top: 5px;
+            right: 5px;
+        {% endif %}
+        z-index: 10;
+    }
+    .badge--viewed {
+        position: absolute;
+        background-color: {{ settings.viewed_badge_bg_color }};
+        color: {{ settings.viewed_badge_text_color }};
+        {% if settings.viewed_badge_position == 'top left' %}
+            top: 5px;
+            left: 5px;
+        {% elsif settings.viewed_badge_position == 'top right' %}
+            top: 5px;
+            right: 5px;
+        {% endif %}
+        z-index: 10;
+    }
+</style> {% endcomment %}
+<script>
+    window.badgeStrings = {
+        inCart: `{{ 'products.product.badge.in_cart' | t }}`,
+        viewed: `{{ 'products.product.badge.viewed' | t }}`,
+    };
+    window.addEventListener('DOMContentLoaded', function() {
+        /*
+            * This script is used to display a badge on the product image in the collection page
+            badges: 
+            - In cart : if the product is in the cart
+            - Viewed : if the product is viewed by the user ( when user go to product page )
+        */
+        const cart = {{ cart | json }};
+        const product = {{ product | json }};
+        const isProductPage = window.location.href.includes('/products/');
+        const isListingPage = window.location.href.includes('/collections/') || window.location.href.includes('/search');
+        const listViewedBadge = JSON.parse(localStorage.getItem('listViewedBadge') || '[]');
+        if(isProductPage){
+            if(!listViewedBadge.includes(product.id)){
+                listViewedBadge.push(product.id);
+                localStorage.setItem('listViewedBadge', JSON.stringify(listViewedBadge));
+            }
+        } else {
+            // query all product card in the collection page
+            const productCards = document.querySelectorAll('product-card.product-card');
+            const productCardList = Array.from(productCards);
+
+            productCardList.forEach((productCard) => {
+                const productId = productCard.getAttribute('data-product-id');
+                const productImage = productCard.querySelector('.product-badges .in-cart-viewed-badge-main');
+
+                if(!productImage) return;
+
+                if(!productId) return;
+
+                if(cart.items.find(item => item.product_id == productId)){
+                    productImage.querySelectorAll('div').forEach(el => {
+                        el.style.display = 'none';
+                      });
+                    productImage.insertAdjacentHTML('beforeend', `<div class="in-cart-viewed-badge product-badges__badge product-badges__badge--rectangle
+                    color-{{ settings.badge_incart_color_scheme }}">${badgeStrings.inCart}</div>`);
+                } else if(listViewedBadge.includes(parseInt(productId))){
+                    productImage.querySelectorAll('div').forEach(el => {
+                        el.style.display = 'none';
+                      });
+                    productImage.insertAdjacentHTML('beforeend', `<div class="in-cart-viewed-badge product-badges__badge product-badges__badge--rectangle
+                    color-{{ settings.badge_viewed_color_scheme }}">${badgeStrings.viewed}</div>`);
+                }
+            });
+        }
+       
+    })
+    
+</script>

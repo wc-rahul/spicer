@@ -1,0 +1,230 @@
+{{ 'bulk-order.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  @media(min-width:992px){
+      .padding_{{ section.id }}{
+          padding-top:{{section.settings.padding_top}}px;
+          padding-bottom:{{section.settings.padding_bottom}}px;
+      }
+  }
+  @media(max-width:991px){
+      .padding_{{ section.id }}{
+          padding-top:{{section.settings.padding_top_mob}}px;
+          padding-bottom:{{section.settings.padding_bottom_mob}}px;
+      }
+  }
+{% endstyle %}
+
+{% liquid
+  if section.settings.style_class != blank
+    assign button_class = button_class | append: ' ' | append: section.settings.style_class
+  endif
+
+  if section.settings.clear_filters != blank
+    assign button_class_clear = button_class | append: ' ' | append: section.settings.clear_filters
+  endif
+%}
+
+{% assign product = section.settings.product %}
+{% assign heading_tag = section.settings.heading_tag %}
+
+<section class="bulk-order-section padding_{{ section.id }} section-id-{{ section.id }}">
+  <div class="section">
+    <div class="bo_heading">
+      {% if section.settings.heading != blank %}
+        <{{ heading_tag }} class="bulk-heading"> {{ section.settings.heading }} </{{ heading_tag }}>
+      {% endif %}
+    </div>
+
+    <div class="bo_filter">
+      <div class="bo_swatch_filter">
+        <div class="swatch-wrapper">
+          {% assign used_colours = '' %}
+          {% for variant in product.variants %}
+            {% assign colour = variant.option1 %}
+            {% unless used_colours contains colour %}
+              {% assign used_colours = used_colours | append: colour | append: ',' %}
+              <div class="bo_swatch" data-search="{{ colour | downcase }}" title="{{ colour }} - {{ variant.title }}" >
+                <span class="swatch-text">{{ colour }}</span>
+                {% comment %} {% if variant.metafields.custom.swatch_image %}
+                  <img src="{{ variant.metafields.custom.swatch_image | image_url: width: 60 }}" alt="{{ colour }}" >
+                {% else %}
+                  <span class="swatch-text">{{ colour }}</span>
+                {% endif %} {% endcomment %}
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+        <button id="clearFilters" class="{{ button_class_clear }}">Clear All Filters</button>
+      </div>
+      <div class="bulk-search">
+        {{ 'sections.bulk-order.filter-product' | t }}
+        <input type="text" id="variantSearch" placeholder="Search by colour, size or finish">
+      </div>
+    </div>
+
+    <div class="bulk-table">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Size</th>
+            <th>Price / Unit</th>
+            <th>Qty</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="variantTable">
+          {% for variant in product.variants %}
+            <tr class="variant-row" data-search="{{ variant.option1 | downcase }} {{ variant.option2 | downcase }} {{ variant.option3 | downcase }} {{ variant.title | downcase }} ">
+              <td>
+                <span class="bo_variant-color">{{ variant.metafields.custom.color }}</span>
+                {{ variant.sku }}
+              </td>
+              <td>
+                {{ variant.title }}
+                {% comment %} {% if variant.metafields.custom.information_tooltip %}
+                  <span class="tooltip"
+                    >
+                    <span class="tooltip-text">
+                      {{ variant.metafields.custom.information_tooltip }}
+                    </span>
+                  </span>
+                {% endif %} {% endcomment %}
+              </td>
+              <td>
+                {% if variant.available %}
+                  <span class="in-stock">{{ 'sections.bulk-order.in-stock' | t }}</span>
+                {% else %}
+                  <span class="out-stock">{{ 'sections.bulk-order.out-of-stock' | t }}</span>
+                {% endif %}
+              </td>
+              <td>{{ variant.metafields.custom.sheet_size }}</td>
+              <td>{{ variant.price | money }}</td>
+              <td>
+                {% render 'quantity-selector', product: product %}
+              </td>
+              <td>
+                <button
+                  class="add-to-cart {{ button_class }}"
+                  data-id="{{ variant.id }}" {% unless variant.available %} disabled {% endunless %}>
+                  {{ 'sections.bulk-order.add-to-order' | t }}
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<script src="{{ 'bulk-order.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Bulk Order Table",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "Bulk Order"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading Tag",
+      "default": "h2",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "style_class",
+      "label": "Buy Button Style",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:options.primary"
+        },
+        {
+          "value": "button-secondary",
+          "label": "t:options.secondary"
+        }
+      ],
+      "default": "button-secondary"
+    },
+    {
+      "type": "select",
+      "id": "clear_filters",
+      "label": "Clear Filters Style",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:options.primary"
+        },
+        {
+          "value": "button-secondary",
+          "label": "t:options.secondary"
+        }
+      ],
+      "default": "button-secondary"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bulk Order Table"
+    }
+  ]
+}
+{% endschema %}

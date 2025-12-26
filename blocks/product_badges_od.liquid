@@ -1,0 +1,81 @@
+<div class="product-details-badges spacing-style " {{ od_type }} 
+    style="{% render 'spacing-style', settings: block.settings %}
+    
+     --badge-border-radius: {{ settings.badge_corner_radius }}px;
+    --badge-font-family: var(--font-{{ settings.badge_font_family }}--family); 
+    --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight); 
+    --badge-text-transform: {{ settings.badge_text_transform }};
+    --badge-font-size-custom: {{ settings.font_size_badges }};
+    ">
+	{%- for badge in block.settings.items -%}
+		{%- render 'product-badge',
+			badge: badge,
+			type: 'badges'
+		-%}
+	{%- endfor -%}
+</div>
+{% schema %}
+{
+  "name": "Custom Product Badges",
+  "tag": null,
+  "settings": [
+        {
+            "type": "metaobject_list",
+            "metaobject_type": "product_badges",
+            "id": "items",
+            "label": "Product Badges"
+        },
+
+    {
+        "type": "header",
+        "content": "t:content.padding"
+      },
+      {
+        "type": "range",
+        "id": "padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Badges",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

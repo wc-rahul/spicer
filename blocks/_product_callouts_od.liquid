@@ -1,0 +1,64 @@
+<div class="product-details-badges " {{ od_type }} 
+    style="{% render 'spacing-style', settings: block.settings %}
+     --badge-border-radius: {{ settings.badge_corner_radius }}px;
+    --badge-font-family: var(--font-{{ settings.badge_font_family }}--family); --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight); --badge-text-transform: {{ settings.badge_text_transform }};
+    --badge-font-size-custom: {{ settings.font_size_badges }};">
+	<div class="product-card-badges top-left ">
+        {%- for badge in block.settings.items -%}
+            {% assign display_badge = true %}
+            {% if badge.position != "Image - Top Left" %}
+                {% assign display_badge = false %}
+            {% endif %}
+    
+            {% if display_badge %}
+                {% render 'product-badge', badge: badge, type: 'badges' %}
+            {% endif %}
+        {%- endfor -%}
+    </div>
+    
+    <div class="product-card-badges top-right">
+        {%- for badge in block.settings.items -%}
+            {% assign display_badge = true %}
+            {% if badge.position != "Image - Top Right" %}
+                {% assign display_badge = false %}
+            {% endif %}
+    
+            {% if display_badge %}
+                {% render 'product-badge', badge: badge, type: 'badges' %}
+            {% endif %}
+        {%- endfor -%}
+    </div>
+    
+    <div class="product-card-badges bottom">
+        {%- for badge in block.settings.items -%}
+            {% assign display_badge = true %}
+            {% if badge.position != "Image - Bottom" %}
+                {% assign display_badge = false %}
+            {% endif %}
+    
+            {% if display_badge %}
+                {% render 'product-badge', badge: badge, type: 'promotion-callouts' %}
+            {% endif %}
+        {%- endfor -%}
+    </div>
+</div>
+{% schema %}
+{
+  "name": "Promotion Callouts",
+  "tag": null,
+  "settings": [
+    {
+        "type": "metaobject_list",
+        "metaobject_type": "promotion_callouts",
+        "id": "items",
+        "label": "Promotion Callout"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotion Callouts",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

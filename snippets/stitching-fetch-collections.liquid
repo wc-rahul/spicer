@@ -1,0 +1,513 @@
+
+{% assign groupTagPrefix = block.settings.group_tag %}
+{% for tag in product.tags %}
+  {% if tag contains groupTagPrefix %}
+  {% assign productGroup = tag %}
+  {% endif %}
+{% endfor %}
+
+{% for prod in product.metafields.shopify.color-pattern.value%}
+  {% assign color_name =  prod.label %} 
+  {% break %}
+{% endfor %}
+
+<colour-swatches {% if block.settings.do_not_crop != blank %}class="swatch-not-cropped"{% endif %}>
+{% if block.settings.stitching_context != 'product_card'%}
+<legend>
+  {{ block.settings.stitching_label }}
+    <span class="variant-option__swatch-value">{{ color_name }}</span>
+</legend>
+{% endif %}
+<div>
+  <div class="colour-swatches__container-wrapper" style="position:relative;">
+    <div class="colour-swatches__container" style="position:relative; z-index:2;">
+      <fieldset class="variant-option variant-option--buttons variant-option--swatches">
+      </fieldset>
+    </div>
+    <ul id="placeholder_swatches_{{ product.id }}" class="pdp-colour-swatch__color-list_placeholder" data-product-colors="" style="position:absolute; top:0; left:0; width:100%; z-index:1;">
+      {% render 'stich-placeholder', block:block %}
+    </ul>
+  </div>
+</div>
+
+
+<script type="application/json" class="swatches-settings">
+{
+"image_type": {{settings.show_variant_image | json }},
+"groupTag":  {{productGroup | json }},
+"colour": {{colourTag | replace: block.settings.colour_tag, "" | json }},
+"colourTagPrefix": {{block.settings.colour_tag | json }},
+"swatchUrl": {{ "swatch.jpg" | file_img_url: '50x' | json  }},
+"hideIfEmpty": true,
+"location": "{{ template }}",
+"product_handle" : "{{ product.handle }}",
+"hiddeOptionsOutOfStock": {{ block.settings.hide_if_do_not_stock | json }},
+"stitching_context": "{{ block.settings.stitching_context }}",
+"product_id": "{{ product.id }}"
+}
+</script>
+</colour-swatches>
+
+<script>
+if (!window.ColourSwatchesDefined) {
+  class ColourSwatches extends HTMLElement {
+    constructor() {
+      super();
+      this.preloadedSections = {};
+    }
+    
+    {% comment %} constructor() {
+      super();
+      this.initPopStateListener(); 
+      this.preloadedSections = {};
+      this.container = this.querySelector('.colour-swatches__container fieldset');
+      this.settings = this.setSettings();
+      var hideIfEmpty = this.settings.hideIfEmpty;
+      console.log(" here setting current", this.container )
+      if (this.settings.groupTag) {
+        
+        fetch(`/collections/all/${encodeURIComponent(this.settings.groupTag)}?view=data`)
+          .then((response) => response.json())
+          .then((responseJson) => {
+            // Validation: if no products, hide <colour-swatches>
+            if (!Array.isArray(responseJson) || responseJson.length === 0) {
+              this.style.display = 'none'; 
+              return;
+            }
+            this.initSwatches(responseJson);
+            this.attachColorSwatchEventListeners();
+            //this.setCurrent();
+            this.hideIfEmpty(hideIfEmpty);
+            this.document.querySelector('#placeholder_swatches').classList.add("hidden");
+        });
+      } else {
+        this.hideIfEmpty(hideIfEmpty);
+      }
+    } {% endcomment %}
+
+    connectedCallback() {
+      this.container = this.querySelector('.colour-swatches__container fieldset');
+      this.settings = this.setSettings();
+      console.log("here connected callback", this.container)
+      this.initPopStateListener(); 
+    
+      if (!this.container || !this.settings) return;
+    
+      const hideIfEmpty = this.settings.hideIfEmpty;
+    
+      if (this.settings.groupTag) {
+        fetch(`/collections/all/${encodeURIComponent(this.settings.groupTag)}?view=data`)
+          .then((response) => response.json())
+          .then((responseJson) => {
+            if (!Array.isArray(responseJson) || responseJson.length === 0) {
+              this.style.display = 'none';
+              return;
+            }
+            this.initSwatches(responseJson);
+            this.attachColorSwatchEventListeners();
+            this.hideIfEmpty(hideIfEmpty);
+    
+            const placeholder = this.querySelector(`#placeholder_swatches_${this.settings.product_id}`);
+            if (placeholder) placeholder.classList.add("hidden");
+          });
+      } else {
+        this.hideIfEmpty(hideIfEmpty);
+      }
+    }
+    initPopStateListener() {
+        window.addEventListener('popstate', (event) => this.handlePopState(event));
+    }
+    handlePopState(event) {
+        if (event.state && event.state.path) {
+            const url = event.state.path
+            this.updateSection(url.replaceAll('/products/',''));
+        }
+    }
+    hideIfEmpty(hideIfEmpty) {
+      if (!hideIfEmpty) return;
+  
+      const swatches = this.querySelectorAll('.colour-swatches__container input');
+      if (swatches.length > 0  ) return;
+  
+      this.classList.add("swatch-empty--hide"); 
+    }
+  
+    setSettings() {
+      const settingsRawJson = this.querySelector(".swatches-settings");
+      if(!settingsRawJson) return {}
+      return JSON.parse(settingsRawJson.innerHTML);
+    }
+  
+    initSwatches(products) {
+      var html = "";
+      var html_colors = "";
+      var image_swatch_metaobject = '';
+      const self = this;
+      products.forEach(product => {
+            const request = new XMLHttpRequest();
+            request.open('GET', `${product.handle}?sections={{ section.id }}`, true);
+            request.onload = function() {
+
+              if (this.status >= 200 && this.status < 400) {
+                    // Success: Store the HTML content in the preloadedSections object
+                    self.preloadedSections[product.handle] = JSON.parse(this.responseText);
+                    
+                } else {
+                    console.error('Error fetching section:', this.statusText);
+                }
+            };  
+            request.onerror = function() {
+                console.error('Request failed');
+            };
+            request.send();
+      
+          console.log("image_type",this.settings.image_type)
+        if (this.settings.image_type == true ){
+              
+                    const imgSrc = this.getProductImageSrc(product)
+                    var el_swatch = `<label class="variant-option__button-label variant-option__button-label--has-swatch">
+                                          <input id="swatch-input-${product.id}" 
+                                          swatch-input  
+                                          data-href="/products/${product.handle}" 
+                                          data-handle="${product.handle}"  
+                                          type="radio" 
+                                          value="${product.id}" 
+                                          aria-label="${product.handle}" 
+                                          data-input-id="1-0" 
+                                          data-option-value-id="${product.id}" 
+                                          data-option-available="${product.available}" 
+                                          data-connected-product-url="${product.handle}" 
+                                          data-variant-id="${product.variants[0].id}"
+                                          ${this.settings.location=='product'&&this.settings.product_handle==product.handle ? "checked" : ""}
+                                          >
+                                          <span class="swatch ${this.settings.stitching_context == 'product_page' ? 'swatch--unscaled' : ''}" style="--swatch-background: url(${imgSrc});"></span>
+                                          ${!product.available ? `
+                                            <svg
+                                              width="100%"
+                                              height="100%"
+                                              viewBox="0 0 100 46"
+                                              preserveAspectRatio="xMidYMid slice"
+                                            >
+                                              <line x1="100" y1="0" x2="0" y2="46" vector-effect="non-scaling-stroke" />
+                                            </svg>
+                                          ` : ''}
+                                        </label>`
+                                      
+                                       
+                    const el = `<label class="oos_swatch" data-available="${product.available}"></label><input  ${this.settings.location=='product'&&this.settings.product_handle==product.handle ? 'class="current"' : ''} swatch-input type="image" aria-label="${product.handle}" data-handle="${product.handle}" data-available="${product.available}" data-handle="${product.handle}" src="${imgSrc}" data-href="/products/${product.handle}">`;
+                    html += el_swatch
+              
+        } else { 
+                  const imgSrc = this.getProductImageSrc(product)
+                  const color_metafield = product.color_swatch_metafield; 
+                   image_swatch_metaobject = product.image_swatch_metaobject;
+                   var el_swatch = `<label class="variant-option__button-label variant-option__button-label--has-swatch">
+                                          <input id="swatch-input-${product.id}" swatch-input  data-href="/products/${product.handle}" 
+                                          data-handle="${product.handle}"  
+                                          type="radio" value="${product.id}" aria-label="${product.handle}" 
+                                          data-input-id="1-0" data-option-value-id="4635978924349" 
+                                          data-option-available="${product.available}" 
+                                          data-connected-product-url="${product.handle}" 
+                                          data-variant-id="${product.variants[0].id}" 
+                                          ${this.settings.location=='product'&&this.settings.product_handle==product.handle ? "checked" : ""}
+                                          >
+                                          <span class="swatch ${this.settings.stitching_context == 'product_page' ? 'swatch--unscaled' : ''}" 
+                                          style="${image_swatch_metaobject && image_swatch_metaobject !== '' ? `--swatch-background: url(${image_swatch_metaobject})` : `--swatch-background: ${color_metafield}`}"></span>
+                                          ${!product.available ? `
+                                            <svg
+                                              width="100%"
+                                              height="100%"
+                                              viewBox="0 0 100 46"
+                                              preserveAspectRatio="xMidYMid slice"
+                                            >
+                                              <line x1="100" y1="0" x2="0" y2="46" vector-effect="non-scaling-stroke" />
+                                            </svg>
+                                          ` : ''}
+                                        </label>`;
+                                       
+                    html += el_swatch
+                  const el = `<li ${this.settings.location=='product'&&this.settings.product_handle==product.handle ? 'class="current pdp-colour-swatch__color-item--active pdp-colour-swatch__color-item"' : 'class="pdp-colour-swatch__color-item"'} "
+                      data-product-color="{{ forloop.index }}"><a style="${image_swatch_metaobject && image_swatch_metaobject !== '' ? `background-image:url(${image_swatch_metaobject})` : `background-color:${color_metafield}`}" data-handle="${product.handle}" href="${product.handle}" data-href="/products/${product.handle}" data-available="${product.available}"></a></li>`
+                
+                }
+             
+        
+      })
+
+      if(html) {
+       
+        this.container.innerHTML = html
+        const swatchInputs = this.container.querySelectorAll("[swatch-input]");
+        const swatchInputsLength = swatchInputs.length;
+      }
+    }
+  
+    getProductImageSrc(product) {
+      var imageSrc = product.featured_image;
+      switch (this.settings.image_type) {
+        case "color_swatch":
+          const colourTag = product.tags.find(tag => tag.indexOf(this.settings.colourTagPrefix) > -1);
+          if(colourTag) {
+            const colour = colourTag.replace(this.settings.colourTagPrefix, "").toLowerCase();
+            imageSrc = colour;
+          }
+          break;
+        case "first_variant_image":
+        const firstVariantImage = product.variants[0].image;
+          if(firstVariantImage) imageSrc = firstVariantImage;
+          break;
+        case "last_variant_image":
+          const lastVariantImg = product.variants[product.variants.length - 1].image;
+          if(lastVariantImg) imageSrc = lastVariantImg;
+          break;
+        default:
+          break;
+      }
+      return imageSrc;
+    }
+  
+    getProductImage(product) {
+      const imageSrc = this.getProductImageSrc(product);
+      const image = `<img src="${imageSrc}">`;
+      return image;
+    }
+    updateSection(url) {
+        const section_id = '{{ section.id }}';
+        console.log("here update section", this)
+        const sectionContainer = document.querySelector('#shopify-section-' + section_id );
+        var productPath = url;
+       
+        if (this.preloadedSections[productPath]) {
+            // Use the preloaded HTML content
+            sectionContainer.innerHTML = this.preloadedSections[productPath]['{{section.id}}'];
+            // here you will need to add any functions or JS files that you migh eed for the components to work again
+            // for exmaple sliders, accordions,etc.
+        } else {
+            console.error('No preloaded section found for:', productPath);
+        }
+         this.attachColorSwatchEventListeners();
+    }
+    getProductPath(url) {
+        const urlParts = url.split('?'); // Split the URL at the query string
+        return urlParts[0]; // Return the part before the query string
+    }
+    attachColorSwatchEventListeners() {
+        const self = this;
+        const swatches = this.querySelectorAll('.colour-swatches__container input[type="radio"]');
+        if (swatches.length > 0){
+            swatches.forEach(item => {
+                item.addEventListener("click", function(event) {
+                  console.log("here clicking swatch")
+                    event.preventDefault();
+                    swatches.forEach(input => {
+                        input.checked = false;
+                        input.removeAttribute('checked');
+                    });
+
+                    // Set checked on the clicked input
+                    this.checked = true;
+                    this.setAttribute('checked', 'checked');
+
+                    const product_handle = this.getAttribute('data-handle');
+                    const productUrl = this.getAttribute('data-href');
+                    const urlParts = productUrl.split('?');
+                    const productPath = urlParts[0];
+                    if(self.settings.location == 'product'){
+                      history.pushState({ path: productPath }, '', productPath);
+                    }
+                    self.updateSection(product_handle);
+                  
+                });
+            });
+        }
+      
+    }
+    
+    setCurrent() {
+        const swatches = this.querySelectorAll('.colour-swatches__container input');
+        if (swatches.length > 0){
+        this.container.querySelector(`[data-handle="${window.current.product.handle}"]`).setAttribute("checked", "checked");
+       
+        }
+    }
+  }
+  if (!customElements.get('colour-swatches')) {
+    customElements.define('colour-swatches', ColourSwatches);
+  }
+}
+
+</script>
+<style>
+  .colour-swatches__container-wrapper {
+    position: relative;
+    min-height: 34px;
+    padding-block: calc(var(--product-swatches-padding-block-start) + var(--focus-outline-offset) + var(--focus-outline-width)) calc(var(--product-swatches-padding-block-end) + var(--focus-outline-offset) + var(--focus-outline-width));
+    padding-inline: calc(var(--product-swatches-padding-inline-start) + var(--focus-outline-offset) + (1.5 * var(--focus-outline-width))) calc(var(--product-swatches-padding-inline-end) + var(--focus-outline-offset) + var(--focus-outline-width));
+}
+  }
+  .colour-swatches__container {
+    position: relative;
+    z-index: 2;
+  }
+  colour-swatches legend{
+    margin-block-end: var(--margin-xs);
+  } 
+  #placeholder_swatches.pdp-colour-swatch__color-list_placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  #placeholder_swatches.hidden {
+    display: none;
+  }
+  .pdp-colour-swatch__color-list {
+    display: flex;
+    column-gap: 16px;
+    padding: 10px 0;
+    min-height:52px;
+    margin: 0px 0px;
+}
+.pdp-colour-swatch__color-list_placeholder {
+  display: flex;
+  column-gap: 16px;
+  padding: 0px 0;
+  min-height:30px;
+  margin: 0px 0px;
+  opacity: 0.2;
+}
+
+.pdp-colour-swatch__color-item {
+    width: 32px;
+    text-align: center;
+    min-height: 32px;
+}
+#placeholder_swatches .pdp-colour-swatch__color-item a {
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+  display: block;
+  position: relative;
+  border: 0.5px solid lightgray;
+}
+.pdp-colour-swatch__color-item a {
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: relative;
+    border: 0.5px solid black;
+}
+
+.pdp-colour-swatch__color-item a:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    transition: all 125ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    border: 2px solid transparent;
+}
+
+.pdp-colour-swatch__color-item a:hover:after {
+    border-color: #7F7F7F;
+    inset: -4px;
+}
+
+.pdp-colour-swatch__color-item a[style*="#fff"] {
+    box-shadow: 0 0 0 1px black;
+}
+
+.pdp-colour-swatch__color-item--active a {
+    outline: 1px solid black;
+    border: 2px solid white;
+    box-shadow: none;
+}
+ul, li{
+  list-style: none;
+}
+.colour-swatches__container input,
+.colour-swatches__container img {
+max-width: 50px;
+max-height: calc(50px + 10px);
+object-fit: cover;
+height: 100%;
+width: 100%;
+border-radius: 2px;
+}
+.colour-swatches__container input.current.selected,
+.colour-swatches__container input.current {
+    border: 1px solid black;
+}
+.colour-swatches__container {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, 50px);
+    grid-gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .colour-swatches__container a.selected,
+  .colour-swatches__container a:hover {
+    border: 1px solid #353535;
+    border-radius: 2px;
+  }
+  .colour-swatches__container a {
+    position: relative;
+    width:  var(--swatch-width);
+    height:  var(--swatch-width);
+    overflow: hidden;
+  }
+  
+  .colour-swatches__container input[data-available="false"] {
+    filter: grayscale(0.2);
+  }
+  .pdp-colour-swatch__color-item a[data-available="false"]:before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -2px;
+    width: 28px;
+    border-top: 2px solid rgb(18, 18, 18, 0.1);
+    transform: rotate(-45deg);
+    z-index: 10;
+  }
+  .colour-swatches__container label[data-available="false"]{
+    position: absolute;
+    content: "";
+    left: -3px;
+    top: 64%;
+    width: 57px;
+    border-top: 2px solid lightgray;
+    transform: rotate(-36deg);
+    z-index: 10;
+    max-width: 93px;
+    max-height: 38px;
+    height: 2px;
+  }
+  .colour-swatches__container label[data-available="true"]{
+  display:none;
+  }
+
+  
+  .swatch-not-cropped .colour-swatches__container input,
+  .swatch-not-cropped .colour-swatches__container a {
+    width: auto;
+    height: auto;
+  }
+  
+  .swatch-not-cropped .colour-swatches__container input,
+  .swatch-not-cropped .colour-swatches__container img {
+    object-fit: fill;
+  }
+  
+  colour-swatches.swatch-empty--hide {
+    display: none;
+  }
+  .pdp-colour-swatch__color-item [data-available="false"]{
+  opacity: .7;
+  outline: 1px solid rgba(18, 18, 18, 0.1);
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  }
+ 
+</style>

@@ -1,0 +1,147 @@
+{% comment %}
+  Renders the predictive search products list for empty state and recently viewed products
+
+  Accepts:
+  - title: @string - title of the result list
+  - products: @array - array of products
+  - order_ids: @array - array of product ids
+  - limit: @number - limit of products to display
+  - products_test_id: @string - a playwright test id, used to differentiate empty state from 'real' search results
+{% endcomment %}
+{%- liquid
+  assign recently_viewed_title_text = 'content.recently_viewed_products' | t
+-%}
+<div
+  id="predictive-search-products"
+  {% if products_test_id %}
+    data-testid="{{ products_test_id }}"
+  {% endif %}
+  {% if has_sections %}
+    class="predictive-search-results__sections"
+  {% endif %}
+>
+  {% if title == recently_viewed_title_text %}
+    <div
+      class="recently-viewed-wrapper {% if settings.empty_state_show_recently_viewed_products %}show-recently-viewed{% else %}hide-recently-viewed{% endif %}"
+      ref="recentlyViewedWrapper"
+    >
+      <span
+        class="predictive-search-results__title"
+        ref="recentlyViewedTitle[]"
+      >
+        {{ title }}
+        <button
+          class="predictive-search-results__clear button button-unstyled"
+          type="button"
+          on:click="/clearRecentlyViewedProducts"
+        >
+          {{ 'actions.clear' | t }}
+        </button>
+      </span>
+      <ul
+        class="predictive-search-results__list predictive-search-results__wrapper-products list-unstyled"
+        role="listbox"
+        aria-label="{{ title }}"
+      >
+        {% liquid
+          assign limit = limit | default: settings.max_products_to_show
+        %}
+        {% comment %}
+          If we're searching for recently viewed products by id, we need to reorder the products.
+          The order here comes from the search terms, and we display the products in the order of the ids.
+        {% endcomment %}
+        {% if order_ids != blank %}
+          {% for _id in order_ids %}
+            {% assign int_id = _id | times: 1 %}
+            {% assign product = products | find: 'id', int_id %}
+            <li
+              class="predictive-search-results__card predictive-search-results__card--product"
+              ref="recentlyViewedItems[]"
+            >
+              {% render 'resource-card-search-product', product: product %}
+              {% comment %} {% render 'resource-card',
+                resource_type: 'product',
+                resource: product,
+                image_width: 500,
+                image_hover: true,
+                image_aspect_ratio: '4 / 5'
+              %} {% endcomment %}
+            </li>
+          {% endfor %}
+        {% else %}
+          {% for product in products limit: limit %}
+            <li
+              class="predictive-search-results__card predictive-search-results__card--product"
+              ref="recentlyViewedItems[]"
+            >
+              {% render 'resource-card-search-product', product: product %}
+              {% comment %} {% render 'resource-card',
+                resource_type: 'product', 
+                resource: product,
+                image_width: 500,
+                image_hover: true,
+                image_aspect_ratio: '4 / 5'
+              %} {% endcomment %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  {% else %}
+    <span class="predictive-search-results__title">
+      {{ title }}
+    </span>
+    <ul
+      class="predictive-search-results__list predictive-search-results__wrapper-products list-unstyled"
+      role="listbox"
+      aria-label="{{ title }}"
+    >
+      {% liquid
+        assign limit = limit | default: settings.max_products_to_show
+      %}
+      {% if order_ids != blank %}
+        {% for _id in order_ids %}
+          {% assign int_id = _id | times: 1 %}
+          {% assign product = products | find: 'id', int_id %}
+          <li
+            class="predictive-search-results__card predictive-search-results__card--product"
+            ref="resultsItems[]"
+          >
+            {% render 'resource-card-search-product', product: product %}
+            {% comment %} {% render 'resource-card',
+              resource_type: 'product',
+              resource: product,
+              image_width: 500,
+              image_hover: true,
+              image_aspect_ratio: '4 / 5'
+            %} {% endcomment %}
+          </li>
+        {% endfor %}
+      {% else %}
+        {% for product in products limit: limit %}
+          <li
+            class="predictive-search-results__card predictive-search-results__card--product"
+            ref="resultsItems[]"
+          >
+            {% render 'resource-card-search-product', product: product %}
+            {% comment %} {% render 'resource-card',
+              resource_type: 'product',
+              resource: product,
+              image_width: 500,
+              image_hover: true,
+              image_aspect_ratio: '4 / 5'
+            %} {% endcomment %}
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  {% endif %}
+</div>
+{% style %}
+  .show-recently-viewed{
+    display: block;
+  }
+  .hide-recently-viewed{
+    display: none;
+  }
+{% endstyle %}

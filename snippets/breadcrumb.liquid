@@ -1,0 +1,161 @@
+{% style %}
+  .breadcrumbs__list {list-style: none;margin: 0;padding: 0;display: flex;flex-wrap: wrap;align-items: center;}
+  .breadcrumbs__list a{color:var(--color-foreground);}
+  .breadcrumbs__item {display: flex;align-items: center;}
+  .breadcrumbs__separator {margin: 0 8px;display: inline-flex;align-items: center; color: rgb(var(--color-foreground) / 64%);}
+  .breadcrumbs__link{color:inherit;font-weight: normal;text-decoration: none;}
+  .breadcrumbs__link:hover,
+  .breadcrumbs__link:focus {text-decoration: underline;}
+{% endstyle %}
+
+
+{%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+{%- assign t = template | split: '.' | first -%}
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <ol class="breadcrumbs__list">
+
+    <!-- Home -->
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="/">Home</a>
+    </li>
+
+    {%- case t -%}
+
+      <!-- PAGE -->
+      {%- when 'page' -%}
+        <li class="breadcrumbs__separator" aria-hidden="true">
+          <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+          </svg>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">
+            {{ page.title }}
+          </a>
+        </li>
+
+      <!-- PRODUCT -->
+      {%- when 'product' -%}
+
+        {%- assign breadcrumb_collection = collection -%}
+        {%- if breadcrumb_collection == nil and product.collections.size > 0 -%}
+          {%- assign breadcrumb_collection = product.collections.first -%}
+        {%- endif -%}
+
+        {%- if breadcrumb_collection -%}
+          <li class="breadcrumbs__separator" aria-hidden="true">
+            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ breadcrumb_collection.url }}">
+              {{ breadcrumb_collection.title }}
+            </a>
+          </li>
+        {%- endif -%}
+
+        <li class="breadcrumbs__separator" aria-hidden="true">
+          <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+          </svg>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">
+            {{ product.title }}
+          </a>
+        </li>
+
+      <!-- COLLECTION -->
+      {%- when 'collection' -%}
+        {%- if current_tags -%}
+          <li class="breadcrumbs__separator" aria-hidden="true">
+            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ collection.url }}">
+              {{ collection.title }}
+            </a>
+          </li>
+
+          <li class="breadcrumbs__separator" aria-hidden="true">
+            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ collection.url }}/{{ current_tags | join: '+' }}" aria-current="page">
+              {{ current_tags | join: ' + ' }}
+            </a>
+          </li>
+        {%- else -%}
+          <li class="breadcrumbs__separator" aria-hidden="true">
+            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">
+              {{ collection.title }}
+            </a>
+          </li>
+        {%- endif -%}
+
+      <!-- BLOG -->
+      {%- when 'blog' -%}
+        <li class="breadcrumbs__separator" aria-hidden="true">
+          <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+          </svg>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">
+            {{ blog.title }}
+          </a>
+        </li>
+
+      <!-- ARTICLE -->
+      {%- when 'article' -%}
+        <li class="breadcrumbs__separator" aria-hidden="true">
+          <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+          </svg>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ blog.url }}">
+            {{ blog.title }}
+          </a>
+        </li>
+
+        <li class="breadcrumbs__separator" aria-hidden="true">
+          <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+          </svg>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">
+            {{ article.title }}
+          </a>
+        </li>
+
+      <!-- FALLBACK -->
+      {%- else -%}
+        <li class="breadcrumbs__separator" aria-hidden="true">
+          <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.64" d="M5.26377 0.364148L0.993774 11.7881L-0.000226527 11.4241L4.26977 0.000148177L5.26377 0.364148Z" fill="currentColor"/>
+          </svg>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">
+            {{ page_title }}
+          </a>
+        </li>
+
+    {%- endcase -%}
+
+  </ol>
+</nav>
+
+{%- endunless -%}

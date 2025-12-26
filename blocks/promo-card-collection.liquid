@@ -1,0 +1,223 @@
+
+    {% assign promotional_tile_object = block.settings.promotion_tile %}
+    {% assign promotional_tile = metaobjects['promotion_tile'][promotional_tile_object] %}
+    
+    
+    {% if promotional_tile %}
+      <li class=" spacing-style block-{{ block.id }}
+      border-style 
+      grid__item promotional-tile-wrapper
+      {% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}
+        style="
+      {% render 'border-override', settings: block.settings %}
+      {% render 'spacing-style', settings: block.settings %}
+      {% if block.settings.padding-inline-start > 0 %}--zoom-out-padding-inline-start: min(var(--padding-xs), {{ block.settings.padding-inline-start | times: 0.7}}px);{% endif %}
+      {% if block.settings.padding-inline-end > 0 %}--zoom-out-padding-inline-end: min(var(--padding-xs), {{ block.settings.padding-inline-end | times: 0.7}}px);{% endif %}
+      {% if block.settings.padding-block-start > 0 %}--zoom-out-padding-block-start: min(var(--padding-xs), {{ block.settings.padding-block-start | times: 0.7}}px);{% endif %}
+      {% if block.settings.padding-block-end > 0 %}--zoom-out-padding-block-end: min(var(--padding-xs), {{ block.settings.padding-block-end | times: 0.7}}px);{% endif %}
+    "
+    >
+        {% if promotional_tile.link != blank %}
+          <a href="{{ promotional_tile.link.url }}" class="promotional-tile" style="background-color: {{ promotional_tile.background_color }}; {% if promotional_tile.background_image %}background-image: url({{ promotional_tile.background_image | img_url: 'master' }});{% endif %}">
+        {% else %}
+          <div class="promotional-tile" style="background-color: {{ promotional_tile.background_color }}; {% if promotional_tile.background_image %}background-image: url({{ promotional_tile.background_image | img_url: 'master' }});{% endif %}">
+        {% endif %}
+        {% if promotional_tile.text != blank %}
+          <div class="promotional-tile__text" style="color: {{ promotional_tile.text_color }}; text-align: {{ block.settings.text_alignment }}; font-size: {{ block.settings.text_size }}rem;">
+            {{ promotional_tile.text }}
+          </div>
+        {% endif %}
+        {% if promotional_tile.link != blank %}
+          </a>
+        {% else %}
+          </div>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    <style>
+      @media (min-width: 768px) {
+      .product-grid--{{ section.id }}:is([product-grid-view='zoom-out']) div#shopify-block-{{ block.id }} {
+        display:none !important;
+      }
+    }
+    </style>
+{% stylesheet %}
+
+    #shopify-block-{{ block.id }}.hide-if-no-promo-tile {
+    display: none !important;
+    }
+  li.grid__item.promotional-tile-wrapper {
+    height: 100%;
+    }
+/* Custom styles for promotional tiles */
+.promotional-tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+  }
+
+  .promotional-tile__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 1rem;
+  }
+{% endstylesheet %}
+
+  {% schema %}
+  {
+    "name": "Promo Card Collection",
+    "settings": [
+        
+              {
+                "type": "metaobject",
+                "id": "promotion_tile",
+                "label": "Promotional Tile",
+                "metaobject_type": "promotion_tile"
+              },
+              {
+                "type": "range",
+                "id": "text_size",
+                "label": "Text Size",
+                "min": 0,
+                "max": 5,
+                "step": 0.5,
+                "default": 1.5,
+                "unit": "rem"
+              },
+              {
+                "type": "select",
+                "id": "text_alignment",
+                "label": "Text Alignment",
+                "options": [
+                  { "value": "left", "label": "Left" },
+                  { "value": "center", "label": "Center" },
+                  { "value": "right", "label": "Right" }
+                ],
+                "default": "center"
+              },
+
+    {
+        "type": "header",
+        "content": "t:content.borders"
+      },
+      {
+        "type": "select",
+        "id": "border",
+        "label": "t:settings.style",
+        "options": [
+          {
+            "value": "none",
+            "label": "t:options.none"
+          },
+          {
+            "value": "solid",
+            "label": "t:options.solid"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "range",
+        "id": "border_width",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings.thickness",
+        "default": 1,
+        "visible_if": "{{ block.settings.border != 'none' }}"
+      },
+      {
+        "type": "range",
+        "id": "border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "t:settings.opacity",
+        "default": 100,
+        "visible_if": "{{ block.settings.border != 'none' }}"
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "label": "t:settings.border_radius",
+        "min": 0,
+        "max": 32,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:content.padding"
+      },
+      {
+        "type": "range",
+        "id": "padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }
+           
+    ]
+  }
+  
+  {% endschema %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const promoBlock = document.getElementById("shopify-block-{{ block.id }}");
+        
+        if (promoBlock) {
+          // Check if the block DOES NOT contain the promotional tile
+          const hasPromoTile = promoBlock.querySelector(".promotional-tile-wrapper");
+          
+          // If NO promotional tile exists, hide the parent block
+         
+          if (!hasPromoTile) {
+            promoBlock.classList.add("hide-if-no-promo-tile");
+          }
+        }
+      });
+  </script>

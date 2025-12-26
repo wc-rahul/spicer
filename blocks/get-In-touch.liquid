@@ -1,0 +1,105 @@
+{% liquid
+  if block.settings.style_class != blank
+    assign button_class = button_class | append: ' ' | append: block.settings.style_class
+  endif
+%}
+
+<div class="get-in-touch color-{{ block.settings.color_scheme }}">
+  <div class="git_innr">
+    <div class="git_left">
+      {% assign heading_tag = block.settings.type_preset | default: 'h2' %}
+
+      {% if heading_tag == 'paragraph' %}
+        <p class="git_heading">{{ block.settings.label }}</p>
+      {% elsif heading_tag == 'custom' %}
+        <div class="git_heading custom-heading">{{ block.settings.label }}</div>
+      {% else %}
+        <{{ heading_tag }} class="git_heading">
+          {{ block.settings.label }}
+        </{{ heading_tag }}>
+      {% endif %}
+
+      {% if block.settings.description != blank %}
+        <div class="git_desc">
+          {{ block.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if block.settings.btn_label != blank and block.settings.btn_url != blank %}
+      <div class="git_right">
+        <a  class="{{ button_class }}" href="{{ block.settings.btn_url }}">
+          {{ block.settings.btn_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Get In Touch",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Heading",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "select",
+      "id": "type_preset",
+      "label": "Heading Type",
+      "default": "h2",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" },
+        { "value": "paragraph", "label": "Paragraph" },
+        { "value": "custom", "label": "Custom (Div)" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Add your contact message here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "primary"
+    },
+    {
+      "type": "select",
+      "id": "style_class",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:options.primary"
+        },
+        {
+          "value": "button-secondary",
+          "label": "t:options.secondary"
+        }
+      ],
+      "default": "button-secondary"
+    }
+  ]
+}
+{% endschema %}

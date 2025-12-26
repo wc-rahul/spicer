@@ -1,0 +1,376 @@
+
+
+
+  {% render 'cart-discounts-bar',  block_settings: block %}
+  
+
+  {% schema %}
+  {
+    "name": "Discounts Progress Bar",
+    "tag": null,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_first_thershold",
+        "label": "Enable First Threshold",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "first_threshold_discounts",
+        "label": "First Threshold",
+        "default": "25.00",
+        "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'. This field is required to display the step."
+       
+      },
+      {
+        "type": "text",
+        "id": "first_discount_percentage",
+        "label": "First Discount Percentage",
+        "default": "10% Off"
+      
+      },
+      {
+        "type": "text",
+        "id": "first_threshold_message",
+        "label": "First Threshold Message",
+        "default": "Spend $25 <br>get 10% off"
+      },
+      {
+        "type": "liquid",
+        "id": "discount_image_1",
+        "label": "SVG code for the icon"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_second_thershold",
+        "label": "Enable Second Threshold",
+        "default": false
+    
+      },
+      {
+        "type": "text",
+        "id": "second_threshold_discounts",
+        "label": "Second Threshold",
+        "default": "50.00",
+        "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'.",
+        "visible_if": "{{ block.settings.enable_second_thershold == true }}"
+        },
+      {
+        "type": "text",
+        "id": "second_discount_percentage",
+        "label": "Second Discount Percentage",
+        "default": "20% Off",
+        "visible_if": "{{ block.settings.enable_second_thershold == true }}"
+        
+      },
+      {
+        "type": "text",
+        "id": "second_threshold_message",
+        "label": "Second Threshold Message",
+        "default": "Spend $50 <br>get 20% off",
+        "visible_if": "{{ block.settings.enable_second_thershold == true }}"
+      },
+
+      {
+        "type": "liquid",
+        "id": "discount_image_2",
+        "label": "SVG code for the icon",
+        "visible_if": "{{ block.settings.enable_second_thershold == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_third_thershold",
+        "label": "Enable Third Threshold",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "third_threshold_discounts",
+        "label": "Third Threshold",
+        "default": "75.00",
+         "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'.",
+         "visible_if": "{{ block.settings.enable_third_thershold == true }}"
+      },
+      {
+        "type": "text",
+        "id": "third_discount_percentage",
+        "label": "Third Discount Percentage",
+        "default": "30% Off",
+        "visible_if": "{{ block.settings.enable_third_thershold == true }}"
+      },
+      {
+        "type": "text",
+        "id": "third_threshold_message",
+        "label": "Third Threshold Message",
+        "default": "Spend $75 <br>get 30% off",
+        "visible_if": "{{ block.settings.enable_third_thershold == true }}"
+      },
+      {
+        "type": "liquid",
+        "id": "discount_image_3",
+        "label": "SVG code for the icon",
+        "visible_if": "{{ block.settings.enable_third_thershold == true }}"
+      },
+      {
+        "type": "text",
+        "id": "final_message",
+        "label": "Final Message",
+        "default": "You have reached all discounts (discounts applied at checkout)",
+        "visible_if": "{{ block.settings.enable_first_thershold == true }}"
+      },
+      {
+        "type": "header",
+        "content": "t:content.padding"
+      },
+      {
+        "type": "range",
+        "id": "padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:settings.color_scheme",
+        "default": "scheme-3"
+      }
+    
+    ],
+    "presets": [
+      {
+        "name": "Discounts Progress Bar"
+      }
+    ]
+  }
+  {% endschema %}
+{% comment %}   
+  {% schema %}
+  {
+    "name": "Discounts Progress Bar",
+    "tag": null,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "progress_bar",
+        "label": "Show Discounts Progress Bar",
+        "default": false,
+        "info": "You'll see the progress bar only within the cart drawer interface. The discounts are visual only and require corresponding automatic discount rules in Shopify to be applied during checkout.",
+      },
+      {
+        "type": "checkbox",
+        "id": "progress_bar_settings_block",
+        "label": "Use settings from the theme settings",
+        "default": false,
+        "info": "If you want to use the settings from the theme settings, check this box. If you want to use the settings from the block, uncheck this box.",
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_first_thershold",
+        "label": "Enable First Threshold",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "first_threshold_discounts",
+        "label": "First Threshold",
+        "default": "25.00",
+        "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'. This field is required to display the step."
+      },
+      {
+        "type": "text",
+        "id": "first_discount_percentage",
+        "label": "First Discount Percentage",
+        "default": "10% Off"
+       
+      },
+      {
+        "type": "text",
+        "id": "first_threshold_message",
+        "label": "First Threshold Message",
+        "default": "Spend $25.00<br>get 10% off"
+      },
+      {
+        "type": "liquid",
+        "id": "discount_image_1",
+        "label": "SVG code for the icon"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_second_thershold",
+        "label": "Enable Second Threshold",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "second_threshold_discounts",
+        "label": "Second Threshold",
+        "default": "50.00",
+         "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'."
+      },
+      {
+        "type": "text",
+        "id": "second_discount_percentage",
+        "label": "Second Discount Percentage",
+        "default": "20% Off",
+        
+      },
+      {
+        "type": "text",
+        "id": "second_threshold_message",
+        "label": "Second Threshold Message",
+        "default": "Spend $50.00<br>get 20% off"
+        
+      },
+
+      {
+        "type": "liquid",
+        "id": "discount_image_2",
+        "label": "SVG code for the icon"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_third_thershold",
+        "label": "Enable Third Threshold",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "third_threshold_discounts",
+        "label": "Third Threshold",
+        "default": "75.00",
+         "info": "Enter the value without a currency symbol and use a decimal to separate dollars and cents. Example: '100.00'."
+      },
+      {
+        "type": "text",
+        "id": "third_discount_percentage",
+        "label": "Third Discount Percentage",
+        "default": "30% Off",
+      },
+      {
+        "type": "text",
+        "id": "third_threshold_message",
+        "label": "Third Threshold Message",
+        "default": "Spend $75.00<br>get 30% off"
+        
+      },
+      {
+        "type": "liquid",
+        "id": "discount_image_3",
+        "label": "SVG code for the icon"
+      },
+      {
+        "type": "text",
+        "id": "final_message",
+        "label": "Final Message",
+        "default": "You have reached all discounts (discounts applied at checkout)"
+        
+      },
+      {
+        "type": "header",
+        "content": "t:content.padding"
+      },
+      {
+        "type": "range",
+        "id": "padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "extend_summary",
+        "label": "t:settings.extend_summary",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "inherit_color_scheme",
+        "label": "t:settings.inherit_color_scheme",
+        "default": false
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:settings.color_scheme",
+        "default": "scheme-3",
+        "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+      }
+    
+    ],
+    "presets": [
+      {
+        "name": "Discounts Progress Bar"
+      }
+    ]
+  }
+  {% endschema %} {% endcomment %}
+
+  

@@ -1,0 +1,14 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "mexico"
+  },
+  "sections": {
+    "hero_jVaWmY": {
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/Image_1.png"
+      },
+      "blocks": {}
+    }
+  }
+}

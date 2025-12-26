@@ -1,0 +1,69 @@
+{%- liquid
+    assign resource = blank
+  if block.settings.resource == 'product'
+  assign resource = block.settings.product
+  else
+  assign resource = block.settings.collection
+  endif
+-%}
+{%- if resource != blank -%}
+<a class="promo_blocks" href="{{ resource.url }}" data-mobile-menu="link-{{ block.settings.target | handleize }}">
+    <div class="image_promo_blocks_one img-padding">
+      {{
+        resource.featured_image.src
+        | image_url: width: 1024
+        | image_tag: loading: 'lazy', class: 'mega-menu__link-image', sizes: 'auto'
+      }}
+      <div class="product_title">{{ resource.title }}</div>
+    </div>
+</a>
+{%- endif -%}
+{% schema %}  
+{
+  "name": "Resource Picker",
+  "tag": null,
+  "settings": [
+    {
+        "type": "select",
+        "id": "resource",
+        "label": "Select Resource Type",
+        "options": [
+            {
+                "label": "Product",
+                "value": "product"
+            },
+            {
+                "label": "Collection",
+                "value": "collection"
+            }
+        ]
+    },
+    {
+        "type": "collection",
+        "id": "collection",
+        "label": "Select Collection"
+    },
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Select Product"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Drawer Only"
+    },
+    {
+      "type": "text",
+      "id": "target",
+      "label": "Enter Target Link",
+      "info": "Enter Print to display content in print menu"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Resource Picker"
+    }
+  ]
+}
+{% endschema %}

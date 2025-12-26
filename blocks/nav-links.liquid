@@ -1,0 +1,381 @@
+
+
+{% liquid
+    assign menu = block.settings.menu
+    assign heading = block.settings.heading
+    assign color_scheme = block.settings.color_scheme
+    assign show_as_accordion = block.settings.show_as_accordion
+    if show_as_accordion == true and block.settings.accordion_dividers == true
+      assign dividers_enabled = true
+    endif
+  %}
+  
+  {% if menu != blank or heading != blank %}
+    <div
+      class="
+        menu announcement-menu
+        {% if show_as_accordion == true %} menu--accordion menu--{{ block.settings.accordion_icon }}{% endif %}
+        {% if dividers_enabled == true %} menu--dividers{% endif %}
+      "
+      data-disable-on-desktop="true"
+      open-by-default-on-desktop
+      {% if show_as_accordion == false %}
+        data-disable-on-mobile="true"
+        open-by-default-on-mobile
+      {% endif %}
+    >
+      <div
+        class="
+          menu__details
+          spacing-style
+          {% if block.settings.inherit_color_scheme == false %} color-{{ color_scheme }}{% endif %}
+        "
+        style="
+          --popover_border_radius: {{settings.popover_border_radius }}px;
+          --spacing--size: {{ block.settings.menu_spacing }}px;
+          {% render 'spacing-style', settings: block.settings %}
+        "
+        {{ block.shopify_attributes }}
+      >
+        <summary class="menu__heading{% if heading == blank %} menu__heading--empty{% endif %} {{ block.settings.heading_preset }}">
+          <span class="menu__heading__default">{{ heading }}</span>
+          <span class="menu__heading__accordion">
+            {{ heading | default: menu.title }}
+            <span class="menu__heading__toggle svg-wrapper icon-caret icon-animated">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+            <span class="menu__heading__toggle svg-wrapper icon-plus">
+              {{- 'icon-plus.svg' | inline_asset_content -}}
+            </span>
+          </span>
+        </summary>
+  
+        <div class="details-content">
+          {% if menu %}
+            <ul class="list-unstyled">
+              {% for link in menu.links %}
+                <li class="menu__item {{ block.settings.link_preset }}{% if link.links != blank %} has-dropdown{% endif %}">
+                  <a href="{{ link.url }}"{% if link.links != blank %} class="dropdown-trigger"{% endif %}>
+                    {{ link.title }}
+                    {% if link.links != blank %}
+                      <span class="dropdown-arrow svg-wrapper icon-caret">
+                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                      </span>
+                    {% endif %}
+                  </a>
+                  {% if link.links != blank %}
+                    <ul class="dropdown-menu">
+                      {% for child_link in link.links %}
+                        <li class="dropdown-item">
+                          <a href="{{ child_link.url }}">
+                            {{ child_link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
+  {% stylesheet %}
+   .announcement-menu .list-unstyled {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    }
+    .announcement-menu {
+      width: auto;
+      position: relative;
+    }
+    .announcement-menu .details-content{
+        overflow-y: visible;
+    }
+    .announcement-menu .menu__details{
+        position: relative;
+    }
+    .announcement-menu  .menu__item+.menu__item{
+        margin-block-start: 0px;
+    }
+  
+    .menu:not(:has(.menu__heading--empty)) .details-content {
+      margin-block-start: var(--spacing--size);
+    }
+  
+    .menu__item + .menu__item {
+      margin-block-start: var(--spacing--size);
+    }
+  
+    .menu .menu__heading--empty {
+      display: none;
+    }
+  
+    .menu__heading__default {
+      display: contents;
+    }
+  
+    .menu__heading__accordion {
+      display: none;
+    }
+
+    /* Dropdown styles */
+    .menu__item.has-dropdown {
+      position: relative;
+    }
+
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .dropdown-arrow {
+      transition: transform 0.2s ease;
+      width: 12px;
+      height: 12px;
+    }
+
+    .menu__item.has-dropdown:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--color-background);
+      color: var(--color-foreground);
+      /* border: 1px solid var(--color-border); */
+      border-radius: var(--popover_border_radius);
+      box-shadow: var(--shadow-popover);
+      border: var(--style-border-popover);
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.3s ease;
+      list-style: none;
+      padding: 8px 0;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    .menu__item.has-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Ensure dropdown stays visible when hovering over the dropdown itself */
+    .dropdown-menu:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-item {
+      margin: 0;
+    }
+
+    .dropdown-item a {
+      display: block;
+      padding: 8px 16px;
+      color: var(--color-foreground);
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .dropdown-item a:hover {
+      color: var(--color-foreground-hover);
+    }
+
+    /* Mobile styles - hide dropdown on mobile */
+    @media screen and (width < 750px) {
+      .dropdown-menu {
+        display: none;
+      }
+      
+      .dropdown-arrow {
+        display: none;
+      }
+    }
+  
+    @media screen and (width < 750px) {
+      .announcement-menu {
+        display: none;
+      }
+      /* Always show the fallback heading on mobile when accordion is enabled */
+      .menu--accordion .menu__heading--empty {
+        display: flex;
+      }
+  
+      .menu--accordion .menu__heading__accordion {
+        display: contents;
+      }
+  
+      .menu--accordion .menu__heading__default {
+        display: none;
+      }
+  
+      .menu--accordion .details-content {
+        margin-block-start: var(--spacing--size);
+      }
+  
+      .menu--accordion .menu__details {
+        padding-inline: 0;
+      }
+  
+      .menu--dividers .menu__details {
+        border-block-end: var(--style-border-width) solid var(--color-border);
+      }
+  
+      .menu--dividers .details-content {
+        padding-block-end: var(--padding-sm);
+      }
+    }
+  
+    .menu--caret .icon-plus,
+    .menu--plus .icon-caret {
+      display: none;
+    }
+  {% endstylesheet %}
+  
+  {% schema %}
+  {
+    "name": "Nav Links",
+    "tag": null,
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "t:settings.menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "header",
+        "content": "t:content.appearance"
+      },
+      {
+        "type": "checkbox",
+        "id": "inherit_color_scheme",
+        "label": "t:settings.inherit_color_scheme",
+        "default": true
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:settings.color_scheme",
+        "default": "scheme-1",
+        "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+      },
+      {
+        "type": "header",
+        "content": "t:content.typography"
+      },
+      {
+        "type": "select",
+        "id": "link_preset",
+        "label": "t:settings.link_preset",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "paragraph",
+            "label": "t:options.paragraph"
+          },
+          {
+            "value": "h1",
+            "label": "t:options.h1"
+          },
+          {
+            "value": "h2",
+            "label": "t:options.h2"
+          },
+          {
+            "value": "h3",
+            "label": "t:options.h3"
+          },
+          {
+            "value": "h4",
+            "label": "t:options.h4"
+          },
+          {
+            "value": "h5",
+            "label": "t:options.h5"
+          },
+          {
+            "value": "h6",
+            "label": "t:options.h6"
+          }
+        ],
+        "default": "paragraph"
+      },
+      {
+        "type": "header",
+        "content": "t:content.padding"
+      },
+      {
+        "type": "range",
+        "id": "padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Nav Links",
+        "category": "t:categories.links"
+      }
+    ]
+  }
+  {% endschema %}
+  

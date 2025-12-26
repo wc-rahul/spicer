@@ -1,0 +1,128 @@
+{% capture promo_content %}
+  {% content_for 'blocks' %}
+{% endcapture %}
+<div
+  class="header__drawer desktop:hidden"
+  ref="headerDrawerContainer"
+  style="{{ title_case_style }}"
+  {{ block.shopify_attributes }}
+  data-parent-menu="{{ block.settings.target_link_title | handleize }}"
+>
+  {% render 'header-drawer',
+    class: 'header__drawer--mobile',
+    linklist: block.settings.menu,
+    data_header_drawer_type: 'mobile-drawer',
+    promo_content: promo_content
+  %}
+</div>
+{% schema %}
+{
+  "name": "Mobile Drawer",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "target_link_title",
+      "label": "Target menu link title",
+      "info": "Enter the exact name of the menu link where you want to show this mega menu (e.g., 'Bed Bases')"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:settings.menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "menu_style",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "text",
+          "label": "t:options.text_only"
+        },
+        {
+          "value": "collection_images",
+          "label": "t:options.collection_images"
+        },
+        {
+          "value": "featured_products",
+          "label": "t:options.featured_products"
+        },
+        {
+          "value": "featured_collections",
+          "label": "t:options.featured_collections"
+        }
+      ],
+      "default": "collection_images"
+    },
+     {
+      "type": "select",
+      "id": "featured_collections_aspect_ratio",
+      "label": "t:settings.image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "16 / 9",
+          "label": "t:options.landscape"
+        },
+        {
+          "value": "1 / 1",
+          "label": "t:options.square"
+        }
+      ],
+      "default": "16 / 9",
+      "visible_if": "{{ block.settings.menu_style == 'featured_collections' }}"
+    },
+    {
+      "type": "select",
+      "id": "featured_products_aspect_ratio",
+      "label": "t:settings.image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "4 / 5",
+          "label": "t:options.portrait"
+        },
+        {
+          "value": "1 / 1",
+          "label": "t:options.square"
+        }
+      ],
+      "default": "4 / 5",
+      "visible_if": "{{ block.settings.menu_style == 'featured_products' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "drawer_accordion",
+      "label": "t:settings.accordion",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "drawer_dividers",
+      "label": "t:settings.dividers",
+      "default": false
+    },
+     {
+      "type": "checkbox",
+      "id": "drawer_accordion_expand_first",
+      "label": "t:settings.expand_first_group",
+      "default": false,
+      "visible_if": "{{ block.settings.drawer_accordion == true }}"
+    },
+  ],
+  "blocks": [{ "type": "_promotion-card" },{"type": "_resource-picker"},{"type": "_visual-menu"}],
+  "presets": [
+    {
+      "name": "Mobile Drawer"
+    }
+  ]
+}
+{% endschema %} 

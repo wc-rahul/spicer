@@ -1,0 +1,229 @@
+{% comment %}
+  Promo Card Block - generated from Figma selection
+{% endcomment %}
+{% if block.settings.promo1_collection != blank or block.settings.promo2_collection != blank  or block.settings.promo1_image != blank or block.settings.promo2_image != blank %}
+  <div class="promo-card-block-{{ block.id }}">
+    {%- assign promo1_collection = block.settings.promo1_collection -%}
+    {%- assign promo2_collection = block.settings.promo2_collection -%}
+    {% if promo1_collection != blank or block.settings.promo1_image != blank %}
+      <a class="promo-card-{{ block.id }}" style="background: {{ block.settings.promo1_bg }};" href="{% if promo1_collection != blank %}{{ collections[promo1_collection].url }}{% else %}{{ block.settings.promo1_link }}{% endif %}">
+        {% if promo1_collection != blank and collections[promo1_collection] and collections[promo1_collection].image != blank %}
+          <div class="promo-card__image" style="background-image: url('{{ collections[promo1_collection].image  | image_url: width: 600 }}'); background-size: {{ block.settings.promo_card_image_background_size | default: 'cover' }};"></div>
+        {% elsif block.settings.promo1_image != blank %}
+          <div class="promo-card__image" style="background-image: url('{{ block.settings.promo1_image | image_url: width: 600 }}'); background-size: {{ block.settings.promo_card_image_background_size | default: 'cover' }};"></div>
+        {% endif %}
+        <div class="promo-card__content">
+          <h3 class="promo-card__category">{% if promo1_collection != blank and collections[promo1_collection] %}{{ collections[promo1_collection].title }}{% else %}{{ block.settings.promo1_label }}{% endif %}</h3>
+        </div>
+      </a>
+    {% endif %}
+    {% if promo2_collection != blank or block.settings.promo2_image != blank %}
+      <a class="promo-card-{{ block.id }}" style="background: {{ block.settings.promo2_bg }};" href="{% if promo2_collection != blank %}{{ collections[promo2_collection].url }}{% else %}{{ block.settings.promo2_link }}{% endif %}">
+        {% if promo2_collection != blank and collections[promo2_collection] and collections[promo2_collection].image != blank %}
+          <div class="promo-card__image" style="background-image: url('{{ collections[promo2_collection].image | image_url: width: 600 }}'); background-size: {{ block.settings.promo_card_image_background_size | default: 'cover' }};"></div>
+        {% elsif block.settings.promo2_image != blank %}
+          <div class="promo-card__image" style="background-image: url('{{ block.settings.promo2_image | image_url: width: 600 }}'); background-size: {{ block.settings.promo_card_image_background_size | default: 'cover' }};"></div>
+        {% endif %}
+        <div class="promo-card__content">
+          <h3 class="promo-card__category">{% if promo2_collection != blank and collections[promo2_collection] %}{{ collections[promo2_collection].title }}{% else %}{{ block.settings.promo2_label }}{% endif %}</h3>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  {% if menu_vertical_navigation %}
+    <style>
+      .promo-card-block-{{ block.id }}  {
+          grid-template-columns: repeat(2, minmax(0, 300px)) !important;
+      }
+    </style>
+  {% endif %}
+  <style>
+    #shopify-block-{{ block.id }} {
+      grid-column: span 2;
+    }
+  .promo-card-block-{{ block.id }} {
+      display: grid !important;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      grid-template-columns: repeat(var(--menu-content-columns-desktop), minmax(0, 300px));
+      grid-column: 1 / -1; /* Makes promo-block span all columns */
+      display: grid;
+      gap: 10px;
+  }
+  
+  .promo-card-{{ block.id }} {
+    background: #f7f7f3;
+    border-radius: {{ block.settings.promo_card_border_radius | default: 20 }}px;
+    padding: {{ block.settings.promo_card_padding | default: 15 }}px; 
+    max-width: 350px;
+    max-height: 98%;
+    min-height: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    grid-column: span 1;
+  }
+  .promo-card-{{ block.id }} .promo-card__image {
+    width: 100%;
+    {% case block.settings.promo_card_image_aspect_ratio %}
+    {% when "1/1" %}
+      aspect-ratio: 1 / 1;
+    {% when "4/5" %}
+      aspect-ratio: 4 / 5;
+  {% endcase %}
+    background-size: {{ block.settings.promo_card_image_background_size | default: 'cover' }};
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: {{ block.settings.promo_card_image_border_radius | default: 20 }}px;
+    margin-bottom: 25px;
+  }
+  .promo-card-{{ block.id }} .promo-card__content {
+    width: 100%;
+  }
+  .promo-card-{{ block.id }} .promo-card__category {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #686c58;
+    margin: 0;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  [slot="overflow"] #shopify-block-{{ block.id }} {
+    display: none;
+   }
+  </style>
+  
+  
+  
+  {% schema %}
+  {
+    "name": "Promo Cards Collections",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Promo Card"
+      },
+      {
+        "type": "collection",
+        "id": "promo1_collection",
+        "label": "Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "promo1_image",
+        "label": "Image (if not using collection)"
+      },
+      {
+        "type": "text",
+        "id": "promo1_label",
+        "label": "Image label (if not using collection)"
+      },
+      {
+        "type": "url",
+        "id": "promo1_link",
+        "label": "Image link (if not using collection)"
+      },
+      {
+        "type": "color",
+        "id": "promo1_bg",
+        "label": "Promo Card Background Color",
+        "default": "#f7f7f3"
+      },
+      {
+        "type": "header",
+        "content": "Promo Card"
+      },
+      {
+        "type": "collection",
+        "id": "promo2_collection",
+        "label": "Collection (optional)"
+      },
+      {
+        "type": "image_picker",
+        "id": "promo2_image",
+        "label": "Image (if not using collection)"
+      },
+      {
+        "type": "text",
+        "id": "promo2_label",
+        "label": "Image label (if not using collection)"
+      },
+      {
+        "type": "url",
+        "id": "promo2_link",
+        "label": "Image link (if not using collection)"
+      },
+      {
+        "type": "color",
+        "id": "promo2_bg",
+        "label": "Promo Card Background Color",
+        "default": "#f7f7f3"
+      },
+      {
+        "type": "header",
+        "content": "General Settings"
+      },
+      {
+        "type": "range",
+        "id": "promo_card_border_radius",
+        "label": "Promo card border radius",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "promo_card_image_border_radius",
+        "label": "Promo card image border radius",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "promo_card_padding",
+        "label": "Promo card padding",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "default": 15
+      },{
+        "type": "select",
+        "id": "promo_card_image_aspect_ratio",
+        "label": "Promo card image aspect ratio",
+        "options": [
+          { "value": "1/1", "label": "Square (1:1)" },
+          { "value": "4/5", "label": "Portrait (4:5)" }
+        ],
+        "default": "4/5"
+      },
+      {
+        "type": "select",
+        "id": "promo_card_image_background_size",
+        "label": "Promo card image background size",
+        "options": [
+          { "value": "cover", "label": "Cover" },
+          { "value": "contain", "label": "Contain" }
+        ],
+        "default": "cover"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promo Cards Collections"
+      }
+    ]
+  }
+  {% endschema %}
+  

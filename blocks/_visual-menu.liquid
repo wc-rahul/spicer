@@ -1,0 +1,40 @@
+<ul class="menu_logo_list" data-mobile-menu="link-{{ block.settings.target | handleize }}">
+  {% for entry in block.settings.metaobject %}
+    <li class="menu_logo_item">
+      <a href="{{ entry.link }}" class="logo_img_link">
+        {% comment %} {{ entry.logo | image_url: width: '300', height: '100' | image_tag: class: 'menu_link_logo_img' }} {% endcomment %}
+        <img src="{{ entry.logo | img_url:'master' }}" alt="{{ entry.logo.alt }}" loading="lazy" class="" width="{{ entry.logo.width }}" height="{{ entry.logo.height }}" />
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+{% schema %}
+{
+  "name": "Visual Menu",
+  "tag": null,
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "metaobject",
+      "label": "Select Metaobject",
+      "metaobject_type": "photo_fine_art_menu"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Drawer Only"
+    },
+    {
+      "type": "text",
+      "id": "target",
+      "label": "Enter Target Link",
+      "info": "Enter Print to display content in print menu"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Visual Links"
+    }
+  ]
+}
+{% endschema %}

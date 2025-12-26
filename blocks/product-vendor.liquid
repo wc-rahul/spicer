@@ -1,0 +1,65 @@
+{% style %}
+  .product-vendor__text{font-size:{{ block.settings.font-size }}px;color:var(--color-foreground);}
+{% endstyle %}
+
+{% if product.vendor != blank %}
+  <div class="product-vendor" {{ block.shopify_attributes }}>
+    {% if block.settings.link_to_vendor %}
+      <a href="{{ routes.collections_url }}/vendors?q={{ product.vendor | url_encode }}"
+         class="product-vendor__link product-vendor__text">
+        {{ product.vendor }}
+      </a>
+    {% else %}
+      <span class="product-vendor__text">
+        {{ product.vendor }}
+      </span>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product vendor",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "link_to_vendor",
+      "label": "Link to vendor collection",
+      "default": true
+    },
+    {
+        "type": "select",
+        "id": "font-size",
+        "label": "Font size",
+        "options": [
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          }
+        ],
+        "default": "12"
+      },
+  ],
+  "presets": [
+    {
+      "name": "Product vendor"
+    }
+  ]
+}
+{% endschema %} 

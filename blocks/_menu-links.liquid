@@ -1,0 +1,85 @@
+{%- style -%}
+  .megamenu_{{ block.id }}{width:100%;max-width:100%;}
+  .megamenu_{{ block.id }} .right_cnt_mega{gap:24px;width:100%;max-width:100%;display:flex;padding:24px 12px 24px 24px;justify-content:center;}
+  /* .megamenu_{{ block.id }} .mega-menu__list{--coloumn-grid-menulink:{{block.settings.dropdwon_split_columns}};--menu-vertical-gap:24px;width:100%;display:flex;flex-wrap:wrap;max-width:100%;grid-template-columns:repeat(var(--coloumn-grid-menulink),1fr);} */
+  .megamenu_{{ block.id }} .mega-menu__list{--coloumn-grid-menulink:{{block.settings.dropdwon_split_columns}};--menu-vertical-gap:24px;width:100%;max-width:100%;grid-template-columns:repeat(var(--coloumn-grid-menulink),1fr);    display: grid;grid-template-columns: repeat(5, minmax(0, 1fr));grid-template-areas:"first second third fourth fifth" "sixth second third fourth fifth";}
+  /* .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column{width:calc(20% - 25px * 4 / 5)} */
+  .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column:nth-child(1){grid-area: first;}
+  .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column:nth-child(2){grid-area: second;}
+  .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column:nth-child(3){grid-area: third;}
+  .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column:nth-child(4){grid-area: fourth;}
+  .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column:nth-child(5){grid-area: fifth;}
+  .megamenu_{{ block.id }} .mega-menu__list .mega-menu__column:nth-child(6){grid-area: sixth;}
+  @media(max-width:1399px){
+    .megamenu_{{ block.id }} .mega-menu__list{grid-template-columns: repeat(4, minmax(0, 1fr));grid-template-areas:"first second third fourth" "fifth second third fourth" "fifth sixth third fourth";}
+  }
+  @media(max-width:1199px){
+  .megamenu_{{ block.id }} .mega-menu__list{grid-template-columns: repeat(3, minmax(0, 1fr));grid-template-areas:"first second third" "fourth second third" "fourth fifth third" "fourth fifth sixth";}
+}
+{%- endstyle -%}
+  {% assign id = 'MegaMenuList-{{ parent_link.links.size }}' %}
+  <div class="megamenu_{{ block.id }}">
+      {% render 'mega-menu-list',
+        parent_link: block.settings.menu,
+        id: block.settings.menu.links.size,
+        grid_columns_count: 5,
+        grid_columns_count_tablet: 4,
+        grid_columns_count_collection_images: 8,
+        menu_content_type: '',
+        content_aspect_ratio: '1:1',
+        image_border_radius: '20',
+        promo_card_number: 2
+      %}
+  </div>
+{% schema %}
+{
+  "name": "Menu Links",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "dropdwon_split_columns",
+      "label": "Dropdwon split columns",
+      "info": "This will split the dropdown into the number of columns you select",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        },
+        {
+          "value": "5",
+          "label": "5 columns"
+        },
+        {
+          "value": "6",
+          "label": "6 columns"
+        }
+      ],
+      "default": "5"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Menu Links"
+    }
+  ]
+}
+{% endschema %}

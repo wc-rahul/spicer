@@ -1,0 +1,94 @@
+
+{% render 'mega-menu-vertical-navigation',
+    menu: {{block.settings.menu}},
+    id: id,
+    menu_content_type: menu_content_type,
+    block: block,
+    products_mega_menu: products_mega_menu,
+    collections_mega_menu: collections_mega_menu,
+    menu_vertical_navigation: true,
+    promo_card_number: promo_card_number,
+    dropdwon_split_columns: {{block.settings.dropdwon_split_columns}}
+  %}
+
+  {% schema %}
+  {
+    "name": "Vertical Navigation",
+    "tag": null,
+    "settings": [
+      {
+        "type": "header",
+        "content": "Menu Settings"
+      },
+      {
+        "type": "select",
+        "id": "dropdwon_split_columns",
+        "label": "Column space",
+        "info": "if > 1, the block will take the column space of the number of columns you select",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 column"
+          },
+          {
+            "value": "2",
+            "label": "2 columns"
+          },
+          {
+            "value": "3",
+            "label": "3 columns"
+          },
+          {
+            "value": "4",
+            "label": "4 columns"
+          }, {
+            "value": "5",
+            "label": "5 columns"
+          },
+          {
+            "value": "6",
+            "label": "6 columns"
+          },
+        ],
+        "default": "1"
+      },
+      {
+        "type": "select",
+        "id": "menu_width",
+        "label": " Menu list/tab width",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 column"
+          },
+          {
+            "value": "2",
+            "label": "2 columns"
+          },
+          {
+            "value": "3",
+            "label": "3 columns"
+          },
+          {
+            "value": "4",
+            "label": "4 columns"
+          }, {
+            "value": "5",
+            "label": "5 columns"
+          },
+        ],
+        "default": "3"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Navigation menu"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Vertical Navigation"
+      }
+    ]
+  }
+  {% endschema %}
