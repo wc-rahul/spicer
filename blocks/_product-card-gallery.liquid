@@ -1,0 +1,295 @@
+
+
+{% capture children %}
+  {% unless block.settings.product == blank %}
+    {% capture product__custom_badges %}
+     {% content_for 'block', type: '_product_badges_od', id: 'product-card-badges' %}
+    {% endcapture %}
+    {% render 'product-card-badges', product: block.settings.product  , product__custom_badges: product__custom_badges %}
+    
+    {% comment %} {%  if settings.quick_add or settings.mobile_quick_add %}
+      {% render 'quick-add', product: block.settings.product, section_id: section.id %}
+    {% endif %} {% endcomment %}
+  {% endunless %}
+{% endcapture %}
+{% capture quick_add %}
+  {% comment %} {%  if settings.quick_add or settings.mobile_quick_add %}
+    {% render 'quick-add', product: block.settings.product, section_id: section.id %}
+  {% endif %} {% endcomment %}
+{% endcapture %}
+
+{% render 'card-gallery', children: children, quick_add: quick_add, icons_style: block.settings.icons_style, icons_shape: block.settings.icons_shape , block: block %}
+
+{% # Title and price for the zoomed out grid view %}
+<div class="product-grid-view-zoom-out--details">
+  {% if block.settings.product == blank %}
+    <h3 class="h4">{{ 'content.product_card_placeholder' | t }}</h3>
+  {% else %}
+    <h3 class="h4">{{ block.settings.product.title }}</h3>
+    <div class="h6">
+      <product-price data-product-id="{{ block.settings.product.id }}">
+        {% render 'price', product_resource: block.settings.product, show_unit_price: false %}
+      </product-price>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:names.product_image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:settings.product"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "portrait",
+          "label": "t:options.portrait"
+        },
+        {
+          "value": "square",
+          "label": "t:options.square"
+        },
+        {
+          "value": "landscape",
+          "label": "t:options.landscape"
+        }
+      ],
+      "default": "portrait",
+      "label": "t:settings.aspect_ratio",
+      "info": "t:info.aspect_ratio_adjusted"
+    },
+    {
+      "type": "header",
+      "content": "t:content.carousel_navigation",
+      "info": "Carousel arrows and pagination are only available for grid layout, when the card is inside another carousel only pagintion will be shown"
+      //"visible_if": "{{ block.settings.layout_type == 'carousel' or block.settings.carousel_on_mobile == true }}"
+    },
+    {
+      "type": "select",
+      "id": "icons_style",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "arrow",
+          "label": "t:options.arrows"
+        },
+        {
+          "value": "chevron",
+          "label": "t:options.chevrons"
+        },
+        {
+          "value": "arrows_large",
+          "label": "t:options.arrows_large"
+        },
+        {
+          "value": "chevron_large",
+          "label": "t:options.chevron_large"
+        }
+      ],
+      "default": "arrow",
+      //"visible_if": "{{ block.settings.layout_type == 'carousel' or block.settings.carousel_on_mobile == true }}"
+    },
+    {
+      "type": "select",
+      "id": "icons_shape",
+      "label": "t:settings.icon_background",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "circle",
+          "label": "t:options.circle"
+        },
+        {
+          "value": "square",
+          "label": "t:options.square"
+        }
+      ],
+      "default": "none",
+      //"visible_if": "{{ block.settings.icons_style != 'none' and block.settings.layout_type == 'carousel' or block.settings.carousel_on_mobile == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "inherit_color_scheme",
+      "label": "t:settings.inherit_color_scheme",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-3",
+      "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+    },
+    {
+      "type":"checkbox",
+      "id":"show_pagination",
+      "label":"Show Pagination",
+      "default":false
+    },
+    {
+      "type": "select",
+      "id": "slideshow_controls_style",
+      "label": "t:settings.pagination",
+      "visible_if": "{{ block.settings.show_pagination == true }}",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:options.dots"
+        },
+        {
+          "value": "counter",
+          "label": "t:options.counter"
+        }
+      ],
+     // "visible_if": "{{ block.settings.media_presentation == 'carousel' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_pagination_position",
+      "label": "Pagination on media",
+      "default": true,
+      "info": "If false, pagination will be below the media",
+      "visible_if": "{{ block.settings.show_pagination == true }}",
+    },
+    { "type":"range",
+      "id":"pagination_padding_top",
+      "label":"Pagination padding top",
+      "min":0,
+      "max":30,
+      "step":1,
+      "unit":"px",
+      "default":5,
+      "visible_if": "{{ block.settings.show_pagination == true }}"
+    },
+    { "type":"range",
+      "id":"pagination_padding_bottom",
+      "label":"Pagination padding bottom",
+      "min":0,
+      "max":30,
+      "step":1,
+      "unit":"px",
+      "default":5,
+      "visible_if": "{{ block.settings.show_pagination == true }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.borders"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "solid",
+          "label": "t:options.solid"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:settings.thickness",
+      "default": 1,
+      "visible_if": "{{ block.settings.border != 'none' }}"
+    },
+    {
+      "type": "range",
+      "id": "border_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:settings.opacity",
+      "default": 100,
+      "visible_if": "{{ block.settings.border != 'none' }}"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_card_media",
+      "category": "t:categories.product",
+      "settings": {
+        "product": "{{ closest.product }}"
+      }
+    }
+  ]
+}
+{% endschema %}

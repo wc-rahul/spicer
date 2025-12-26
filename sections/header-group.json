@@ -1,0 +1,835 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "header_announcements_taRXMA": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_LPwHQp": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Testing",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "announcement_TgWMzG": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "Shop our latest arrivals!",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "weight": "600",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "announcement_rLAeRN": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "Shop our latest arrivals!",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "weight": "600",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_LPwHQp",
+        "announcement_TgWMzG",
+        "announcement_rLAeRN"
+      ],
+      "disabled": true,
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "scheme-2",
+        "divider_width": 0,
+        "padding-block-start": 15,
+        "padding-block-end": 15
+      }
+    },
+    "announcement_bar_JY4PpL": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-link": {
+          "type": "announcement-link",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "gap": 20,
+            "show_arrows": true,
+            "speed": 5,
+            "icon": "return",
+            "width": 24,
+            "link": "#",
+            "text": "Call Us 1300 132 644",
+            "open_in_new_tab": false,
+            "icon_2": "none",
+            "width_2": 24,
+            "link_2": "#",
+            "text_2": "",
+            "open_in_new_tab_2": false,
+            "icon_3": "none",
+            "width_3": 24,
+            "link_3": "#",
+            "text_3": "USP CONTENT 3",
+            "open_in_new_tab_3": false
+          },
+          "blocks": {}
+        },
+        "nav-links": {
+          "type": "nav-links",
+          "static": true,
+          "settings": {
+            "menu": "",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "link_preset": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "disabled": true,
+      "custom_css": [],
+      "name": "Custom Announcement Bar",
+      "settings": {
+        "content_direction": "row",
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 0,
+        "color_scheme": "scheme-2569d687-18c2-478e-9b96-adb32f1ecf73",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 10,
+        "padding-block-end": 10
+      }
+    },
+    "header_section": {
+      "type": "header",
+      "blocks": {
+        "header-logo": {
+          "type": "_header-logo",
+          "static": true,
+          "settings": {
+            "hide_logo_on_home_page": false,
+            "custom_height": 85,
+            "custom_height_mobile": 40,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "header-menu-list": {
+          "type": "_header-menu-list",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "header_menu_DrBmhR": {
+              "type": "_header-menu",
+              "name": "menu",
+              "settings": {
+                "menu": "header-print-packaging-menu",
+                "target_link_title": "Print & Packaging",
+                "featured_products_aspect_ratio": "4 / 5",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "image_border_radius": 0,
+                "product_title_case": "default",
+                "collection_title_case": "default",
+                "color_scheme": "",
+                "menu_font_style": "inverse",
+                "type_font_primary_link": "heading",
+                "type_font_primary_size": "1rem",
+                "type_case_primary_link": "none",
+                "type_font_secondary_link": "subheading",
+                "type_case_secondary_link": "none",
+                "type_font_tertiary_link": "body",
+                "type_case_tertiary_link": "none",
+                "menu_style": "collection_images",
+                "navigation_bar": false,
+                "color_scheme_navigation_bar": "",
+                "drawer_accordion": false,
+                "drawer_accordion_expand_first": false,
+                "drawer_dividers": false
+              },
+              "blocks": {
+                "desktop_mega_menu_GeDDkc": {
+                  "type": "desktop-mega-menu",
+                  "name": "Desktop Mega Menu",
+                  "settings": {
+                    "target_link_title": "Print"
+                  },
+                  "blocks": {
+                    "left_side_menu_frxCEq": {
+                      "type": "_left-side-menu",
+                      "name": "Side Menu",
+                      "settings": {
+                        "menu_left": "header-print-packaging-right"
+                      },
+                      "blocks": {}
+                    },
+                    "menu_links_bHR6ac": {
+                      "type": "_menu-links",
+                      "name": "Menu Links",
+                      "settings": {
+                        "dropdwon_split_columns": "5",
+                        "menu": "print-submenu"
+                      },
+                      "blocks": {}
+                    },
+                    "promotion_card_wBFU7M": {
+                      "type": "_promotion-card",
+                      "name": "Promotion Card",
+                      "settings": {
+                        "promo_image": "shopify://shop_images/Screenshot_10-12-2025_105617_admin.shopify.com_38872f7b-0faa-461e-81b5-6e68e3b0e50a.jpg",
+                        "size": "1",
+                        "promo_head": "ALL NEW  VELLUM RANGE",
+                        "promo_sub": "",
+                        "btn_label": "Button",
+                        "btn_url": "#",
+                        "target": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "left_side_menu_frxCEq",
+                    "menu_links_bHR6ac",
+                    "promotion_card_wBFU7M"
+                  ]
+                },
+                "desktop_mega_menu_Eift4H": {
+                  "type": "desktop-mega-menu",
+                  "name": "Desktop Mega Menu",
+                  "settings": {
+                    "target_link_title": "label"
+                  },
+                  "blocks": {
+                    "menu_links_AHE8Ch": {
+                      "type": "_menu-links",
+                      "name": "Menu Links",
+                      "settings": {
+                        "dropdwon_split_columns": "5",
+                        "menu": "print-submenu"
+                      },
+                      "blocks": {}
+                    },
+                    "resource_picker_3hVpcn": {
+                      "type": "_resource-picker",
+                      "name": "Resource Picker",
+                      "settings": {
+                        "resource": "product",
+                        "collection": "",
+                        "product": "3m-3630",
+                        "target": ""
+                      },
+                      "blocks": {}
+                    },
+                    "resource_picker_cMWfXQ": {
+                      "type": "_resource-picker",
+                      "name": "Resource Picker",
+                      "settings": {
+                        "resource": "collection",
+                        "collection": "architecture-interior-design",
+                        "product": "3m-2080-series",
+                        "target": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "menu_links_AHE8Ch",
+                    "resource_picker_3hVpcn",
+                    "resource_picker_cMWfXQ"
+                  ]
+                }
+              },
+              "block_order": [
+                "desktop_mega_menu_GeDDkc",
+                "desktop_mega_menu_Eift4H"
+              ]
+            },
+            "header_menu_VErLXi": {
+              "type": "_header-menu",
+              "name": "menu",
+              "settings": {
+                "menu": "header-visual-communication",
+                "target_link_title": "Visual Communication",
+                "featured_products_aspect_ratio": "4 / 5",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "image_border_radius": 0,
+                "product_title_case": "default",
+                "collection_title_case": "default",
+                "color_scheme": "",
+                "menu_font_style": "inverse",
+                "type_font_primary_link": "heading",
+                "type_font_primary_size": "1rem",
+                "type_case_primary_link": "none",
+                "type_font_secondary_link": "subheading",
+                "type_case_secondary_link": "none",
+                "type_font_tertiary_link": "body",
+                "type_case_tertiary_link": "none",
+                "menu_style": "collection_images",
+                "navigation_bar": false,
+                "color_scheme_navigation_bar": "",
+                "drawer_accordion": false,
+                "drawer_accordion_expand_first": false,
+                "drawer_dividers": false
+              },
+              "blocks": {
+                "desktop_mega_menu_hmRUbL": {
+                  "type": "desktop-mega-menu",
+                  "name": "Desktop Mega Menu",
+                  "settings": {
+                    "target_link_title": "Resources"
+                  },
+                  "blocks": {
+                    "simple_menu_iKQphi": {
+                      "type": "_simple-menu",
+                      "name": "Simple Menu",
+                      "settings": {
+                        "menu": "header-visual-communication-resource-menu"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "simple_menu_iKQphi"
+                  ]
+                }
+              },
+              "block_order": [
+                "desktop_mega_menu_hmRUbL"
+              ]
+            },
+            "header_menu_yi9nQi": {
+              "type": "_header-menu",
+              "name": "menu",
+              "settings": {
+                "menu": "header-photo-fine-art",
+                "target_link_title": "Photo & Fine Art",
+                "featured_products_aspect_ratio": "4 / 5",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "image_border_radius": 0,
+                "product_title_case": "default",
+                "collection_title_case": "default",
+                "color_scheme": "",
+                "menu_font_style": "inverse",
+                "type_font_primary_link": "heading",
+                "type_font_primary_size": "1rem",
+                "type_case_primary_link": "none",
+                "type_font_secondary_link": "subheading",
+                "type_case_secondary_link": "none",
+                "type_font_tertiary_link": "body",
+                "type_case_tertiary_link": "none",
+                "menu_style": "collection_images",
+                "navigation_bar": false,
+                "color_scheme_navigation_bar": "",
+                "drawer_accordion": false,
+                "drawer_accordion_expand_first": false,
+                "drawer_dividers": false
+              },
+              "blocks": {
+                "desktop_mega_menu_t38qFf": {
+                  "type": "desktop-mega-menu",
+                  "name": "Desktop Mega Menu",
+                  "settings": {
+                    "target_link_title": "Proofing"
+                  },
+                  "blocks": {
+                    "visual_menu_WnApcb": {
+                      "type": "_visual-menu",
+                      "name": "Visual Links",
+                      "settings": {
+                        "metaobject": [
+                          "photo-fine-art-menu-ywsy1ibv",
+                          "photo-fine-art-menu-nxqiq89v",
+                          "photo-fine-art-menu-ts8ni7or",
+                          "photo-fine-art-menu-ic7u6cou",
+                          "photo-fine-art-menu-wmsdgw6e",
+                          "photo-fine-art-menu-3rjw8w1e",
+                          "photo-fine-art-menu-fh5uw3ks"
+                        ],
+                        "target": ""
+                      },
+                      "blocks": {}
+                    },
+                    "promotion_card_U7NjMJ": {
+                      "type": "_promotion-card",
+                      "name": "Promotion Card",
+                      "settings": {
+                        "promo_image": "shopify://shop_images/Screenshot_10-12-2025_105617_admin.shopify.com_38872f7b-0faa-461e-81b5-6e68e3b0e50a.jpg",
+                        "size": "2",
+                        "promo_head": "SUSTAINABLE SATIN",
+                        "promo_sub": "",
+                        "btn_label": "Button",
+                        "btn_url": "#",
+                        "target": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "visual_menu_WnApcb",
+                    "promotion_card_U7NjMJ"
+                  ]
+                }
+              },
+              "block_order": [
+                "desktop_mega_menu_t38qFf"
+              ]
+            }
+          },
+          "block_order": [
+            "header_menu_DrBmhR",
+            "header_menu_VErLXi",
+            "header_menu_yi9nQi"
+          ]
+        },
+        "mobile-drawer-menu": {
+          "type": "mobile-drawer-menu",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "mobile_drawer_nL7UEr": {
+              "type": "_mobile-drawer",
+              "name": "Mobile Drawer",
+              "settings": {
+                "target_link_title": "Print & Packaging",
+                "menu": "header-print-packaging-mobile-menu",
+                "menu_style": "collection_images",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "featured_products_aspect_ratio": "4 / 5",
+                "drawer_accordion": true,
+                "drawer_dividers": false,
+                "drawer_accordion_expand_first": false
+              },
+              "blocks": {
+                "resource_picker_CQpT6U": {
+                  "type": "_resource-picker",
+                  "name": "Resource Picker",
+                  "settings": {
+                    "resource": "collection",
+                    "collection": "architecture-interior-design",
+                    "product": "",
+                    "target": "Print"
+                  },
+                  "blocks": {}
+                },
+                "promotion_card_6WCM78": {
+                  "type": "_promotion-card",
+                  "name": "Promotion Card",
+                  "settings": {
+                    "promo_image": "shopify://shop_images/Screenshot_11-12-2025_115415_www.b-flexitalia.com.jpg",
+                    "size": "1",
+                    "promo_head": "Promo",
+                    "promo_sub": "Subtitle",
+                    "btn_label": "Button",
+                    "btn_url": "",
+                    "target": "Print"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "resource_picker_CQpT6U",
+                "promotion_card_6WCM78"
+              ]
+            },
+            "mobile_drawer_hXkUEw": {
+              "type": "_mobile-drawer",
+              "name": "Mobile Drawer",
+              "settings": {
+                "target_link_title": "Visual Communication",
+                "menu": "header-visual-communication-menu",
+                "menu_style": "collection_images",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "featured_products_aspect_ratio": "4 / 5",
+                "drawer_accordion": true,
+                "drawer_dividers": false,
+                "drawer_accordion_expand_first": false
+              },
+              "blocks": {}
+            },
+            "mobile_drawer_Xw7HkT": {
+              "type": "_mobile-drawer",
+              "name": "Mobile Drawer",
+              "settings": {
+                "target_link_title": "Photo & Fine Art",
+                "menu": "mobile-photo-fine-art",
+                "menu_style": "collection_images",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "featured_products_aspect_ratio": "4 / 5",
+                "drawer_accordion": true,
+                "drawer_dividers": false,
+                "drawer_accordion_expand_first": false
+              },
+              "blocks": {
+                "visual_menu_TM6Ygm": {
+                  "type": "_visual-menu",
+                  "name": "Visual Links",
+                  "settings": {
+                    "metaobject": [
+                      "photo-fine-art-menu-fh5uw3ks",
+                      "photo-fine-art-menu-3rjw8w1e",
+                      "photo-fine-art-menu-wmsdgw6e",
+                      "photo-fine-art-menu-ic7u6cou",
+                      "photo-fine-art-menu-ts8ni7or",
+                      "photo-fine-art-menu-nxqiq89v",
+                      "photo-fine-art-menu-ywsy1ibv"
+                    ],
+                    "target": "Fine Art"
+                  },
+                  "blocks": {}
+                },
+                "promotion_card_LQmPfz": {
+                  "type": "_promotion-card",
+                  "name": "Promotion Card",
+                  "settings": {
+                    "promo_image": "shopify://shop_images/Screenshot_10-12-2025_10576_admin.shopify.com.jpg",
+                    "size": "1",
+                    "promo_head": "Promo",
+                    "promo_sub": "Subtitle",
+                    "btn_label": "Button",
+                    "btn_url": "",
+                    "target": "Fine Art"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "visual_menu_TM6Ygm",
+                "promotion_card_LQmPfz"
+              ]
+            },
+            "mobile_drawer_9V34yJ": {
+              "type": "_mobile-drawer",
+              "name": "Mobile Drawer",
+              "settings": {
+                "target_link_title": "",
+                "menu": "main-menu",
+                "menu_style": "collection_images",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "featured_products_aspect_ratio": "4 / 5",
+                "drawer_accordion": true,
+                "drawer_dividers": false,
+                "drawer_accordion_expand_first": false
+              },
+              "blocks": {}
+            },
+            "mobile_drawer_hABrg6": {
+              "type": "_mobile-drawer",
+              "name": "Mobile Drawer",
+              "settings": {
+                "target_link_title": "",
+                "menu": "main-menu",
+                "menu_style": "collection_images",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "featured_products_aspect_ratio": "4 / 5",
+                "drawer_accordion": true,
+                "drawer_dividers": false,
+                "drawer_accordion_expand_first": false
+              },
+              "blocks": {}
+            },
+            "mobile_drawer_gRHCgt": {
+              "type": "_mobile-drawer",
+              "name": "Mobile Drawer",
+              "settings": {
+                "target_link_title": "",
+                "menu": "main-menu",
+                "menu_style": "collection_images",
+                "featured_collections_aspect_ratio": "16 / 9",
+                "featured_products_aspect_ratio": "4 / 5",
+                "drawer_accordion": true,
+                "drawer_dividers": false,
+                "drawer_accordion_expand_first": false
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "mobile_drawer_nL7UEr",
+            "mobile_drawer_hXkUEw",
+            "mobile_drawer_Xw7HkT",
+            "mobile_drawer_9V34yJ",
+            "mobile_drawer_hABrg6",
+            "mobile_drawer_gRHCgt"
+          ]
+        },
+        "header-top_menu": {
+          "type": "_header-top-menu",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "top_menu_items_aA6nCP": {
+              "type": "top-menu-items",
+              "name": "Top Menu Item",
+              "settings": {
+                "menu_text": "Print & Packaging",
+                "menu_link": "",
+                "menu_image": ""
+              },
+              "blocks": {}
+            },
+            "top_menu_items_dLQdtY": {
+              "type": "top-menu-items",
+              "name": "Top Menu Item",
+              "settings": {
+                "menu_text": "Visual Communication",
+                "menu_link": "",
+                "menu_image": ""
+              },
+              "blocks": {}
+            },
+            "top_menu_items_3CVArT": {
+              "type": "top-menu-items",
+              "name": "Top Menu Item",
+              "settings": {
+                "menu_text": "Photo & Fine Art",
+                "menu_link": "",
+                "menu_image": ""
+              },
+              "blocks": {}
+            },
+            "top_menu_items_ex7Uwz": {
+              "type": "top-menu-items",
+              "name": "Top Menu Item",
+              "settings": {
+                "menu_text": "Architecture & Interior Design",
+                "menu_link": "",
+                "menu_image": ""
+              },
+              "blocks": {}
+            },
+            "top_menu_items_yMgMcw": {
+              "type": "top-menu-items",
+              "name": "Top Menu Item",
+              "settings": {
+                "menu_text": "Industrial Fabrics",
+                "menu_link": "",
+                "menu_image": ""
+              },
+              "blocks": {}
+            },
+            "top_menu_items_hz8QRg": {
+              "type": "top-menu-items",
+              "name": "Top Menu Item",
+              "settings": {
+                "menu_text": "Hardware",
+                "menu_link": "",
+                "menu_image": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "top_menu_items_aA6nCP",
+            "top_menu_items_dLQdtY",
+            "top_menu_items_3CVArT",
+            "top_menu_items_ex7Uwz",
+            "top_menu_items_yMgMcw",
+            "top_menu_items_hz8QRg"
+          ]
+        }
+      },
+      "settings": {
+        "logo_position": "left",
+        "menu_position": "center",
+        "menu_row": "top",
+        "show_search": true,
+        "search_position": "right",
+        "search_row": "top",
+        "show_country": true,
+        "country_selector_style": true,
+        "show_language": false,
+        "localization_position": "right",
+        "localization_row": "top",
+        "show_quick-order": true,
+        "hide_quick-order-mobile": false,
+        "qc_label": "",
+        "qo_link": "",
+        "show_phone": true,
+        "phone_title": "",
+        "phone": "",
+        "show_location": true,
+        "location_title": "",
+        "location": "",
+        "section_width": "page-width",
+        "section_height": "standard",
+        "enable_sticky_header": "scroll-up",
+        "divider_width": 0,
+        "divider_size": "page-width",
+        "border_width": 0,
+        "color_scheme_top": "scheme-1",
+        "color_scheme_bottom": "scheme-1",
+        "color_scheme_transparent": "scheme-6",
+        "enable_transparent_header_home": false,
+        "home_color_scheme": "default",
+        "enable_transparent_header_product": false,
+        "product_color_scheme": "default",
+        "enable_transparent_header_collection": false,
+        "collection_color_scheme": "default"
+      }
+    },
+    "cart_drawer_section_fyWRgm": {
+      "type": "cart-drawer-section",
+      "blocks": {
+        "cart_progress_bar_TiLnUj": {
+          "type": "cart-progress-bar",
+          "name": "Discounts Progress Bar",
+          "settings": {
+            "enable_first_thershold": true,
+            "first_threshold_discounts": "250.00",
+            "first_discount_percentage": "10% Off",
+            "first_threshold_message": "Spend $250 get 10% off",
+            "discount_image_1": "",
+            "enable_second_thershold": true,
+            "second_threshold_discounts": "500.00",
+            "second_discount_percentage": "20% Off",
+            "second_threshold_message": "Spend $500 get 20% off",
+            "discount_image_2": "",
+            "enable_third_thershold": true,
+            "third_threshold_discounts": "750.00",
+            "third_discount_percentage": "30% Off",
+            "third_threshold_message": "Spend $750 get 30% off",
+            "discount_image_3": "",
+            "final_message": "All discounts unlocked",
+            "padding-block-start": 12,
+            "padding-block-end": 0,
+            "padding-inline-start": 5,
+            "padding-inline-end": 5,
+            "color_scheme": "scheme-2"
+          },
+          "blocks": {}
+        },
+        "cart_products_drawer_g6VLFp": {
+          "type": "cart-products-drawer",
+          "name": "t:names.cart_items",
+          "settings": {
+            "gap": 24,
+            "image_ratio": "portrait",
+            "dividers": true,
+            "vendor": false,
+            "call_outs": true,
+            "cart_callout_recently_added_color": "#5aca75",
+            "cart_callout_low_stock_threshold": 3,
+            "cart_callout_low_stock_color": "#ff952d",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "cart_summary_drawer_etgMUk": {
+          "type": "cart-summary-drawer",
+          "name": "t:names.summary",
+          "settings": {},
+          "blocks": {}
+        },
+        "payment_icons_HFhGJe": {
+          "type": "payment-icons",
+          "name": "t:names.payment_icons",
+          "disabled": true,
+          "settings": {
+            "horizontal_alignment": "center",
+            "gap": 5,
+            "padding-block-start": 0,
+            "padding-block-end": 10,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_3eDnxD": {
+          "type": "text",
+          "name": "t:names.text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "collapse_text": false,
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "cart_progress_bar_TiLnUj",
+        "cart_products_drawer_g6VLFp",
+        "cart_summary_drawer_etgMUk",
+        "payment_icons_HFhGJe",
+        "text_3eDnxD"
+      ],
+      "name": "Cart Drawer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "header_announcements_taRXMA",
+    "announcement_bar_JY4PpL",
+    "header_section",
+    "cart_drawer_section_fyWRgm"
+  ]
+}

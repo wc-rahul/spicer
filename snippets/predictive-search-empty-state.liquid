@@ -1,0 +1,295 @@
+{% comment %}
+  Renders the predictive search empty state
+
+  Accepts:
+  - empty_state_collection: @object - collection object
+  - shadow_opacity: @number - shadow opacity
+  - products_test_id: @string - a playwright test id, used to differentiate empty state from 'real' search results
+{% endcomment %}
+<div
+  id="predictive-search-results"
+  class="predictive-search-dropdown predictive-search-empty-state"
+  role="listbox"
+  aria-expanded="true"
+  aria-label="Search suggestions and recommendations"
+  style="--color-shadow: rgb(from var(--color-foreground) r g b / {{ shadow_opacity }});"
+>
+  <!-- Close button -->
+  <button
+    type="button"
+    class="button button-unstyled predictive-search-empty-state__close-button"
+    aria-label="{{ 'accessibility.close_dialog' | t }}"
+    on:click="dialog-component/closeDialog"
+  >
+    <span class="svg-wrapper" aria-hidden="true">
+      {{ 'icon-close.svg' | inline_asset_content }}
+    </span>
+  </button>
+
+  <div class="predictive-search-results__inner">
+    {% liquid
+      assign products = settings.empty_state_collection.products | default: collections.all.products
+      assign default_title = 'content.search_results_resource_products' | t
+      assign title = settings.empty_state_collection.title | default: default_title
+      assign article_1 = settings.empty_state_article
+      assign article_2 = settings.empty_state_article_2
+      assign collection_list = settings.empty_state_collection_list
+    %}
+    
+    <div class="predictive-search-empty-state__layout {% if collection_list == blank and article_1 == blank and article_2 == blank %} empty-collection-articles{% endif %}" aria-label="Search recommendations layout">
+      <!-- Left Column: Categories and Articles -->
+      <div class="predictive-search-empty-state__left " aria-label="Categories and articles" >
+        {% if collection_list != blank %}
+          <div class="predictive-search-empty-state__section" aria-label="Related categories section">
+            <h3 class="predictive-search-empty-state__section-title" id="related-categories" style="text-transform: var(--title-case);">{{ 'content.search_related_categories' | t }}</h3>
+            <ul class="predictive-search-empty-state__categories list-unstyled" aria-labelledby="related-categories" role="list">
+              {% for collection in collection_list limit: 5 %}
+                <li class="predictive-search-empty-state__category-item" role="listitem">
+                  <a href="{{ collection.url }}" class="predictive-search-empty-state__category-link">
+                    {{ collection.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {% if article_1 != blank or article_2 != blank %}
+          <div class="predictive-search-empty-state__section" aria-label="Related articles section">
+            <h3 class="predictive-search-empty-state__section-title" id="related-articles" style="text-transform: var(--title-case);">{{ 'content.search_related_pages' | t }}</h3>
+            <ul class="predictive-search-empty-state__articles list-unstyled" aria-labelledby="related-articles" role="list">
+              {% if article_1 != blank %}
+                <li class="predictive-search-empty-state__article-item" role="listitem">
+                  <a href="{{ article_1.url }}" class="predictive-search-empty-state__article-link">
+                    {{ article_1.title }}
+                  </a>
+                </li>
+              {% endif %}
+              {% if article_2 != blank %}
+                <li class="predictive-search-empty-state__article-item" role="listitem">
+                  <a href="{{ article_2.url }}" class="predictive-search-empty-state__article-link">
+                    {{ article_2.title }}
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Right Column: Products -->
+      <div class="predictive-search-empty-state__right" aria-label="Related products">
+        {% comment %} Only show products section if there are products to display {% endcomment %}
+        {% if products.size > 0 %}
+          <div class="predictive-search-empty-state__products" aria-label="Related products section">
+            {% render 'predictive-search-products-list',
+              products_test_id: products_test_id,
+              title: 'Recommended products',
+              products: products,
+              limit: 4
+            %}
+          </div>
+          
+          <!-- View all results button -->
+          {% comment %} <div class="predictive-search-empty-state__view-all" aria-label="View all results button container">
+            <a href="{{ routes.search_url }}?q=" class="button button-secondary predictive-search-empty-state__view-all-button" aria-label="View all {{ products.size }} search results">
+              View all results ({{ products.size }})
+            </a>
+          </div> {% endcomment %}
+        {% else %}
+          <div class="predictive-search-results__no-results" aria-label="No products found message">
+            <p>{{ 'content.no_products_found' | t }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .predictive-search-empty-state {
+    background-color: var(--color-background);
+    border-radius: var(--style-border-radius-popover);
+    box-shadow: var(--shadow-popover);
+    position: relative;
+  }
+
+  .predictive-search-empty-state__close-button {
+    position: absolute;
+    top: var(--padding-sm);
+    right: var(--padding-sm);
+    width: var(--minimum-touch-target);
+    height: var(--minimum-touch-target);
+    color: var(--color-foreground);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+    transition: transform 0.15s var(--animation-timing-bounce), opacity 0.15s var(--animation-easing);
+    border: none;
+    border-radius: 50%;
+  }
+
+  .predictive-search-empty-state__close-button:hover {
+    background-color: rgba(from var(--color-foreground) r g b / 8%);
+  }
+
+  .predictive-search-empty-state__close-button:active {
+    transform: scale(0.8);
+  }
+
+  .predictive-search-empty-state__close-button:focus {
+    outline: var(--focus-outline-width) solid var(--color-primary);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .predictive-search-empty-state__close-button .svg-wrapper {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+  }
+
+  .predictive-search-results__inner {
+    padding: 50px;
+ 
+  }
+
+  .predictive-search-empty-state__layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    padding-inline: var(--padding-xl);
+    animation: search-element-slide-up var(--animation-speed-medium) var(--animation-timing-bounce) backwards;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .predictive-search-empty-state__layout.empty-collection-articles {
+    grid-template-columns: 1fr;
+  } 
+
+  .predictive-search-empty-state__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-lg);
+    border-right: 1px solid var(--color-border);
+  }
+
+  .predictive-search-empty-state__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-sm);
+    animation: search-element-slide-up var(--animation-speed-medium) var(--animation-timing-bounce) backwards;
+  }
+
+  .predictive-search-empty-state__section:nth-child(1) {
+    animation-delay: 50ms;
+  }
+
+  .predictive-search-empty-state__section:nth-child(2) {
+    animation-delay: 100ms;
+  }
+
+  .predictive-search-empty-state__section-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--color-foreground);
+  }
+
+  .predictive-search-empty-state__categories,
+  .predictive-search-empty-state__articles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-xs);
+    margin: 0;
+  }
+
+  .predictive-search-empty-state__category-link,
+  .predictive-search-empty-state__article-link {
+    color: var(--color-foreground);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color var(--animation-speed-medium) var(--animation-easing);
+    padding: var(--padding-xs) 0;
+    display: block;
+  }
+
+  .predictive-search-empty-state__category-link:hover,
+  .predictive-search-empty-state__article-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .predictive-search-empty-state__category-link:focus,
+  .predictive-search-empty-state__article-link:focus {
+    outline: var(--focus-outline-width) solid var(--color-primary);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .predictive-search-empty-state__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .predictive-search-empty-state__products {
+    margin-bottom: var(--padding-lg);
+  }
+
+  .predictive-search-empty-state__view-all {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--padding-lg);
+    animation: search-element-slide-up var(--animation-speed-medium) var(--animation-timing-bounce) backwards;
+    animation-delay: 150ms;
+  }
+
+  .predictive-search-empty-state__view-all-button {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    padding: var(--padding-sm) var(--padding-lg);
+    border-radius: var(--style-border-radius-inputs);
+    text-decoration: none;
+    font-size: var(--font-size--body-sm);
+    transition: all var(--animation-speed-medium) var(--animation-easing);
+  }
+
+  .predictive-search-empty-state__view-all-button:hover {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    border-color: var(--color-foreground);
+  }
+
+  .predictive-search-empty-state__view-all-button:focus {
+    outline: var(--focus-outline-width) solid var(--color-primary);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  @media screen and (width < 750px) {
+    .predictive-search-empty-state__layout {
+      grid-template-columns: 1fr;
+      gap: var(--padding-lg);
+    }
+    
+    .predictive-search-empty-state__close-button {
+      top: var(--padding-xs);
+      right: var(--padding-xs);
+      display: none;
+    }
+    
+    .predictive-search-results__inner {
+      padding-top: calc(var(--padding-lg) + var(--minimum-touch-target) + var(--padding-xs));
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .predictive-search-empty-state__left {
+     order: 2;
+     border-right: none;
+     border-top: 1px solid var(--color-border);
+     padding-top: 20px;
+   }.
+  
+  }
+{% endstylesheet %}

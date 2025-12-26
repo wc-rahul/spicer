@@ -1,0 +1,16 @@
+{% liquid  
+  capture top_menu_items
+    content_for 'blocks'
+  endcapture
+%}
+
+
+{{ top_menu_items }}
+
+{% schema %}
+{
+  "name": "Top Menu",
+  "tag": null,
+  "blocks": [{"type": "top-menu-items"}]
+}
+{% endschema %}

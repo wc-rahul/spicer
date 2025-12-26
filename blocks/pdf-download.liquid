@@ -1,0 +1,63 @@
+<div class="pdf_downloads">
+    <div class="pdf_inner">
+        {% if block.settings.enable_spec_sheet_1 and block.settings.spec_sheet_1 != blank %}
+            <a target="_blank" href="{{ product.metafields.custom.spec_sheet_1_url.value.url }}">{{ 'icon-file.svg' | inline_asset_content }} {{ block.settings.spec_sheet_1 }}</a>
+        {% endif %}
+        {% if block.settings.enable_spec_sheet_2 and block.settings.spec_sheet_2 != blank %}
+            <a target="_blank" href="{{ product.metafields.custom.spec_sheet_2_url.value.url }}">{{ 'icon-file.svg' | inline_asset_content }} {{ block.settings.spec_sheet_2 }}</a>
+        {% endif %}
+        {% if block.settings.enable_spec_sheet_3 and block.settings.spec_sheet_3 != blank %}
+            <a target="_blank" href="{{ product.metafields.custom.spec_sheet_3_url.value.url }}">{{ 'icon-file.svg' | inline_asset_content }} {{ block.settings.spec_sheet_3 }}</a>
+        {% endif %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "PDF Downloads",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_spec_sheet_1",
+      "label": "Enable Spec Sheet 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "spec_sheet_1",
+      "label": "Spec Sheet 1 Label", 
+      "visible_if": "{{ block.settings.enable_spec_sheet_1 == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_spec_sheet_2",
+      "label": "Enable Spec Sheet 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "spec_sheet_2",
+      "label": "Spec Sheet 2 Label",
+      "visible_if": "{{ block.settings.enable_spec_sheet_2 == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_spec_sheet_3",
+      "label": "Enable Spec Sheet 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "spec_sheet_3",
+      "label": "Spec Sheet 3 Label"
+    },
+    
+  ],
+  "presets": [
+    {
+      "name": "PDF Downloads"
+    }
+  ]
+}
+{% endschema %}

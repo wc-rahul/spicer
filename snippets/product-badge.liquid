@@ -1,0 +1,5 @@
+<div class="product-badges__badge--rectangle product-badge product-badge-type--{{- type -}} " 
+    style="{%- if badge.text_colour -%}color:{{- badge.text_colour -}};{%- endif -%}{%- if badge.background_colour -%}background-color:{{- badge.background_colour -}};{%- endif -%}">
+   <span>{{- badge.text -}}</span>
+   {%- if badge.link -%}<a class="product-badge-link" href="{{- badge.link -}}"></a>{%- endif -%}
+</div>

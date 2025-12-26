@@ -1,0 +1,117 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "wrapper": ".template-product",
+  "sections": {
+    "main": {
+      "type": "product-section",
+      "blocks": {
+        "a2404e6d-d50a-46d9-9814-38397449c97b": {
+          "type": "title",
+          "settings": {}
+        },
+        "ns_estimated_delivery_date_nestscale_edd_product_fUQycP": {
+          "type": "shopify://apps/ns-estimated-delivery-date/blocks/nestscale_edd_product/7446b593-1e01-4150-afbd-7d963204ef10",
+          "settings": {}
+        },
+        "8e866cba-d81a-48be-babc-7015462e77ee": {
+          "type": "color-selector",
+          "settings": {}
+        },
+        "klarna_RBNkpE": {
+          "type": "klarna",
+          "settings": {
+            "text": "Make 3 payments of",
+            "logo": "shopify://shop_images/image_18.png"
+          }
+        },
+        "c8a8e9d0-fed2-470e-b1db-0a182a605f05": {
+          "type": "variant-selector",
+          "settings": {
+            "display_variant_label": false
+          }
+        },
+        "fd489f67-8d07-4029-a872-75d047ade77e": {
+          "type": "add-cart",
+          "settings": {}
+        },
+        "product_usp_KYtDiz": {
+          "type": "product-usp",
+          "settings": {
+            "icon-1": "shopify://shop_images/8185e40301ea8d91c9211cc53f0cb3bc7afa6e63_1.png",
+            "text-1": "Expected delivery",
+            "icon-2": "shopify://shop_images/7fe029048b43f0d6410185da6026b485dd22100e_1.png",
+            "text-2": "Boutique Pick-Up"
+          }
+        },
+        "accordian_tab_meCELD": {
+          "type": "accordian-tab",
+          "settings": {
+            "select": "text",
+            "selector_title": "Shipping & Returns",
+            "text_selector": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>"
+          }
+        },
+        "simple_content_Pf9pKT": {
+          "type": "simple-content",
+          "settings": {
+            "select": "text",
+            "text_selector": "<p>Need assistance? <a href=\"#\" title=\"#\">Chat with our Product Specialist</a></p>"
+          }
+        },
+        "simple_content_7DaX97": {
+          "type": "simple-content",
+          "settings": {
+            "select": "text",
+            "text_selector": "<p>Product Style Code: {{ product.metafields.custom.style_id.value }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "a2404e6d-d50a-46d9-9814-38397449c97b",
+        "ns_estimated_delivery_date_nestscale_edd_product_fUQycP",
+        "8e866cba-d81a-48be-babc-7015462e77ee",
+        "klarna_RBNkpE",
+        "c8a8e9d0-fed2-470e-b1db-0a182a605f05",
+        "fd489f67-8d07-4029-a872-75d047ade77e",
+        "product_usp_KYtDiz",
+        "accordian_tab_meCELD",
+        "simple_content_Pf9pKT",
+        "simple_content_7DaX97"
+      ],
+      "settings": {
+        "enable_zoom": true,
+        "media_ratio": "custom",
+        "media_column": "1",
+        "media_layout": "media-slider",
+        "media_slider": "circles",
+        "sticky_info": true,
+        "choose_size_selector": true,
+        "variant_type": "dropdown"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "title": "Recommended For You",
+        "description": "",
+        "products_to_show": 8,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mb_padding_top": 46,
+        "mb_padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

@@ -1,0 +1,181 @@
+{% comment %}
+  {% assign menu_content_type = block.settings.menu_style | default: 'featured_products' %}
+  {% if block.settings.menu_type == 'tab' %}
+    {% assign menu_vertical_navigation = true %}
+  {% else %}
+    {% assign menu_vertical_navigation = false %}
+  {% endif %}
+
+  {% comment %} {% capture collections_mega_menu %}
+   {% content_for 'block', type: '_collections-mega-menu', id: 'promo_cards_collections', variant: 'navigation_bar', transparent: transparent, menu_vertical_navigation: menu_vertical_navigation %}
+  {% endcapture %}
+
+  {% capture products_mega_menu %}
+    {% content_for 'block', type: '_products-mega-menu', id: 'promo_cards_products', variant: 'navigation_bar', transparent: transparent , menu_vertical_navigation: menu_vertical_navigation%}
+   {% endcapture %} {% endcomment %}
+
+  {% comment %} {% capture content_for_blocks %}
+    {% content_for 'blocks' %}
+  {% endcapture %} {% endcomment %}
+
+  <div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}" data-parent-link="{{block.settings.menu}}">
+    <div
+      class="mega-menu__grid"
+      data-menu-grid-id-global="MegaMenuList-{{block.settings.menu.links.size}}-{{ block.settings.menu }}"
+    >
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+
+  {% style %}
+    [data-menu-grid-id-global="MegaMenuList-{{block.settings.menu.links.size}}-{{ block.settings.menu }}"] {
+      --menu-columns-desktop: {{block.settings.dropdwon_split_columns}};
+      --menu-columns-tablet: 3;
+    }
+    [slot="overflow"]  [data-menu-grid-id-global="MegaMenuList-{{block.settings.menu.links.size}}-{{ block.settings.menu }}"]{
+      --menu-columns-tablet: 1;
+    }
+  {% endstyle %}
+
+  {% comment %}
+    {% render 'mega-menu',
+      parent_link: {{block.settings.menu}},
+      id: id_list,
+      menu_content_type: block.settings.menu_style,
+      content_aspect_ratio: content_aspect_ratio,
+      image_border_radius: image_border_radius,
+      blocks: content_for_blocks,
+      target_link_title: block.settings.target_link_title,
+      collections_mega_menu: collections_mega_menu,
+      products_mega_menu: products_mega_menu,
+      promo_card_number: block.settings.promo_card_number,
+      menu_width: block.settings.menu_width,
+      dropdwon_split_columns: block.settings.dropdwon_split_columns
+
+    %} {% endcomment %}
+{% endcomment %}
+
+{% style %}
+  .left_side__menu {
+    height: fit-content;
+<<<<<<< HEAD
+=======
+    padding:24px;
+    background:var(--color-grey);
+    min-height:100%;
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
+  }
+  .left_submenu_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .left_menu_link {
+<<<<<<< HEAD
+    font-size: 24px;
+    font-weight: 800;
+=======
+    font-size: var(--font-h4--size);
+    font-weight: var(--font-800);
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
+    line-height: 34px;
+    padding-bottom: 24px;
+    display: block;
+    color: inherit;
+  }
+  .left_menu_sublink {
+<<<<<<< HEAD
+    font-size: 14px;
+    line-height: 22.4px;
+    font-weight: 700;
+    display: block;
+    color: inherit;
+=======
+    line-height: 160%;
+    font-weight: var(--font-700);
+    display: block;
+    color: inherit;
+    text-decoration:underline
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
+  }
+  .mega-menu__link {
+    padding: 0;
+  }
+  .mega-menu__column .mega-menu__link--parent {
+    color: inherit;
+  }
+  .mega-menu__link--parent .mega-menu__link-title {
+    font-weight: var(--font-700);
+    text-decoration: underline;
+    line-height: 160%;
+    padding-bottom: 8px;
+  }
+  .mega-menu__link-title {
+    font-size: var(--font-size--paragraph);
+    font-weight: var(--font-500);
+    line-height: 160%;
+  }
+  .mega-menu__column .list-unstyled {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+  .image_promo_blocks_one,
+  .image_promo_blocks_second {
+    position: relative;
+  }
+  .image_promo_blocks_one::before,
+  .image_promo_blocks_second::before {position: absolute;content:'';width: 100%;height: 100%;top: 0;left: 0;background: #000000;z-index: 1;opacity: 0.4;border-radius:8px}
+  .menu_image_text_overlay {
+    position: absolute;
+    padding: 24px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index:3;
+    line-height:100%;
+    color: var(--color-white);
+    white-space:normal;
+    display:flex;
+    flex-direction:column;
+    gap:24px
+  }
+  .menu_image_text_overlay .menu_img_title{margin:0;line-height:142%}
+{% endstyle %}
+
+<div
+  class="mega-menu section--full-width-margin section--{{ section.settings.section_width }}"
+  data-parent-link="{{ block.settings.target_link_title | handleize }}"
+>
+  <div
+    class="mega-menu__grid 33"
+    data-menu-grid-id="MegaMenuList-{{parent_link.links.size}}-{{ parent_link }}"  
+  >
+    {%- content_for 'blocks' -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Desktop Mega Menu",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Menu Settings"
+    },
+    {
+      "type": "text",
+      "id": "target_link_title",
+      "label": "Target menu link title",
+      "info": "Enter the exact name of the menu link where you want to show this mega menu (e.g., 'Bed Bases')"
+    }
+  ],
+  "blocks": [{ "type": "_left-side-menu" }, { "type": "_promotion-card" }, { "type": "_menu-links" },{"type": "_resource-picker"},{"type": "_simple-menu"},{"type": "_visual-menu"}],
+  "presets": [
+    {
+      "name": "Desktop Mega Menu"
+    }
+  ]
+}
+{% endschema %}

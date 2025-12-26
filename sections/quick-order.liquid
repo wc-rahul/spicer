@@ -1,0 +1,734 @@
+<script src="https://www.google.com/recaptcha/api.js?render=6Lc-9YwoAAAAAJOchjaIt-c7CgwJslsEH5XS3IVI"></script>
+<style>
+.product-table thead {
+  background: #ececec;
+  /*! padding-top: 10px; */
+  border-bottom: 1px solid;
+}
+
+.product-table thead th {
+  padding-top: 30px;
+  padding-bottom: 0;
+  font-family: Foundry Sterling Bold;
+  text-align: left;
+}
+
+.product-table {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.product-table tbody tr {
+  border-bottom: 1px solid;
+}
+
+.product-table tbody tr td {
+  vertical-align: middle;
+  /* min-width: 160px; */
+}
+
+.product-search {
+  position: relative;
+}
+.product-search .loader {
+  position: absolute;
+  display: none;
+  right: 10px;
+  top: 20px;
+}
+.product-search .result {
+  position: absolute;
+  display: none;
+}
+
+.product-table .button {
+  min-width: 100px;
+  height: 35px;
+  border-radius: 99999px;
+  width: 140px;
+}
+
+.result {
+  position: absolute;
+  background: white;
+  padding: 5px;
+  z-index: 10000;
+  box-shadow: 1px 1px 4px 0px #a2a2a2;
+  display: none;
+  min-width: 300px;
+}
+
+.result-option {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ececec;
+}
+
+.result-option div:first-child {
+  width: 80px;
+  flex-shrink: 0;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="{{ 'application.js' | asset_url }}"></script>
+<div class="container">
+
+<div data-error-message></div>
+<div data-success-message></div>
+  <table class="product-table">
+      <thead>
+          <tr>
+              <th style="width: 128px;">
+                  Material
+              </th>
+              <th style="width: 500px;">
+                  Description
+              </th>
+              <th>
+                  Price (inc. GST)
+              </th>
+              <th style="width: 110px;">
+                  Qty
+              </th>
+
+              <th>Sales Unit</th>
+              <th width="150px">
+                  <button type="submit" title="Add to cart" class="button primary tocart" id="product-addtocart-button-top">Add to Cart</button>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          
+
+        <tr class="product-row active" id="product0">
+            <input id="product-0" type="hidden">
+            <td class="product-search"><input id="material-0" data-material-input="" type="text" data-index="0" value="161389">
+                <span class="loader"></span>
+                <div class="result" id="result-0"></div>
+            </td>
+            <td><span id="description-0"> <span style="color: gray;">Sirio Metallic Platinum 720x1020 300gsm Wrapped</span> </span></td>
+            <td><span id="price-0"> <span style="color: gray;">$12513.60/1000SHEET</span></span></td>
+            <td>
+                <input class="grid-qty" id="qty-0" data-index="0" type="number" data-sku="" min="0">
+
+            </td>
+
+
+            <td>
+                <span id="unit-0"> <span style="color: gray;">SHEET</span></span>
+            </td>
+            <td>
+                <a title="Remove" class="button primary remove" data-remove-item="" data-index="0">Remove</a>
+            </td>
+        </tr>
+          
+
+              <tr class="product-row active" id="product1">
+                  <input id="product-1" type="hidden">
+                  <td class="product-search"><input id="material-1" data-material-input="" type="text" data-index="1" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-1"></div>
+                  </td>
+                  <td><span id="description-1"></span></td>
+                  <td><span id="price-1"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-1" data-index="1" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-1"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="1">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product2">
+                  <input id="product-2" type="hidden">
+                  <td class="product-search"><input id="material-2" data-material-input="" type="text" data-index="2" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-2"></div>
+                  </td>
+                  <td><span id="description-2"></span></td>
+                  <td><span id="price-2"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-2" data-index="2" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-2"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="2">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product3">
+                  <input id="product-3" type="hidden">
+                  <td class="product-search"><input id="material-3" data-material-input="" type="text" data-index="3" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-3"></div>
+                  </td>
+                  <td><span id="description-3"></span></td>
+                  <td><span id="price-3"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-3" data-index="3" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-3"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="3">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product4">
+                  <input id="product-4" type="hidden">
+                  <td class="product-search"><input id="material-4" data-material-input="" type="text" data-index="4" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-4"></div>
+                  </td>
+                  <td><span id="description-4"></span></td>
+                  <td><span id="price-4"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-4" data-index="4" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-4"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="4">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product5">
+                  <input id="product-5" type="hidden">
+                  <td class="product-search"><input id="material-5" data-material-input="" type="text" data-index="5" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-5"></div>
+                  </td>
+                  <td><span id="description-5"></span></td>
+                  <td><span id="price-5"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-5" data-index="5" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-5"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="5">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product6">
+                  <input id="product-6" type="hidden">
+                  <td class="product-search"><input id="material-6" data-material-input="" type="text" data-index="6" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-6"></div>
+                  </td>
+                  <td><span id="description-6"></span></td>
+                  <td><span id="price-6"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-6" data-index="6" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-6"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="6">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product7">
+                  <input id="product-7" type="hidden">
+                  <td class="product-search"><input id="material-7" data-material-input="" type="text" data-index="7" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-7"></div>
+                  </td>
+                  <td><span id="description-7"></span></td>
+                  <td><span id="price-7"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-7" data-index="7" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-7"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="7">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product8">
+                  <input id="product-8" type="hidden">
+                  <td class="product-search"><input id="material-8" data-material-input="" type="text" data-index="8" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-8"></div>
+                  </td>
+                  <td><span id="description-8"></span></td>
+                  <td><span id="price-8"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-8" data-index="8" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-8"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="8">Remove</a>
+                  </td>
+              </tr>
+          
+
+              <tr class="product-row active" id="product9">
+                  <input id="product-9" type="hidden">
+                  <td class="product-search"><input id="material-9" data-material-input="" type="text" data-index="9" value="">
+                      <span class="loader"></span>
+                      <div class="result" id="result-9"></div>
+                  </td>
+                  <td><span id="description-9"></span></td>
+                  <td><span id="price-9"></span></td>
+                  <td>
+                      <input class="grid-qty" id="qty-9" data-index="9" type="number" data-sku="" min="0">
+
+                  </td>
+
+
+                  <td>
+                      <span id="unit-9"></span>
+                  </td>
+                  <td>
+                      <a title="Remove" class="button primary remove" data-remove-item="" data-index="9">Remove</a>
+                  </td>
+              </tr>
+                      </tbody>
+      <tfoot>
+          <tr>
+              <th>
+
+              </th>
+              <th>
+
+              </th>
+
+              <th>
+
+              </th>
+
+
+              <th>
+
+              </th>
+
+              <th></th>
+              <th>
+                  <button type="submit" title="Add to cart" class="button primary tocart" id="product-addtocart-button">Add to Cart</button>
+              </th>
+          </tr>
+      </tfoot>
+  </table>
+
+</div>
+
+<script>
+"use strict";
+
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+//search//
+$('[data-material-input').on('keyup', function (e) {
+  if (e.keyCode == 13) {
+    e.preventDefault();
+  }
+  var index = $(this).data('index');
+  var resultDiv = $('#result-' + index);
+  if ($(this).val().length > 3) {
+    var loader = $(this).siblings('.loader');
+    loader.show();
+    var query = $(this).val();
+    var url = "".concat('https://production-api-2mvzuwrzca-ts.a.run.app', "/search/material?sku=").concat(query);
+    theme.utils.fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': '1'
+      }
+    }).then(function (result) {
+      resultDiv.find('.result-option').remove();
+      resultDiv.hide();
+      var productTemp = [];
+      if (Array.isArray(result) && result.length > 0) {
+        result.forEach(function (product) {
+          if (!productTemp.includes(product.sku)) {
+            resultDiv.append($('<div></div>').append($('<div></div>').text(parseInt(product.sku))).append($('<div></div>').text(product.description)).data('productId', product.productId).data('variantId', product.variantId).data('index', index).data('prm', product.prm).data('sku', product.sku).data('description', product.description).data('uom', product.uom).data('orderMultiple', product.order_multiple).data('priceMultiplier', product.price_multiplier).data('price', product.price).data('lm', product.lineal_metres).attr('class', 'result-option'));
+            productTemp.push(product.sku);
+          }
+        });
+      } else {
+        resultDiv.append($('<div></div>').text('No result found.').attr('class', 'result-option'));
+      }
+      resultDiv.show();
+    })["catch"](function (error) {})["finally"](function () {
+      loader.hide();
+    });
+  }
+});
+$(document).on('click', '.result-option', function () {
+  var _window$customer;
+  var self = $(this);
+  $('#qty-' + self.data('index')).val('');
+  $('#qty-' + self.data('index')).data('lastInput', '');
+  $('#material-' + self.data('index')).val(+self.data('sku'));
+  var customerId = (_window$customer = window.customer) === null || _window$customer === void 0 ? void 0 : _window$customer.sapId;
+  var url = "".concat(theme.ENV.apiUrl, "/customers/pricing/").concat(+$(this).data('prm'), "?material=").concat($(this).data('sku'), "&qty=").concat($(this).data('orderMultiple')).concat(!!customerId ? "&customer=".concat(customerId) : '');
+  theme.utils.fetch(url, {
+    headers: {
+      'ngrok-skip-browser-warning': '1'
+    }
+  }).then(function (result) {
+    var priceUM = result.price;
+    var price = "$".concat((priceUM * parseInt(self.data('priceMultiplier'))).toFixed(2));
+    $('#qty-' + self.data('index')).data('productId', self.data('productId'));
+    $('#qty-' + self.data('index')).data('variant', self.data('variantId'));
+    $('#description-' + self.data('index')).html(self.data('description'));
+    $('#unit-' + self.data('index')).html(self.data('uom'));
+    $('#qty-' + self.data('index')).data('prm', self.data('prm'));
+    if (parseInt(self.data('orderMultiple')) != 1) {
+      $('#qty-' + self.data('index')).data('restrict-qty', 1);
+      $('#qty-' + self.data('index')).data('multiplier', +self.data('orderMultiple'));
+    }
+    $('#price-' + self.data('index')).html(price + '/' + self.data('priceMultiplier') + self.data('uom'));
+    $('#qty-' + self.data('index')).data('uom', self.data('uom'));
+    $('#qty-' + self.data('index')).data('priceMultiplier', self.data('priceMultiplier'));
+    $('#qty-' + self.data('index')).data('product', self.data('sku'));
+    $('#qty-' + self.data('index')).attr('name', 'qty[' + self.data('id') + ']');
+    $('#qty-' + self.data('index')).data('lm', self.data('lm'));
+    $('#qty-' + self.data('index')).data('index', self.data('index'));
+    self.closest('.result').hide();
+  })["catch"](function (err) {
+    $('#qty-' + self.data('index')).data('productId', self.data('productId'));
+    $('#qty-' + self.data('index')).data('variant', self.data('variantId'));
+    $('#description-' + self.data('index')).html(self.data('description'));
+    $('#unit-' + self.data('index')).html(self.data('uom'));
+    $('#qty-' + self.data('index')).data('prm', self.data('prm'));
+    if (parseInt(self.data('orderMultiple')) != 1) {
+      $('#qty-' + self.data('index')).data('restrict-qty', 1);
+      $('#qty-' + self.data('index')).data('multiplier', self.data('orderMultiple'));
+    }
+    var price = parseFloat(self.data('price')) * parseInt(self.data('priceMultiplier'));
+    $('#price-' + self.data('index')).html('$' + price.toFixed(2) + '/' + self.data('priceMultiplier') + self.data('uom'));
+    $('#qty-' + self.data('index')).data('uom', self.data('uom'));
+    $('#qty-' + self.data('index')).data('priceMultiplier', self.data('priceMultiplier'));
+    $('#qty-' + self.data('index')).data('product', self.data('sku'));
+    $('#qty-' + self.data('index')).attr('name', 'qty[' + self.data('id') + ']');
+    $('#qty-' + self.data('index')).data('lm', self.data('lm'));
+    $('#qty-' + self.data('index')).data('index', self.data('index'));
+    self.closest('.result').hide();
+  });
+});
+$('input[id*=qty-]').on('keydown', function (e) {
+  if (e.keyCode == 13) {
+    e.preventDefault();
+    return false;
+  }
+  if (!/^-?\d*$/.test(e.key) && e.keyCode != 8) {
+    e.preventDefault();
+  }
+});
+function _checkStockStatus(variant, qty, lastInput) {
+  var state = theme.utils.getCookie('user-state') || 'NSW';
+  var plant = window.customer ? window.customer.plant : '';
+  var item = {
+    variantId: variant.id,
+    material: variant.sku,
+    prm: variant.prm,
+    qty: qty,
+    key: variant.key
+  };
+  var url1 = "".concat(theme.ENV.apiUrl, "/stock?materialNo=").concat(+variant.sku, "&state=").concat(state).concat(!!plant ? "&plant=".concat(plant) : '');
+  var url2 = "".concat(theme.ENV.apiUrl, "/stock-status?materialNo=").concat(variant.sku, "&state=").concat(state, "&qty=").concat(qty);
+  theme.utils.fetch(url1, {
+    headers: {
+      'ngrok-skip-browser-warning': '1'
+    }
+  }).then(function (result) {
+    var stock = Math.round(+result);
+    if (stock < qty) {
+      return theme.utils.fetch(url2, {
+        headers: {
+          'ngrok-skip-browser-warning': '1'
+        }
+      }).then(function (data) {
+        if (data.length) {
+          var backorder_date = "".concat(data[0].date.slice(6, 8), "/").concat(data[0].date.slice(4, 6), "/").concat(data[0].date.slice(0, 4));
+          var order_multiplier = variant.order_multiplier;
+          var available_qty = order_multiplier != 1 ? Math.floor(stock / order_multiplier) * order_multiplier : stock;
+          var message = stock == 0 ? 'item ' + parseInt(variant.sku) + ' is out of stock right now, If you are happy to wait for full delivery on ' + backorder_date + ', please continue to checkout' : 'We only have ' + available_qty + 'available for immediate delivery. If you want partial delivery please update your cart qty to ' + available_qty + '. If you are happy to wait for full delivery on ' + backorder_date + ', then continue to checkout';
+          vex.dialog.confirm({
+            message: message,
+            callback: function callback(value) {
+              if (value) {
+                $('#qty-' + variant.index).val(qty);
+              } else {
+                $('#qty-' + variant.index).val(lastInput);
+              }
+            }
+          });
+        } else {
+          vex.dialog.confirm({
+            message: 'item ' + parseInt(variant.sku) + ' is low in, or out of stock at this stage, please contact a  sales representative for more information.',
+            callback: function callback(value) {
+              $('#qty-' + variant.index).val(lastInput);
+            }
+          });
+        }
+      })["catch"](function (err) {
+        console.error(err);
+        $('#qty-' + variant.index).val(lastInput);
+      })["finally"](function () {
+        return;
+      });
+    }
+  })["catch"](function (err) {
+    console.warn('cannot load stock');
+  });
+}
+$('input[id*=qty-]').on('blur', function (e) {
+  var inputQty = $(this);
+  var lastInput = inputQty.data('last-input') || '';
+  if (inputQty.val() == '') {
+    inputQty.val(lastInput);
+    return;
+  }
+  if (inputQty.val() !== '' && +inputQty.val() > 0 && inputQty.val() != lastInput) {
+    var id = inputQty.data('variant');
+    var qty = +inputQty.val();
+    inputQty.data('lastInput', inputQty.val());
+    var multiplier = inputQty.data('restrict-qty') !== undefined ? parseInt(inputQty.data('multiplier')) : !!inputQty.data('lm') ? +inputQty.data('lm') : 1;
+    var variant = {
+      id: id,
+      sku: inputQty.data('product'),
+      prm: inputQty.data('prm'),
+      order_multiplier: multiplier,
+      key: inputQty.data('key'),
+      index: inputQty.data('index')
+    };
+    var is_order_by_lm_available = !!inputQty.data('lm');
+    var next_available_qty = qty;
+    if (!!inputQty.data('restrict-qty') || is_order_by_lm_available) {
+      if (qty % multiplier !== 0 && !is_order_by_lm_available || is_order_by_lm_available && qty != ~~qty && qty % multiplier !== 0) {
+        next_available_qty = Math.ceil(qty / multiplier) * multiplier;
+        if (is_order_by_lm_available) next_available_qty = +next_available_qty.toFixed(2);
+        vex.dialog.confirm({
+          message: (is_order_by_lm_available ? 'Decimal qty' : 'Order quantity') + ' must be in multiples of ' + multiplier + ' for this product - would you like to update order quantity to  ' + next_available_qty + '?',
+          callback: function callback(value) {
+            if (value) {
+              inputQty.val(next_available_qty);
+              _checkStockStatus(variant, next_available_qty, lastInput);
+            } else {
+              inputQty.val(lastInput);
+            }
+          }
+        });
+        return;
+      }
+    }
+    _checkStockStatus(variant, next_available_qty, lastInput);
+  }
+});
+
+//remove item//
+$('[data-remove-item]').on('click', function () {
+  var index = $(this).data('index');
+  $('#material-' + index).val('');
+  $('#description-' + index).text('');
+  $('#unit-' + index).text('');
+  $('#price-' + index).text('');
+  $('#qty-' + index).removeData(['restrict-qty', 'multiplier', 'productId', 'variant', 'lm', 'priceMultiplier', 'uom', 'prm', 'lastInput']);
+  $('#qty-' + index).val('');
+});
+$('#product-addtocart-button-top').on('click', function () {
+  var _window$customer2, _ShopifyAnalytics;
+  var data = [];
+  var lines_to_delete = {};
+  var cart = window.cart;
+  var add = [];
+  var update = [];
+  $('.grid-qty').each(function () {
+    var qty = +$(this).val();
+    var shouldUpdate = false;
+    if (!!qty) {
+      var sku = $(this).data('product');
+      var id = $(this).data('variant');
+      if (cart && cart.items.length > 0) {
+        var items_in_cart = cart.items.find(function (item) {
+          return +item.sku == +sku;
+        });
+        var index = cart.items.map(function (item) {
+          return +item.sku;
+        }).indexOf(+sku);
+        if (items_in_cart && items_in_cart.properties && items_in_cart.properties.qty) {
+          qty = qty + +items_in_cart.properties.qty;
+          id = items_in_cart.id;
+          shouldUpdate = true;
+        }
+      }
+      if (shouldUpdate) {
+        update.push({
+          index: index + 1,
+          id: id
+        });
+      } else {
+        add.push(id);
+      }
+      data.push({
+        variantId: id,
+        qty: qty,
+        material: $(this).data('product'),
+        prm: $(this).data('prm')
+      });
+    }
+  });
+  var customer = ((_window$customer2 = window.customer) === null || _window$customer2 === void 0 ? void 0 : _window$customer2.sapId) || '143282';
+  var session = (_ShopifyAnalytics = ShopifyAnalytics) === null || _ShopifyAnalytics === void 0 || (_ShopifyAnalytics = _ShopifyAnalytics.lib) === null || _ShopifyAnalytics === void 0 || (_ShopifyAnalytics = _ShopifyAnalytics.user()) === null || _ShopifyAnalytics === void 0 || (_ShopifyAnalytics = _ShopifyAnalytics.traits()) === null || _ShopifyAnalytics === void 0 ? void 0 : _ShopifyAnalytics.uniqToken;
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6Lc-9YwoAAAAAJOchjaIt-c7CgwJslsEH5XS3IVI', {
+      action: 'submit'
+    }).then(function (token) {
+      var url = "".concat(theme.ENV.apiUrl, "/cart?token=").concat(token, "&page=quickorder");
+      theme.utils.fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': '1'
+        },
+        body: JSON.stringify({
+          token: 'KIi16KkJ3HEjwydO7S582tKkESRZJsaJDlH2ckDXZ1OJjmHp6W',
+          variants: data,
+          session: session,
+          customer: customer
+        })
+      }).then(function (result) {
+        var items = result;
+        var itemsToAdd = items.filter(function (i) {
+          return add.includes(+i.id);
+        });
+        var itemsToChange = update.map(function (u) {
+          var item = items.find(function (i) {
+            return i.id == u.id;
+          });
+          if (item) {
+            return {
+              line: u.index,
+              properties: _objectSpread(_objectSpread({}, item.properties), {}, {
+                _hmac: item.hmac
+              })
+            };
+          } else {
+            return {
+              id: u.id,
+              quantity: 0
+            };
+          }
+        });
+        var promises = [];
+        if (itemsToAdd.length) {
+          promises.push(fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              items: itemsToAdd.map(function (i) {
+                return _objectSpread(_objectSpread({}, i), {}, {
+                  properties: _objectSpread(_objectSpread({}, i.properties), {}, {
+                    _hmac: i.hmac
+                  })
+                });
+              })
+            })
+          }));
+        }
+        var _iterator = _createForOfIteratorHelper(itemsToChange),
+          _step;
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var item = _step.value;
+            promises.push(fetch("/cart/change.js", {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(item)
+            }));
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+        Promise.all(promises).then(function () {
+          theme.utils.updateBadge();
+          emptyForm();
+          $('[data-success-message]').text('Items have been added to cart').show();
+          setTimeout(function () {
+            $('[data-success-message]').text('').hide();
+          }, 2000);
+          //self._enableAddToCart()
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $('[data-success-message]').offset().top - 50
+          }, 1000);
+        })["catch"](function handleError(error) {
+          console.log('Error' + error);
+          $('[data-error-message]').append(error.message).show();
+          setTimeout(function () {
+            $('[data-error-message]').text('').hide();
+          }, 3000);
+        });
+      });
+    });
+  });
+});
+function emptyForm() {
+  $('.grid-qty').removeData(['restrict-qty', 'multiplier', 'productId', 'variant', 'lm', 'priceMultiplier', 'uom', 'prm', 'lastInput']).val('');
+  $('[id*=material-]').val('');
+  $('[id*=description-]').text('');
+  $('[id*=unit-]').text('');
+  $('[id*=price-]').text('');
+}
+</script>

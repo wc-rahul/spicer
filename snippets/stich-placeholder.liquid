@@ -1,0 +1,37 @@
+
+<fieldset class="variant-option variant-option--buttons variant-option--swatches placeholder-swatches">
+   
+      <label class="variant-option__button-label variant-option__button-label--has-swatch">
+        <input type="radio" name="Color-AVFkxL3FPT2NTS1NhQ__variant_picker_R3rGDr-9770626646333" value="Green" aria-label="Green" data-input-id="1-0" data-option-value-id="4635978924349" data-option-available="true" data-connected-product-url="" data-variant-id="49728962724157" >
+  <span class="swatch {%if block.settings.stitching_context == 'product_page' %} swatch--unscaled{% endif %}" style="--swatch-background: url({{settings.logo | image_url: width: 64}});">
+  </span>
+      </label>
+      <label class="variant-option__button-label variant-option__button-label--has-swatch">
+        <input type="radio" name="Color-AVFkxL3FPT2NTS1NhQ__variant_picker_R3rGDr-9770626646333" value="Brown" aria-label="Brown" aria-disabled="true" data-input-id="1-1" data-option-value-id="4635978957117" data-option-available="false" data-connected-product-url="" data-variant-id="49869576241469" c>
+       
+  <span class="swatch {%if block.settings.stitching_context == 'product_page' %} swatch--unscaled{% endif %}" style="--swatch-background: url({{settings.logo | image_url: width: 64}});">
+  </span>
+
+      </label>
+      <label class="variant-option__button-label variant-option__button-label--has-swatch">
+        <input type="radio" name="Color-AVFkxL3FPT2NTS1NhQ__variant_picker_R3rGDr-9770626646333" value="Beige" aria-label="Beige" data-input-id="1-2" data-option-value-id="4635978989885" data-option-available="true" data-connected-product-url="" data-variant-id="49869576274237" >
+        
+  <span class="swatch {%if block.settings.stitching_context == 'product_page' %} swatch--unscaled{% endif %}" style="--swatch-background: url({{settings.logo | image_url: width: 64}});">
+  </span>
+      </label>
+  </fieldset>
+
+  {% style %}
+  .placeholder-swatches span.swatch{
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+  }
+.placeholder-swatches span.swatch{
+    color: var(--color-selected-variant-text);
+    background-color: var(--color-selected-variant-background);
+    border-color: var(--color-selected-variant-border);
+    transition: background-color var(--animation-speed) var(--animation-easing), border-color var(--animation-speed) var(--animation-easing);
+}
+    {% endstyle %}
+                

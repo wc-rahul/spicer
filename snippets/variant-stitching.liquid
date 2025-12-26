@@ -1,0 +1,113 @@
+{% comment %}
+  This is a swatches variant picker. It is used to display the variant picker in the product-swatches block.
+{% endcomment %}
+
+<stitching-product-picker-component
+    data-product-id="{{ product_resource.id }}"
+    data-product-url="{{ product_resource.url }}"
+    ref="swatchesVariantPicker"
+  >
+    <form>
+     
+        {%- liquid
+          assign swatch_count = products_stitching | size
+        -%}
+     
+        {% if swatch_count == 0 %}
+          {% continue %}
+        {% endif %}
+
+        {% if block.settings.stitching_context != 'product_card' and swatch_count > 0%}
+          {% for prod in product.metafields.shopify.color-pattern.value%}
+            {% assign color_name =  prod.label %} 
+            {% break %}
+        {% endfor %}
+          <legend>
+            {{ block.settings.stitching_label }}
+              <span class="variant-option__swatch-value">{{ color_name }}</span>
+          </legend>
+        {% endif %}
+  
+        <fieldset class="variant-option variant-option--buttons variant-option--swatches">
+        {%- for product_option in products_stitching -%}
+            
+             {% if swatch_count == 0 %}
+                {% continue %}
+              {% endif %}
+            
+                {% liquid
+                assign featured_media = product_option.featured_media
+    
+                # If the variant has no featured media, and we have a combined listing product, then fall back to using the
+                # featured media of the child product that is linked to this option value.
+                if featured_media == blank and product_option.url
+                    assign featured_media = product_option.featured_media
+                endif
+                %}
+
+                {% assign image_swatch_metaobject = '' %}
+                {% for prod in product_option.metafields.shopify.color-pattern.value%}
+                    {% assign color_name =  prod.label %}   
+                    {% assign color_swatch =  prod.color %} 
+                    {% if prod.image != blank and prod.image != null %}
+                        {% assign image_swatch_metaobject =  prod.image | image_url %} 
+                    {% endif %}
+                    {% break %}
+                {% endfor %}
+
+                
+                <li class="variant-option__swatch product_stitching_item {% if block.settings.stitching_context == 'product_card' %} product_stitching_item_card {% endif %}" role="button" data-product-handle="/products/{{product_option.handle}}" data-block-id="{{ block.id }}">
+                <label
+                    data-media-id="{{ featured_media.id }}"
+                    data-product-handle="{{ product_option.handle }}"
+                    class="variant-option__button-label variant-option__button-label--has-swatch"
+                    on:pointerenter="product-card/previewVariant/{{ featured_media.id }}"
+                    on:pointerleave="product-card/resetVariant"
+                >
+                    <input
+                    type="radio"
+                    name="{{ product_option.name | escape }}-{{ product_option.id }}-swatch"
+                    value="{{ product_option_value | escape }}"
+                    aria-label="{{ product_option.name }}"
+                    data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
+                    data-option-media-id="{{ featured_media.id }}"
+                    data-option-value-id="{{ product_option.id }}"
+                    data-option-available="{{ product_option.available }}"
+                    data-connected-product-url="{{ product_option.url }}"
+                    {% if product_option.selected_or_first_available_variant.id %}
+                        data-variant-id="{{ product_option.selected_or_first_available_variant.id }}"
+                    {% endif %}
+                    {% if product_option.handle == product_resource.handle %}
+                      checked
+                    {% endif %}
+                    >
+                   
+                    {% if block.settings.stitching_context != 'product_card' %}
+                      {% render 'stitch',
+                          swatch: product_option_value.swatch,
+                          variant_image: featured_media,
+                          swatch_color: color_swatch,
+                          swatch_image: image_swatch_metaobject,
+                            mode: 'unscaled'
+                      %}
+                    {% else %}
+                      {% render 'stitch',
+                        swatch: product_option_value.swatch,
+                        variant_image: featured_media,
+                        swatch_color: color_swatch,
+                        swatch_image: image_swatch_metaobject
+                    %}
+                    {% endif %}
+                    {% render 'strikethrough-variant', product_option: product_option %}
+                </label>
+                </li>
+          
+      {%- endfor -%}
+     
+    </fieldset>
+      <script type="application/json">
+        {{ product_resource.selected_or_first_available_variant | json }}
+      </script>
+    </form>
+  </stitching-product-picker-component>
+  

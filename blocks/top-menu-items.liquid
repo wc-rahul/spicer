@@ -1,0 +1,37 @@
+<a class="menu_item" data-menu="{{ block.settings.menu_text | handleize }}" {% if block.settings.menu_link != blank %} href="{{ block.settings.menu_link }}" {% endif %}>
+  {% if block.settings.menu_image != blank %}
+    {{ block.settings.menu_image }}
+  {% else %}
+    {{ block.settings.menu_text }}
+  {% endif %}
+</a>
+
+
+{% schema %}
+{
+  "name": "Top Menu Item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "menu_text",
+      "label": "Menu Text"
+    },
+    {
+      "type": "url",
+      "id": "menu_link",
+      "label": "Menu Link",
+    },
+    {
+      "type": "html",
+      "id": "menu_image",
+      "label": "Menu Image SVG Code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Top Menu Item",
+    }
+  ]
+}
+{% endschema %}
