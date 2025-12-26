@@ -1375,7 +1375,7 @@
         "step": 2,
         "unit": "px",
         "label": "Mobile Padding",
-        "default":48
+        "default": 48
       }
     ]
   },
@@ -1471,33 +1471,33 @@
         "default": "scheme-5"
       },
       {
-        "type":"checkbox",
-        "id":"show_default_badges",
-        "label":"Show Default Badges",
-        "default":true,
-        "info":"If enabled, the default badges sold out and sale will be shown on the product card image."
+        "type": "checkbox",
+        "id": "show_default_badges",
+        "label": "Show Default Badges",
+        "default": true,
+        "info": "If enabled, the default badges sold out and sale will be shown on the product card image."
       },
-    {
-      "type": "header",
-      "content": "Viewed/Incart Badge"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_viewd_in_cart_badges",
-      "label": "Enable Viewed and In Cart Badges",
-      "default": false
-    },
-    {
-      "type": "color_scheme",
-      "id": "badge_viewed_color_scheme",
-      "label": "Viewed Badge Color",
-      "default": "scheme-3"
-     
-    },{
-      "type": "color_scheme",
-      "id": "badge_incart_color_scheme",
-      "label": "In Cart Badge Color",
-      "default": "scheme-2"
+      {
+        "type": "header",
+        "content": "Viewed\/Incart Badge"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_viewd_in_cart_badges",
+        "label": "Enable Viewed and In Cart Badges",
+        "default": false
+      },
+      {
+        "type": "color_scheme",
+        "id": "badge_viewed_color_scheme",
+        "label": "Viewed Badge Color",
+        "default": "scheme-3"
+      },
+      {
+        "type": "color_scheme",
+        "id": "badge_incart_color_scheme",
+        "label": "In Cart Badge Color",
+        "default": "scheme-2"
       },
       {
         "type": "header",
@@ -1508,23 +1508,74 @@
         "id": "font_size_badges",
         "label": "t:settings.size",
         "options": [
-          { "value": "", "label": "t:options.default" },
-          { "value": "0.625rem", "label": "10px" },
-          { "value": "0.6875rem", "label": "11px" },
-          { "value": "0.75rem", "label": "12px" },
-          { "value": "0.8125rem", "label": "13px" },
-          { "value": "0.875rem", "label": "14px" },
-          { "value": "0.9375rem", "label": "15px" },
-          { "value": "1rem", "label": "16px" },
-          { "value": "1.0625rem", "label": "17px" },
-          { "value": "1.125rem", "label": "18px" },
-          { "value": "1.1875rem", "label": "19px" },
-          { "value": "1.25rem", "label": "20px" },
-          { "value": "1.3125rem", "label": "21px" },
-          { "value": "1.375rem", "label": "22px" },
-          { "value": "1.4375rem", "label": "23px" },
-          { "value": "1.5rem", "label": "24px" },
-          { "value": "1.5625rem", "label": "25px" }
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "0.625rem",
+            "label": "10px"
+          },
+          {
+            "value": "0.6875rem",
+            "label": "11px"
+          },
+          {
+            "value": "0.75rem",
+            "label": "12px"
+          },
+          {
+            "value": "0.8125rem",
+            "label": "13px"
+          },
+          {
+            "value": "0.875rem",
+            "label": "14px"
+          },
+          {
+            "value": "0.9375rem",
+            "label": "15px"
+          },
+          {
+            "value": "1rem",
+            "label": "16px"
+          },
+          {
+            "value": "1.0625rem",
+            "label": "17px"
+          },
+          {
+            "value": "1.125rem",
+            "label": "18px"
+          },
+          {
+            "value": "1.1875rem",
+            "label": "19px"
+          },
+          {
+            "value": "1.25rem",
+            "label": "20px"
+          },
+          {
+            "value": "1.3125rem",
+            "label": "21px"
+          },
+          {
+            "value": "1.375rem",
+            "label": "22px"
+          },
+          {
+            "value": "1.4375rem",
+            "label": "23px"
+          },
+          {
+            "value": "1.5rem",
+            "label": "24px"
+          },
+          {
+            "value": "1.5625rem",
+            "label": "25px"
+          }
         ],
         "default": "0.8125rem"
       },
@@ -2137,7 +2188,7 @@
         "id": "quick_add",
         "label": "t:settings.quick_add",
         "default": true
-      }, 
+      },
       {
         "type": "select",
         "id": "desktop_quick_add_style",
@@ -2195,12 +2246,12 @@
       {
         "type": "page",
         "id": "empty_state_article",
-        "label": "Trending Pages",
+        "label": "Trending Pages"
       },
       {
         "type": "page",
         "id": "empty_state_article_2",
-        "label": "Trending Pages",
+        "label": "Trending Pages"
       },
       {
         "type": "collection_list",
@@ -2214,19 +2265,19 @@
         "id": "empty_state_show_recently_viewed_products",
         "label": "Show recently viewed products",
         "default": true
-      }, 
+      },
       {
         "type": "header",
         "content": "t:names.predictive_search"
       },
       {
-        "type":"range",
-        "id":"max_products_to_show",
-        "label":"Max products to show in the search results",
-        "min":1,
-        "max":8,
-        "step":1,
-        "unit":"p",
+        "type": "range",
+        "id": "max_products_to_show",
+        "label": "Max products to show in the search results",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "unit": "p",
         "default": 4
       },
       {
@@ -2273,16 +2324,6 @@
         "label": "Show badges",
         "default": true
       },
-      // {
-      //   "type": "range",
-      //   "id": "product_corner_radius",
-      //   "min": 0,
-      //   "max": 32,
-      //   "step": 1,
-      //   "unit": "px",
-      //   "label": "t:settings.product_corner_radius",
-      //   "default": 0
-      // },
       {
         "type": "range",
         "id": "card_corner_radius",
@@ -2293,7 +2334,6 @@
         "label": "t:settings.card_corner_radius",
         "default": 0
       }
-      
     ]
   },
   {

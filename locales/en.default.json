@@ -332,7 +332,17 @@
         "low_stock": "Only {{ qyt }} left in stock",
         "recently_added": "Just added"
       }
+<<<<<<< HEAD
+    },
+    "bulk-order":{
+      "in-stock":"In Stock",
+      "out-of-stock":"Out of Stock",
+      "add-to-order":"Add to Order",
+      "filter-product":"Filter Product"
+    },
+=======
 
     }
+>>>>>>> e662a838418fd56c8fc95ce268c1162d94c3acc0
   }
 }

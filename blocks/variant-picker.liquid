@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign product_resource = block.settings.product
   if request.visual_preview_mode and product_resource == blank
@@ -28,6 +26,12 @@
       "id": "variant_dropdown",
       "label": "Fix variant dropdown",
       "info": "Please enter a variant name. If a name is entered, a dropdown will be created for that specific variant."
+    },
+    {
+      "type": "text",
+      "id": "variant_hide",
+      "label": "Fix variant hide",
+      "info": "Please enter a variant name. If a name is entered, that specific variant will be hidden."
     },
     {
       "type": "select",

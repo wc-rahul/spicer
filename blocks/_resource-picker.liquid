@@ -8,7 +8,7 @@
 -%}
 {%- if resource != blank -%}
 <a class="promo_blocks" href="{{ resource.url }}" data-mobile-menu="link-{{ block.settings.target | handleize }}">
-    <div class="image_promo_blocks_one">
+    <div class="image_promo_blocks_one img-padding">
       {{
         resource.featured_image.src
         | image_url: width: 1024

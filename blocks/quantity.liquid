@@ -1,6 +1,13 @@
+{% style %}
+  .quntity-note.block-id-{{ block.id }}{background:{{ block.settings.color_note }};}
+{% endstyle %}
 
 
-{% render 'quantity-selector', product: block.settings.product %}
+{% if block.settings.note != blank and block.settings.enable_note %}
+  <div class="quntity-note block-id-{{ block.id }}">{{ block.settings.note }}</div>
+{% endif %}
+{% render 'quantity-selector', product: block.settings.product, quantity-set: block.settings.quantity-set, enable_note: block.settings.enable_note %}
+
 
 {% schema %}
 {
@@ -11,6 +18,29 @@
       "type": "product",
       "id": "product",
       "label": "t:settings.product"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_note",
+      "label": "Enable Quantity Order Note"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Add Quantity Order Note",
+      "visible_if": "{{ block.settings.enable_note == true }}"
+    },
+    {
+      "type": "text",
+      "id": "quantity-set",
+      "label": "Select Number For Set Quantity",
+      "visible_if": "{{ block.settings.enable_note == true }}"
+    },
+    {
+      "type": "color",
+      "id": "color_note",
+      "label": "Select Note Backhround Color",
+      "visible_if": "{{ block.settings.enable_note == true }}"
     }
   ]
 }

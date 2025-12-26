@@ -1,7 +1,7 @@
 {%- if block.settings.promo_image != blank -%}
-<div class="promo_blocks {% if block.settings.size == '2' %} double_size{% endif %}" data-mobile-menu="link-{{ block.settings.target | handleize }}">
+<div class="promo_blocks {% if block.settings.size == '2' %} double_size{% endif %}" href="{{ block.settings.btn_url }}">
     <div class="image_promo_blocks_one">
-    <a href="{{ block.settings.btn_url }}">
+    <a class="media-img" href="{{ block.settings.btn_url }}">
         {{
           block.settings.promo_image
           | image_url: width: 1024
@@ -9,11 +9,15 @@
         }}
     </a>
       <div class="menu_image_text_overlay">
-        <div class="menu_image_text_overlay">
-          <p class="menu_img_title">{{ block.settings.promo_head }}</p>
+        {% if block.settings.promo_head != blank %}
+          <h4 class="menu_img_title font-800">{{ block.settings.promo_head }}</h4>
+        {% endif %} 
+        {% if  block.settings.promo_sub != blank %}
           <p class="menu_img_desc">{{ block.settings.promo_sub }}</p>
-          <a href="{{ block.settings.btn_url }}" class="button-secondary btn">{{ block.settings.btn_label }}</a>
-        </div>
+        {% endif %}
+        {% if block.settings.btn_label != blank %}
+          <a class="menu_img_btn btn-outline" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }}</a>
+        {% endif %}
       </div>
     </div>
 </div>
@@ -66,16 +70,6 @@
       "type": "url",
       "id": "btn_url",
       "label": "Button Link"
-    },
-    {
-      "type": "header",
-      "content": "Mobile Drawer Only"
-    },
-    {
-      "type": "text",
-      "id": "target",
-      "label": "Enter Target Link",
-      "info": "Enter Print to display content in print menu"
     }
   ],
   "blocks": [],

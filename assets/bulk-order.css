@@ -1,0 +1,6 @@
+.bo_heading{margin-bottom:2rem;}
+.bo_filter{display:flex; align-items:flex-start; gap:4rem; width:100%;}
+.bo_swatch_filter{width:100%;}
+.bulk-search{width:calc(100% - 70.59% - 4rem);}
+.swatch-wrapper{display:flex; flex-wrap: wrap; gap:0.75rem; margin-bottom:2rem;}
+.bo_swatch{width:2.5rem; height:2.5rem; border-radius:50%; overflow:hidden; border:1px solid var(--border-color);}
